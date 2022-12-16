@@ -1,0 +1,100 @@
+The goal of this project is to direct near real-\/time satellite data regarding the optical properties of the surface ocean into operational ocean models and coupled ocean-\/atmosphere models. These satellite data are presently processed and distributed by the Naval Oceanographic Office (N\-A\-V\-O\-C\-E\-A\-N\-O) for warfighter support, however, at present there is no mechanism that would direct these data into the operational ocean models. The present suite of operational models uses either a static table of optical attenuation coefficients that is based on Jerlov’s early work (before the modern satellite era \mbox{[}Jerlov 1968\mbox{]}), or a static monthly climatology built from an obsolete N\-A\-S\-A mission (Sea\-Wi\-F\-S). As these operational models do not utilize any contemporaneous ocean optical attenuation data, the default attenuation and radiative transfer computations may result in gross errors for simulated upper ocean temperature structure, mixed layer depth, and substantial underestimates of air-\/sea thermal energy exchange rates. These errors will occur in spite of temperature data assimilation efforts because incorrect attenuation functions create structural problems in the way the ocean models calculate radiant heating throughout the upper water column. In coupled modeling systems, these errors will also impact the thermal energy balance within the simulated ocean-\/atmosphere systems and may have cascading effects on the forecasts for a wide range of tactically pertinent environmental variables, such as Electro-\/\-Magnetic (E\-M) duct heights. \hypertarget{index_my-intro}{}\section{V\-I\-S\-O\-R Overview}\label{index_my-intro}
+\subsection*{Quick and Dirty}
+
+
+\begin{DoxyItemize}
+\item To build\-: ./scripts/build\-\_\-visor.sh
+\item To run a test (must be customized, ./scripts/test\-\_\-netcdf.env)\-: ./scripts/test\-\_\-netcdfs.sh
+\end{DoxyItemize}
+
+\subsection*{Structure}
+
+
+\begin{DoxyItemize}
+\item ./\-Makefile -\/\-Linux P\-C's Makefile
+\item ./\-Makefile\-\_\-\-D\-S\-R\-C -\/\-H\-P\-C Makefile
+\item ./misc -\/directory containing material germane to software engineering of this project
+\item ./jbooks -\/\-Jupyter lab files for basic debugging and origination of code.
+\item ./screen\-\_\-visor.rc -\/\-Screen configuration to see execution of slicer.
+\item ./scripts -\/directory with scripts used to\-:test, build, scan project.
+\item ./build\-\_\-visor.sh -\/builds P\-C Makefile
+\item ./build\-\_\-visor\-Cray.sh -\/builds D\-S\-R\-C Makefile, loads modules (Gordon, Conrad), for D\-S\-R\-C
+\item ./build\-\_\-visor\-S\-G\-I.sh -\/builds D\-S\-R\-C Makefile, loads modules (Gaffney, Koehr), for D\-S\-R\-C
+\item ./test$\ast$.sh -\/\-Various test routines
+\item ./visor\-\_\-gops\-\_\-parser\-\_\-doxygen.dxy -\/\-Doxygen documentation generation configuration file
+\item ./sonar-\/project.properties -\/\-Sonar\-Qube (D\-I2\-E, static code scanner) properties file.
+\item ./sonar\-Scan\-\_\-visor.sh -\/\-Script to invoke sonar scan with key for this project.
+\item ./profile.sh -\/\-Used to call various valgrind calls for code analysis
+\item ./replicate\-Climo\-\_\-visor.ksh -\/\-Script for D\-S\-R\-C to replicate a single climatology to the entire year (12 months)
+\item ./docs -\/\-S\-T\-I\-G, Design, A\-C\-G, and related documentation necessary for transition
+\item ./src -\/actual source code
+\begin{DoxyItemize}
+\item ./visor\-\_\-gops\-\_\-climatology\-\_\-generator.c -\/\-Reads climatology and creates an N\-C\-O\-D\-A\-Q\-C compliant climo file(s)
+\item ./visor\-\_\-gops\-\_\-parser.c -\/\-Reads Net\-C\-D\-F/\-H\-D\-F5 A\-P\-S generated satellite imagery and slices it for N\-C\-O\-D\-A\-Q\-C ingest
+\item ./swapc\-\_\-bytes.c -\/\-Swaps bytes for N\-C\-O\-D\-A\-Q\-C D\-S\-R\-C Big-\/endian (required)
+\item ./libll.c -\/\-Linked list tool used to store valid pixels in nodes on the heap.
+\item ./lib\-Nav.c -\/\-Structure to store navigation data with basic support routines.
+\item ./lib\-Product.c -\/\-Structure to store product data with basic support routines.
+\item ./log.c -\/\-Logging framework from external source.
+\end{DoxyItemize}
+\item ./test -\/\-Directory containing results of testing and validation
+\item ./\-Use\-Case -\/discrete information about data points to get against wrt the read
+\item ./\-Test\-Case -\/actual execution results
+\end{DoxyItemize}
+
+\subsection*{Description}
+
+Given a l3mapgen created file at 0.\-01 resolution produce a N\-C\-O\-D\-A-\/\-Q\-C compliant output file for ingest into the N\-C\-O\-D\-A system. Create a climatology file compliant with N\-C\-O\-D\-A-\/\-Q\-C expectations given a Net\-C\-D\-F based climatology file.
+
+\subsection*{Libraries (Net\-C\-D\-F / H\-D\-F / H5)}
+
+{\itshape Assumes access to A\-P\-S libraries in direct support of all Ocean Color efforts.}
+
+A\-P\-S Libraries\-: {\ttfamily /net/americium/export/sw/linux-\/x86\-\_\-64-\/sl7/aps/local}
+
+\subsection*{Reference}
+
+
+\begin{DoxyItemize}
+\item \href{https://confluence.di2e.net/display/NRL7331/VISOR}{\tt https\-://confluence.\-di2e.\-net/display/\-N\-R\-L7331/\-V\-I\-S\-O\-R}
+\item \href{https://bitbucket.di2e.net/projects/NRL7331/repos/visor_gops_parser}{\tt https\-://bitbucket.\-di2e.\-net/projects/\-N\-R\-L7331/repos/visor\-\_\-gops\-\_\-parser/browse}
+\end{DoxyItemize}
+
+\subsection*{Versioning}
+
+See the Design Document for details.
+
+\subsection*{Operational file locations and job execution}
+
+
+\begin{DoxyItemize}
+\item Crontabs
+\begin{DoxyItemize}
+\item iridium (batch system master node) runs a job to pull N\-A\-V\-O\-C\-E\-A\-N\-O G\-O\-P\-S data locally
+\item 00 07 $\ast$ $\ast$ $\ast$ /home/cwood/\-Documents/visor\-\_\-gops\-\_\-scripts/src/visor\-\_\-cron.sh $>$ /projects/socom/visor\-\_\-gops/logs/visor\-\_\-cron.log 2$>$\&1
+\item data are stored in {\ttfamily /projects/socom/visor\-\_\-gops/db}
+\item logs are stored in {\ttfamily /projects/socom/visor\-\_\-gops/logs}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection*{T\-E\-S\-T C\-A\-S\-E\-S}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily /projects/socom/\-N\-C\-O\-D\-A\-\_\-\-T\-E\-S\-T\-C\-A\-S\-E/2021\-\_\-\-T\-E\-S\-T}
+\item Previous tests evidenced by D\-T\-G.
+\end{DoxyItemize}
+
+\subsection*{Critical Project Data}
+
+
+\begin{DoxyItemize}
+\item Climatology created by our team located at {\ttfamily /projects/socom/visor\-\_\-climatology/output/v3}
+\item Source to build climatolog in this repository.
+\item Source of data used to build output {\ttfamily /projects/socom/source/\-N\-A\-V\-O\-C\-E\-A\-N\-O\-\_\-\-J\-J}
+\item Location on D\-S\-R\-C (gaffney,koehr) is {\ttfamily /p/work1/cwood/\-N\-C\-O\-D\-A\-Q\-C\-\_\-\-O\-P\-T\-I\-C\-S\-\_\-\-C\-L\-I\-M}, note that based on D\-S\-R\-C file schedules this can \char`\"{}suddenly\char`\"{} disappear without by-\/hands refresh.
+\end{DoxyItemize}
+
+\subsection*{D\-S\-R\-C Efforts}
+
+See visor\-\_\-gops\-\_\-scripts repository. 

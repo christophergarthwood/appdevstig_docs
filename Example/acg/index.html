@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>VISOR Documentation</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../markdown.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#application-configuration-guide-acg">Application Configuration Guide (ACG)</a><ul>
+<li><a href="#visible-band-satellite-data-to-improve-ocean-model-radiative-transfer-visor">Visible Band Satellite Data to Improve Ocean Model Radiative Transfer (VISOR)</a></li>
+<li><a href="#general-algorithm-concept-of-operations">General Algorithm / Concept of Operations</a></li>
+<li><a href="#system-requirements">System Requirements</a><ul>
+<li><a href="#minimal-requirements-specification">Minimal Requirements Specification</a></li>
+<li><a href="#development-environment-specification">Development Environment Specification</a></li>
+</ul></li>
+<li><a href="#system-architecture">System Architecture</a></li>
+<li><a href="#data-delivery">Data Delivery</a><ul>
+<li><a href="#inputs">Inputs</a></li>
+</ul></li>
+<li><a href="#user-interfaces">User Interfaces</a></li>
+<li><a href="#web">Web</a></li>
+<li><a href="#security">Security</a></li>
+<li><a href="#database">Database</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#usingstarting-visor_gops_parser">Using/Starting visor_gops_parser</a></li>
+<li><a href="#components">Components</a><ul>
+<li><a href="#visor_gops_parser">visor_gops_parser</a></li>
+<li><a href="#visor_climatology_nasa_generator">visor_climatology_nasa_generator</a></li>
+<li><a href="#jbooks">Jbooks</a></li>
+<li><a href="#c-requirements">C Requirements</a></li>
+<li><a href="#libraries"><strong><em>Libraries</em></strong></a></li>
+</ul></li>
+<li><a href="#build-requirements">Build Requirements</a><ul>
+<li><a href="#compilation-directives"><strong><em>Compilation Directives</em></strong></a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="application-configuration-guide-acg">Application Configuration Guide (ACG)</h1>
+<h2 id="visible-band-satellite-data-to-improve-ocean-model-radiative-transfer-visor">Visible Band Satellite Data to Improve Ocean Model Radiative Transfer (VISOR)</h2>
+<p>The creation or integration of a software components requires the identification of those desired traits the software will present as a solution to business requirements that inspired the creation of the software component and those requirements that are necessary for actual execution. These prerequisites are known as (computer) system requirements and are often used as a guideline as opposed to an absolute rule.</p>
+<p>The system requirements outlined in this text were created from vendor documentation and the actual installation and configuration of the VISOR application on an execution environment within the Naval Research Lab (NRL) development labs. Data sources were via Network File System (NFS) mounts and actual daily runs were made from an unclassified environment.</p>
+<p>visor_gops_parser is a compiled program that reads input from a Global Oceanographic Processing System (GOPS) implementation, NetCDF based output, and generates an NCODA QC compliant, Fortran binary file.</p>
+<h2 id="general-algorithm-concept-of-operations">General Algorithm / Concept of Operations</h2>
+<p>visor_gops_parser reads in a Global Oceanogaphic Processing System (GOPS) NetCDF satellite file. This file covers a single product and has world coverage. visor_gops_parser acts as the PreQC stage of the NCODA QC system as a whole. In the PreQC stage data is read in and output to a Fortran based binary file consistent with NCODA QC’s ingest requirements. Due to the size of the GOPS output the data is “sliced” into 90 to -90 (Latitude) strips and saved as an individual input to NCODA QC. Each strip is date time stamped according to the time_coverage_end global attribute with each slice being stamped going backwards from subject time coverage. The input received from GOPS is a merged, validated, and QC’d product thus making this program a data transformer with a single quality check applied. A boundary check which is product dependent and defaults if unaltered via CLI is performed prior to writing the optics data into subject Fortran binary file. Any value that exceeds the boundary condition is set to the mininum / maximum threshold accordingly.</p>
+<h2 id="system-requirements">System Requirements</h2>
+<h3 id="minimal-requirements-specification">Minimal Requirements Specification</h3>
+<h4 id="overall-minimal-hardware-requirements"><strong><em>Overall Minimal Hardware requirements:</em></strong></h4>
+<table>
+<colgroup>
+<col style="width: 42%" />
+<col style="width: 57%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Memory</td>
+<td>8 GB</td>
+</tr>
+<tr class="even">
+<td>Hard-drive space</td>
+<td>1 GB</td>
+</tr>
+<tr class="odd">
+<td>Processor</td>
+<td>&gt;i5 @ 2.5 GHZ</td>
+</tr>
+<tr class="even">
+<td>Network</td>
+<td>Standard network connectivity sufficient, not required by application but NFS mounts with insufficient network connectivity would make the program fail.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="overall-minimal-software-requirements"><strong><em>Overall Minimal Software requirements:</em></strong></h4>
+<table>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Unix operating system</td>
+<td>CentOS Linux</td>
+</tr>
+<tr class="even">
+<td>Bash Shell</td>
+<td>v4+, must support hashes.</td>
+</tr>
+<tr class="odd">
+<td>Korn Shell</td>
+<td>v93+, used to support functions.</td>
+</tr>
+<tr class="even">
+<td>make</td>
+<td>Builds visor applications.</td>
+</tr>
+<tr class="odd">
+<td>gcc</td>
+<td>4.8.5+</td>
+</tr>
+<tr class="even">
+<td>Global Oceanographic Process System (GOPS)</td>
+<td>Processes satellite imagery.</td>
+</tr>
+</tbody>
+</table>
+<p>If built on gcc 8.5 on a CentOS 8 (Stream) platform you must install the following packages: - <code>sudo yum install epel-release</code> - <code>sudo dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm</code> - <code>sudo dnf makecache --refresh</code> - <code>sudo yum makecache --refresh</code> - <code>sudo yum install git gcc *fortran*</code> - <code>sudo dnf config-manager --set-enabled PowerTools</code> - <code>sudo dnf -y instlal dnf-plugins-core</code> - <code>sudo dnf upgrade</code> - <code>sudo yum update</code> - <code>sudo yum install git</code> - <code>sudo yum install ansible</code> - <code>sudo yum install gcc *fortran* libnetcdf-dev libnetcdff-dev netcdf netcdf-devel hdf5 hdf5-devel libjpeg* libjpeg*devel* mfhdf-devel hdf-devel</code></p>
+<h4 id="optional-requirements"><strong><em>Optional requirements:</em></strong></h4>
+<table>
+<colgroup>
+<col style="width: 42%" />
+<col style="width: 57%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TORQUE (batch system)</td>
+<td>These vary so commands like qsub/qstat might need tweaking.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="development-environment-specification">Development Environment Specification</h3>
+<h4 id="nrl-development-environment-overview"><strong><em>NRL Development Environment Overview</em></strong></h4>
+<table>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th style="text-align: right;">Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Memory</td>
+<td style="text-align: right;">32 GB</td>
+</tr>
+<tr class="even">
+<td>Hard-drive space</td>
+<td style="text-align: right;">100 MB</td>
+</tr>
+<tr class="odd">
+<td>Processor</td>
+<td style="text-align: right;">Intel Xeon @ 3.7 GHZ</td>
+</tr>
+<tr class="even">
+<td>Network</td>
+<td style="text-align: right;">100 mb network</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>Software</th>
+<th style="text-align: right;">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CentOS Linux</td>
+<td style="text-align: right;">v7.8.2003</td>
+</tr>
+<tr class="even">
+<td>make</td>
+<td style="text-align: right;">v3.82</td>
+</tr>
+<tr class="odd">
+<td>gcc</td>
+<td style="text-align: right;">v4.8.5</td>
+</tr>
+</tbody>
+</table>
+<h2 id="system-architecture">System Architecture</h2>
+<p>No system architecture diagram exists as this program is a single executable intensed for unprivileged accounts to process an incoming NetCDF owned by the end-user and output a Fortran based binary output for NCODA QC.</p>
+<h2 id="data-delivery">Data Delivery</h2>
+<p>No FTP/SCP calls are made outside of the NFS mount. Data is expected to be accessible in a standard Unix file system layout.</p>
+<p>visor_gops_parser initially sources the environmental file referncesd in the <code>-i</code> CLI argument. Output is plated in the location specified in the <code>-o</code> option.</p>
+<h3 id="inputs">Inputs</h3>
+<ul>
+<li>GOPS Satellite Image:
+<ul>
+<li>Dimensions: lat(18000), lon(36000)</li>
+<li>Variables: a_490_lmi, bb_490_lmi, lat, lon</li>
+<li>Attributes: time_coverage_start, time_coverage_end</li>
+</ul></li>
+</ul>
+<h2 id="user-interfaces">User Interfaces</h2>
+<p>visor_gops_parser has no Graphical User Interface and is 100% Command Line Interface (CLI) driven.</p>
+<h2 id="web">Web</h2>
+<p>visor_gops_parser has no web component associated with it. Some documentation generated by Doxygen, code source documenter, and pandoc to transform the Markdown into HyperText Markup Language (HTML) but do not require a web server or external network connectivity.</p>
+<h2 id="security">Security</h2>
+<h4 id="accounts">Accounts</h4>
+<p>No service account are required for visor_gops_parser. It is recommended visor_gops_parser be run as a standard user account that has only those privileges that are appropriate for typical scientific computing. If using a batch system it setup for subject user with access to appropriate queues will be necessary.</p>
+<p>There are no roles associated with visor_gops_parser such as administrator or user.</p>
+<h2 id="database">Database</h2>
+<p>There is no database or persistence mechanism other than the filesystem location specified on the CLI.</p>
+<h2 id="installation">Installation</h2>
+<p>See documentation in the <code>installation</code> folder.</p>
+<h2 id="usingstarting-visor_gops_parser">Using/Starting visor_gops_parser</h2>
+<p>This application requires command line interface (CLI) arguments to run.</p>
+<p>./visor_gops_parser</p>
+<ul>
+<li><p>-V, –Version, -Version prints the version of this software package.</p></li>
+<li><p>-v, –verbose, -verbose prints debug information to standard output.</p></li>
+<li><p>-c, –clobber, -clobber overwrites outputs files without prompt.</p></li>
+<li><p>-d, –debug, -debug prints data, lots of I/O, to screen.</p></li>
+<li><p>-i, –ifile, -ifile name of the H5 or NetCDF input file.</p></li>
+<li><p>-o, –ofile, -ofile name of the NCODA QC output file.</p></li>
+<li><p>-p, –product, -product name of the products you want included in the output, use double quotes to encapsulate comma separated values. no spaces between products (a_490_lmi,bb_490_lmi).</p></li>
+<li><p>-s, –split, -split Number of times to split the data.</p></li>
+<li><p>-n, –ndex,, -ndex If desired the individual split you want to run (can run a single slice), start at (0) zero.</p></li>
+<li><p>-m, –product_min Minimal value of optics data allowed through this system. Default is product dependent.</p></li>
+<li><p>-x, –product_max Maximum value of optics data allowed through this system. Default is product dependent.</p></li>
+<li><p>Absorption ( 0.0160, 2.5000), Backscattering ( 0.0016, 1.0000)</p></li>
+<li><p>Output file is the prefix intended as output will be split 9 ways with a pattern of (<ofile>_0.out, <ofile>_1.out, …)</p></li>
+</ul>
+<h2 id="components">Components</h2>
+<h3 id="visor_gops_parser">visor_gops_parser</h3>
+<p>Compiled C program that this manual covers.</p>
+<p><a href="../gops_parser/html/index.html">visor_gops_parser Doxygen Source Code Document</a></p>
+<h3 id="visor_climatology_nasa_generator">visor_climatology_nasa_generator</h3>
+<p>Early implementation, C, of a climatology generator using NASA 4Km climatology to generate a GDEM-like NCODA compliant climatology file for NCODA [QC, VAR].</p>
+<h3 id="jbooks">Jbooks</h3>
+<p>Python based Jupyter Lab (notebooks) designed to support non-formal and formal code to support the project. Of note is the ./ncoda_NAVOClimatology_[a,bb]_HalfLogOnly.ipynb. This reads NAVOCEANO generated climatologies processed by the Principle Investigator and stiches the input back together into a world view while halving the total data points. NCODA only support 4 byte integers and 685M data points times 4 bytes (to represent the total potential size required for data capture) is simply too large. Output is a GDEM-like NCODA compliant climatology file for NCODA [QC, VAR]. This application is considered a <em>one off</em> as it is used to generate an output one time used for the lifecycle of the application.</p>
+<h3 id="c-requirements">C Requirements</h3>
+<p>Version: gcc compiler 4.8.5 Tested On: 4.8.5</p>
+<p>Requirement: Availability of APS/GOPS libraries for NetCDF and HDF are a must.</p>
+<h4 id="library-domain-for-visor_gops_parser-c-code">Library domain for visor_gops_parser C code:</h4>
+<h3 id="libraries"><strong><em>Libraries</em></strong></h3>
+<table>
+<colgroup>
+<col style="width: 42%" />
+<col style="width: 57%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Library</th>
+<th>Reason for Use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>include &lt;stdio.h&gt;</td>
+<td>Standard I/O library.</td>
+</tr>
+<tr class="even">
+<td>include &lt;stdlib.h&gt;</td>
+<td>Standard C library for any compiled program.</td>
+</tr>
+<tr class="odd">
+<td>include &lt;string.h&gt;</td>
+<td>String functions (str).</td>
+</tr>
+<tr class="even">
+<td>include &lt;getopt.h&gt;</td>
+<td>CLI argument management.</td>
+</tr>
+<tr class="odd">
+<td>include &lt;unistd.h&gt;</td>
+<td>File existence checks.</td>
+</tr>
+<tr class="even">
+<td>include &lt;math.h&gt;</td>
+<td>Used for fabs and log10 functions.</td>
+</tr>
+<tr class="odd">
+<td>include &lt;errno.h&gt;</td>
+<td>Unix standard error codes.</td>
+</tr>
+<tr class="even">
+<td>include &lt;time.h&gt;</td>
+<td>Time library for manipulation of dates.</td>
+</tr>
+<tr class="odd">
+<td>include “hdf5.h”</td>
+<td>3rd Party, HDF5 library.</td>
+</tr>
+<tr class="even">
+<td>include “hdf5_hl.h”</td>
+<td>3rd Party, HDF5 “lite” library used for attribute access.</td>
+</tr>
+<tr class="odd">
+<td>include &lt;netcdf.h&gt;</td>
+<td>3rd Party, NetCDF library.</td>
+</tr>
+<tr class="even">
+<td>include “log.h”</td>
+<td>3rd party logging library, inspected and approved.</td>
+</tr>
+<tr class="odd">
+<td>include “libll.h”</td>
+<td>Internal, Data Node Structure and linked list library.</td>
+</tr>
+<tr class="even">
+<td>include “libNav.h”</td>
+<td>Internal, Navigation Structure library</td>
+</tr>
+<tr class="odd">
+<td>include “libProduct.h”</td>
+<td>Internal, Product structure library.</td>
+</tr>
+<tr class="even">
+<td>include “swapc_bytes.h”</td>
+<td>Internal, classic byte swapping library.</td>
+</tr>
+<tr class="odd">
+<td>include &lt;fcntl.h&gt;</td>
+<td>File locking libraries.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="build-requirements">Build Requirements</h2>
+<p>visor_gops_parser is a C application that requires compilation to function. The information showing below illustrates those requirements for a successfull build. Note that the Makefile and ./build_.sh script(s) have full details necessary to replicate compilation and linking.</p>
+<h3 id="compilation-directives"><strong><em>Compilation Directives</em></strong></h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 66%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Compilation Directive</th>
+<th>Requirements</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Compiler used</td>
+<td>gcc =&gt; /usr/bin/gcc</td>
+</tr>
+<tr class="even">
+<td>Objects dir</td>
+<td>./obj</td>
+</tr>
+<tr class="odd">
+<td>Executables dir</td>
+<td>./</td>
+</tr>
+<tr class="even">
+<td>Libraries</td>
+<td>-L/net/americium/export/sw/linux-x86_64-sl7/aps/local/lib</td>
+</tr>
+<tr class="odd">
+<td>Includes</td>
+<td>-I/net/americium/export/sw/linux-x86_64-sl7/aps/local/include</td>
+</tr>
+<tr class="even">
+<td>Compiling options</td>
+<td>[-C -g -Wall -pedantic -fbounds-check -std=c99 -O5 -Wvariadic-macros ]</td>
+</tr>
+<tr class="odd">
+<td>Linking options</td>
+<td>[-lnetcdf -ljpeg -lmfhdf -ldf -lhdf5_hl -lhdf5 -ldl -lm -lz -ljpeg]</td>
+</tr>
+</tbody>
+</table>
+Naval Research Lab (NRL) VISOR Documentation
+</body>
+</html>

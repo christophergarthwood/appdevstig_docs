@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>VISOR Documentation</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="./markdown.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#visible-band-satellite-data-to-improve-ocean-model-radiative-transfer-visor">Visible Band Satellite Data to Improve Ocean Model Radiative Transfer (VISOR)</a><ul>
+<li><a href="#documentation-table-of-contents-toc">Documentation Table of Contents (TOC)</a><ul>
+<li><a href="#application-configuration-guide"><span>Application Configuration Guide</span></a></li>
+<li><a href="#design-document"><span>Design Document</span></a></li>
+<li><a href="#installation"><span>Installation</span></a></li>
+<li><a href="#setup"><span>Setup</span></a></li>
+<li><a href="#test-casemetrics"><span>Test Case/Metrics</span></a></li>
+</ul></li>
+</ul></li>
+<li><a href="#visor-gops-parser-ncodaqc-writer">VISOR GOPS Parser / NCODAQC Writer</a><ul>
+<li><a href="#quick-and-dirty">Quick and Dirty</a></li>
+<li><a href="#structure">Structure</a></li>
+<li><a href="#description">Description</a></li>
+<li><a href="#libraries-netcdf-hdf-h5">Libraries (NetCDF / HDF / H5)</a></li>
+<li><a href="#reference">Reference</a></li>
+<li><a href="#versioning">Versioning</a></li>
+<li><a href="#operational-file-locations-and-job-execution">Operational file locations and job execution</a></li>
+<li><a href="#climatology">Climatology</a></li>
+<li><a href="#test-cases">TEST CASES</a></li>
+<li><a href="#critical-project-data">Critical Project Data</a></li>
+<li><a href="#dsrc-efforts">DSRC Efforts</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="visible-band-satellite-data-to-improve-ocean-model-radiative-transfer-visor">Visible Band Satellite Data to Improve Ocean Model Radiative Transfer (VISOR)</h1>
+<h2 id="documentation-table-of-contents-toc">Documentation Table of Contents (TOC)</h2>
+<h3 id="application-configuration-guide"><a href="./acg/index.html">Application Configuration Guide</a></h3>
+<h3 id="design-document"><a href="./design_doc/index.html">Design Document</a></h3>
+<h3 id="installation"><a href="./installation/index.html">Installation</a></h3>
+<h3 id="setup"><a href="./setup/index.html">Setup</a></h3>
+<h3 id="test-casemetrics"><a href="./testcase/index.html">Test Case/Metrics</a></h3>
+<h1 id="visor-gops-parser-ncodaqc-writer">VISOR GOPS Parser / NCODAQC Writer</h1>
+<p>/*! VISOR</p>
+<p>The goal of this project is to direct near real-time satellite data regarding the optical properties of the surface ocean into operational ocean models and coupled ocean-atmosphere models. These satellite data are presently processed and distributed by the Naval Oceanographic Office (NAVOCEANO) for warfighter support, however, at present there is no mechanism that would direct these data into the operational ocean models. The present suite of operational models uses either a static table of optical attenuation coefficients that is based on Jerlov’s early work (before the modern satellite era [Jerlov 1968]), or a static monthly climatology built from an obsolete NASA mission (SeaWiFS). As these operational models do not utilize any contemporaneous ocean optical attenuation data, the default attenuation and radiative transfer computations may result in gross errors for simulated upper ocean temperature structure, mixed layer depth, and substantial underestimates of air-sea thermal energy exchange rates. These errors will occur in spite of temperature data assimilation efforts because incorrect attenuation functions create structural problems in the way the ocean models calculate radiant heating throughout the upper water column. In coupled modeling systems, these errors will also impact the thermal energy balance within the simulated ocean-atmosphere systems and may have cascading effects on the forecasts for a wide range of tactically pertinent environmental variables, such as Electro-Magnetic (EM) duct heights. \section my-intro VISOR Overview</p>
+<h2 id="quick-and-dirty">Quick and Dirty</h2>
+<ul>
+<li><p>To build: ./scripts/build_visor.sh</p></li>
+<li><p>To run a test (must be customized, ./scripts/test_netcdf.env): ./scripts/test_netcdfs.sh</p></li>
+</ul>
+<h2 id="structure">Structure</h2>
+<ul>
+<li>./Makefile -Linux PC’s Makefile</li>
+<li>./Makefile_DSRC -HPC Makefile</li>
+<li>./misc -directory containing material germane to software engineering of this project</li>
+<li>./jbooks -Jupyter lab files for basic debugging and origination of code.</li>
+<li>./screen_visor.rc -Screen configuration to see execution of slicer.</li>
+<li>./scripts -directory with scripts used to:test, build, scan project.</li>
+<li>./build_visor.sh -builds PC Makefile</li>
+<li>./build_visorCray.sh -builds DSRC Makefile, loads modules (Gordon, Conrad), for DSRC</li>
+<li>./build_visorSGI.sh -builds DSRC Makefile, loads modules (Gaffney, Koehr), for DSRC</li>
+<li>./test*.sh -Various test routines</li>
+<li>./visor_gops_parser_doxygen.dxy -Doxygen documentation generation configuration file</li>
+<li>./sonar-project.properties -SonarQube (DI2E, static code scanner) properties file.</li>
+<li>./sonarScan_visor.sh -Script to invoke sonar scan with key for this project.</li>
+<li>./profile.sh -Used to call various valgrind calls for code analysis</li>
+<li>./replicateClimo_visor.ksh -Script for DSRC to replicate a single climatology to the entire year (12 months)</li>
+<li>./docs -STIG, Design, ACG, and related documentation necessary for transition</li>
+<li>./project_documentation -Manuals for COAMPS/NCODA, validation results (PPTX), and notes from DI2E that are VERY helpful.</li>
+<li>./src -actual source code
+<ul>
+<li>./visor_gops_climatology_generator.c -Reads climatology and creates an NCODAQC compliant climo file(s)</li>
+<li>./visor_gops_parser.c -Reads NetCDF/HDF5 APS generated satellite imagery and slices it for NCODAQC ingest</li>
+<li>./swapc_bytes.c -Swaps bytes for NCODAQC DSRC Big-endian (required)</li>
+<li>./libll.c -Linked list tool used to store valid pixels in nodes on the heap.</li>
+<li>./libNav.c -Structure to store navigation data with basic support routines.</li>
+<li>./libProduct.c -Structure to store product data with basic support routines.</li>
+<li>./log.c -Logging framework from external source.</li>
+</ul></li>
+<li>./test -Directory containing results of testing and validation</li>
+<li>./UseCase -discrete information about data points to get against wrt the read</li>
+<li>./TestCase -actual execution results</li>
+</ul>
+<h2 id="description">Description</h2>
+<p>Given a l3mapgen created file at 0.01 resolution produce a NCODA-QC compliant output file for ingest into the NCODA system. Create a climatology file compliant with NCODA-QC expectations given a NetCDF based climatology file.</p>
+<h2 id="libraries-netcdf-hdf-h5">Libraries (NetCDF / HDF / H5)</h2>
+<p><em>Assumes access to APS libraries in direct support of all Ocean Color efforts.</em></p>
+<p>APS Libraries: <code>/net/americium/export/sw/linux-x86_64-sl7/aps/local</code></p>
+<h2 id="reference">Reference</h2>
+<ul>
+<li>[https://confluence.di2e.net/display/NRL7331/VISOR] (https://confluence.di2e.net/display/NRL7331/VISOR)</li>
+<li>[https://bitbucket.di2e.net/projects/NRL7331/repos/visor_gops_parser/browse] (https://bitbucket.di2e.net/projects/NRL7331/repos/visor_gops_parser)</li>
+</ul>
+<h2 id="versioning">Versioning</h2>
+<p>See the Design Document for details.</p>
+<h2 id="operational-file-locations-and-job-execution">Operational file locations and job execution</h2>
+<ul>
+<li>Crontabs
+<ul>
+<li>iridium (batch system master node) runs a job to pull NAVOCEANO GOPS data locally</li>
+<li>00 07 * * * /home/cwood/Documents/visor_gops_scripts/src/visor_cron.sh &gt; /projects/socom/visor_gops/logs/visor_cron.log 2&gt;&amp;1</li>
+<li>data are stored in <code>/projects/socom/visor_gops/db</code></li>
+<li>logs are stored in <code>/projects/socom/visor_gops/logs</code></li>
+</ul></li>
+</ul>
+<h2 id="climatology">Climatology</h2>
+<p>So you want to make the climatology used in the original 90 day experiments and for the duration of this project? Use ./misc/jbooks/ncoda_ClimatologyV3_nologFullResolution.ipynb with a Jupyter Notebook. + Source your Anaconda RC equivalent. + <code>conda activate &lt;path to your distribution&gt;</code> + <code>conda activate /projects/intro/apps/machine_learning/</code> + <code>jupyter notebook --ip=0.0.0.0 --port=8081</code> + Access the notebook and follow the instructions within. + This notebook creates a custom climatology based on NCODA standards which changes how the world looks from a traditional mercator projection.</p>
+<h2 id="test-cases">TEST CASES</h2>
+<ul>
+<li><code>/projects/socom/NCODA_TESTCASE/2021_TEST</code></li>
+<li>Previous tests evidenced by DTG.</li>
+</ul>
+<h2 id="critical-project-data">Critical Project Data</h2>
+<ul>
+<li>Climatology created by our team located at <code>/projects/socom/visor_climatology/output/v3</code></li>
+<li>Source to build climatolog in this repository.</li>
+<li>Source of data used to build output <code>/projects/socom/source/NAVOCEANO_JJ</code></li>
+<li>Location on DSRC (gaffney,koehr) is <code>/p/work1/cwood/NCODAQC_OPTICS_CLIM</code>, note that based on DSRC file schedules this can “suddenly” disappear without by-hands refresh.</li>
+</ul>
+<h2 id="dsrc-efforts">DSRC Efforts</h2>
+<p>See visor_gops_scripts repository.</p>
+Naval Research Lab (NRL) VISOR Documentation
+</body>
+</html>

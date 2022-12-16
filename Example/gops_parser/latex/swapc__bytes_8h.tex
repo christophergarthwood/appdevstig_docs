@@ -1,0 +1,142 @@
+\hypertarget{swapc__bytes_8h}{\section{src/swapc\-\_\-bytes.h File Reference}
+\label{swapc__bytes_8h}\index{src/swapc\-\_\-bytes.\-h@{src/swapc\-\_\-bytes.\-h}}
+}
+
+
+Routines for swapping bytes due to endianess requirements of project.  
+
+
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{swapc__bytes_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{swapc__bytes_8h_a06c33eac02176dea763880121a447805}{swapc\-\_\-bytes} (char $\ast$in, int nbyte, int ntime)
+\begin{DoxyCompactList}\small\item\em Swaps bytes given a pointer, number of bytes and size of swaps to make. \end{DoxyCompactList}\item 
+void \hyperlink{swapc__bytes_8h_a05408c9b7872f382b58aa7af5e514a49}{swapc\-\_\-bytes2} (const char $\ast$in, char $\ast$out, int nbyte, int ntime)
+\begin{DoxyCompactList}\small\item\em Swaps bytes given a pointer but doesn't change anything in the original value given (allocate memory!) \end{DoxyCompactList}\item 
+int \hyperlink{swapc__bytes_8h_ab1681eaee16d7efe6bd5659c1ce28174}{safe\-\_\-memcpy} (char $\ast$dest, const char $\ast$src, size\-\_\-t cnt)
+\begin{DoxyCompactList}\small\item\em Wrapper for memory copies done safely with layered defense, return on non-\/zero is an error. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Routines for swapping bytes due to endianess requirements of project. \begin{DoxyAuthor}{Author}
+N\-R\-L, Code 7330 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2019/05/31 Routines pulled from satellite image processing code\-: 
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See Also}
+/export/projects/socom/aps7/ocssw/oel\-\_\-util/libgenutils/swapc\-\_\-bytes.c
+
+\href{https://confluence.di2e.net/display/NRL7331/VISOR}{\tt https\-://confluence.\-di2e.\-net/display/\-N\-R\-L7331/\-V\-I\-S\-O\-R} 
+\end{DoxySeeAlso}
+
+
+Definition in file \hyperlink{swapc__bytes_8h_source}{swapc\-\_\-bytes.\-h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{swapc__bytes_8h_ab1681eaee16d7efe6bd5659c1ce28174}{\index{swapc\-\_\-bytes.\-h@{swapc\-\_\-bytes.\-h}!safe\-\_\-memcpy@{safe\-\_\-memcpy}}
+\index{safe\-\_\-memcpy@{safe\-\_\-memcpy}!swapc_bytes.h@{swapc\-\_\-bytes.\-h}}
+\subsubsection[{safe\-\_\-memcpy}]{\setlength{\rightskip}{0pt plus 5cm}int safe\-\_\-memcpy (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{dest, }
+\item[{const char $\ast$}]{src, }
+\item[{size\-\_\-t}]{cnt}
+\end{DoxyParamCaption}
+)}}\label{swapc__bytes_8h_ab1681eaee16d7efe6bd5659c1ce28174}
+
+
+Wrapper for memory copies done safely with layered defense, return on non-\/zero is an error. 
+
+Local implementation of a safe memory copy procedure, wrapper.
+
+
+\begin{DoxyParams}{Parameters}
+{\em char} & $\ast$ dest -\/ target data \\
+\hline
+{\em const} & char $\ast$ src -\/ source data \\
+\hline
+{\em size\-\_\-t} & cnt -\/ number of bytes to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 45 of file safe\-\_\-memcpy.\-c.
+
+\hypertarget{swapc__bytes_8h_a06c33eac02176dea763880121a447805}{\index{swapc\-\_\-bytes.\-h@{swapc\-\_\-bytes.\-h}!swapc\-\_\-bytes@{swapc\-\_\-bytes}}
+\index{swapc\-\_\-bytes@{swapc\-\_\-bytes}!swapc_bytes.h@{swapc\-\_\-bytes.\-h}}
+\subsubsection[{swapc\-\_\-bytes}]{\setlength{\rightskip}{0pt plus 5cm}void swapc\-\_\-bytes (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{in, }
+\item[{int}]{nbyte, }
+\item[{int}]{ntime}
+\end{DoxyParamCaption}
+)}}\label{swapc__bytes_8h_a06c33eac02176dea763880121a447805}
+
+
+Swaps bytes given a pointer, number of bytes and size of swaps to make. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em char$\ast$} & -\/ pointer to the data itself \\
+\hline
+{\em int} & -\/ number of bytes that will be swapped (defines incoming data size) \\
+\hline
+{\em int} & -\/ number of times to swap \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 41 of file swapc\-\_\-bytes.\-c.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{swapc__bytes_8h_a06c33eac02176dea763880121a447805_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{swapc__bytes_8h_a05408c9b7872f382b58aa7af5e514a49}{\index{swapc\-\_\-bytes.\-h@{swapc\-\_\-bytes.\-h}!swapc\-\_\-bytes2@{swapc\-\_\-bytes2}}
+\index{swapc\-\_\-bytes2@{swapc\-\_\-bytes2}!swapc_bytes.h@{swapc\-\_\-bytes.\-h}}
+\subsubsection[{swapc\-\_\-bytes2}]{\setlength{\rightskip}{0pt plus 5cm}void swapc\-\_\-bytes2 (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{in, }
+\item[{char $\ast$}]{out, }
+\item[{int}]{nbyte, }
+\item[{int}]{ntime}
+\end{DoxyParamCaption}
+)}}\label{swapc__bytes_8h_a05408c9b7872f382b58aa7af5e514a49}
+
+
+Swaps bytes given a pointer but doesn't change anything in the original value given (allocate memory!) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em char$\ast$} & -\/ pointer to the data itself \\
+\hline
+{\em char$\ast$} & -\/ pointer to the new data you want swapped \\
+\hline
+{\em int} & -\/ number of bytes that will be swapped (defines incoming data size) \\
+\hline
+{\em int} & -\/ number of times to swap \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 66 of file swapc\-\_\-bytes.\-c.
+

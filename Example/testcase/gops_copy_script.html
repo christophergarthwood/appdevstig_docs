@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>VISOR Documentation</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../markdown.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#gops-cronjob">GOPS Cronjob</a><ul>
+<li><a href="#daily-file-copy-metrics">Daily File Copy Metrics</a><ul>
+<li><a href="#general-execution-time-for-copy">General Execution time for Copy</a></li>
+<li><a href="#example-results">Example Results</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="gops-cronjob">GOPS Cronjob</h1>
+<h2 id="daily-file-copy-metrics">Daily File Copy Metrics</h2>
+<p><em>File Totals</em></p>
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 54%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Total Files</th>
+<th>Avg Bytes(M)</th>
+<th>Total Load(GB)</th>
+<th>Pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>a_490</td>
+<td>190</td>
+<td>125</td>
+<td>23</td>
+<td>find /home/aps/optics/gops_rs/lvl5 -name *a_490_lmi.nc -print</td>
+</tr>
+<tr class="even">
+<td>bb_490</td>
+<td>190</td>
+<td>146</td>
+<td>27</td>
+<td>find /home/aps/optics/gops_rs/lvl5 -name *bb_490_lmi.nc -print</td>
+</tr>
+<tr class="odd">
+<td>merged_a490</td>
+<td>31</td>
+<td>164</td>
+<td>5</td>
+<td>find /home/aps/optics/gops_rs/lvl5 -name merged<em>L5.1113m</em>a_490_lmi.nc -print</td>
+</tr>
+<tr class="even">
+<td>merged_bb490</td>
+<td>31</td>
+<td>189</td>
+<td>5</td>
+<td>find /home/aps/optics/gops_rs/lvl5 -name merged<em>L5.1113m</em>bb_490_lmi.nc -print</td>
+</tr>
+<tr class="odd">
+<td>merged_10D_490</td>
+<td>31</td>
+<td>302</td>
+<td>9</td>
+<td>find /home/aps/optics/gops_rs/lvl5 -name merged<em>L5.10D</em>a_490_lmi.nc -print</td>
+</tr>
+<tr class="even">
+<td>merged_10D_bb490</td>
+<td>31</td>
+<td>357</td>
+<td>11</td>
+<td>find /home/aps/optics/gops_rs/lvl5 -name merged<em>L5.10D</em>bb_490_lmi.nc -print</td>
+</tr>
+</tbody>
+</table>
+<p>80 (GB) total space at day of year 189.</p>
+<h3 id="general-execution-time-for-copy">General Execution time for Copy</h3>
+<p>real 32m44.188s</p>
+<p>user 0m1.595s</p>
+<p>sys 2m1.416s</p>
+<h3 id="example-results">Example Results</h3>
+<ul>
+<li>1.6G /projects/socom/visor_gops/lvl5/2020066.0306</li>
+<li>1.7G /projects/socom/visor_gops/lvl5/2020087.0327</li>
+<li>1.7G /projects/socom/visor_gops/lvl5/2020089.0329</li>
+<li>109M /projects/socom/visor_gops/lvl5/2020111.0420</li>
+<li>1.7G /projects/socom/visor_gops/lvl5/2020088.0328</li>
+<li>1.7G /projects/socom/visor_gops/lvl5/2020074.0314</li>
+<li>107M /projects/socom/visor_gops/lvl5/2020115.0424</li>
+<li>112M /projects/socom/visor_gops/lvl5/2020113.0422</li>
+<li>1.7G /projects/socom/visor_gops/lvl5/2020063.0303</li>
+<li>1.7G /projects/socom/visor_gops/lvl5/2020076.0316</li>
+<li>1.6G /projects/socom/visor_gops/lvl5/2020065.0305</li>
+<li>1.6G /projects/socom/visor_gops/lvl5/2020061.0301</li>
+<li>1.7G /projects/socom/visor_gops/lvl5/2020070.0310</li>
+<li>1.7G /projects/socom/visor_gops/lvl5/2020083.0323</li>
+<li>1.7G /projects/socom/visor_gops/lvl5/2020075.0315</li>
+<li>110M /projects/socom/visor_gops/lvl5/2020114.0423</li>
+<li>1.6G /projects/socom/visor_gops/lvl5/2020068.0308</li>
+<li>1.3G /projects/socom/visor_gops/lvl5/2020078.0318</li>
+<li>1.7G /projects/socom/visor_gops/lvl5/2020091.0331</li>
+<li>1.7G /projects/socom/visor_gops/lvl5/2020062.0302</li>
+<li>1.6G /projects/socom/visor_gops/lvl5/2020067.0307</li>
+<li>1.7G /projects/socom/visor_gops/lvl5/2020081.0321</li>
+<li>1.7G /projects/socom/visor_gops/lvl5/2020082.0322</li>
+<li>1.7G /projects/socom/visor_gops/lvl5/2020072.0312</li>
+<li>1.7G /projects/socom/visor_gops/lvl5/2020064.0304</li>
+<li>1.6G /projects/socom/visor_gops/lvl5/2020077.0317</li>
+<li>1.7G /projects/socom/visor_gops/lvl5/2020084.0324</li>
+<li>1.7G /projects/socom/visor_gops/lvl5/2020086.0326</li>
+<li>1.6G /projects/socom/visor_gops/lvl5/2020069.0309</li>
+<li>1.7G /projects/socom/visor_gops/lvl5/2020073.0313</li>
+<li>1.7G /projects/socom/visor_gops/lvl5/2020071.0311</li>
+<li>114M /projects/socom/visor_gops/lvl5/2020112.0421</li>
+<li>1.7G /projects/socom/visor_gops/lvl5/2020079.0319</li>
+<li>1.7G /projects/socom/visor_gops/lvl5/2020085.0325</li>
+<li>1.6G /projects/socom/visor_gops/lvl5/2020080.0320</li>
+<li>1.5G /projects/socom/visor_gops/lvl5/2020090.0330</li>
+</ul>
+<p>51G /projects/socom/visor_gops/lvl5</p>
+Naval Research Lab (NRL) VISOR Documentation
+</body>
+</html>

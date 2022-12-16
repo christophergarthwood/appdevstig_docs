@@ -1,0 +1,147 @@
+\hypertarget{libProduct_8h}{\section{src/lib\-Product.h File Reference}
+\label{libProduct_8h}\index{src/lib\-Product.\-h@{src/lib\-Product.\-h}}
+}
+
+
+Contains definitions for a \hyperlink{structProduct}{Product} structure necessary to hold salient meta-\/data related to a scientific data point. Information is gathered from the Net\-C\-D\-F/\-H\-D\-F5 file for persistence thus ensuring is does have to continually be accessed for the same data.  
+
+
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{libProduct_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structProduct__Node}{Product\-\_\-\-Node}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{libProduct_8h_a9db775ed29138af8173b6e9a13d50b43}{A\-T\-T\-\_\-\-N\-M\-\_\-\-S\-C\-A\-L\-E\-\_\-\-F\-A\-C\-T\-O\-R}~\char`\"{}scale\-\_\-factor\char`\"{}
+\item 
+\#define \hyperlink{libProduct_8h_aa2a42c8375e7ce6df89b3e078c8baebf}{A\-T\-T\-\_\-\-N\-M\-\_\-\-A\-D\-D\-\_\-\-O\-F\-F\-S\-E\-T}~\char`\"{}add\-\_\-offset\char`\"{}
+\item 
+\#define \hyperlink{libProduct_8h_a8c41f7047ace1bd9d8a468706351e7d1}{A\-T\-T\-\_\-\-N\-M\-\_\-\-M\-A\-X\-\_\-\-S\-I\-Z\-E}~255
+\item 
+\#define \hyperlink{libProduct_8h_a5b63207c5ee57a1a43ae61b697f046c9}{P\-R\-O\-D\-U\-C\-T\-\_\-\-F\-I\-L\-L\-\_\-\-V\-A\-L\-U\-E}~-\/32767
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{libProduct_8h_a78a43077ff2f12332d23106cb4aab9c3}{typedef struct \hyperlink{structProduct__Node}{Product\-\_\-\-Node} $\ast$ {\bfseries prod\-Ptr}}\label{libProduct_8h_a78a43077ff2f12332d23106cb4aab9c3}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{libProduct_8h_aa5a994d345c27e96aed658adf4a4b67d}{\hyperlink{structProduct__Node}{prod\-Ptr} \hyperlink{libProduct_8h_aa5a994d345c27e96aed658adf4a4b67d}{New\-Product\-Node} ()}\label{libProduct_8h_aa5a994d345c27e96aed658adf4a4b67d}
+
+\begin{DoxyCompactList}\small\item\em Creates a new \hyperlink{structProduct}{Product} \hyperlink{structNode}{Node} for storage of meta-\/data related to a product passed. \end{DoxyCompactList}\item 
+void \hyperlink{libProduct_8h_a59424c2f92072709165acca6c0f78c34}{Print\-Product\-Node} (const \hyperlink{structProduct__Node}{prod\-Ptr} inc\-\_\-prod\-Ptr)
+\begin{DoxyCompactList}\small\item\em Prints each node to standard output for lat, long, and optics value. \end{DoxyCompactList}\item 
+void \hyperlink{libProduct_8h_adb284521fd68ca8e0bac06cbbd0fe5c9}{Free\-Product\-Node} (const \hyperlink{structProduct__Node}{prod\-Ptr} inc\-\_\-prod\-Ptr)
+\begin{DoxyCompactList}\small\item\em Iterates through each -\/$>$next reference and frees memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains definitions for a \hyperlink{structProduct}{Product} structure necessary to hold salient meta-\/data related to a scientific data point. Information is gathered from the Net\-C\-D\-F/\-H\-D\-F5 file for persistence thus ensuring is does have to continually be accessed for the same data. \begin{DoxyAuthor}{Author}
+N\-R\-L, Code 7330 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2019/05/31 Library used to store information about a product gathered from the parent Net\-C\-D\-F/\-H\-D\-F5 file and persisted to support optics data processing as the satellite file is parsed into individual slices.
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See Also}
+\href{https://confluence.di2e.net/display/NRL7331/VISOR}{\tt https\-://confluence.\-di2e.\-net/display/\-N\-R\-L7331/\-V\-I\-S\-O\-R} 
+\end{DoxySeeAlso}
+
+
+Definition in file \hyperlink{libProduct_8h_source}{lib\-Product.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{libProduct_8h_aa2a42c8375e7ce6df89b3e078c8baebf}{\index{lib\-Product.\-h@{lib\-Product.\-h}!A\-T\-T\-\_\-\-N\-M\-\_\-\-A\-D\-D\-\_\-\-O\-F\-F\-S\-E\-T@{A\-T\-T\-\_\-\-N\-M\-\_\-\-A\-D\-D\-\_\-\-O\-F\-F\-S\-E\-T}}
+\index{A\-T\-T\-\_\-\-N\-M\-\_\-\-A\-D\-D\-\_\-\-O\-F\-F\-S\-E\-T@{A\-T\-T\-\_\-\-N\-M\-\_\-\-A\-D\-D\-\_\-\-O\-F\-F\-S\-E\-T}!libProduct.h@{lib\-Product.\-h}}
+\subsubsection[{A\-T\-T\-\_\-\-N\-M\-\_\-\-A\-D\-D\-\_\-\-O\-F\-F\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-T\-T\-\_\-\-N\-M\-\_\-\-A\-D\-D\-\_\-\-O\-F\-F\-S\-E\-T~\char`\"{}add\-\_\-offset\char`\"{}}}\label{libProduct_8h_aa2a42c8375e7ce6df89b3e078c8baebf}
+Actual name of variable from within input file. 
+
+Definition at line 37 of file lib\-Product.\-h.
+
+\hypertarget{libProduct_8h_a8c41f7047ace1bd9d8a468706351e7d1}{\index{lib\-Product.\-h@{lib\-Product.\-h}!A\-T\-T\-\_\-\-N\-M\-\_\-\-M\-A\-X\-\_\-\-S\-I\-Z\-E@{A\-T\-T\-\_\-\-N\-M\-\_\-\-M\-A\-X\-\_\-\-S\-I\-Z\-E}}
+\index{A\-T\-T\-\_\-\-N\-M\-\_\-\-M\-A\-X\-\_\-\-S\-I\-Z\-E@{A\-T\-T\-\_\-\-N\-M\-\_\-\-M\-A\-X\-\_\-\-S\-I\-Z\-E}!libProduct.h@{lib\-Product.\-h}}
+\subsubsection[{A\-T\-T\-\_\-\-N\-M\-\_\-\-M\-A\-X\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-T\-T\-\_\-\-N\-M\-\_\-\-M\-A\-X\-\_\-\-S\-I\-Z\-E~255}}\label{libProduct_8h_a8c41f7047ace1bd9d8a468706351e7d1}
+Defined maximum size of any attribute for purposes of defining string space. 
+
+Definition at line 38 of file lib\-Product.\-h.
+
+\hypertarget{libProduct_8h_a9db775ed29138af8173b6e9a13d50b43}{\index{lib\-Product.\-h@{lib\-Product.\-h}!A\-T\-T\-\_\-\-N\-M\-\_\-\-S\-C\-A\-L\-E\-\_\-\-F\-A\-C\-T\-O\-R@{A\-T\-T\-\_\-\-N\-M\-\_\-\-S\-C\-A\-L\-E\-\_\-\-F\-A\-C\-T\-O\-R}}
+\index{A\-T\-T\-\_\-\-N\-M\-\_\-\-S\-C\-A\-L\-E\-\_\-\-F\-A\-C\-T\-O\-R@{A\-T\-T\-\_\-\-N\-M\-\_\-\-S\-C\-A\-L\-E\-\_\-\-F\-A\-C\-T\-O\-R}!libProduct.h@{lib\-Product.\-h}}
+\subsubsection[{A\-T\-T\-\_\-\-N\-M\-\_\-\-S\-C\-A\-L\-E\-\_\-\-F\-A\-C\-T\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-T\-T\-\_\-\-N\-M\-\_\-\-S\-C\-A\-L\-E\-\_\-\-F\-A\-C\-T\-O\-R~\char`\"{}scale\-\_\-factor\char`\"{}}}\label{libProduct_8h_a9db775ed29138af8173b6e9a13d50b43}
+Actual name of variable from within input file. 
+
+Definition at line 36 of file lib\-Product.\-h.
+
+\hypertarget{libProduct_8h_a5b63207c5ee57a1a43ae61b697f046c9}{\index{lib\-Product.\-h@{lib\-Product.\-h}!P\-R\-O\-D\-U\-C\-T\-\_\-\-F\-I\-L\-L\-\_\-\-V\-A\-L\-U\-E@{P\-R\-O\-D\-U\-C\-T\-\_\-\-F\-I\-L\-L\-\_\-\-V\-A\-L\-U\-E}}
+\index{P\-R\-O\-D\-U\-C\-T\-\_\-\-F\-I\-L\-L\-\_\-\-V\-A\-L\-U\-E@{P\-R\-O\-D\-U\-C\-T\-\_\-\-F\-I\-L\-L\-\_\-\-V\-A\-L\-U\-E}!libProduct.h@{lib\-Product.\-h}}
+\subsubsection[{P\-R\-O\-D\-U\-C\-T\-\_\-\-F\-I\-L\-L\-\_\-\-V\-A\-L\-U\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-D\-U\-C\-T\-\_\-\-F\-I\-L\-L\-\_\-\-V\-A\-L\-U\-E~-\/32767}}\label{libProduct_8h_a5b63207c5ee57a1a43ae61b697f046c9}
+Defined universal integer value for \char`\"{}fills\char`\"{} in data. 
+
+Definition at line 39 of file lib\-Product.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{libProduct_8h_adb284521fd68ca8e0bac06cbbd0fe5c9}{\index{lib\-Product.\-h@{lib\-Product.\-h}!Free\-Product\-Node@{Free\-Product\-Node}}
+\index{Free\-Product\-Node@{Free\-Product\-Node}!libProduct.h@{lib\-Product.\-h}}
+\subsubsection[{Free\-Product\-Node}]{\setlength{\rightskip}{0pt plus 5cm}void Free\-Product\-Node (
+\begin{DoxyParamCaption}
+\item[{const {\bf prod\-Ptr}}]{inc\-\_\-prod\-Ptr}
+\end{DoxyParamCaption}
+)}}\label{libProduct_8h_adb284521fd68ca8e0bac06cbbd0fe5c9}
+
+
+Iterates through each -\/$>$next reference and frees memory. 
+
+Iterates through each -\/$>$next reference and frees memory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & prod\-Ptr -\/ incoming product pointer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 40 of file lib\-Product.\-c.
+
+\hypertarget{libProduct_8h_a59424c2f92072709165acca6c0f78c34}{\index{lib\-Product.\-h@{lib\-Product.\-h}!Print\-Product\-Node@{Print\-Product\-Node}}
+\index{Print\-Product\-Node@{Print\-Product\-Node}!libProduct.h@{lib\-Product.\-h}}
+\subsubsection[{Print\-Product\-Node}]{\setlength{\rightskip}{0pt plus 5cm}void Print\-Product\-Node (
+\begin{DoxyParamCaption}
+\item[{const {\bf prod\-Ptr}}]{inc\-\_\-prod\-Ptr}
+\end{DoxyParamCaption}
+)}}\label{libProduct_8h_a59424c2f92072709165acca6c0f78c34}
+
+
+Prints each node to standard output for lat, long, and optics value. 
+
+Prints each node to standard output for lat, long, and optics value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & prod\-Ptr -\/ incoming product pointer to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 51 of file lib\-Product.\-c.
+

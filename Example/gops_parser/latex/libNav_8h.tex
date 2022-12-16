@@ -1,0 +1,96 @@
+\hypertarget{libNav_8h}{\section{src/lib\-Nav.h File Reference}
+\label{libNav_8h}\index{src/lib\-Nav.\-h@{src/lib\-Nav.\-h}}
+}
+
+
+Contains definitions for Navigation necessary for tracking position while processing each \char`\"{}slice\char`\"{} of an image.  
+
+
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{libNav_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structNavigation__Node}{Navigation\-\_\-\-Node}
+\begin{DoxyCompactList}\small\item\em Navigation structure with start points, overall size, and current index values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structNavigation__Node}{Navigation\-\_\-\-Node} $\ast$ \hyperlink{libNav_8h_aa25a9e1e8a1e470352cfdbb88d0f5b5e}{New\-Nav\-Node} ()
+\begin{DoxyCompactList}\small\item\em Returns a newly minted \hyperlink{structNode}{Node}. \end{DoxyCompactList}\item 
+void \hyperlink{libNav_8h_ad5f3fa84f88ddba51c3163e376b7e278}{Print\-Nav\-Node} (struct \hyperlink{structNavigation__Node}{Navigation\-\_\-\-Node} $\ast$inc\-\_\-nav\-Node\-Ptr)
+\begin{DoxyCompactList}\small\item\em Returns meta-\/data about the Navigation \hyperlink{structNode}{Node} to standard output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains definitions for Navigation necessary for tracking position while processing each \char`\"{}slice\char`\"{} of an image. \begin{DoxyAuthor}{Author}
+N\-R\-L, Code 7330 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2019/05/31 Navigational data regarding overall coordinates of image as well as actual slicing information as the image is parsed.
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See Also}
+\href{https://confluence.di2e.net/display/NRL7331/VISOR}{\tt https\-://confluence.\-di2e.\-net/display/\-N\-R\-L7331/\-V\-I\-S\-O\-R} 
+\end{DoxySeeAlso}
+
+
+Definition in file \hyperlink{libNav_8h_source}{lib\-Nav.\-h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{libNav_8h_aa25a9e1e8a1e470352cfdbb88d0f5b5e}{\index{lib\-Nav.\-h@{lib\-Nav.\-h}!New\-Nav\-Node@{New\-Nav\-Node}}
+\index{New\-Nav\-Node@{New\-Nav\-Node}!libNav.h@{lib\-Nav.\-h}}
+\subsubsection[{New\-Nav\-Node}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf Navigation\-\_\-\-Node}$\ast$ New\-Nav\-Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{libNav_8h_aa25a9e1e8a1e470352cfdbb88d0f5b5e}
+
+
+Returns a newly minted \hyperlink{structNode}{Node}. 
+
+Returns a newly minted \hyperlink{structNode}{Node}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{structNavigation__Node}{Navigation\-\_\-\-Node} 
+\end{DoxyReturn}
+
+
+Definition at line 73 of file lib\-Nav.\-c.
+
+\hypertarget{libNav_8h_ad5f3fa84f88ddba51c3163e376b7e278}{\index{lib\-Nav.\-h@{lib\-Nav.\-h}!Print\-Nav\-Node@{Print\-Nav\-Node}}
+\index{Print\-Nav\-Node@{Print\-Nav\-Node}!libNav.h@{lib\-Nav.\-h}}
+\subsubsection[{Print\-Nav\-Node}]{\setlength{\rightskip}{0pt plus 5cm}void Print\-Nav\-Node (
+\begin{DoxyParamCaption}
+\item[{struct {\bf Navigation\-\_\-\-Node} $\ast$}]{inc\-\_\-nav\-Node\-Ptr}
+\end{DoxyParamCaption}
+)}}\label{libNav_8h_ad5f3fa84f88ddba51c3163e376b7e278}
+
+
+Returns meta-\/data about the Navigation \hyperlink{structNode}{Node} to standard output. 
+
+Returns meta-\/data about the Navigation \hyperlink{structNode}{Node} to standard output.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{structNavigation__Node}{Navigation\-\_\-\-Node}} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 38 of file lib\-Nav.\-c.
+

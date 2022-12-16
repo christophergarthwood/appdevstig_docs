@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>VISOR Documentation</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../markdown.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#design-document-appdev-stig-v4r7-apsc-dv-003220">Design Document (AppDev STIG v4r7, APSC-DV-003220)</a><ul>
+<li><a href="#visible-band-satellite-data-to-improve-ocean-model-radiative-transfer-visor-v1.">Visible Band Satellite Data to Improve Ocean Model Radiative Transfer (VISOR) v1.*</a><ul>
+<li><a href="#dr.-jason-jolliff-nrl-7331-jason.jolliffnrlssc.navy.mil">Dr. Jason Jolliff (NRL, 7331), <em>jason.jolliff@nrlssc.navy.mil</em></a></li>
+<li><a href="#section">2020/07/07</a></li>
+<li><a href="#v1.1.20">v1.1.20</a></li>
+</ul></li>
+<li><a href="#history-of-work-performed">History of Work Performed</a></li>
+<li><a href="#versioning">Versioning</a></li>
+<li><a href="#executive-summary">Executive Summary</a></li>
+<li><a href="#introduction">Introduction</a><ul>
+<li><a href="#development-strategy">Development Strategy</a></li>
+<li><a href="#environment">Environment</a></li>
+<li><a href="#processes-policies">Processes &amp; Policies</a></li>
+<li><a href="#communications">Communications</a></li>
+<li><a href="#hardware-configuration-items">Hardware Configuration Items</a></li>
+<li><a href="#data-communications">Data Communications</a></li>
+<li><a href="#software-configuration-items">Software Configuration Items</a></li>
+<li><a href="#data-design">Data Design</a></li>
+<li><a href="#data">Data</a></li>
+</ul></li>
+<li><a href="#architecture">Architecture</a><ul>
+<li><a href="#approved-architecture">Approved Architecture</a></li>
+<li><a href="#communications-1">Communications</a></li>
+<li><a href="#roles-apsc-dv-000610">Roles (APSC-DV-000610)</a></li>
+</ul></li>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#software-specifications">Software Specifications</a><ul>
+<li><a href="#system-environment-and-system-components">System Environment and System Components</a></li>
+<li><a href="#managed-software-domain">Managed Software Domain</a></li>
+<li><a href="#development-technique">Development Technique</a></li>
+</ul></li>
+<li><a href="#build-environment">Build Environment</a><ul>
+<li><a href="#introduction-coding-standards-apsc-dv-003215">Introduction Coding Standards (APSC-DV-003215)</a></li>
+<li><a href="#best-practices">Best Practices</a></li>
+<li><a href="#top-10-secure-coding-practices-software-engineering-institute">Top 10 Secure Coding Practices (Software Engineering Institute)</a></li>
+<li><a href="#transferring-code-from-development-to-deployment-apsc-dv-003010">Transferring Code from Development to Deployment (APSC-DV-003010)</a></li>
+</ul></li>
+<li><a href="#security">Security</a><ul>
+<li><a href="#definition-1">Definition</a></li>
+<li><a href="#scope-1">Scope</a></li>
+<li><a href="#categories">Categories</a></li>
+<li><a href="#threat-assessment-apsc-dv-003230">Threat Assessment (APSC-DV-003230)</a></li>
+<li><a href="#application-configuration-guide-acg-apsc-dv-003285">Application Configuration Guide ~ ACG (APSC-DV-003285)</a></li>
+</ul></li>
+<li><a href="#metrics">Metrics</a><ul>
+<li><a href="#definition-2">Definition</a></li>
+<li><a href="#scope-2">Scope</a></li>
+</ul></li>
+<li><a href="#testing">Testing</a><ul>
+<li><a href="#definition-3">Definition</a></li>
+<li><a href="#scope-3">Scope</a></li>
+<li><a href="#categories-1">Categories</a></li>
+<li><a href="#testing-levels">Testing Levels</a></li>
+<li><a href="#test-plans-apsc-dv-003130">Test Plans (APSC-DV-003130)</a></li>
+</ul></li>
+<li><a href="#references">References</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="design-document-appdev-stig-v4r7-apsc-dv-003220">Design Document (AppDev STIG v4r7, APSC-DV-003220)</h1>
+<h2 id="visible-band-satellite-data-to-improve-ocean-model-radiative-transfer-visor-v1.">Visible Band Satellite Data to Improve Ocean Model Radiative Transfer (VISOR) v1.*</h2>
+<h3 id="dr.-jason-jolliff-nrl-7331-jason.jolliffnrlssc.navy.mil">Dr. Jason Jolliff (NRL, 7331), <em>jason.jolliff@nrlssc.navy.mil</em></h3>
+<h3 id="section">2020/07/07</h3>
+<h3 id="v1.1.20">v1.1.20</h3>
+<h2 id="history-of-work-performed">History of Work Performed</h2>
+<h2 id="versioning">Versioning</h2>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 89%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Version</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>v0.1</td>
+<td>Inception source code, totally alpha, v0.1</td>
+</tr>
+<tr class="even">
+<td>v1.0</td>
+<td>v1.0 GOMEX run verified, basic NCODA QC compliance.</td>
+</tr>
+<tr class="odd">
+<td>v1.1</td>
+<td>v1.1 Modularized, documented, verified to work.</td>
+</tr>
+<tr class="even">
+<td>v1.2</td>
+<td>v1.2 with CLI, Doyxgen documentation, and defensive programming initiated.</td>
+</tr>
+<tr class="odd">
+<td>v1.3</td>
+<td>v1.3 NCODA QC output file and NASA 4km Climatology complete.</td>
+</tr>
+<tr class="even">
+<td>v1.4</td>
+<td>v1.4 Fortran record boundary completed.</td>
+</tr>
+<tr class="odd">
+<td>v1.5</td>
+<td>v1.5 Data Slicing</td>
+</tr>
+<tr class="even">
+<td>v1.6</td>
+<td>v1.6 Climatology Orientation Change, climatology output correctly.</td>
+</tr>
+<tr class="odd">
+<td>v1.7</td>
+<td>v1.7 NetCDF Libraries utilized for NetCDF ingest.</td>
+</tr>
+<tr class="even">
+<td>v1.8</td>
+<td>v1.8 Logger added, NetCDF/HDF5 Attribution Read, Fully Tested.</td>
+</tr>
+<tr class="odd">
+<td>v1.8.1</td>
+<td>v1.8.1 Valid Data confirmed for NetCDF, working HDF now.</td>
+</tr>
+<tr class="even">
+<td>v1.9</td>
+<td>v1.9 Valid data only for NetCDF/HDF5 formats. Verified data and geographic output.</td>
+</tr>
+<tr class="odd">
+<td>v1.10</td>
+<td>v1.10 Time slice applied.</td>
+</tr>
+<tr class="even">
+<td>v1.1.10</td>
+<td>v1.1.10 Compiler warning cleanup and C99 standards compliance upgrades in anticipation for code review.</td>
+</tr>
+<tr class="odd">
+<td>v1.1.11</td>
+<td>v1.1.11 Additional code defenses.</td>
+</tr>
+<tr class="even">
+<td>v1.1.12</td>
+<td>v1.1.12 Documentation overhaul and full use of Markdown.</td>
+</tr>
+<tr class="odd">
+<td>v1.1.13</td>
+<td>v1.1.13 File lock race condition defense applied (STIG requirement).</td>
+</tr>
+<tr class="even">
+<td>v1.1.14</td>
+<td>v1.1.14 Fixed DTG starting at 2400 to 2300 for NCODA QC/VAR support.</td>
+</tr>
+<tr class="odd">
+<td>v1.1.15</td>
+<td>v1.1.15 Skipped</td>
+</tr>
+<tr class="even">
+<td>v1.1.16</td>
+<td>v1.1.16 Added min/max defaults per product and allowed CLI inputs for subject min/max.</td>
+</tr>
+<tr class="odd">
+<td>v1.1.17</td>
+<td>v1.1.17 Added uid defenses to augment against RACE conditions.</td>
+</tr>
+<tr class="even">
+<td>v1.1.18</td>
+<td>v1.1.18 Updated filename and product name validation with cannonicalized input and whitelist characters.</td>
+</tr>
+<tr class="odd">
+<td>v1.1.19</td>
+<td>v1.1.19 Added TAU 00 for all date/time outputs as per Dr. Travis Smith request due to how the model ingests inputs.</td>
+</tr>
+<tr class="even">
+<td>v1.1.20</td>
+<td>v1.1.20 Added -n for selecting a specific index of -s number of slices to process thus massive reducing the time it takes to process either a single strip or with batch processing cutting down processing time by 7 factors of a single run.</td>
+</tr>
+<tr class="odd">
+<td>v1.1.21</td>
+<td>v1.1.21 Modified data-type constants for integration with NCODA suite of tools due to integration with NCODA team.</td>
+</tr>
+<tr class="even">
+<td>v1.1.22</td>
+<td>v1.1.22 Added comparison script for quick look if two versions output is consistent.</td>
+</tr>
+<tr class="odd">
+<td>v1.1.23</td>
+<td>v1.1.23 Updated build path for libaries at NRL, updated DSRC build scripts to use Koehr as primary, and fixed decision statement problem associated with code defense that was causing persistent failure when evaluating output filenames.</td>
+</tr>
+<tr class="even">
+<td>v1.1.24</td>
+<td>v1.1.24 Stopped adding a day to end date of processing as the composite_time_end meta-data now encapsulates the ending date the composite represents.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="executive-summary">Executive Summary</h2>
+<p>The purpose of this document is to provide a detailed description of the technical requirements, components, and development practices associated with software development for this project. This project<code>'</code>s design will be laid out here in detail as a blueprint for project implementation. The following sections contain both detailed information about a software concept and the actions to be taken in order to create the system environment as well as details on all components used within the system.</p>
+<h2 id="introduction">Introduction</h2>
+<p>The goal of this project is to direct near real-time satellite data regarding the optical properties of the surface ocean into operational ocean models and coupled ocean-atmosphere models. These satellite data are presently processed and distributed by the Naval Oceanographic Office (NAVO) for warfighter support, however, at present there is no mechanism that would direct these data into the operational ocean models. The present suite of operational models uses either a static table of optical attenuation coefficients that is based on Jerlov’s early work (before the modern satellite era [Jerlov 1968]), or a static monthly climatology built from an obsolete NASA mission (SeaWiFS). As these operational models do not utilize any contemporaneous ocean optical attenuation data, the default attenuation and radiative transfer computations may result in gross errors for simulated upper ocean temperature structure, mixed layer depth, and substantial underestimates of air-sea thermal energy exchange rates. These errors will occur in spite of temperature data assimilation efforts because incorrect attenuation functions create structural problems in the way the ocean models calculate radiant heating throughout the upper water column. In coupled modeling systems, these errors will also impact the thermal energy balance within the simulated ocean-atmosphere systems and may have cascading effects on the forecasts for a wide range of tactically pertinent environmental variables, such as Electro-Magnetic (EM) duct heights.</p>
+<h3 id="development-strategy">Development Strategy</h3>
+<p>Develop occurs on NRL resources, RHEL platforms, and was run real-time on the <code>tomcat.nrlssc.navy.mil</code> system. Development on the DSRC was performed as well to act as a deployment validation as well as gain metrics on an alterate Batch system. Note that build and make files exist for RHEL platforms as well as the DSRC.</p>
+<h3 id="environment">Environment</h3>
+<ul>
+<li>Development Environment - tomcat.nrlssc.navy.mil (NRL SSC), see <a href="../acg/index.html">ACG</a>.</li>
+<li>Staging - DSRC (Gordon, Conrad, Gaffney, Koehr).</li>
+<li>Operations - Customer dependent.</li>
+</ul>
+<h3 id="processes-policies">Processes &amp; Policies</h3>
+<ul>
+<li>Development at NRL targets customer end-environments and embraces the following principles:</li>
+<li>Secure operations</li>
+<li>Logging at various levels of granularity</li>
+<li>Fail fail</li>
+<li>Highly defensive code</li>
+</ul>
+<h3 id="communications">Communications</h3>
+<ul>
+<li>Developers coordinate with NRL Principle Invesigator on a weekly basis.</li>
+<li>Quarterly Report to Office of Naval Research (ONR).</li>
+<li>Yearly reviews to upper management, ONR, and end-users.</li>
+<li>Periodic meetings with end-user to discuss general progress and clarify requirements as needed.</li>
+</ul>
+<h3 id="hardware-configuration-items">Hardware Configuration Items</h3>
+<p>Specify network domain or named hardware configuration will be the target architecture for the smaller applications.</p>
+<p>provide details specific for the development environment and execution environment for hardware that is specific to this project.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Hardware Item</th>
+<th>Configuration Identifier</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>tomcat.nrlssc.navy.mil</td>
+<td>N/A</td>
+<td>See ACG for explicit details about asset specs.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="data-communications">Data Communications</h3>
+<p>All communications are performed on a file system, it is possible and at NRL probable that subject file system is Network File System (NFS) mounted, however no other communciations via TCP/IP are performed on any ports. This is a scientific data processing program with no user accounts, roles, or web presence.</p>
+<h3 id="software-configuration-items">Software Configuration Items</h3>
+<p>Language(s) / libraries that will be used for all applications developed for OFM-CS tasking.</p>
+<table>
+<thead>
+<tr class="header">
+<th>App Name</th>
+<th>App Version</th>
+<th>DADMS Id</th>
+<th>End Date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GCC</td>
+<td>4.8.+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Bash shell</td>
+<td>4+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Korn shell</td>
+<td>93+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>H5 libs</td>
+<td>1.8.19</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>NetCDF libs</td>
+<td>4.4.1</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Software Domain</em></p>
+<h3 id="data-design">Data Design</h3>
+<h4 id="data-objects-and-resultant-data-structures">Data Objects and Resultant Data Structures</h4>
+<p>NetCDF, v4.4.1 is the predominant format used for the Global Ocean Processing System (GOPS) output imagery:</p>
+<ul>
+<li>satellite imagery</li>
+</ul>
+<p>Fortran compliant binary outputs are the final resultant and are structured as follows:</p>
+<p><strong><em>Data Structure</em></strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Type</th>
+<th>Type</th>
+<th>Bytes</th>
+<th>Bytes</th>
+<th>Bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>[int]</td>
+<td>[int]</td>
+<td>[int]</td>
+<td>[4b]</td>
+<td>[# records]</td>
+<td>[4b]</td>
+</tr>
+<tr class="even">
+<td>[int]</td>
+<td>[int]</td>
+<td>[int]</td>
+<td>[4b]</td>
+<td>[data type]</td>
+<td>[4b]</td>
+</tr>
+<tr class="odd">
+<td>[int]</td>
+<td>[char@12 x #rec]</td>
+<td>[int]</td>
+<td>[4b]</td>
+<td>[dtg ary ]</td>
+<td>[4b]</td>
+</tr>
+<tr class="even">
+<td>[int]</td>
+<td>[float x #rec]</td>
+<td>[int]</td>
+<td>[4b]</td>
+<td>[lat ary ]</td>
+<td>[4b]</td>
+</tr>
+<tr class="odd">
+<td>[int]</td>
+<td>[float x #rec]</td>
+<td>[int]</td>
+<td>[4b]</td>
+<td>[long ary ]</td>
+<td>[4b]</td>
+</tr>
+<tr class="even">
+<td>[int]</td>
+<td>[float x # rec]</td>
+<td>[int]</td>
+<td>[4b]</td>
+<td>[a_490_lmi]</td>
+<td>[4b]</td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>Binary Datafile Example</em></strong></p>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 35%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Hex FRB</th>
+<th>Hex Data Value</th>
+<th>Hex FRB</th>
+<th>Boundary</th>
+<th>Data</th>
+<th>Boundary</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>[00 00 00 04]</td>
+<td>[00 67 5E E5]</td>
+<td>[00 00 00 04]</td>
+<td>[FORTRAN RB]</td>
+<td>[6774501 ]</td>
+<td>[FORTRAN RB ]</td>
+</tr>
+<tr class="even">
+<td>[00 00 00 04]</td>
+<td>[00 00 00 DB]</td>
+<td>[00 00 00 04]</td>
+<td>[FORTRAN RB ]</td>
+<td>[219 ]</td>
+<td>[FORTRAN RB ]</td>
+</tr>
+<tr class="odd">
+<td>[00 00 00 0C]</td>
+<td>[32 30 31 38 31 32 31 37 30 30 30 30]</td>
+<td>[00 00 00 0C]</td>
+<td>[FORTRAN RB ]</td>
+<td>[201812170000]</td>
+<td>[FORTRAN RB ]</td>
+</tr>
+<tr class="even">
+<td>[01 9D 7B 94]</td>
+<td>[42 30 99 9A] @ 6774501</td>
+<td></td>
+<td>[27098004 ]</td>
+<td>[44.18 ]</td>
+<td>[FORTRAN RB ]</td>
+</tr>
+<tr class="odd">
+<td>[01 9D 7B 94]</td>
+<td>[C3 34 00 00] @ 6774501</td>
+<td></td>
+<td>[27098004 ]</td>
+<td>[-180.0 ]</td>
+<td>[FORTRAN RB ]</td>
+</tr>
+<tr class="even">
+<td>[01 9D 7B 94]</td>
+<td>[3D 55 66 C0] @ 6774501</td>
+<td></td>
+<td>[27098004 ]</td>
+<td>[0.05209994 ]</td>
+<td>[FORTRAN RB ]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>FRB - Fortran Record Boundary</strong></p>
+<p>Internal data structures used are not saved to the file-system.</p>
+<h4 id="file-and-database-structures">File and Database Structures</h4>
+<p>No database mechanism is in use for this application. NetCDF v4.+ in use for all data formats.</p>
+<h3 id="data">Data</h3>
+<h4 id="data-flow-diagram-apsc-dv-002950">Data Flow Diagram (APSC-DV-002950)</h4>
+<p><a href="./visor_gops_parser_data_exchange.png">Data Exchange</a> <img src="./visor_gops_parser_data_exchange.png" alt="Data Exchange" /></p>
+<p><em>Data Flow (APSC-DV-002950)</em></p>
+<p>Data exchange is not intrinsically network based, like a web application. This scientific application gathers data files via file system, stores them locally to facilitate easier I/O, and saves the final result to a designated folder. NetCDF and binary output structured for NCODA are the only data file formats and information exchanged.</p>
+<h4 id="categories-of-data-sensitivity-apsc-dv-003290">Categories of Data Sensitivity (APSC-DV-003290)</h4>
+<p>No specific classification is associated with this project. Source code does not include a specific requirement to handle data classifications. VISOR code could be hosted on any environment that supports the same libraries as Global Ocean Processing System (GOPS). Additional output modification for security classifications would be handled via postProduction.sh scripts.</p>
+<p>DoD 5200.01R identifies requirements for security classification and/or declassification guides.</p>
+<p><a href="http://www.dtic.mil/whs/directives/corres/pdf/520001_vol1.pdf">DoD Data Sensitivity</a></p>
+<p>Security classification guides shall provide the following information:</p>
+<ul>
+<li>There are no security requirements for this project.</li>
+</ul>
+<h2 id="architecture">Architecture</h2>
+<h3 id="approved-architecture">Approved Architecture</h3>
+<p>This is a scientific data processing software solution and does not have a traditional web architecture or utilize services. No API was developed for this software package. See <a href="../acg/index.html">ACG</a> for details regarding the general Concept of Operations (CONOPS) and architecture.</p>
+<h3 id="communications-1">Communications</h3>
+<p>Desktop applications will utilize HTTP with Secure Socket Layers (SSL) which leverages DoD PKI to perform certificate exchanges.</p>
+<p><strong>Communications Protocols</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Protocol</th>
+<th>Port</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>None</td>
+<td>N/A</td>
+<td>No network communications sans NFS mounts, environment dependent.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="roles-apsc-dv-000610">Roles (APSC-DV-000610)</h3>
+<p>Identify any roles associated with this application:</p>
+<p><strong>Roles</strong></p>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 10%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Role Name</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>None</td>
+<td>N/A</td>
+<td>A standard system user account is the only requirement for this system. There are no administrator or special access privilege roles associated with this software package.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="requirements">Requirements</h2>
+<p>Requirements are encapsulated within a 1498 and on file with the Office of Naval Research (ONR).</p>
+<p>Changes to software are tracked in <a href="https://jira.di2e.net/secure/Dashboard.jspa">DI2E Jira</a> under the NRL 7331 Project.</p>
+<p>Overall project perspective is maintained at <a href="https://confluence.di2e.net/display/NRL7331/VISOR">DI2E Confluence</a> under the NRL 7331 Project.</p>
+<p>See the section entitled 4.2.4 Software Configuration Management (APSC-DV-003010) for details regarding the proper way to start a change of this software application.</p>
+<p>Changes are made in a branch that typically correlates to a registered Jira issue. Commits via the Software Configuration Management (SCM) system include reference to the Jira issue the change was initiated for.</p>
+<h2 id="software-specifications">Software Specifications</h2>
+<h3 id="system-environment-and-system-components">System Environment and System Components</h3>
+<p>Target environment is a server using Red Hat Enterprise Linux v7+ in either 32 or 64 bit configuration.</p>
+<p>All aspects of Operating System security, maintenance, and installation are maintained by Jack Higgs (NRL) for the NRL Development Environment. System security will be managed by the end-user system administrators.</p>
+<h3 id="managed-software-domain">Managed Software Domain</h3>
+<p>See section, Software, for details regarding the managed software domain associated with this IT solution.</p>
+<h3 id="development-technique">Development Technique</h3>
+<h4 id="sdlc">SDLC</h4>
+<p>The Software Development Lifecycle used for these applications will follow the identify process used for software development is the Spiral model whereby changes are made and a full test, validation, inspection loop is performed prior to adding new functionality. Each new fiscal year sees the modification of requirements and changes in direction if directed by the Office of Naval Research (ONR).</p>
+<h4 id="secure-design-principle-training-apsc-dv-003400">Secure Design Principle Training (APSC-DV-003400)</h4>
+<p>Many application team members may not be aware of the security implications regarding the code that they design, write and test. To address this concern, the Program Manager will ensure all levels of program management receive security training regarding the necessity, impact, and benefits of integrating secure development practices into the development lifecycle.</p>
+<p>This training is in addition to DoD 8570 training requirements as DoD 8570 annual security training does not presently cover application SDLC security concerns.</p>
+<p>The Program Manager will ensure development team members are provided training on secure design principles for the entire SDLC and newly discovered vulnerability types on, at least, an annual basis.</p>
+<p>Development team members include:</p>
+<ul>
+<li>Designers/Application Architects</li>
+<li>Developers/Programmers</li>
+<li>Testers</li>
+<li>Application managers</li>
+</ul>
+<p>Security Training completed by team in support of Secure Software Development Practices:</p>
+<p><strong>Security Training (APSC-DV-003400)</strong></p>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Training Name</th>
+<th>Date Reviewed</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>OWASP Top Ten</td>
+<td>2020/01/01</td>
+<td>Internal training covering the OWASP Top Ten for 2017 and implications for this application.</td>
+</tr>
+<tr class="even">
+<td>SDLC 101</td>
+<td>2020/01/01</td>
+<td>http://safecode.org/courses/security-development-lifecycle-101</td>
+</tr>
+<tr class="odd">
+<td>CyberAwareness</td>
+<td>2019/12/01</td>
+<td>DoD Requirement</td>
+</tr>
+</tbody>
+</table>
+<h5 id="standards">Standards</h5>
+<p>Development efforts will follow the processes specified in the Process Asset Library (PAL) or other standard as specified in a kick-off meeting. Enumerate the different processes and provide a hyperlink to their authoritative location.</p>
+<h4 id="pal">PAL</h4>
+<p>DI2E Confluence stores all <a href="https://confluence.di2e.net/display/NRL7331">standards and best practices</a> used per project and as a whole by the team.</p>
+<h4 id="software-configuration-management-apsc-dv-003010">Software Configuration Management (APSC-DV-003010)</h4>
+<p>Software Configuration Management (SCM) is the process of tracking code as it is developed, maintaining versions of code and their histories and ensuring that only one person at a time is making changes to a given section of code. The importance of SCM cannot be overstated, especially in a development environment with multiple programmers.</p>
+<p>The application is modified using a Trunk/Branch/Tag methodology and the Git repository management system . Each modification will be tracked as a task which in turn will be the basis for software modification, testing, and eventual feature release. All modifications will be correlated to the host/parent organization tracking/requirements system which authorizes the work.</p>
+<p>Objects considered eligible for deployment:</p>
+<ul>
+<li>Source Code (<em>.c, </em>.sh, <em>.md, </em>.html, *.(all graphics formats) )</li>
+<li>Configuration/Settings files</li>
+<li>Libraries used for execution at build and run-time</li>
+</ul>
+<p>VISOR utilizes a single repository.</p>
+<p><a href="https://bitbucket.di2e.net/projects/NRL7331/repos/visor_gops_parser/browse">VISOR Central Repository</a></p>
+<p>Additional information regarding operational deployment is located in the section Transferring Code from Development to Deployment (APSC-DV-003010).</p>
+<p>All modifications to any configurable part of the project will be managed and tracked by using the tracking system.</p>
+<p>Each time this software is released a new version is indicated and a tag created, all change requests are recorded in the version history for that release. The team will have an environment that will represent the release of all software deployments. All software components, source code, libraries, and project documentation will be encapsulated within repository name with URI under specific structure requirements highlighted in the top level of the repository.</p>
+<p>Individual tag history is stored with each project in a corresponding README.md file at the top level of the folder.</p>
+<p>For a baseline of all components of the software package refer to the Deployment folder for the last deployment which should contain: + Test Case report. + Sonar Source report. + Unit, Human Testing, Technical Acceptance Test | User Acceptance Test report. + Security scan report (Sonar duplicates this function). + A copy of the actual software and any supplementary content to deploy as in the binary release. + Reference to the reference for repository for subject release of the following components: + Source Code. + Documentation. + Architecture diagram, embedded within documentation. + Design document (this document). + User Release Notes + Application Configuration Guide + Setup Guide + Installation Guide</p>
+<h2 id="build-environment">Build Environment</h2>
+<h3 id="introduction-coding-standards-apsc-dv-003215">Introduction Coding Standards (APSC-DV-003215)</h3>
+<h4 id="definition">Definition</h4>
+<p>Common programming standards are adhered to for the following reasons:</p>
+<ul>
+<li>Programmers can go into any code and determine the current status which increases maintainability, readability, and reusability.</li>
+<li>New programmers can rapidly grasp the current status.</li>
+<li>Programmers that are unfamiliar with a programming language have a common standard which alleviates the need to develop a personal style.</li>
+<li>Standard programming language reduces errors and increases reliability.</li>
+<li>Individual styles are replaced and an emphasis is placed on business concerns - high productivity, maintainability, shared authorship, and other aspects that help the group achieve its goal.</li>
+</ul>
+<p>See: http://www.cse.buffalo.edu/~rapaport/code.documentation.Excerpts.pdf for details and a more robust explanation as to why a coding standard is necessary.</p>
+<h4 id="scope">Scope</h4>
+<p>Coding standards are outlined on <a href="https://confluence.di2e.net/display/NRL7331/How-to+articles">DI2E Confluence NRL 7331 HOWTO</a> under: Profiling Applications, Code Review, Transition Environment, Git Best Practices and Sample Log Helper Scriptlets, Development Knowledge, Format and Linting tools.</p>
+<p>Note that each project has a build and test script associated with it.</p>
+<p><strong>Coding format / standards:</strong></p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 32%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Specification</th>
+<th>Sub-Component</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Doxygen</td>
+<td>VISOR (visor_gops_parser)</td>
+<td>Documentation</td>
+</tr>
+<tr class="even">
+<td>Markdown README.md</td>
+<td>All</td>
+<td>Documentation</td>
+</tr>
+<tr class="odd">
+<td>SonarQube</td>
+<td>VISOR (visor_gops_parser)</td>
+<td>Compliance inspection and security</td>
+</tr>
+<tr class="even">
+<td>Visual Code Grep Scanner</td>
+<td>VISOR (visor_gops_parser)</td>
+<td>C/C++ static code analysis</td>
+</tr>
+<tr class="odd">
+<td>Shellcheck</td>
+<td>Consolidated System</td>
+<td>Compliance/Standards inspection</td>
+</tr>
+</tbody>
+</table>
+<h4 id="general-conventions---c-bash-ksh-languages-used">General Conventions - C / Bash / Ksh languages used</h4>
+<h5 id="unsafe-methods-apsc-dv-003210">Unsafe Methods (APSC-DV-003210)</h5>
+<p>Unsafe methods are those that have side-effects that are not understood properly or require elevated security privileges in order to perform their function. No unsafe methods are utilized in this system. Functions such as strlen and related string manipulation functions are not used. Research into best C practices for unsafe functions was conducted and all relevent function calls replaced with known good representations of the same function.</p>
+<p>Classic list of recognized unsafe functions:</p>
+<ul>
+<li>strcpy -&gt; strncpy -&gt; strlcpy/strcpy_s.</li>
+<li>strcat -&gt; strncat -&gt; strlcat/strcat_s -strtok.</li>
+<li>sprintf -&gt; snprintf.</li>
+<li>vsprintf -&gt; vsnprintf.</li>
+<li>gets -&gt; fgets/gets_s.</li>
+<li>makepath -&gt; _makepath_s (MSDN)</li>
+<li>_splitpath -&gt; _splitpath_s (MSDN)</li>
+<li>scanf/sscanf -&gt; sscanf_s (MSDN</li>
+<li>ato*</li>
+</ul>
+<p>A grep performed on all *.c source files indicates the aforementioned unsafe functions are not in useexcept in these locations:</p>
+<ul>
+<li>strncpy is used in libProduct and visor_gops_parser at three instances. Extensive research into various tools, libraries, and commentary by developers indicates that this is a bottomless pit if one attempts to add strlcpy to C source code. Subject strncpy stands and is used careful with input validation backing defenses.</li>
+</ul>
+<p>Other considerations are the output by Flaw Finder: 1. Multiple references to format strings (CWE-134). This is a library pulled in from a 3rd party and reviewed. Inputs provided to the log.c code are all generated by the developer. In the event an external string is provided to the log.c routines subject external input would be scrubbed for input by 2. References to CWE-362/CWE-367. As previously stated this code should be run using the lowest privileges that are required to accomplish the necessary tasks. If possible, create isolated accounts with limited privileges that are only used for a single task. That way, a successful attack will not immediately give the attacker access to the rest of the software or its environment. Also note that files are closed after use, user input is validated, see <strong><em>validate_</em></strong> routines, subject files are not open and closed multiple times, and race conditions are met with the fcntl library that locks the .out files created during program executio. NetCDF’s don’t have a locking mechanism for shared reading thus the input is unaltered.</p>
+<ol start="3" type="1">
+<li><p>Buffer boundary checking referenced in the report for libll.c are invalid as this routine is a debugging routine to support output of data to ASCII format. Use of snsprintf helps prevent overflow. Commentary regarding log.c buffers do not take the sizeof(buf) into account and are a false positive.</p></li>
+<li><p>memcpy concerns in visor_gops_parser are mitigated by specifically checking incoming strings for size, calculating maximum size and then allocating bytes.</p></li>
+</ol>
+<p>[Unsafe C functions and the replacement](https://stackoverflow.com/questions/26558197/unsafe-c-functions-and-the-replacement]</p>
+<h5 id="system-executables">System Executables</h5>
+<p>No system commands are called in compiled code.</p>
+<h5 id="no-urls-in-compiled-code">No URL’s in Compiled Code</h5>
+<p>As this is not a web application, no URL<code>'</code>s are stored within source code.</p>
+<h5 id="exceptionserror-messages">Exceptions/Error Messages</h5>
+<p>Error messages (Exceptions) will be invoked with a custom class (API infrastructure) specifically designed to support the Application Development STIG to ensure no information expressed during error (stack traces) are displayed to the end-user thus revealing information that could be deemed valuable to an attacker. Output of error should go to the log, based on log levels, and an obfuscated/reduced output should be displayed to the end user.</p>
+<p>The application must not be subject to error handling vulnerabilities (APSC-DV-003235). The software specific error/exception class will extend from the base functionality of the existing language error/exception class/object.</p>
+<p>This application was designed to test the “contract” by which it was written and to fail fast if that contract is broken without authorizing additional capabilities due to failure.</p>
+<p>A domain of standard responses, which are application specific, will be matured over time based on encounters of the running package.</p>
+<h3 id="best-practices">Best Practices</h3>
+<p>The following are employed as part of “standard practice” within the VISOR system.</p>
+<h4 id="local-variables">Local Variables</h4>
+<ul>
+<li>Do not name local variables with the same name as an instance (global scope) variable.</li>
+<li>One per line.</li>
+<li>Use the local variable for only one thing.</li>
+</ul>
+<h4 id="methods">Methods</h4>
+<ul>
+<li>Separate with blank lines.</li>
+<li>Refactor where appropriate. If you have a method that takes more than 60 seconds to understand, break it into helper methods.<br />
+</li>
+<li>Reuse. If you have a routine that is called by someone/something else consider incorporation into a larger schema for access such as our APIs.</li>
+</ul>
+<h4 id="importslibrary-references">Imports/Library references</h4>
+<ul>
+<li>Use separate lines.</li>
+<li>Preference is to group as follows: 1) standard library 2) related third party 3) local project</li>
+<li>Bulk import for #1, #2, and #3 bring in specific objects needed.</li>
+<li>Regardless, be consistent.</li>
+<li>Remove unused import statements; leverage the IDE to find these if possible.</li>
+</ul>
+<h4 id="error-handling">Error Handling</h4>
+<ul>
+<li>All code will be written to degrade gracefully…if possible and where appropriate.</li>
+<li>Exhaustive testing to ensure <em>fail fast</em> is used throughout the code base.</li>
+<li>All routines that the developer considers “risky” meaning has potential for failure or the developer recognized potential flaw in algorithm and is unsure of a solution will wrap the code in the equivalent of a try/catch/finally.</li>
+<li>All results of failure will gracefully degrade and report the error along with meaningful commentary.</li>
+</ul>
+<h4 id="abstraction">Abstraction</h4>
+<p>Always abstract one level between API’s and invocation. Constants are used as extensively as possible and when used more than once or there is a potential for modification subject values are placed in a configuration file.</p>
+<h4 id="source-formatting">Source Formatting</h4>
+<p>All source, for the entire project, will be formatted prior to a tag being created using, preferred, an external formatting tool thus ensuring no dependency on a specific IDE. See standards section for details on tools used for source code formatting. Use of <code>uncrustify</code> was utilized.</p>
+<h4 id="static-code-analysis">Static Code Analysis</h4>
+<p>Source code will be scanned for classic errors using a standardized tool (could be considered standard if a custom written solution is the only way to verify error for a language). + No issues flagged as Critical will be permitted to go forward into a release unless agreed to by team. + Update tool configuration file so error doesn’t propagate. + SonarQube is used to help manage static code analysis, see <a href="../testcase/index.html">Test Case</a> documentation for details regarding SonarQube instance that supports this project. + Visual Code Grepper (windows based) is used to help manage static code analysis as well, see <a href="../testcase/index.html">Test Case</a> documentation for details regarding SonarQube instance that supports this project.</p>
+<h3 id="top-10-secure-coding-practices-software-engineering-institute">Top 10 Secure Coding Practices (Software Engineering Institute)</h3>
+<ol type="1">
+<li><p>Validate input Validate input from all untrusted data sources. Proper input validation can eliminate the vast majority of software vulnerabilities. Be suspicious of most external data sources, including command line arguments, network interfaces, environmental variables, and user controlled (APSC-DV-002530, APSC-DV-002560). <strong><em>Performed on all user input received, see <code>validate_</code> routines.</em></strong></p></li>
+<li><p>Heed compiler warnings. Compile code using the highest warning level available for your compiler and eliminate warnings by modifying the code. Use static and dynamic analysis tools to detect and eliminate additional security flaws. <strong><em>Compiler warnings are kept to a bare minimal. Compiler details and log results are made available in the <a href="../testcase/index.html">Test Case</a></em></strong></p></li>
+<li><p>Architect and design for security policies. Create software architecture and design your software to implement and enforce security policies. For example, if your system requires different privileges at different times, consider dividing the system into distinct intercommunicating subsystems, each with an appropriate privilege set. <strong><em>SELinux concerns would have to be addressed for those applications associated with this effort.</em></strong></p></li>
+<li><p>Keep it simple. Keep the design as simple and small as possible. Complex designs increase the likelihood that errors will be made in their implementation, configuration, and use. Additionally, the effort required to achieve an appropriate level of assurance increases dramatically as security mechanisms become more complex.</p></li>
+<li><p>Default deny. Base access decisions on permission rather than exclusion. This means that, by default, access is denied and the protection scheme identifies conditions under which access is permitted.</p></li>
+<li><p>Adhere to the principle of least privilege. Every process should execute with the least set of privileges necessary to complete the job. Any elevated permission should be held for a minimum time. This approach reduces the opportunities an attacker has to execute arbitrary code with elevated privileges. <strong><em>This system was designed to support only a basic user account with appropriate access to file system areas designated in teh configuration file.</em></strong></p></li>
+<li><p>Sanitize data sent to other systems. Sanitize all data passed to complex subsystems such as command shells, relational databases, and commercial off-the-shelf components. Attackers may be able to invoke unused functionality in these components through the use of SQL, command, or other injection attacks. This is not necessarily an input validation problem because the complex subsystem being invoked does not understand the context in which the call is made. Because the calling process understands the context, it is responsible for sanitizing the data before invoking the subsystem. <strong><em>All user supplied input is validated for erroneous characters.</em></strong></p></li>
+<li><p>Practice defense in depth. Manage risk with multiple defensive strategies, so that if one layer of defense turns out to be inadequate, another layer of defense can prevent a security flaw from becoming an exploitable vulnerability and/or limit the consequences of a successful exploit. For example, combining secure programming techniques with secure runtime environments should reduce the likelihood that vulnerabilities remaining in the code at deployment time can be exploited in the operational environment.</p></li>
+<li><p>Use effective quality assurance techniques. Good quality assurance techniques can be effective in identifying and eliminating vulnerabilities. Fuzz testing, penetration testing, and source code audits should all be incorporated as part of an effective quality assurance program. Independent security reviews can lead to more secure systems. External reviewers bring an independent perspective; for example, in identifying and correcting invalid assumptions. <strong><em>Source code is internally code reviewed, discussion of algorithms is held with team members, and SonarQube is used for compliance checks.</em></strong></p></li>
+<li><p>Adopt a secure coding standard. Develop and/or apply a secure coding standard for your target development language and platform.</p></li>
+</ol>
+<h3 id="transferring-code-from-development-to-deployment-apsc-dv-003010">Transferring Code from Development to Deployment (APSC-DV-003010)</h3>
+<p>As referenced in section, Build Environment, multiple environments are used to develop this application. Build and Test (BAT) is the actual developer’s workstation. Code is written after the trunk is branched and the appropriate change request is updated. The developer implements the algorithm/modifications to their branch on their workstation and conducts tests prior to reintegration of the branch into the trunk.</p>
+<p>The Operational environment will be hosted on NAVOCEANO resources and maintenance of both environment and security fall to that organization<code>'</code>s administrative staff.</p>
+<h4 id="deployment">Deployment</h4>
+<p>The final steps in any deployment are to specifically test both general functionality as well as specific functionality of what was released with the specific stakeholder for each change request.</p>
+<p>Deployment will have a guide and be a specific tag identified as part of the transition document.</p>
+<p>TODO: Consider Ansible deployment script.</p>
+<h4 id="creation-of-deployment-materials">Creation of Deployment Materials</h4>
+<p>Application files must be cryptographically hashed prior to deploying to DoD operational networks (ASPC-DV-003140). Indicate where deployment materials are kept as part of a deployment, if using a code repository be sure to include the URI.</p>
+<h2 id="security">Security</h2>
+<h3 id="definition-1">Definition</h3>
+<p>The focus of this section is to discuss security within a DoD environment for web application as well as Desktop application development. Security in this context are those measures taken to protect an application from aberrant/malicious actions by any user accessing the application. Security is the use of various mechanisms, with defense in depth taken into consideration, intended to thwart and/or record the aforementioned aberrant/malicious user behavior.</p>
+<h3 id="scope-1">Scope</h3>
+<p>This document represents core knowledge of the project in question regarding application security which will serve as the authoritative medium for all decisions. Standards, rules, and guidance on action will come from the material contained in this document.</p>
+<p>The goal of application security is to prevent unauthorized access to the application and its respective data. It should be noted that there is no completely secure application; however attack vectors can be secured such that the efforts to overcome security implementations far outweigh any gains that could be had.</p>
+<p>The SANS Institute has an excellent and sufficiently generic checklist regarding application security. This checklist notes important points to consider during the design process: risk assessment, authentication, and authorization/access control. Security issues within the actual codebase fall outside the scope of this document.</p>
+<p>The Department of Defense (DoD) is sufficiently concerned about this topic to dedicate a complete Security Technical Implementation Guide (STIG) to the subject. Information Assurance Officers (IAO) and even end users should also be concerned with web application security because of its direct effect on data integrity.</p>
+<p>Major categories within application security discussed in this text are:</p>
+<ul>
+<li>Security Technical Implementation Guide (STIG)</li>
+<li>Application Security and Development (AppDev), Version 4, Release 7 (27 July 2018)</li>
+<li>Desktop applications will not utilize authentication and will rely solely on host credentials/rights to execute.</li>
+<li>Open Web Application Security Project (OWASP) https://www.owasp.org/index.php/Main_Page</li>
+<li>National Institute of Standards and Technology (NIST) - http://www.nist.gov/</li>
+</ul>
+<h3 id="categories">Categories</h3>
+<h4 id="security-technical-implementation-guide-stig">Security Technical Implementation Guide (STIG)</h4>
+<p>From the STIG:</p>
+<p>DoD Directive 8500.01E requires that “all IA and IA-enabled IT products incorporated into DoD information systems shall be configured in accordance with DoD-approved security configuration guidelines” and tasks DISA to “develop and provide security configuration guidance for IA and IA-enabled IT products in coordination with Director, NSA”. By using the STIG, developers achieve a twofold accomplishment: compliance with DoD mandates, and usage of fully vetted best practices. The STIG addresses three levels (or categories) of vulnerabilities – CAT I (highest, can lead to immediate unauthorized access), CAT II (high potential of granting unauthorized access), and CAT III (can indirectly cause unauthorized access).</p>
+<p>Subject application is not an IA or IA-enabled IT product. It is a scientific processing suite which should be run with an unprivileged account.</p>
+<h4 id="authentication">Authentication</h4>
+<p>All authentication for this application is resident with the host operating system (OS) and has no bearing on the execution of this project.</p>
+<p>Access to the repository and project materials is governed by DI2E<code>'</code> user management policy with is DoD approved.</p>
+<h4 id="unique-security-requirements">Unique Security Requirements</h4>
+<p>None</p>
+<h4 id="open-web-application-security-project-owasp">Open Web Application Security Project (OWASP)</h4>
+<p>OWASP advocates the following security principles:</p>
+<ul>
+<li>Minimize Attack Surface Area, <em>N/A not a web application</em>.</li>
+<li>Secure Defaults, <em>all functions assume failure and do not elegate privilege</em>.</li>
+<li>Principle of Least Privilege, <em>confirmed</em>.</li>
+<li>Principle of Defense in Depth, <em>input validation, file/dir verification occur at all levels</em>.</li>
+<li>Fail Securely, <em>application fails securely and fast reporting issue to invoker and log</em>.</li>
+<li>Separation of Duties, <em>N/A, no additional requirements or duties are associated with this application such as Database Administrator</em>.</li>
+<li>Do not trust Security through Obscurity, <em>confirmed</em>.</li>
+<li>Simplicity, <em>confirmed</em>.</li>
+<li>Fix Security Issues Correctly, <em>confirmed</em>.</li>
+</ul>
+<p><strong><em>This is note a web application, not applicable.</em></strong></p>
+<h4 id="common-weakness-enumeration-cwe">Common Weakness Enumeration (CWE)</h4>
+<p>From the website: “International in scope and free for public use, CWE(TM) provides an unified, measurable set of software weaknesses that is enabling more effective discussion, description, selection, and use of software security tools and services that can find these weaknesses in source code and operational systems as well as better understanding and management of software weaknesses related to architecture and design.” The Common Weakness Enumeration website can certainly be consulted periodically concerning vulnerabilities and weaknesses or as issues arise, otherwise this website should not be considered a must-visit by developers.</p>
+<p>It should be noted that valuable information related to application security can be obtained from this site. While not mandatory, as DoD STIG requirements represent the highest standard, this site is worth periodic review for potential vulnerabilities when executing a threat assessment.</p>
+<h4 id="national-institute-of-standards-and-technology-nist">National Institute of Standards and Technology (NIST)</h4>
+<p>From the website: “Founded in 1901, NIST is a non-regulatory federal agency within the U.S. Department of Commerce. NIST’s mission is to promote U.S. innovation and industrial competitiveness by advancing measurement science, standards, and technology in ways that enhance economic security and improve our quality of life.”</p>
+<p>It should be noted that valuable information related to application security can be obtained from this site. While not mandatory, as DoD STIG requirements represent the highest standard, this site is worth periodic review for potential vulnerabilities when executing a threat assessment.</p>
+<h3 id="threat-assessment-apsc-dv-003230">Threat Assessment (APSC-DV-003230)</h3>
+<p>The STIG details Threat Modeling:</p>
+<p>“Threat Modeling is the process of identifying potential threats to the application, risk ranking these threats, and selecting appropriate countermeasures or mitigations for the threats. Threat modeling is a critical step in securing an application from attack.”</p>
+<ul>
+<li>Define Common Usage
+<ul>
+<li>Invocation by host OS authenticated user with appropritate file system permissions only.</li>
+</ul></li>
+<li>Identify External Dependencies
+<ul>
+<li>No external programs used or invoked by software.</li>
+</ul></li>
+<li>Enumerate Security Assumptions
+<ul>
+<li>No external network requiements, NetCDF assumed a safe data file format for purposes of trust.</li>
+<li>All inputs obtained from trusted sources using secure transport mechanisms.</li>
+</ul></li>
+<li>Identify Objects and Interactions
+<ul>
+<li>Basic NetCDF read and Fortran compliant binary output.<br />
+</li>
+<li>libll - Linked list struct implementation.</li>
+<li>libNav - Navigation struct.</li>
+<li>libProducts - Product domain management struct.</li>
+</ul></li>
+<li>Identify Entry Points
+<ul>
+<li>Entry point via authorized user with appropriate access to file system.</li>
+</ul></li>
+<li>Determine Threat Risk
+<ul>
+<li>Threat risk minimal due to lack of web presence, host OS user management, and no external network dependencies.</li>
+</ul></li>
+</ul>
+<p>The threat risk modeling process has five steps enumerated below. They are:</p>
+<ul>
+<li>Identify Security Objectives.</li>
+<li>Survey the Application</li>
+<li>Decompose it</li>
+<li>Identify Threats</li>
+<li>Identify Vulnerabilities</li>
+</ul>
+<p>The remainder of this section identifies different threat assessment models and how they might be used to assist in an assessment.</p>
+<h4 id="dread">DREAD</h4>
+<p>DREAD is a classification scheme for quantifying, comparing and prioritizing the amount of risk presented by each evaluated threat. The DREAD acronym is formed from the first letter of each category below. DREAD modeling influences the thinking behind setting the risk rating, and is also used directly to sort the risks. The</p>
+<p>DREAD algorithm, shown below, is used to compute a risk value, which is an average of all five categories.</p>
+<p>Risk_DREAD = (DAMAGE + REPRODUCIBILITY + EXPLOITABILITY + AFFECTED USERS + DISCOVERABILITY) / 5</p>
+<p>The calculation always produces a number between 0 and 10; the higher the number, the more serious the risk. Here are some examples of how to quantify the DREAD categories:</p>
+<p>Damage Potential - If a threat exploit occurs, how much damage will be caused?</p>
+<ul>
+<li>0 = Nothing</li>
+<li>5 = Individual user data is compromised or affected.</li>
+<li>10 = Complete system or data destruction</li>
+</ul>
+<p>Reproducibility - How easy is it to reproduce the threat exploit?</p>
+<ul>
+<li>0 = Very hard or impossible, even for administrators of the application.</li>
+<li>5 = One or two steps required, may need to be an authorized user.</li>
+<li>10 = Just a web browser and the address bar is sufficient, without authentication.</li>
+</ul>
+<p>Exploitability - What is needed to exploit this threat?</p>
+<ul>
+<li>0 = Advanced programming and networking knowledge, with custom or advanced attack tools.</li>
+<li>5 = Malware exists on the Internet, or an exploit is easily performed, using available attack tools.</li>
+<li>10 = Just a web browser</li>
+</ul>
+<p>Affected Users - How many users will be affected?</p>
+<ul>
+<li>0 = None</li>
+<li>5 = Some users, but not all</li>
+<li>10 = All users</li>
+</ul>
+<p>Discoverability - How easy is it to discover this threat?</p>
+<ul>
+<li>0 = Very hard to impossible; requires source code or administrative access.</li>
+<li>5 = Can figure it out by guessing or by monitoring network traces.</li>
+<li>9 = Details of faults like this are already in the public domain and can be easily discovered using a search engine.</li>
+<li>10 = The information is visible in the web browser address bar or in a form.</li>
+</ul>
+<p><strong>Note:</strong> When performing a security review of an existing application, “Discoverability” will often be set to 10 by convention, as it is assumed the threat issues will be discovered.</p>
+<ol type="1">
+<li>TODO - generate examples of potential for harm.</li>
+</ol>
+<h5 id="tampering-with-data">Tampering with Data</h5>
+<p>Data provided can potentially be altered prior to receipt, however no data is used when making system calls and input validation of all user data is performed prior to execution. Data could be modified during run-stream operations if the attacker had access to the file system and files being generated.</p>
+<p>Worst harm is invalid / erroneous results from the processing code resulting in products that do not convey the presented product information.</p>
+<p>System breach not possible.</p>
+<h5 id="denial-of-service">Denial of Service</h5>
+<p>Application designers should be aware that their applications may be subject to a denial of service attack. Therefore, the use of expensive resources such as large files, complex calculations, heavy-duty searches, or long queries should be reserved for authenticated and authorized users, and not available to anonymous users.</p>
+<p>Denial of Service could be engineered if code was used to process the same NetCDF over and over again which is why this should be run on an unprivileged account.</p>
+<h5 id="elevation-of-privilege">Elevation of Privilege</h5>
+<p>Unless run as root, which there are defenses in place for this, no elevation of privilege is possible.</p>
+<h4 id="security-tools-apsc-dv-002930">Security Tools (APSC-DV-002930)</h4>
+<p>SonarQube will be used as a static code analyzer; no automated test tools have been identified save direct user manipulation for the application.</p>
+<h3 id="application-configuration-guide-acg-apsc-dv-003285">Application Configuration Guide ~ ACG (APSC-DV-003285)</h3>
+<p>An application configuration guide defines the components, configuration of the components, and how those components work together. See Appendix B: Application Configuration Guide (ACG) ~ APSC-DV-003285. Installation guides are located in a separate text. See <a href="../acg/index.html">ACG</a> for additional details.</p>
+<h2 id="metrics">Metrics</h2>
+<h3 id="definition-2">Definition</h3>
+<p>Software metric is a measure of some property of a piece of software or its specifications. Since quantitative measurements are essential in all sciences, there is a continuous effort by computer science practitioners and theoreticians to bring similar approaches to software development. The goal is obtaining objective, reproducible and quantifiable measurements, which may have numerous valuable applications in schedule and budget planning, cost estimation, quality assurance testing, software debugging, software performance optimization, and optimal personnel task assignments.</p>
+<h3 id="scope-2">Scope</h3>
+<p>The scope of the Metrics Topic will cover the future development effort such as lines of code and tracking elements (time). Metrics, for both process and software, tell us to what extent a desired characteristic is present in our processes or our software systems. Maintainability is a desired characteristic of a software component and is referenced in all the main software quality models (including the ISO 9126). Measures will be taken at each software release after the initial deployment.</p>
+<p>All measures / metrics can be gathered from DI2E whether they be issues, errors, or lines of code (SonarQube).</p>
+<h2 id="testing">Testing</h2>
+<h3 id="definition-3">Definition</h3>
+<p>Software testing is an investigation conducted to provide stakeholders with information about the quality of the product or service under test. Software testing also provides an objective, independent view of the software to allow the business to appreciate and understand the risks of software implementation. Test techniques include, but are not limited to, the process of executing a program or application with the intent of finding software bugs (errors). Software testing can also be stated as the process of validating and verifying that a software program/application/product: + Meets the business and technical requirements that guided its design and development; + Works as expected; and + Can be implemented with the same characteristics.</p>
+<p>Software testing, depending on the testing method employed, can be implemented at any time in the development process. However, most of the test effort occurs after the requirements have been defined and the coding process has been completed. As such, the methodology of the test is governed by the software development methodology adopted.</p>
+<p>Different software development models will focus the test effort at different points in the development process. Newer development models, such as Agile, often employ test driven development and place an increased portion of the testing in the hands of the developer, before it reaches a formal team of testers. In a more traditional model, most of the test execution occurs after the requirements have been defined and the coding process has been completed.</p>
+<h3 id="scope-3">Scope</h3>
+<p>A primary purpose of testing is to detect software failures so that defects may be discovered and corrected. All testing for release will have a Test Plan prior to release to the customer. User Acceptance Test (UAT) will be conducted prior to operational release of the software.</p>
+<h3 id="categories-1">Categories</h3>
+<h4 id="functional-vs.-non-functional-testing">Functional vs. Non-functional Testing</h4>
+<p>Functional testing refers to activities that verify a specific action or function of the code. These are usually found in the code requirements documentation, although some development methodologies work from use cases or user stories. Functional tests tend to answer the question of “can the user do this” or “does this particular feature work”.</p>
+<p>Non-functional testing refers to aspects of the software that may not be related to a specific function or user action, such as scalability or security. Non-functional testing tends to answer such questions as “how many people can log in at once”. Most applications developed will be desktop applications and many traditional non-functional tests such as multi-user access, band-width utilization will not be applicable. Specific tests will be documented in Use Test Cases. Only those tests the customer requests of a non-functional nature will actually have registered tests in Use Test Cases.</p>
+<h4 id="defects-and-failures">Defects and Failures</h4>
+<p>All defects and failures encountered will be registered with the sponsor and designated as a bug. All defects will be addressed and prioritized based on communication with the sponsor. Typically software changes will be exercised first followed by defects during a development cycle unless the defect is born from a newly created software change. Describe the process and how you manage defects.</p>
+<h4 id="compatibility">Compatibility</h4>
+<p>All software developed will target the Java Virtual Machine (JVM) and who will make a final compilations and tests against the sponsor<code>'</code>s target infrastructure thus ensuring full compatibility with final environment.</p>
+<h4 id="software-verification-and-validation">Software Verification and Validation</h4>
+<p>Software testing is used in association with verification and validation:</p>
+<ul>
+<li>Verification: Have we built the software right? (i.e., does it match the specification)?
+<ul>
+<li>Softare performs as expected and fulfills the purpose of slicing a world sized NetCDF into smaller pieces and creating output sufficient to feed into NCODA QC.</li>
+</ul></li>
+<li>Validation: Have we built the right software? (i.e., is this what the customer wants)?
+<ul>
+<li>Software terms and execution agreed to by the end-user.</li>
+</ul></li>
+</ul>
+<h3 id="testing-levels">Testing Levels</h3>
+<p>Tests are frequently grouped by where they are added in the software development process, or by the level of specificity of the test. The main levels during the development process as defined by the SWEBOK guide are unit-, integration-, and system testing that are distinguished by the test target without implying a specific process model. Other test levels are classified by the testing objective.</p>
+<h4 id="unit-testing">Unit Testing</h4>
+<p>Unit testing refers to tests that verify the functionality of a specific section of code, usually at the function level. In an object-oriented environment, this is usually at the class level, and the minimal unit tests include the constructors and destructors. It will not be necessary to unit test every function in the application, primary focus will be object (which contain data or perform operations on data) method unit tests. 100% code coverage is not a reality in most applications thus focus on unit testing will be at a discrete versus a raw code coverage value as performed by SonarQube.</p>
+<p>No discrete unit testing is present as this is not an API but an application that uses many different components.</p>
+<h4 id="integration-testing">Integration Testing</h4>
+<p>Integration testing is any type of software testing that seeks to verify the interfaces between components against a software design. Software components may be integrated in an iterative way or all together (“big bang”). Normally the former is considered a better practice since it allows interface issues to be localized more quickly and fixed. Integration testing works to expose defects in the interfaces and interaction between integrated components (modules). Progressively larger groups of tested software components corresponding to elements of the architectural design are integrated and tested until the software works as a system.</p>
+<ul>
+<li>Integration Testing - Does the project actively advocate and create Integration Tests for interaction of functions, objects, and procedures?</li>
+</ul>
+<p>Integration tests are available per platform (DSRC, NRL) and are proceeded by <code>test_*</code>.</p>
+<h4 id="system-testing">System Testing</h4>
+<p>System testing tests a completely integrated system to verify that it meets its requirements. The completed compiled application will be tested in the development environment and ultimately tested on DOD and named hardware platform workstations. Describe how system testing is performed and indicate by reference where standards for testing exist.</p>
+<p>System test on CENTOS and DSRC SGI &amp; Cray platforms was performed.</p>
+<h4 id="vulnerability-testing-apsc-dv-001460-apsc-dv-002930">Vulnerability Testing (APSC-DV-001460, APSC-DV-002930)</h4>
+<p>An application vulnerability assessment is a test conducted in order to identify weaknesses and security vulnerabilities that may exist within an application. The testing must cover all aspects and components of the application architecture. If an application consists of a web server and a database, then both components must be tested for vulnerabilities to the fullest extent possible.</p>
+<p>Vulnerability assessment tests normally utilize a combination of specialized software called application vulnerability scanners as well as custom scripts and manual tests. In some instances, multiple tools are required in order to test all aspects of application features, functions and architecture. The vulnerability scanner is typically configured to communicate with the application through the user interface or via an applications communication port. In addition to using automated tools, manual tests conducted from the OS console such as executing custom scripts or reviewing configuration settings for known vulnerabilities may also be included as part of the test.</p>
+<p>Testers will typically utilize application user test accounts in order to test application features and functionality such as adding content, executing queries and completing transactions. The vulnerability testing software utilizes user actions and access as well as a list of known security vulnerabilities in order to detect and identify weak security controls or misconfigurations that could potentially be manipulated by the user or create a security vulnerability.</p>
+<p>Testing must be conducted on a periodic basis while the application is in production and subsequent to system changes to ensure any changes made to the system do not introduce new security vulnerabilities.</p>
+<p>Describe how vulnerability testing is conducted for the application.</p>
+<p>No discrete tools are used for vulnerability testing except local attempts to penetrate the CLI arguments which are performed informally.</p>
+<h3 id="test-plans-apsc-dv-003130">Test Plans (APSC-DV-003130)</h3>
+<p>The application testing process is vital in identifying security flaws before the application is released. In addition to the standard functional testing performed, the development team will have at least one tester specifically testing the application for security flaws. Standard security flaws will be evaluated on the development environment, review of source code for security flaws will be reviewed as well. Test plans specify how you will test the application. Test plans say how you will test. Use Cases represent a function that the application is performing and is the basis for requirements/code creation. Test Cases are the embodiment of the Use Case and provide details descriptions of how the test of the Use Case will be conducted. Test Cases persist, have a specific date/time of execution, and individual performing the test. Integration tests could include any number and types of tests, they represent a body of tests that confirm past testing, which was successful, continues to be successful due to any change to the application or its components. An integration test passing represents acknowledgement of a known past functional state. Automated testing is nothing more than tests, at any level of granularity, which can be invoked, typically triggered by an event like a build, and run by themselves with no human interaction. The resultant of an automated test should be persisted.</p>
+<h4 id="named-testertest-team-apsc-dv-003150">Named Tester/Test Team (APSC-DV-003150)</h4>
+<p>For each deployment a single developer will be designated as the Test Manager and responsible for the review of all tests performed and will consult with the Team Leader regarding the results of the tests performed. The team will ensure tests procedures exist and at least annually executed to ensure system initialization, shutdown, and aborts are configured to ensure the system remains in a secure state (APSC-DV-003160).</p>
+<p><strong>Designated Testers</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Name of Tester</th>
+<th>Email Address</th>
+<th>Last Test related training</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Todd Lovitt</td>
+<td>todd.lovitt.ctr.@nrlssc.navy.mil</td>
+<td>Not conducted.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="test-procedures">Test Procedures</h4>
+<p>The testing procedure will function as follow: + Integration Testing + Integration testing will be written for each sub-component with a validation of results executed. + Validation will contain expected size. + Validation will contain expected number of outputs. + Validation will contain verification of data such as AVG of a parameter. + System Testing + System testing will occur by the developer prior to commit based on integration testing. + Technical Acceptance Test + Will be conducted with a demonstration to the end-user. + User Acceptance Test + Will occur minimally at customer<code>'</code>s resource.</p>
+<p>++ Glossary of Terms</p>
+<p>Access Control - based on your system classification, you will be given access to particular package functions specific to your job.</p>
+<p>Attribute - information about a process or task.</p>
+<p>Checklist - a list of items, each with a check box, displayed in the task window.</p>
+<p>Class - a category, to which documents and process definitions are assigned, used to organize documents and process definitions.</p>
+<p>Graphical User Interface (GUI) - visually oriented interface to talk with a program.</p>
+<p>Host - generally a program that stores data for a client and provides that data to the client as requested.</p>
+<p>Primary Key - a value that uniquely identifies each row in a database table. See Relational Database management on the Internet.</p>
+<p>Privilege - an access control mechanism for processes.</p>
+<p>C - a compiled language.</p>
+<p>RDBMS - Relational Database Management System</p>
+<p>RDBMS ER Diagram - (Relational Database Management System Entity Relationship Diagram).</p>
+<p>Security Technical Information Guide (STIG) - The documentation that specifies and explains the procedures for performing the SRR.</p>
+<p>SCM - Software Configuration Management.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="http://iase.disa.mil/stigs/app-security/app-security/Pages/index.aspx">Application Development and Security (AppDev) Security Technical Implementation Guide (STIG) v4r7</a></li>
+</ul>
+Naval Research Lab (NRL) VISOR Documentation
+</body>
+</html>

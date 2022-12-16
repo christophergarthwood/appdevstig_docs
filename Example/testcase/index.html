@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>VISOR Documentation</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../markdown.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#test-case-metrics">Test Case &amp; Metrics</a><ul>
+<li><a href="#processing-times">Processing Times</a><ul>
+<li><a href="#nrl-developer-hardware-configuration"><strong><em>NRL Developer Hardware Configuration</em></strong></a></li>
+<li><a href="#nrl-server-hardware-configuration"><strong><em>NRL Server Hardware Configuration</em></strong></a></li>
+<li><a href="#dsrc-hardware-configuration"><strong><em>DSRC Hardware Configuration</em></strong></a></li>
+<li><a href="#times"><strong><em>Times</em></strong></a></li>
+</ul></li>
+<li><a href="#gops-daily-cron-copy-of-files">GOPS daily cron copy of files</a></li>
+<li><a href="#sonarqube-analysis-from-di2e-resources">SonarQube Analysis from DI2E Resources</a></li>
+<li><a href="#call-graph">Call Graph</a></li>
+<li><a href="#test-case-results">Test Case Results</a><ul>
+<li><a href="#parameters">Parameters</a></li>
+<li><a href="#satellite-data">Satellite Data</a></li>
+<li><a href="#initial-results">Initial Results</a></li>
+<li><a href="#fy21-v.1.1.20-results">FY21 v.1.1.20 Results</a></li>
+<li><a href="#compilation-results">Compilation Results</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="test-case-metrics">Test Case &amp; Metrics</h1>
+<h2 id="processing-times">Processing Times</h2>
+<h3 id="nrl-developer-hardware-configuration"><strong><em>NRL Developer Hardware Configuration</em></strong></h3>
+<table>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Specification</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Processor</td>
+<td>40 CPU, Intel Xeon Silver 4114 CPU @ 2.2GHZ</td>
+</tr>
+<tr class="even">
+<td>Memory</td>
+<td>251 GB</td>
+</tr>
+</tbody>
+</table>
+<h3 id="nrl-server-hardware-configuration"><strong><em>NRL Server Hardware Configuration</em></strong></h3>
+<table>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Specification</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Processor</td>
+<td>40 CPU, Intel Xeon Silver 4114 CPU @ 2.2GHZ</td>
+</tr>
+<tr class="even">
+<td>Memory</td>
+<td>251 GB</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dsrc-hardware-configuration"><strong><em>DSRC Hardware Configuration</em></strong></h3>
+<table>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Specification</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Asset</td>
+<td>Gordon, Conrad, Koehr, Gaffney</td>
+</tr>
+<tr class="even">
+<td>Queue</td>
+<td>Standard, HIE, gpu</td>
+</tr>
+</tbody>
+</table>
+<h3 id="times"><strong><em>Times</em></strong></h3>
+<table>
+<thead>
+<tr class="header">
+<th>Platform</th>
+<th>Total time (minutes)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>NRL Developer</td>
+<td>23.02</td>
+</tr>
+<tr class="even">
+<td>NRL Server (single)</td>
+<td>4.00+</td>
+</tr>
+<tr class="odd">
+<td>NRL Server (all, batch)</td>
+<td>6.00+</td>
+</tr>
+<tr class="even">
+<td>NRL Server</td>
+<td>33.92</td>
+</tr>
+<tr class="odd">
+<td>Conrad</td>
+<td>27.89</td>
+</tr>
+<tr class="even">
+<td>Gaffney</td>
+<td>27.32</td>
+</tr>
+<tr class="odd">
+<td>Koehr</td>
+<td>26.25</td>
+</tr>
+<tr class="even">
+<td>Gordon</td>
+<td>28.48</td>
+</tr>
+</tbody>
+</table>
+<h2 id="gops-daily-cron-copy-of-files">GOPS daily cron copy of files</h2>
+<p><a href="./gops_copy_script.md">Example Results for Reference</a></p>
+<h2 id="sonarqube-analysis-from-di2e-resources">SonarQube Analysis from DI2E Resources</h2>
+<p><a href="https://sonarqube.di2e.net/dashboard?id=visor_gops_parser">SonarQube Results</a> <a href="./visor_gops_parser_sonarqube.png">SonarQube Results v1.1.13</a></p>
+<h2 id="call-graph">Call Graph</h2>
+<p><a href="./visor_gops_parser_callgraph.png">visor_gops_parser Call Graph</a> <img src="./visor_gops_parser_callgraph.png" alt="visor_gops_parser Call Graph" /></p>
+<h2 id="test-case-results">Test Case Results</h2>
+<p>Region: World (global) on 2020/01/01</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li>a_490_lmi (lat, lon)</li>
+</ul>
+<h3 id="satellite-data">Satellite Data</h3>
+<ul>
+<li>Input: /projects/socom/NCODA_TESTCASE/merged.2020010.0110.L5.10D.a_490_lmi.nc</li>
+<li>18000 x 36000 matrix</li>
+<li>Products: a_490_lmi</li>
+</ul>
+<h3 id="initial-results">Initial Results</h3>
+<ul>
+<li>Successful execution.</li>
+<li>1819s (~30 mins) runtime.</li>
+<li>All outputs created and of sizes expected.</li>
+<li>Program started and finished according to logs.</li>
+<li>Each slice records read-in, records output, and inspection of binary output with 010 indicated proper output.</li>
+<li>Scale factor and offset read in by program verified by SeaDAS and <code>ncdump -h</code>.</li>
+<li>Percentage coverage consistent between multiple execution runs on same input file.</li>
+<li>5,000+ DSRC executions on: gaffney, koehr, gordon, and conrad</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Statistic</th>
+<th>Gaffney</th>
+<th>Koehr</th>
+<th>Gordon</th>
+<th>Conrad</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Avg Exe Time (s)</td>
+<td>1,638.92</td>
+<td>1,574.80</td>
+<td>1,708.95</td>
+<td>1,673.40</td>
+</tr>
+<tr class="even">
+<td>Avg Exe Time (m)</td>
+<td>27.32</td>
+<td>26.25</td>
+<td>28.48</td>
+<td>27.89</td>
+</tr>
+<tr class="odd">
+<td>Avg Memory Use (GB)</td>
+<td>4.38</td>
+<td>4.92</td>
+<td>unk</td>
+<td>unk</td>
+</tr>
+<tr class="even">
+<td>Predominant Queue</td>
+<td>GPU</td>
+<td>HIE</td>
+<td>standard</td>
+<td>standard</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fy21-v.1.1.20-results">FY21 v.1.1.20 Results</h3>
+<ul>
+<li>Successful execution.</li>
+<li>Processing time for all slices sequentially took 1643s, aproximately 27 minutes.</li>
+<li>Processing time for a single slice took 214s, aproximately 4 minutes.</li>
+<li>Processing time for all slices using multiple batch jobs took, 228s, aproximately 4 minutes with longest time at 6 minutes for all slices.</li>
+<li>All outputs created and of sizes expected.</li>
+<li>Program started and finished according to logs.</li>
+<li>Percentage coverage consistent between multiple execution runs on same input file.</li>
+</ul>
+<p>Added functionality to select the number of times to split the GOPS input file and which (if any index to select):</p>
+<table>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 19%" />
+<col style="width: 56%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Index (of split)</th>
+<th>Split</th>
+<th>Results</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tested an index of -1</td>
+<td>using split of 9.</td>
+<td>Failed, expected and error message provided.</td>
+</tr>
+<tr class="even">
+<td>Tested an index of 0</td>
+<td>using split of 9.</td>
+<td>Passed, output as expected.</td>
+</tr>
+<tr class="odd">
+<td>Tested an index of 1</td>
+<td>using split of 9.</td>
+<td>Passed, output as expected.</td>
+</tr>
+<tr class="even">
+<td>Tested an index of 2</td>
+<td>using split of 9.</td>
+<td>Passed, output as expected.</td>
+</tr>
+<tr class="odd">
+<td>Tested an index of 3</td>
+<td>using split of 9.</td>
+<td>Passed, output as expected.</td>
+</tr>
+<tr class="even">
+<td>Tested an index of 8</td>
+<td>using split of 9.</td>
+<td>Passed, output as expected.</td>
+</tr>
+<tr class="odd">
+<td>Tested an index of 9</td>
+<td>using split of 9.</td>
+<td>Failed, expected and error message provided.</td>
+</tr>
+<tr class="even">
+<td>Tested an index of 19</td>
+<td>using split of 9.</td>
+<td>Failed, expected and error message provided.</td>
+</tr>
+<tr class="odd">
+<td>Tested an index of -1</td>
+<td>no inputs given.</td>
+<td>Failed, expected with split defaulting to 9 and message about index being in error.</td>
+</tr>
+<tr class="even">
+<td>Tested an index of 0</td>
+<td>no inputs given.</td>
+<td>Passed, output as expected.</td>
+</tr>
+<tr class="odd">
+<td>Tested an index of 1</td>
+<td>no inputs given.</td>
+<td>Passed, output as expected.</td>
+</tr>
+<tr class="even">
+<td>Tested an index of -1</td>
+<td>using split of 8</td>
+<td>Failed, expected and error indicated minimal ranges.</td>
+</tr>
+<tr class="odd">
+<td>Tested an index of 0</td>
+<td>using split of 8</td>
+<td>Failed, expected and error indicated minimal ranges.</td>
+</tr>
+<tr class="even">
+<td>Tested an index of 1</td>
+<td>using split of 8</td>
+<td>Failed, expected and error indicated minimal ranges.</td>
+</tr>
+<tr class="odd">
+<td>Tested an index of -1</td>
+<td>using split of 20</td>
+<td>Failed, expected and error indicated minimal ranges.</td>
+</tr>
+<tr class="even">
+<td>Tested an index of 0</td>
+<td>using split of 20</td>
+<td>Failed, expected and error indicated minimal ranges.</td>
+</tr>
+<tr class="odd">
+<td>Tested an index of 1</td>
+<td>using split of 20</td>
+<td>Failed, expected and error indicated minimal ranges.</td>
+</tr>
+</tbody>
+</table>
+<p>Output from Slice 0 was compared to the default number of slices, all slices at once (sequential), and the multi-cpu solution with the following results:</p>
+<table>
+<colgroup>
+<col style="width: 53%" />
+<col style="width: 46%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>filename</th>
+<th>Checksum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>md5sum ./202106050000_a_490_lmi_0.out</td>
+<td>6e9a60641c49fd402f824983e3615343</td>
+</tr>
+<tr class="even">
+<td>md5sum ./20210729_restuls/all_0.out</td>
+<td>6e9a60641c49fd402f824983e3615343</td>
+</tr>
+<tr class="odd">
+<td>md5sum ./20210729_restuls/Nine_202106050000_a_490_lmi_0.out</td>
+<td>6e9a60641c49fd402f824983e3615343</td>
+</tr>
+</tbody>
+</table>
+<p>Output from logs where metrics are gathered such as number of good versus bad records, percent coverage and related output are completely consistent across all log outputs.</p>
+<p>Thus proving consistent results across multiple invocations.</p>
+<h3 id="compilation-results">Compilation Results</h3>
+<h4 id="biocast-post-build">BioCast (post build)</h4>
+<ul>
+<li><a href="./make.log">make.log</a></li>
+<li><a href="./error_messages">error_messages</a></li>
+<li><a href="./diagnostic_messages">diagnostics_messages</a></li>
+</ul>
+Naval Research Lab (NRL) VISOR Documentation
+</body>
+</html>

@@ -1,0 +1,180 @@
+\hypertarget{libll_8h}{\section{src/libll.h File Reference}
+\label{libll_8h}\index{src/libll.\-h@{src/libll.\-h}}
+}
+
+
+Contains definitions for Nodes used in a Linked List.  
+
+
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{libll_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structNode}{Node}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structNode}{Node} structure to store a single pixel value with geospatial coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structNode}{Node} $\ast$ \hyperlink{libll_8h_aa0fea1f9df88e0d0dd14ef3119aa437f}{New\-Node} ()
+\begin{DoxyCompactList}\small\item\em Returns a newly minted \hyperlink{structNode}{Node}. \end{DoxyCompactList}\item 
+int \hyperlink{libll_8h_a14ccd3536ae7a080ee36948426fd7f70}{Count\-List\-Items} (struct \hyperlink{structNode}{Node} $\ast$head)
+\begin{DoxyCompactList}\small\item\em Returns a count of nodes based on the node \char`\"{}head\char`\"{} passed in. \end{DoxyCompactList}\item 
+void \hyperlink{libll_8h_a66d59982b50fda3ea31a540f44731c6c}{Print\-List\-Items} (struct \hyperlink{structNode}{Node} $\ast$head)
+\begin{DoxyCompactList}\small\item\em Returns a printed list of nodes to standard output. \end{DoxyCompactList}\item 
+void \hyperlink{libll_8h_a91af3ff7b7b2fb602628b5741f440804}{Free\-List\-Items} (struct \hyperlink{structNode}{Node} $\ast$head)
+\begin{DoxyCompactList}\small\item\em Iterates through each node from the \char`\"{}head\char`\"{} and frees memory as it goes. \end{DoxyCompactList}\item 
+void \hyperlink{libll_8h_a6803d4a058156a21a7beeebb86254ec3}{Write\-List\-Items} (F\-I\-L\-E $\ast$$\ast$inc\-\_\-outputfile, struct \hyperlink{structNode}{Node} $\ast$head)
+\begin{DoxyCompactList}\small\item\em Outputs ndoe meta-\/data (lat,lon,optics) to the file provided for output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains definitions for Nodes used in a Linked List. \begin{DoxyAuthor}{Author}
+N\-R\-L, Code 7330 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2019/05/31 Linked list library with basic support routines for reading 1 to N valid pixels in a satellite image and producing an N\-C\-O\-D\-A Q\-C compliant output.
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See Also}
+\href{https://confluence.di2e.net/display/NRL7331/VISOR}{\tt https\-://confluence.\-di2e.\-net/display/\-N\-R\-L7331/\-V\-I\-S\-O\-R} 
+\end{DoxySeeAlso}
+
+
+Definition in file \hyperlink{libll_8h_source}{libll.\-h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{libll_8h_a14ccd3536ae7a080ee36948426fd7f70}{\index{libll.\-h@{libll.\-h}!Count\-List\-Items@{Count\-List\-Items}}
+\index{Count\-List\-Items@{Count\-List\-Items}!libll.h@{libll.\-h}}
+\subsubsection[{Count\-List\-Items}]{\setlength{\rightskip}{0pt plus 5cm}int Count\-List\-Items (
+\begin{DoxyParamCaption}
+\item[{struct {\bf Node} $\ast$}]{input\-List}
+\end{DoxyParamCaption}
+)}}\label{libll_8h_a14ccd3536ae7a080ee36948426fd7f70}
+
+
+Returns a count of nodes based on the node \char`\"{}head\char`\"{} passed in. 
+
+Returns a count of nodes based on the node \char`\"{}head\char`\"{} passed in.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{structNode}{Node}} & -\/ start node to free memory from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line 135 of file libll.\-c.
+
+\hypertarget{libll_8h_a91af3ff7b7b2fb602628b5741f440804}{\index{libll.\-h@{libll.\-h}!Free\-List\-Items@{Free\-List\-Items}}
+\index{Free\-List\-Items@{Free\-List\-Items}!libll.h@{libll.\-h}}
+\subsubsection[{Free\-List\-Items}]{\setlength{\rightskip}{0pt plus 5cm}void Free\-List\-Items (
+\begin{DoxyParamCaption}
+\item[{struct {\bf Node} $\ast$}]{head}
+\end{DoxyParamCaption}
+)}}\label{libll_8h_a91af3ff7b7b2fb602628b5741f440804}
+
+
+Iterates through each node from the \char`\"{}head\char`\"{} and frees memory as it goes. 
+
+Iterates through each node from the \char`\"{}head\char`\"{} and frees memory as it goes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{structNode}{Node}} & -\/ start node to free memory from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 118 of file libll.\-c.
+
+\hypertarget{libll_8h_aa0fea1f9df88e0d0dd14ef3119aa437f}{\index{libll.\-h@{libll.\-h}!New\-Node@{New\-Node}}
+\index{New\-Node@{New\-Node}!libll.h@{libll.\-h}}
+\subsubsection[{New\-Node}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf Node}$\ast$ New\-Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{libll_8h_aa0fea1f9df88e0d0dd14ef3119aa437f}
+
+
+Returns a newly minted \hyperlink{structNode}{Node}. 
+
+Returns a newly minted \hyperlink{structNode}{Node}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{structNode}{Node} 
+\end{DoxyReturn}
+
+
+Definition at line 49 of file libll.\-c.
+
+\hypertarget{libll_8h_a66d59982b50fda3ea31a540f44731c6c}{\index{libll.\-h@{libll.\-h}!Print\-List\-Items@{Print\-List\-Items}}
+\index{Print\-List\-Items@{Print\-List\-Items}!libll.h@{libll.\-h}}
+\subsubsection[{Print\-List\-Items}]{\setlength{\rightskip}{0pt plus 5cm}void Print\-List\-Items (
+\begin{DoxyParamCaption}
+\item[{struct {\bf Node} $\ast$}]{head}
+\end{DoxyParamCaption}
+)}}\label{libll_8h_a66d59982b50fda3ea31a540f44731c6c}
+
+
+Returns a printed list of nodes to standard output. 
+
+Returns a printed list of nodes to standard output.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{structNode}{Node}} & -\/ start node to print from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 101 of file libll.\-c.
+
+\hypertarget{libll_8h_a6803d4a058156a21a7beeebb86254ec3}{\index{libll.\-h@{libll.\-h}!Write\-List\-Items@{Write\-List\-Items}}
+\index{Write\-List\-Items@{Write\-List\-Items}!libll.h@{libll.\-h}}
+\subsubsection[{Write\-List\-Items}]{\setlength{\rightskip}{0pt plus 5cm}void Write\-List\-Items (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$$\ast$}]{inc\-\_\-writefile, }
+\item[{struct {\bf Node} $\ast$}]{head}
+\end{DoxyParamCaption}
+)}}\label{libll_8h_a6803d4a058156a21a7beeebb86254ec3}
+
+
+Outputs ndoe meta-\/data (lat,lon,optics) to the file provided for output. 
+
+Outputs ndoe meta-\/data (lat,lon,optics) to the file provided for output.
+
+
+\begin{DoxyParams}{Parameters}
+{\em F\-I\-L\-E} & -\/ double pointer to output file \\
+\hline
+{\em \hyperlink{structNode}{Node}} & -\/ start node to print from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 69 of file libll.\-c.
+

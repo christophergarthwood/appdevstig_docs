@@ -1,0 +1,111 @@
+\hypertarget{log_8h}{\section{src/log.h File Reference}
+\label{log_8h}\index{src/log.\-h@{src/log.\-h}}
+}
+
+
+Contains definitions for Nodes used in a Linked List.  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdarg.\-h$>$}\\*
+Include dependency graph for log.\-h\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{log_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{log_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{log_8h_aa48b2017856a8a9c33a9935afe604c8d}{\#define {\bfseries L\-O\-G\-\_\-\-V\-E\-R\-S\-I\-O\-N}~\char`\"{}0.\-1.\-0\char`\"{}}\label{log_8h_aa48b2017856a8a9c33a9935afe604c8d}
+
+\item 
+\hypertarget{log_8h_af89cb876e6e1d43cfeacdd58a7c9b78c}{\#define {\bfseries log\-\_\-trace}(...)~log\-\_\-log(L\-O\-G\-\_\-\-T\-R\-A\-C\-E, \-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-)}\label{log_8h_af89cb876e6e1d43cfeacdd58a7c9b78c}
+
+\item 
+\hypertarget{log_8h_aa77e596ef13d2f0f75d0ac9540ed358d}{\#define {\bfseries log\-\_\-debug}(...)~log\-\_\-log(L\-O\-G\-\_\-\-D\-E\-B\-U\-G, \-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-)}\label{log_8h_aa77e596ef13d2f0f75d0ac9540ed358d}
+
+\item 
+\hypertarget{log_8h_aa1cfe5444875c8eca0ea6f6993977d6d}{\#define {\bfseries log\-\_\-info}(...)~log\-\_\-log(L\-O\-G\-\_\-\-I\-N\-F\-O, \-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-)}\label{log_8h_aa1cfe5444875c8eca0ea6f6993977d6d}
+
+\item 
+\hypertarget{log_8h_a04af09851c431d178f16b24fa1aac1e9}{\#define {\bfseries log\-\_\-warn}(...)~log\-\_\-log(L\-O\-G\-\_\-\-W\-A\-R\-N, \-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-)}\label{log_8h_a04af09851c431d178f16b24fa1aac1e9}
+
+\item 
+\hypertarget{log_8h_a6ae72553ea9805dd87a463d6f710364d}{\#define {\bfseries log\-\_\-error}(...)~log\-\_\-log(L\-O\-G\-\_\-\-E\-R\-R\-O\-R, \-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-)}\label{log_8h_a6ae72553ea9805dd87a463d6f710364d}
+
+\item 
+\hypertarget{log_8h_a704a43b1e2ff3bb554aff101efdbeecf}{\#define {\bfseries log\-\_\-fatal}(...)~log\-\_\-log(L\-O\-G\-\_\-\-F\-A\-T\-A\-L, \-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-)}\label{log_8h_a704a43b1e2ff3bb554aff101efdbeecf}
+
+\item 
+\hypertarget{log_8h_af2ca793fa591cec3c25b023fd03787c9}{\#define {\bfseries log\-\_\-emerg}(...)~log\-\_\-log(L\-O\-G\-\_\-\-F\-A\-T\-A\-L, \-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-)}\label{log_8h_af2ca793fa591cec3c25b023fd03787c9}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{log_8h_ae4814768d44b3dc4fc107e713de0477f}{typedef void($\ast$ {\bfseries log\-\_\-\-Lock\-Fn} )(void $\ast$udata, int lock)}\label{log_8h_ae4814768d44b3dc4fc107e713de0477f}
+
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \\*
+{\bfseries L\-O\-G\-\_\-\-T\-R\-A\-C\-E}, 
+{\bfseries L\-O\-G\-\_\-\-D\-E\-B\-U\-G}, 
+{\bfseries L\-O\-G\-\_\-\-I\-N\-F\-O}, 
+{\bfseries L\-O\-G\-\_\-\-W\-A\-R\-N}, 
+\\*
+{\bfseries L\-O\-G\-\_\-\-E\-R\-R\-O\-R}, 
+{\bfseries L\-O\-G\-\_\-\-F\-A\-T\-A\-L}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{log_8h_a670c547ace6683148e5f480c4fc4c0f0}{void {\bfseries log\-\_\-set\-\_\-udata} (void $\ast$udata)}\label{log_8h_a670c547ace6683148e5f480c4fc4c0f0}
+
+\item 
+\hypertarget{log_8h_a93d6674a530b372c85e6bdf275e6e6b4}{void {\bfseries log\-\_\-set\-\_\-lock} (log\-\_\-\-Lock\-Fn fn)}\label{log_8h_a93d6674a530b372c85e6bdf275e6e6b4}
+
+\item 
+\hypertarget{log_8h_af0f33363d4098787cac5b47f0a6ad443}{void {\bfseries log\-\_\-set\-\_\-fp} (F\-I\-L\-E $\ast$fp)}\label{log_8h_af0f33363d4098787cac5b47f0a6ad443}
+
+\item 
+\hypertarget{log_8h_af2493e94f152a28b2ba4e3a2e2bba65d}{void {\bfseries log\-\_\-set\-\_\-level} (int level)}\label{log_8h_af2493e94f152a28b2ba4e3a2e2bba65d}
+
+\item 
+\hypertarget{log_8h_a15fc2e61d925edc83d6eaa748a7fb40c}{void {\bfseries log\-\_\-set\-\_\-quiet} (int enable)}\label{log_8h_a15fc2e61d925edc83d6eaa748a7fb40c}
+
+\item 
+\hypertarget{log_8h_ac008ecbde449b2dd1bc4f8671d9a0e07}{void {\bfseries log\-\_\-log} (int level, const char $\ast$file, int line, const char $\ast$fmt,...)}\label{log_8h_ac008ecbde449b2dd1bc4f8671d9a0e07}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains definitions for Nodes used in a Linked List. \begin{DoxyAuthor}{Author}
+N\-R\-L, Code 7330 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2019/05/31 Copyright (c) 2017 rxi
+\end{DoxyDate}
+This library is free software; you can redistribute it and/or modify it under the terms of the M\-I\-T license. See {\ttfamily \hyperlink{log_8c_source}{log.\-c}} for details.
+
+Logging library used from, see reference blow, another project to support granular logging.
+
+\begin{DoxySeeAlso}{See Also}
+\href{https://github.com/rxi/log.c}{\tt https\-://github.\-com/rxi/log.\-c} 
+\end{DoxySeeAlso}
+
+
+Definition in file \hyperlink{log_8h_source}{log.\-h}.
+
