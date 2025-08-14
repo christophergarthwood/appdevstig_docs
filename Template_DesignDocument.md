@@ -1,4 +1,4 @@
-# Design Document (AppDev STIG v4r7, APSC-DV-003220)
+# Design Document (AppDev STIG v6r3, APSC-DV-003220)
 
 ## Name of the Project
 
@@ -15,7 +15,8 @@
 |Version       |Description                                                                                                         |
 |--------------|--------------------------------------------------------------------------------------------------------------------|
 |v0.1          | Inception source code, totally alpha, v0.1  |
-|v1.1.24       | v1.1.24 Some version later                  |
+|v1.1.24       | v1.1.24 ASD STIG v5 updates                 |
+|v1.2.00       | v1.2.00 ASD STIG v6r3 updates               |
 
 
 ## Executive Summary
@@ -27,6 +28,16 @@ The purpose of this document is to provide a detailed description of the technic
 ## Introduction
 
 The goal of this project is to ...
+
+### Project Plan (APSC-DV-003210)
+
+This requirement is meant to apply to developers or organizations that are doing application development work.
+
+Application development efforts include the creation of a project plan to track and organize the development work.
+
+If security flaws are not tracked within the project plan, it is possible the flaws will be overlooked and included in a release.
+
+Tracking flaws in the project plan will help identify code elements to be changed as well as the requested change.
 
 ### Development Strategy
 
@@ -162,7 +173,7 @@ This is a scientific data processing software solution and does not have a tradi
 |None             | N/A     | No network communications sans NFS mounts, environment dependent.  |
 
 
-### Roles (APSC-DV-000610)
+### Roles (APSC-DV-002380)
 
 Identify any roles associated with this application:
 
@@ -675,6 +686,13 @@ All defects and failures encountered will be registered with the sponsor and des
 
 All software developed will target the Java Virtual Machine (JVM) and who will make a final compilations and tests against the sponsor`'`s target infrastructure thus ensuring full compatibility with final environment.
 
+#### Security flaws (APSC-DV-003210)
+Security flaws must be fixed or addressed in the project plan. This requirement is meant to apply to developers or organizations that are doing application development work. Application development efforts include the creation of a project plan to track and organize the development work.  If security flaws are not tracked within the project plan, it is possible the flaws will be overlooked and included in a release.
+
+Tracking flaws in the project plan will help identify code elements to be changed as well as the requested change.
+
+Ensure you have a project plan that identifies known security flaws ranging from host applications to your own.
+
 #### Software Verification and Validation
 
 Software testing is used in association with verification and validation:
@@ -731,8 +749,8 @@ The application testing process is vital in identifying security flaws before th
 Test plans specify how you will test the application.  Test plans say how you will test.  Use Cases represent a function that the application is performing and is the basis for requirements/code creation.  Test Cases are the embodiment of the Use Case and provide details descriptions of how the test of the Use Case will be conducted.  Test Cases persist, have a specific date/time of execution, and individual performing the test.  Integration tests could include any number and types of tests, they represent a body of tests that confirm past testing, which was successful, continues to be successful due to any change to the application or its components.  An integration test passing represents acknowledgement of a known past functional state.
 Automated testing is nothing more than tests, at any level of granularity, which can be invoked, typically triggered by an event like a build, and run by themselves with no human interaction.  The resultant of an automated test should be persisted.
  
-#### Named Tester/Test Team (APSC-DV-003150)
-For each deployment a single developer will be designated as the Test Manager and responsible for the review of all tests performed and will consult with the Team Leader regarding the results of the tests performed.  The team will ensure tests procedures exist and at least annually executed to ensure system initialization, shutdown, and aborts are configured to ensure the system remains in a secure state (APSC-DV-003160).
+#### Named Tester/Test Team (APSC-DV-0031[50,60])
+For each deployment a single developer will be designated as the Test Manager and responsible for the review of all tests performed and will consult with the Team Leader regarding the results of the tests performed.  The team will ensure tests procedures exist and at least annually executed to ensure system initialization, shutdown, and aborts are configured to ensure the system remains in a secure state.  Utilize the Testing Standard and its references for minimal requirements.
 
 **Designated Testers**
 
@@ -742,18 +760,7 @@ For each deployment a single developer will be designated as the Test Manager an
 
 #### Test Procedures
 
-The testing procedure will function as follow:
-+ Integration Testing
-    + Integration testing will be written for each sub-component with a validation of results executed.
-    + Validation will contain expected size.
-    + Validation will contain expected number of outputs.
-    + Validation will contain verification of data such as AVG of a parameter.
-+ System Testing
-	+ System testing will occur by the developer prior to commit based on integration testing.
-+ Technical Acceptance Test
-	+ Will be conducted with a demonstration to the end-user.
-+ User Acceptance Test
-	+ Will occur minimally at customer`'`s resource.
+See dedicated Test Standard and Plan.
 
 ++ Glossary of Terms 
 

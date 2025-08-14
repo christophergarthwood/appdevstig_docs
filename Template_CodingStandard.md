@@ -1,5 +1,9 @@
 # Coding Standard (Simple)
 
+## Reference
+Application Security and Development (ASD) Security Technical Implementation Guide (STIG) Version 6, Release 3, 2025/04/02
+ - APSC-DV-003215, The application development team must follow a set of coding standards.
+
 ## Coding Standard
 
 1.  Will have "Top 10" things not to do in the language(s) you're developing in.
