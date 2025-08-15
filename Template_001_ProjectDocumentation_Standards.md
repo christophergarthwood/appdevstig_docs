@@ -162,7 +162,7 @@ Communication Standards
  - *Project Artifact Location:* Central location, identify primary and secondary responsibilities
  - *Periodicity of Update:* Reviewed Updated per Sprint Review
  - *Comments:* Aligned to methodology, easily accessed
- - *Standard:* [Project Plan Template](./Template_002_ProjectPlan.md) 
+ - *Standard:* [Project Plan Template](./Template_002_ProjectPlanStandard.md)
 
 A project plan is valuable because it provides a roadmap for successful project completion, ensuring projects are completed on time, within budget, and to the required standard. It helps teams avoid potential problems, manage resources effectively, and communicate clearly with stakeholders. Ultimately, a strong project plan sets the foundation for efficient execution and better project outcomes.  This requirement is meant to apply to developers or organizations that are doing application development work.
 
