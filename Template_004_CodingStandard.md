@@ -49,9 +49,13 @@ Real-time with application development.
 ## Miscellanous
 
 [Case Preference Per Language](#case_preference_per_language)
+
 [Documentation Tools](#documentation_tools)
+
 [Scanning Tools](#scanning_tools)
+
 [Linting Tools](#lintint_tools)
+
 + [Python](#python)
 + [Bash](#bash)
 + [Java](#Java)
