@@ -63,9 +63,6 @@ Reviewing each standard and creating the minimally required content within each 
 + [Code Review Standard](#code_review_standard)
 
 + [Configuration Management Standard](#configuration_management_standard)
- - Standard exists is sufficient.
- - Template provide references.
- - Artifacts have to exist, specifically a Software Configuration Manual (SCM)
 
 + [Design Document Standard](#design_document_standard)
  - Must exist.
@@ -220,15 +217,30 @@ A coding standard is a set of simple rules and guidelines that programmers follo
 <a name="code_review_standard"/>
 
 #### Code Review Standard
- - Standard exists is sufficient.
- - Template provides references.
- - Artifacts have to exist.
+ - *Structure:* should be template based on team standards and must exist.
+ - *Format:* preference is to use Markdown and convert with pandoc if possible.  Atlassian Crucible is an excellent tool.
+ - *Methods of work implementation:*  Performed at the end of a code development cycle per change prior to full merge into main.
+ - *Project Artifact Location:* central location, likely with Project management Plans and similar documentation.
+ - *Periodicity of Update:* Performed with each change.
+ - *Comments:* None
+ - *Standard:* [Code Review](./Template_005_CodeReviewStandard.md)
+ - *References:* APSC-DV-\*, multiple ASD references.
 
 A code review is when one or more developers check someone else’s computer program code to find mistakes, improve quality, and make sure it follows agreed-upon rules before the code is added to the final project. It helps catch problems early and keeps the software working well.
 
 <a name="configuration_management_standard"/>
 
 #### Configuration Management Standard
+ - *Structure:* Must be utilized and must be a centralized softare server solution, like Git or another version management system.
+ - *Format:* Git
+ - *Methods of work implementation:*  Performed with branch, trunk, tag strategy. Peformed minimally every few hours.
+ - *Project Artifact Location:* central location, hosted by server.
+ - *Periodicity of Update:* Performed no less than every few hours on your branch and pushed to the central server (upstream).
+ - *Comments:* None
+ - *Standard:* [Configuration Management Standard](./Template_006_ConfigurationManagementStandard.md)
+ - *References:* APSC-DV-\*, multiple ASD references.
+
+Software Configuration Management (SCM) is the process of keeping track of and controlling all the changes made to software throughout its development and use. In simple terms, it helps teams manage updates to the software, including code, documents, and settings, so that everything stays organized, consistent, and reliable.
 
 <a name="design_document_standard"/>
 
