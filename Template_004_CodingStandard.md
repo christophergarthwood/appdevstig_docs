@@ -153,19 +153,19 @@ Namespaces are one honking great idea -- let's do more of those!
 ## Static Code Analysis (SonarQube)
 1. Source code will be scanned for classic errors using a standardized tool (could be considered standard if a custom written solution is the only way to verify error for a language).
 2. No issues flagged as Critical will be permitted to go forward into a release unless:
-	2.1.  Agreed to by team.
-	2.2.  Update tool configuration file so error doesn't propagate.
-	2.3.  CM configuration file for tool.
-	2.4.  Add to comments/readme in deployment document and design document (coding standards)
+	+  Agreed to by team.
+	+  Update tool configuration file so error doesn't propagate.
+	+  CM configuration file for tool.
+	+  Add to comments/readme in deployment document and design document (coding standards)
 3. No Application Development STIG issues will be permitted going forward (get APP codes) into a release unless:
-	3.1.  Agreed to by team after performing a dedicated code review to ensure vulnerabilities are not considered dangerous to the project.
-	3.2.  Documented in the comments/readme in deployment document.
-	3.3.  Added to a new story in the backlog to be addressed immediately at next cycle.
-	3.4.  Customer notified of plan.
+	+  Agreed to by team after performing a dedicated code review to ensure vulnerabilities are not considered dangerous to the project.
+	+  Documented in the comments/readme in deployment document.
+	+  Added to a new story in the backlog to be addressed immediately at next cycle.
+	+  Customer notified of plan.
 
 ## Useful tools related to Code Standards enforcement
 
-+ 1. **Linters:**
+1. **Linters:**
 
 Linters analyze code for potential errors, bugs, and violations of coding standards.
 They can be customized to enforce specific style rules and best practices.
@@ -173,25 +173,25 @@ Examples: ESLint (JavaScript/JSX), Flake8 (Python), StyleCop (.NET).
 ESLint, for example, identifies and fixes code issues based on predefined rules, promoting consistency in JavaScript projects.
 Linters help avoid syntax errors, ensure consistent indentation, and enforce naming conventions.
 
-+ 2. **Code Formatters:**
+2. **Code Formatters:**
 
 Code formatters automatically format code according to predefined style guides.
 They ensure consistent code structure, layout, and indentation.
 Examples: Prettier, Beautify, ESLint (when used for formatting), Stylelint.
 Prettier, for instance, automatically formats code, handling issues like unnecessary whitespace and trailing commas.
 
-+ 3. **Static Analysis Tools:**
+3. **Static Analysis Tools:**
 
 Static analysis tools analyze code without executing it, identifying potential issues such as security vulnerabilities and code quality problems.  They can detect issues like SQL injection, XSS, and memory leaks.  Examples: SonarQube, Veracode, Klocwork, Snyk Code, Semgrep.  SonarQube offers comprehensive code quality and security analysis for multiple languages.
 
-+ 4. **IDE Plugins:**
+4. **IDE Plugins:**
 
 Many IDEs (Integrated Development Environments) offer plugins that enhance code quality and enforce coding standards.
 These plugins can include linting, formatting, and code analysis features.
 Examples: ReSharper for .NET, various plugins for Visual Studio Code.
 IDEs like Visual Studio Code and WebStorm provide features like syntax highlighting, code completion, and linting integration.
 
-+ 5. **Other Tools:**
+5. **Other Tools:**
 
   + 5.1 Continuous Integration/Continuous Deployment (CI/CD) tools: Automate testing and deployment, ensuring code quality and adherence to standards throughout the development lifecycle.
 
