@@ -46,6 +46,18 @@ Real-time with application development.
 
    + [coding Standards and Guidelines](https://www.geeksforgeeks.org/software-engineering/coding-standards-and-guidelines/)
 
+## Miscellanous
+
+[Case Preference Per Language](#case_preference_per_language)
+[Documentation Tools](#documentation_tools)
+[Scanning Tools](#scanning_tools)
+[Linting Tools](#lintint_tools)
++ [Python](#python)
++ [Bash](#bash)
++ [Java](#Java)
++ [Perl](#perl)
++ [C](#c)
++ [FORTRAN](#fortran)
 __________________________________________________________________________________________________________________________________
 # **Template**
 
@@ -199,6 +211,8 @@ IDEs like Visual Studio Code and WebStorm provide features like syntax highlight
 
   + 5.3 Dependency scanning tools: Identify vulnerabilities in open-source dependencies.
 
+<a name="case_preference_per_language"/>
+
 ## Case Preference Per Language
 
 |Language	|Style	    |Example	                |URI|
@@ -210,22 +224,32 @@ IDEs like Visual Studio Code and WebStorm provide features like syntax highlight
 |Fortran	|Snake case	|this_is_my_var	            |https://gcc.gnu.org/onlinedocs/gcc-6.1.0/gfortran/Naming-conventions.html; http://www.fortran90.org/src/best-practices.html|
 |C / C++    |           |                           | |			
 
+<a name="documentation_tools"/>
 
 ## Documentation Tools
+
 |Name	   |URI	                             |Notes|
-|----------|---------------------------------|     |
+|----------|---------------------------------|-----|
 |Doxygen   |http://www.doxygen.nl/           |Converts many languages to highly useful documentation.|
 |Pandoc	   |https://pandoc.org/              |Converts Markdown, which you should be using, to any format you want.|
 |FORTRAN Documenter	| http://www.doxygen.nl/ |Converts FORTRAN source to highly useful documentation.|
 
+<a name="scanning_tools"/>
+
 ## Scanning Tools
+
 |Name	                   |URI	              |Notes|
 |--------------------------|------------------|-----|
 |SonarQube	               |See CI/CD Pipeline|	Performs static code analysis against configurable templates.|
 |Visual Code Grepper (VCGV)|https://github.com/nccgroup/VCG|Only works in Windows (sorry) and is an automated code security review tools which handles: C, C++, Java, VB, C#, PL/SQL.|
 |Flawfinder|https://dwheeler.com/flawfinder/|A simple program that examines C/C++ source code and reports possible security weaknesses (“flaws”) sorted by risk level.|
 
+<a name="linting_tools"/>
+
 ## Formatting / Linting Tools
+
+<a name="python"/>
+
 ### Python
 
 |Name	    |URI	                               |Notes|
@@ -234,11 +258,15 @@ IDEs like Visual Studio Code and WebStorm provide features like syntax highlight
 |Pyflakes	|https://pypi.python.org/pypi/pyflakes |Code checker / linter.|
 |black	    |Use Anaconda.	                       |Anaconda|
 
-###C/C++
+<a name="c"/>
+
+### C/C++
 
 |Name|URI|Notes|
 |----|---|-----|
 |Uncrustify|http://uncrustify.sourceforge.net/|Actual format tool.|
+
+<a name="perl"/>
 
 ### Perl
 
@@ -246,10 +274,14 @@ IDEs like Visual Studio Code and WebStorm provide features like syntax highlight
 |----|---|-----|
 |perltidy|http://perltidy.sourceforge.net/|Saves file to *.pdy|
 
+<a name="java"/>
+
 ### Java
 |Name|URI|Notes|
 |----|---|-----|
 |google-java-format-1.5|https://github.com/google/google-java-format|Invocation with java –jar.|
+
+<a name="bash"/>
 
 ### Bash
 
@@ -257,6 +289,8 @@ IDEs like Visual Studio Code and WebStorm provide features like syntax highlight
 |----|---|-----|
 |Shellcheck|https://github.com/koalaman/shellcheck|https://www.shellcheck.net/|
 |Beautysh|https://github.com/bemeurer/beautysh| Will overwrite your files use –b or perform your own backup.|
+
+<a name="fortran"/>
 
 ### FORTRAN
 
