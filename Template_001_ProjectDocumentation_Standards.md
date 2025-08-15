@@ -4,7 +4,6 @@
 
 |Version       |Date (YYYY/MM/DD)    |Description |
 |--------------|---------------------|------------|
-
 |v0.1          | 2025/08/15          |Inception of effort. |
 
 ## Table of Contents
@@ -16,7 +15,9 @@
 + [References](#references)
 
 <a name="executive_summary"/>
+
 ## Executive Summary
+
 A standardized approach to software project management, grounded in PMI and Department of Defense (DOD) acquisition policy, delivers critical value to organizations. PMI’s globally recognized framework ensures consistent project planning, execution, and control, enabling project teams to improve efficiency, manage risks proactively, and deliver repeatable success across projects. By adhering to standards such as those outlined in the PMBOK Guide, teams benefit from a common vocabulary, validated methodologies, and best practices that promote stakeholder alignment, transparency, and resource optimization.
 
 Within the DOD, acquisition policy mandates the use of flexible, adaptive standards for software development. The DOD’s Software Acquisition Pathway focuses on rapid and iterative software delivery, integrating modern methodologies such as Agile and DevSecOps to meet urgent mission needs. These standard-driven processes enhance risk management, expedite decision-making, and ensure cybersecurity and intellectual property considerations are addressed from project inception.
@@ -24,6 +25,7 @@ Within the DOD, acquisition policy mandates the use of flexible, adaptive standa
 Overall, the integration of proven PMI standards and DOD policy fosters accountability, improves communication, and raises the quality of deliverables. Organizations experience greater consistency and predictability in projects, while also adapting to evolving technology and mission requirements—a competitive advantage essential for mission success and organizational growth.
 
 <a name="introduction"/>
+
 ## Introduction
 
 The goal of this document is to establish minimal standards towards consistent software delivery grounded in DOD policy and procedures.  
@@ -45,6 +47,7 @@ Cloud-centric behavior prioritize continuous learning, open communication, and c
 Cloud culture seeks automation over manual processes, exercises Agile workload management, utilizes abstraction and seeks scalable design first.
 
 <a name="minimal_documentation_set"/>
+
 ### Minimal Documentation Set
 
 The following standards represents the minimal set of documents / artifacts a software project should create, maintain, and reference throughout the Software Development Lifecycle (SDLC).  Each standard provides justification for existence through references to US Government policy and Industry recognized practices.  Decentralized command is a tennant of the US military, without mechanisms in place to help ensure each team member has a means of understanding protocol / procedure you lose cohesion in the face of inevitable personnel change outs.
@@ -147,9 +150,11 @@ Communication Standards
   - CTG 80.7 community messages (ALL), downtime, etc.
 
 <a name="documentation_explained"/>
+
 ### Documentation Explained
  
 <a name="project_plan"/>
+
 #### Project Plan (APSC-DV-003210)
  - *Structure:* should be template based on customer standards else develop a template reference the template and utilize that.
  - *Format:* preference is Markdown using pandoc to transform the content, else utilize MS Word.
@@ -171,45 +176,59 @@ Tracking flaws in the project plan will help identify code elements to be change
 The Department of Defense (DoD), other agencies and DoD contractors use Integrated Master Plans (IMPs) and Integrated Master Schedules (IMSs) to plan and manage projects from inception to completion. Together the IMP and IMS integrate the activities and schedule components necessary to complete a project successfully.  The IMP typically describes three levels of activities: Events, Accomplishments, and Criteria.  The IMS adds a fourth level of detail: Tasks, with detailed timelines and deadlines. Each level consists of activities to fulfill the next level in the hierarchy. Programs complete Tasks to satisfy Criteria, which roll up to satisfy Accomplishments, which roll up to complete an Event. The IMP and IMS are integrated, so changes to the plan are reflected in the schedule.
 
 <a name="acg"/>
+
 #### Application Configuration Guide (ACG) Standards
 
 <a name="coding_standard"/>
+
 #### Coding Standard](#coding_standard)
 
 <a name="code_review_standard"/>
+
 #### Code Review Standard
 
 <a name="configuration_management_standard"/>
+
 #### Configuration Management Standard
 
 <a name="design_document_standard"/>
+
 #### Design Document Standard
 
 <a name="deployment_standard"/>
+
 #### Deployment Standard
 
 <a name="delivery_standard"/>
+
 #### Delivery Standard
 
 <a name="threat_modeling_standard"/>
+
 #### Threat Modeling Standard
 
 <a name="logging_standard"/>
+
 #### Logging Standard
 
 <a name="tracking_system_standard"/>
+
 #### Tracking System Standard
 
 <a name="test_plan_standard"/>
+
 #### Test Plan Standard
 
 <a name="sdlc_standard"/>
+
 #### Software Development Lifecycle (SDLC) Standard
 
 <a name="communication_standard"/>
+
 #### Communication Standard
 
 <a name="references"/>
+
 ## References
 + [Integrated Master Plan and Integrated Master Schedule Preparation and Use Guide, May 2023](https://ac.cto.mil/wp-content/uploads/2023/05/IMP-IMS-Guide-2023.pdf)
 
