@@ -61,9 +61,6 @@ Reviewing each standard and creating the minimally required content within each 
 + [Coding Standard](#coding_standard)
 
 + [Code Review Standard](#code_review_standard)
- - Standard exists is sufficient.
- - Template provides references.
- - Artifacts have to exist.
 
 + [Configuration Management Standard](#configuration_management_standard)
  - Standard exists is sufficient.
@@ -209,27 +206,25 @@ All deployment configuration settings are to be documented in the Application Co
 <a name="coding_standard"/>
 
 #### Coding Standard
- - *Structure:* should be template based on customer standards else develop a template reference the template and utilize that.
- - *Format:* preference is Markdown using pandoc to transform the content, else utilize MS Word.
- - *Methods of work implementation:*  technical lead is responsible and maintains.
- - *Project Artifact Location:* central location, with Project Managment Plan (PMP).
- - *Periodicity of Update:* reviewed Updated per Sprint Retrospective after completed stories.
- - *Comments:* aligned to methodology, easily accessed
- - *Standard:* [Application Configuration Guide](./Template_003_ApplicationConfigurationGuideStandard.md)
- - *References:* APSC-DV-003285, An Application Configuration Guide must be created and included with the application.
+ - *Structure:* should be template based on team standards and must exist.
+ - *Format:* preference is to use automated mechanism for conformance.  Alternate is Markdown using pandoc to transform the content, else utilize MS Word.
+ - *Methods of work implementation:*  technical lead is responsible and maintains, will use automation whenever possible.
+ - *Project Artifact Location:* central location, likely with project code files.
+ - *Periodicity of Update:* reviewed Updated per Sprint Retrospective, team discussion.
+ - *Comments:* Automation!
+ - *Standard:* [Coding Standard](./Template_004_CodingStandard.md)
+ - *References:* APSC-DV-003215, The application development team must follow a set of coding standards.
 
-A code review is when one or more developers check someone else’s computer program code to find mistakes, improve quality, and make sure it follows agreed-upon rules before the code is added to the final project. It helps catch problems early and keeps the software working well.
-
- - Universal (general)
- - Just simply must exist.
- - Template provides references.
- - Adherence automated minimally.
- - DO NOT use documents to drive change, use configurations.
- - Template provides references (APSC-DV-003215).
+A coding standard is a set of simple rules and guidelines that programmers follow when writing code. These rules help make the code easier to read, understand, and maintain by everyone on the team. It ensures that all the code looks and works in a consistent way.
 
 <a name="code_review_standard"/>
 
 #### Code Review Standard
+ - Standard exists is sufficient.
+ - Template provides references.
+ - Artifacts have to exist.
+
+A code review is when one or more developers check someone else’s computer program code to find mistakes, improve quality, and make sure it follows agreed-upon rules before the code is added to the final project. It helps catch problems early and keeps the software working well.
 
 <a name="configuration_management_standard"/>
 

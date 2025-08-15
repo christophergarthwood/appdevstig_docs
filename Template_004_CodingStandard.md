@@ -1,10 +1,53 @@
-# Coding Standard (Simple)
+# Title: Coding Standard 
 
-## Reference
-Application Security and Development (ASD) Security Technical Implementation Guide (STIG) Version 6, Release 3, 2025/04/02
- - APSC-DV-003215, The application development team must follow a set of coding standards.
+## Definition:                                                                                        
+The application development team must follow a set of coding standards.
 
-## Coding Standard
+Coding standards are guidelines established by the development team or individual developers that recommend programming style, practices and methods.  The coding standards employed will vary based upon the programming language that is being used to develop the application and the development team.
+
+Coding standards often cover the use of white space characters, variable naming conventions, function naming conventions, and comment styles.  Implementing coding standards provides many benefits to the development process.  These benefits include code readability, coding consistency among both individual and teams of developers as well as ease of code integration.  
+
+The following are examples of what will typically be in a coding standards document.  This list is an example of what one can expect to find in typical coding standard documents and is not a comprehensive list:
+
+- Indent style conventions
+- Naming conventions
+- Line length conventions
+- Comment conventions
+- Programming best practices
+- Programming style conventions
+
+Coding standards allow developers to quickly adapt to code which has been developed by various members of a development team.  Coding standards are useful in the code review process as well as in situations where a team member leaves and duties must then be assigned to another team member.  
+
+Code conforming to a standard format is easier to read, especially if someone other than the original developer is examining the code.  In addition, formatted code can be debugged and corrected faster than unformatted code.
+
+Introducing coding standards can help increase the consistency, reliability, and security of the application by ensuring common programming structures and tasks are handled by similar methods, as well as, reducing the occurrence of common logic errors.
+
+## Requirements/Specifications/Guidelines:                                                            
+
+
+## Measurable and Actionable:
+Analysis of code submitted to the repository should conform, largely, with the coding standard.
+
+## Purpose:
+The purpose of a coding standard is to establish clear, consistent rules and guidelines that developers follow when writing code. These standards ensure that the code is clean, readable, and maintainable, which makes it easier for teams to collaborate, find and fix bugs, and extend the software over time. Coding standards also help reduce errors, improve security, and enhance overall software quality by promoting uniformity across the codebase regardless of who writes the code. Ultimately, they lead to more efficient development and better long-term project success.
+
+## Timelines: 
+Real-time with application development.                                                                                         
+
+## Reference(s):
+   Application Security and Development (ASD) Security Technical Implementation Guide (STIG) Version 6, Release 3, 2025/04/02
+
+   - APSC-DV-003215, The application development team must follow a set of coding standards.
+
+  - Universal (general)
+ - Just simply must exist.
+ - Template provides references.
+ - Adherence automated minimally.
+ - DO NOT use documents to drive change, use configurations.
+ - Template provides references (APSC-DV-003215).
+
+__________________________________________________________________________________________________________________________________
+# **Template**
 
 1.  Will have "Top 10" things not to do in the language(s) you're developing in.
 2.  Will have "Top 5+" things that are considered best practices for the language(s) you're developing in.
