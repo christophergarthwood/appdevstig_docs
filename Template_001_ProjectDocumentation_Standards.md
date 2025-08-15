@@ -57,9 +57,6 @@ Reviewing each standard and creating the minimally required content within each 
 + [Project Plan and Master Integrated POA&M](#project_plan)
 
 + [Application Configuration Guide (ACG) Standard](#acg)
- - Must exist
- - Template provides references.
- - APSC-DV-003285, An Application Configuration Guide must be created and included with the application.
 
 + [Coding Standard](#coding_standard)
  - Universal (general)
@@ -178,6 +175,42 @@ The Department of Defense (DoD), other agencies and DoD contractors use Integrat
 <a name="acg"/>
 
 #### Application Configuration Guide (ACG) Standards
+ - *Structure:* should be template based on customer standards else develop a template reference the template and utilize that.
+ - *Format:* preference is Markdown using pandoc to transform the content, else utilize MS Word.
+ - *Methods of work implementation:*  technical lead is responsible and maintains.
+ - *Project Artifact Location:* central location, with Project Managment Plan (PMP).
+ - *Periodicity of Update:* reviewed Updated per Sprint Retrospective after completed stories.
+ - *Comments:* aligned to methodology, easily accessed
+ - *Standard:* [Application Configuration Guide](./Template_003_ApplicationConfigurationGuideStandard.md)
+ - *References:* APSC-DV-003285, An Application Configuration Guide must be created and included with the application.
+
+The Application Configuration Guide is any document or collection of documents used to configure the application.  These documents may be part of a user guide, secure configuration guide, or any guidance that satisfies the requirements provided herein.
+
+Configuration examples include but are not limited to:
+
+ - Encryption Settings
+ - PKI Certificate Configuration Settings
+ - Password Settings
+ - Auditing configuration
+ - AD configuration
+ - Backup and disaster recovery settings
+ - List of hosting enclaves and network connection requirements
+ - Deployment configuration settings
+ - Known security assumptions, implications, system level protections, best practices, and required permissions
+
+Development systems, build systems, and test systems must operate in a standardized environment. These settings are to be documented in the Application Configuration Guide.
+
+Examples include but are not limited to:
+
+ - List of development systems, build systems, and test systems.
+ - Versions of compilers used
+ - Build options when creating applications and components
+ - Versions of COTS software (used as part of the application)
+ - Operating systems and versions
+ - For web applications, which browsers and what versions are supported.
+
+All deployment configuration settings are to be documented in the Application Configuration Guide and the Application Configuration Guide must be made available to application hosting providers and application/system administrators.
+
 
 <a name="coding_standard"/>
 
