@@ -16,3 +16,5 @@ Utilize the following content as a means of establishing and validating a standa
 
 + How to Meet the Standard (Guidance or Methods): Provides information or methods for achieving the requirements outlined in the standard.                                                                                                                 
 + When to Meet the Standard (Timeframes/Policy Alignment): Indicates any deadlines or time-based requirements, and alignment with relevant policies.    
+
++ References (Justification / Rules): Indicate where the guidance, rule, or justification for the standard comes from with a link provided to the content referenced.
