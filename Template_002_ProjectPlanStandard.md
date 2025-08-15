@@ -1,4 +1,4 @@
-# Project Plan: [Project Name]
+# Project Plan Standard
 
 ## Introduction
 
@@ -9,6 +9,10 @@ Utilize the template below to properly document by way of explicit input or refe
 + Update the Milestones and Timeline according to changes experienced per cycle / Sprint / iteration of work.
 
 The PM should review the Project Plan with the customer on a bi-yearly basis to ensure understanding of all facets of the project are still apropos and that customer expectations are being met.
+
+___________________________________________________________________________________________________________________________________
+
+# Project Plan for [Plan title]
 
 ## 1. Project Overview
 
