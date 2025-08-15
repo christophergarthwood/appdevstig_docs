@@ -59,12 +59,6 @@ Reviewing each standard and creating the minimally required content within each 
 + [Application Configuration Guide (ACG) Standard](#acg)
 
 + [Coding Standard](#coding_standard)
- - Universal (general)
- - Just simply must exist.
- - Template provides references.
- - Adherence automated minimally.
- - DO NOT use documents to drive change, use configurations.
- - Template provides references (APSC-DV-003215).
 
 + [Code Review Standard](#code_review_standard)
  - Standard exists is sufficient.
@@ -214,7 +208,24 @@ All deployment configuration settings are to be documented in the Application Co
 
 <a name="coding_standard"/>
 
-#### Coding Standard](#coding_standard)
+#### Coding Standard
+ - *Structure:* should be template based on customer standards else develop a template reference the template and utilize that.
+ - *Format:* preference is Markdown using pandoc to transform the content, else utilize MS Word.
+ - *Methods of work implementation:*  technical lead is responsible and maintains.
+ - *Project Artifact Location:* central location, with Project Managment Plan (PMP).
+ - *Periodicity of Update:* reviewed Updated per Sprint Retrospective after completed stories.
+ - *Comments:* aligned to methodology, easily accessed
+ - *Standard:* [Application Configuration Guide](./Template_003_ApplicationConfigurationGuideStandard.md)
+ - *References:* APSC-DV-003285, An Application Configuration Guide must be created and included with the application.
+
+A code review is when one or more developers check someone else’s computer program code to find mistakes, improve quality, and make sure it follows agreed-upon rules before the code is added to the final project. It helps catch problems early and keeps the software working well.
+
+ - Universal (general)
+ - Just simply must exist.
+ - Template provides references.
+ - Adherence automated minimally.
+ - DO NOT use documents to drive change, use configurations.
+ - Template provides references (APSC-DV-003215).
 
 <a name="code_review_standard"/>
 
