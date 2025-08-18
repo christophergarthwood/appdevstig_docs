@@ -2,15 +2,29 @@
 
 ## Definition:
 
-Software Configuration Management (SCM) is the process of keeping track of and controlling all the changes made to software throughout its development and use. In simple terms, it helps teams manage updates to the software, including code, documents, and settings, so that everything stays organized, consistent, and reliable.
+**Configuration management** is a structured process used to consistently identify, record, and control the various components (hardware, software, documentation, etc.) that make up a system, organization, or IT environment. Its main goal is to ensure the integrity and stability of all these components throughout their lifecycle, from creation to retirement.
+
+***Key principles include:***
+
+*Identification:* Clearly labeling and cataloging configuration items (CIs) like hardware, software, and documents to understand what exists and how it fits into the overall environment.
+
+*Control:* Managing and documenting changes to CIs with approvals, ensuring modifications are deliberate and meet requirements.
+
+*Status tracking:* Monitoring and recording the current state, version, and relationships of each CI, so you always know what's active, what has changed, and why.
+
+*Audits:* Regularly reviewing CIs and processes to verify accuracy and compliance, helping detect and correct issues early.
+
+Configuration management helps organizations achieve greater reliability, improved troubleshooting, easier recovery, and compliance with security or regulatory standards. It’s widely used in IT, software engineering, and manufacturing—anywhere change control and consistency are essential for business success.
+
+***Software Configuration Management (SCM)*** is the process of keeping track of and controlling all the changes made to software throughout its development and use. In simple terms, it helps teams manage updates to the software, including code, documents, and settings, so that everything stays organized, consistent, and reliable.
 
 In Software Configuration Management (SCM), the terms branch, trunk, and tag represent key concepts used in version control to organize and manage changes in the codebase:
 
-Trunk: This is the main line of development where the most current and stable code resides. It represents the official version of the software that is under continuous development. Developers usually merge their completed and tested changes into the trunk.
+*Trunk:* This is the main line of development where the most current and stable code resides. It represents the official version of the software that is under continuous development. Developers usually merge their completed and tested changes into the trunk.
 
-Branch: A branch is a separate copy of the code created from the trunk (or another branch) to work on new features, bug fixes, or experiments without affecting the main codebase. Branches allow teams to develop or test changes in isolation. Once the work is stable and approved, it is merged back into the trunk. Branches can be short-lived (feature branches) or long-lived (release or maintenance branches).
+*Branch:* A branch is a separate copy of the code created from the trunk (or another branch) to work on new features, bug fixes, or experiments without affecting the main codebase. Branches allow teams to develop or test changes in isolation. Once the work is stable and approved, it is merged back into the trunk. Branches can be short-lived (feature branches) or long-lived (release or maintenance branches).
 
-Tag: A tag is a snapshot of the code at a specific point in time, often marking a release version like 1.0 or 2.1. Unlike branches, tags are typically immutable, meaning they are not changed after creation. Tags help identify important milestones, releases, or checkpoints in the code history.
+*Tag:* A tag is a snapshot of the code at a specific point in time, often marking a release version like 1.0 or 2.1. Unlike branches, tags are typically immutable, meaning they are not changed after creation. Tags help identify important milestones, releases, or checkpoints in the code history.
 
 Together, these concepts help teams manage multiple concurrent development efforts, maintain stable release versions, and track important states of the project efficiently. For example, the trunk holds ongoing development, branches are used for isolated changes, and tags mark stable releases or versions for future reference.
 
@@ -84,16 +98,41 @@ ________________________________________________________________________________
 
 ### Project Background:
 
+Provide an overview of the goal and what requirement(s) are being satisfied with capability(ies) to satisfy that goal.  What is this project of benefit to the customer.
+
 ### Purpose and Scope:
+
+Further refine the purpose of the capability described in the previous section and create a bounding box for the project.  What are the extents of actual scope and perhaps end-goal scope.
 
 ### Assumptions and Constraints:
 
+Document any assumptions or contraints in an enumerated list that impact this project.  Assumptions and Constraints might need [risk management](#risk_management).
+
 ### Roles and Responsibilities:
 
-### Configuration Management Strategy
+Identify any roles and the responsibilties of each role in the context of the project as a whole.
+
+### Configuration Management (CM) Strategy
 
 #### Configuration Management Strategy Overview
 Describe the Configuration Management Strategy for the project. Suggested text is provided below.  The Configuration Management Strategy describes the planned activities to accomplish the setup and management of project environments related to the project.
+
+***Example:***
+This project's configuration management strategy is a structured approach to track, control, and organize changes to a software project’s artifacts—such as code, documentation, and environment settings—across its lifecycle. Key elements of an effective strategy include:
+
++ Planning and Identification: Identify Configuration Items (CI's) and utilize a process for management of those CI's.
+
++ Version Control: Use version control systems (e.g., Git) to record every change. Utilize Trunk, Branch, Tag methodology.
+
++ Change Management: Implement a workflow to review, approve, and document changes. Use approvals from senior team leads to ensure only authorized modifications go live.
+
++ Status Tracking: Utilize a tracking system and correlate changes (commit scraping) from the version control system to the tracking system.
+
++ Audits and Reviews: Each Sprint Retrospective look at metrics and general details related to adherence to the CM plan.
+
++ Standardization and Automation: Establish and enforce guidelines for consistent configuration; use automation tools to apply and validate configurations, especially in multi-environment or cloud contexts.
+
++ Rollback and Disaster Recovery: Plan for rapid restoration from trusted baselines in case of faults or failures.
 
 ##### Documentation Repositories
 Describe the overall strategy for the overall project’s usage of documentation repositories.
@@ -115,18 +154,18 @@ Describe the pre-production environment that the project will use and its purpos
 
 ***Example:***
 
-|Environment|Network Name|Server Name          |Ports         |Purpose / Function        |Description|
-|-----------|------------|---------------------------------------------------------------|-----------|
-|Operational|Ocean domain|ws-las.ocean.navy.mil|443           |Proxy Server              |Apache instance that serves as proxy server for all incoming requests.|
+|Environment |Network Name |Server Name           |Ports         |Purpose or Function       |Description|
+|------------|-------------|----------------------|--------------|--------------------------|-----------|
+|Operational |Ocean domain |ws-las.ocean.navy.mil |443           |Proxy Server              |Apache instance that serves as proxy server for all incoming requests.|
 
 ##### Production (Operations) Environment
 Describe the production environment that the project will use and its purpose. Primary concern of this element is the actual operational environment that the workload for the customer executes on.
 
 ***Example:***
 
-|Environment|Network Name|Server Name          |Ports         |Purpose / Function        |Description|
-|-----------|------------|---------------------------------------------------------------|-----------|
-|Operational|Ocean domain|ws-las.ocean.navy.mil|443           |Proxy Server              |Apache instance that serves as proxy server for all incoming requests.|
+|Environment |Network Name |Server Name           |Ports         |Purpose or Function      |Description|
+|------------|-------------|----------------------|--------------|-------------------------|-----------|
+|Operational |Ocean domain |ws-las.ocean.navy.mil |443           |Proxy Server             |Apache instance that serves as proxy server for all incoming requests.|
 
 #### Tools Used for Environment Management
 Describe the tools used to management the environment.  If you use CI/CD pipelines a basic one paragraph description with location information is sufficient, however a diagram showing the workflow or Mermaid input is a minimal requirement.
@@ -137,8 +176,8 @@ If you use a code repository such as Git and/or an artifact repository such as J
 
 |Environment|Network Name|Server Name|Purpose / Function|Description|
 |-----------|------------|-----------|------------------|-----------|
-|CI/CD      |Cosmo DEV   |DarkStar   |Jenkins Server    |Overall runtime environment for CI/CD pipeline to include SonarQube and basic formatting expectations.|
-|SCM        |Cosmo DEV   |cosmo-git  |Git Server        |Code repository for project and all configuration files within the project.|
+|CI/CD      |Our DEV     |DarkStar   |Jenkins Server    |Overall runtime environment for CI/CD pipeline to include SonarQube and basic formatting expectations.|
+|SCM        |Our DEV     |awesome-git  |Git Server        |Code repository for project and all configuration files within the project.|
 
 #### Environment Access
 
@@ -165,8 +204,8 @@ Data is transferred with *harvester* scripts via cronjob to shell script invocat
 
 |Data Concept           |Method                       |Source            |Target                        | Description|
 |-----------------------|-----------------------------|------------------|------------------------------|------------|
-|Global NetCDF Transfer |cronjob harvester for ERDDAP | ws-las3 cron -l  | ws-las5 ERDDAP server        |Update the ERDDAP application by invoking the ERDDAP dataset Java program to update datasets.xml|
-|Global Sonar  Transfer |cronjob harvester for PostgreSQL | ws-las3 cron -l  | ws-las6 PostgreSQL server|Update the PostgreSQL geospatial database by invoking Python code that reads Sonar data, creates SQL updates statements, and updates the database which ESRI Portal receives. |
+|Global NetCDF Transfer |cronjob harvester for ERDDAP | some-server3 cron -l  | some-server4 ERDDAP server        |Update the ERDDAP application by invoking the ERDDAP dataset Java program to update datasets.xml|
+|Global Cool Data  Transfer |cronjob harvester for PostgreSQL | some-server2 cron -l  | some-server6 PostgreSQL server|Update the PostgreSQL geospatial database by invoking Python code that reads Sonar data, creates SQL updates statements, and updates the database which ESRI Portal receives. |
 
 + Backup Schedule
 
@@ -242,4 +281,80 @@ If the project does not control the infrastructure configuration items, then thi
 |Name                      |Product                         |Location                  |Access Control  |Applicable Environments |
 |--------------------------|--------------------------------|--------------------------|----------------|------------------------|
 |AWS Storage Bucket        |Larg data storage bucket for data. |`url here` | Role here from previous table. | Operations, Staging, DEV|
+
+### Configuration Management System (CMS)
+
+#### Change Management
+Define the process for controlling changes to the system baselines and for tracking the implementation of those changes.  Usually a system change request (SCR) is used to provide information concerning the need to change a baseline system or system component (hardware, software, or documentation). If these processes are detailed in a separate, more detailed plan it should be referenced here.
+
+#### Documentation Configuration Management System
+1.	Describe the project documentation configuration management system(s), including the naming of the system, the purpose, naming standards, directory structure standards, owner, access and version controls.
+2.	Describe the backup and recovery approach including frequency of backup and recovery exercised and validation if required.
+3.	Describe the approach for removal/deletion/archival of project documents. Please include the project document selection process, storage medium, and responsibilities.
+4.	Describe the security and clearance requirements for the controlled project documents.
+5.	Describe the tools and techniques the project will use to let the configuration manager know when a controlled document must be updated based on an approved change request. Document specifics on how the configuration management system will interact with the change control process. >>
+
+#### Software / Code Configuration Management
+
+1.	Describe the project software/code configuration management system(s), including the naming of the system, the purpose, naming standards, directory structure standards, owner, access and version controls.
+2.	Describe the backup and recovery approach including frequency of backup and recovery exercised and validation if required.
+3.	Describe the archival approach for the controlled project software configuration items. Please include the storage medium, retention policy, retrieval process, and access controls
+4.	Describe the security and clearance requirements for the software configuration items.
+5.	Describe the tools and techniques the project will use to let the configuration manager know when a signed off code must be modified under the change request. Document specifics on how the software/code configuration management system will interact with the change control process. >>
+
+#### Infrastructure Configuration Management
+
+1.	Describe the project infrastructure configuration management system(s), including the naming of the system, the purpose, naming standards, directory structure standards, owner, access and version controls.
+2.	Describe the backup and recovery approach including frequency of backup and recovery exercised and validation if required.
+3.	Describe the archival approach for the system or infrastructure/environment: Include the storage medium, retention policy, retrieval process, and access controls
+4.	Describe any security and clearance requirements for access and configuration of the infrastructure
+5.	Describe the tools and techniques the project will use to let the configuration manager know when a controlled infrastructure item must be modified under the change request. Document specifics on how the configuration management system will interact with the change control process.
+
+#### Interface Configuration Management
+
+1.	Describe the project interface configuration management system(s), including the naming of the system, the purpose, naming standards, directory structure standards, owner, access and version controls.
+2.	Describe the tools and techniques the project will use to let the configuration manager know when a controlled infrastructure item must be modified under the change request. Document specifics on how the configuration management system will interact with the change control process. 
+
+#### Database Configuration Management
+
+1.	Describe the project database configuration management system(s), including the naming of the system, the purpose, naming standards, directory structure standards, owner, access and version controls.
+2.	Describe the backup and recovery approach including frequency of backup and recovery exercised and validation if required.
+3.	Describe the archival approach for the system: Include the storage medium, retention policy, retrieval process, and access controls
+4.	Describe any security and clearance requirements for access and configuration of the database
+5.	Describe the tools and techniques the project will use to let the configuration manager know when a controlled database item must be modified under the change request. Document specifics on how the configuration management system will interact with the change control process. >>
+
+#### Library Configuration Management
+
+1.	Describe the project libraries configuration management system(s), including the naming of the system, the purpose, naming standards, directory structure standards, owner, access and version controls.
+2.	Describe the tools and techniques the project will use to let the configuration manager know when a controlled library item must be modified under the change request. Document specifics on how the configuration management system will interact with the change control process.
+
+### CM Plan Maintenance
+
+Describe the activities and responsibilities necessary to ensure continued CM planning during the life cycle of the project. Identify all of those responsible for monitoring the CM plan. Describe how frequently updates are to be performed; how changes to the CM plan are to be evaluated and certified; and how changes to the CM plan are to be made and communicated. 
+
+Example: Control Boards, CM Change Management Process, etc.
+
+<a name="risk_management"/>
+
+#### Risk Management
+
+Enumerate any risks perceived with the existing CM Plan and document stragegies employed to help mitigate that risk in a favorable way for the project.
+
+###	Configuration Management Automation Support
+
+1.	Automated Tools
+
+Describe any automated tools used.
+
+2.	Work Space Management
+
+Describe the processes used for automated software source code control tools.
+
+3.	Build Management
+
+Describe the controls in place to manage the building of executable code.
+
+
+
+
 
