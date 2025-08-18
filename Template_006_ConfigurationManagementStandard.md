@@ -110,7 +110,23 @@ Document any assumptions or contraints in an enumerated list that impact this pr
 
 ### Roles and Responsibilities:
 
-Identify any roles and the responsibilties of each role in the context of the project as a whole.
+Identify any roles and the responsibilties of each role in the context of the project as a whole.  The leads of each role are ultimately responsible for success or failure at that scope of the project and will approve / disapprove changes to the system according to their level of involvement.
+
+***Example:***
+
+|Name                | Named Participant   |Definition                                         |
+|--------------------|---------------------|---------------------------------------------------|
+|Product Owner       | ???                 |Defines the project vision, prioritizes requirements, acts as the main point of contact for stakeholders, manages the product backlog, and ensures the final product meets user and business needs.|
+|Project Manager     | ???                 |Plans and coordinates the project, manages schedules and budgets, allocates resources, monitors progress, addresses risks and issues, and communicates with stakeholders to keep everyone informed.|
+|Software Architect  | ???                 |Designs the system’s overall structure, sets technical standards, chooses technologies, ensures scalability, security, and performance, and guides the development team on implementation.|
+|Business Analyst    | ???                 |Gathers, analyzes, and documents business requirements; translates business needs into technical requirements; and bridges communication between stakeholders and the development team.|
+|Software Developer  | ???                 |Writes, tests, and maintains code; implements features and fixes; participates in code reviews; and collaborates with other team members to deliver quality software.|
+|UI/UX Designer      | ???                 |Designs interfaces and user experiences; creates wireframes, prototypes, and visual assets; and works with developers to ensure usability and branding consistency.|
+|Middleware Admin    | ???                 |Performs configuration and related administrative tasks on the application services: app server, web server, database server of the project to include patch support to the System Administrator.  Pre-testing of patches for the target environment is the responsibility of the middleware admin on a managed DEV environment prior to any upgrades.|
+|System Admin        | ???                 |Overall system responsibility, patch management, authentication, authorization, backups, uptime, and any other aspect of the Operating System (OS) for the given project platform(s).|
+|Tester/Quality Assurance Specialist| ???  | Develops and executes test plans; finds and reports bugs; verifies software functions as expected; and ensures product reliability and quality.|
+|Team Lead/Tech Lead | ???                 |Provides technical guidance, supports team collaboration, monitors progress, resolves conflicts, and ensures delivery of project goals.|
+|Scrum Master (Agile teams)| ???           | Facilitates Scrum processes, coaches the team in Agile practices, removes obstacles, and ensures continuous improvements.|
 
 ### Configuration Management (CM) Strategy
 
@@ -154,18 +170,18 @@ Describe the pre-production environment that the project will use and its purpos
 
 ***Example:***
 
-|Environment |Network Name |Server Name           |Ports         |Purpose or Function       |Description|
-|------------|-------------|----------------------|--------------|--------------------------|-----------|
-|Operational |Ocean domain |ws-las.ocean.navy.mil |443           |Proxy Server              |Apache instance that serves as proxy server for all incoming requests.|
+|Environment |Network Name |Server Name                     |Ports         |Purpose or Function       |Description|
+|------------|-------------|--------------------------------|--------------|--------------------------|-----------|
+|Operational |Some domain  |some-server.at.somplace.special |443           |Proxy Server              |Apache instance that serves as proxy server for all incoming requests.|
 
 ##### Production (Operations) Environment
 Describe the production environment that the project will use and its purpose. Primary concern of this element is the actual operational environment that the workload for the customer executes on.
 
 ***Example:***
 
-|Environment |Network Name |Server Name           |Ports         |Purpose or Function      |Description|
-|------------|-------------|----------------------|--------------|-------------------------|-----------|
-|Operational |Ocean domain |ws-las.ocean.navy.mil |443           |Proxy Server             |Apache instance that serves as proxy server for all incoming requests.|
+|Environment |Network Name |Server Name                          |Ports         |Purpose or Function      |Description|
+|------------|-------------|-------------------------------------|--------------|-------------------------|-----------|
+|Operational |Some domain  |some-server.at.sompeplace.operations |443           |Proxy Server             |Apache instance that serves as proxy server for all incoming requests.|
 
 #### Tools Used for Environment Management
 Describe the tools used to management the environment.  If you use CI/CD pipelines a basic one paragraph description with location information is sufficient, however a diagram showing the workflow or Mermaid input is a minimal requirement.
@@ -194,7 +210,7 @@ Who has access to the environment, what role?  Enumerate the roles first and the
 
 Describe the environment's schedule.  This comes in four-parts:
 
-+ Data Schedule
+##### Data Schedule
 
 Describe in details using the example table below how data is moved / transferred to the various environments.  If a consistent mechanism is used only one overall environment description is required.
 
@@ -207,7 +223,7 @@ Data is transferred with *harvester* scripts via cronjob to shell script invocat
 |Global NetCDF Transfer |cronjob harvester for ERDDAP | some-server3 cron -l  | some-server4 ERDDAP server        |Update the ERDDAP application by invoking the ERDDAP dataset Java program to update datasets.xml|
 |Global Cool Data  Transfer |cronjob harvester for PostgreSQL | some-server2 cron -l  | some-server6 PostgreSQL server|Update the PostgreSQL geospatial database by invoking Python code that reads Sonar data, creates SQL updates statements, and updates the database which ESRI Portal receives. |
 
-+ Backup Schedule
+##### Backup Schedule
 
 Describe in detail how data is backed up for the project.
 
@@ -219,11 +235,11 @@ All code is maintained in a Git repository, see environments.
 
 All persistent functions like ESRI Portal for ArcGIS are saved after a shutdown (weekly) to `/blah/blah`.
 
-+ Update Communication Plan and Schedule
+##### Update Communication Plan and Schedule
 
 Describe, in detail, the communicate methods and any scheduled time for deployments / updates that would affect customers' ability to use the software package.
 
-+ Routine Downtime
+##### Routine Downtime
 
 Describe, in detail, how the various human and computer components of this system are notified of routine downtime.
 
