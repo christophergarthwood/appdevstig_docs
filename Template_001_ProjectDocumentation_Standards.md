@@ -116,8 +116,6 @@ Reviewing each standard and creating the minimally required content within each 
   - APSC-DV-002930, The ISSO must ensure active vulnerability testing is performed. Ask the application representative to provide vulnerability test procedures and vulnerability test results.
 
 + [Software Development Lifecycle (SDLC) Standard](#sdlc_standard)
-  - Actual development of solutions whether it be system modifications or software modifications.
-  - Standard will be expected only for CTG 80.7 Portal proper development, however incoming projects must adhere to minimal delivery standards.
   - APSC-DV-003400, The Program Manager must verify all levels of program management, designers, developers, and testers receive annual security training pertaining to their job function.
 
 
