@@ -65,9 +65,6 @@ Reviewing each standard and creating the minimally required content within each 
 + [Configuration Management Standard](#configuration_management_standard)
 
 + [Design Document Standard](#design_document_standard)
- - Must exist.
- - Template provides references.
- - APSC-DV-003220, The designer must create and update the Design Document for each release of the application.
 
 + [Deployment Standard](#deployment_standard)
  - Primary - Ansible / Puppet
@@ -245,6 +242,20 @@ Software Configuration Management (SCM) is the process of keeping track of and c
 <a name="design_document_standard"/>
 
 #### Design Document Standard
+ - *Structure:* Must be utilized and must be a centralized softare server solution, like Git or another version management system.
+ - *Format:* Preference is Markdown with transformation via pandoc.
+ - *Methods of work implementation:*  Executed by Technical Lead with discussion to Project Manager.
+ - *Project Artifact Location:* With Project Management Plan (PMP) or related project artifacts.
+ - *Periodicity of Update:* Each major change or process / procedure change.  Inspection quarterly with update noted in record of change..
+ - *Comments:* None
+ - *Standard:* [Design Document Standard](./Template_007_DesignDocumentStandard.md)
+ - *References:* APSC-DV-003220, The designer must create and update the Design Document for each release of the application.
+
+This requirement is meant to apply to developers or organizations that are doing application development work.
+
+The application design document or configuration guide includes configuration settings, recommendations and best practices that pertain to the secure deployment of the application.
+
+It also contains the detailed functional architecture as well as any changes to the application architecture corresponding to a new version release and must be documented to ensure all risks are assessed and mitigated to the maximum extent practical.
 
 <a name="deployment_standard"/>
 
