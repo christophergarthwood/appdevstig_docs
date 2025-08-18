@@ -1,7 +1,13 @@
 # Title: Coding Standard 
 
 ## Definition:                                                                                        
-The application development team must follow a set of coding standards.
+The application development team must follow a set of coding standards.  Common programming standards are adhered to for the following reasons:
+
++   Programmers can go into any code and determine the current status   which increases maintainability, readability, and reusability.
++   New programmers can rapidly grasp the current status.
++   Programmers that are unfamiliar with a programming language have a common standard which alleviates the need to develop a personal style.
++   Standard programming language reduces errors and increases reliability.
++   Individual styles are replaced and an emphasis is placed on business concerns - high productivity, maintainability, shared authorship, and other aspects that help the group achieve its goal.
 
 Coding standards are guidelines established by the development team or individual developers that recommend programming style, practices and methods.  The coding standards employed will vary based upon the programming language that is being used to develop the application and the development team.
 
@@ -21,6 +27,8 @@ Coding standards allow developers to quickly adapt to code which has been develo
 Code conforming to a standard format is easier to read, especially if someone other than the original developer is examining the code.  In addition, formatted code can be debugged and corrected faster than unformatted code.
 
 Introducing coding standards can help increase the consistency, reliability, and security of the application by ensuring common programming structures and tasks are handled by similar methods, as well as, reducing the occurrence of common logic errors.
+
+See: http://www.cse.buffalo.edu/~rapaport/code.documentation.Excerpts.pdf  for details and a more robust explanation as to why a coding standard is necessary.
 
 ## Requirements/Specifications/Guidelines:                                                            
 Having an ACG is a Cat II requirement as per the ASD STIG V6R3 and has been a requirement since at least V4 of the ASD STIG.  An ACG is considered an industry best practice as well.  Subject document just exist, should be in Markup, and ideally be as automated as possible.
@@ -64,6 +72,22 @@ Real-time with application development.
 + [FORTRAN](#fortran)
 __________________________________________________________________________________________________________________________________
 # **Template**
+
+## Project Components and Automation Tools Used
+*Enumerate those parts of the software that will utilize a specific solution / tool.*
+
+***Example:***
+**Coding format / standards:**
+| Specification           | Sub-Component            | Purpose                      |
+|-------------------------|--------------------------|------------------------------|
+| Doxygen                 | VISOR (visor_gops_parser)|Documentation                |
+| Markdown README.md      | All                      | Documentation                |
+| SonarQube               | VISOR (visor_gops_parser)| Compliance inspection and security |
+| Visual Code Grep Scanner| VISOR (visor_gops_parser)| C/C++ static code analysis     |
+| Shellcheck              | Consolidated System      | Compliance/Standards inspection|
+
+## The Standard
+*Document the coding standards intended for your project, enumerated list and automation are ideal for this stage.*
 
 The following are high level coding standards rules that transcend language and algorithm and are intended to foster highly legible code without cramping the style of your programming staff.  Subject rules should be adapted / augmented to support your project(s) and not used at face value.
 
@@ -178,6 +202,34 @@ Namespaces are one honking great idea -- let's do more of those!
 	+  Documented in the comments/readme in deployment document.
 	+  Added to a new story in the backlog to be addressed immediately at next cycle.
 	+  Customer notified of plan.
+
+## STIG Considerations
+
+### Unsafe Methods (APSC-DV-003210)                                                                                                                                                                                                                                                           
+Unsafe methods are those that have side-effects that are not understood properly or require elevated security privileges in order to perform their function.  No unsafe methods are utilized in this system.  Functions such as strlen and related string manipulation functions are not used.  Research into best C practices for unsafe functions was conducted and all relevent function calls replaced with known good representations of the same function.
+
+Classic list of recognized unsafe functions:
+
++ strcpy -> strncpy -> strlcpy/strcpy_s.
++ strcat -> strncat -> strlcat/strcat_s -strtok.
++ sprintf -> snprintf.
++ vsprintf -> vsnprintf.
++ gets -> fgets/gets_s.
++ makepath -> _makepath_s (MSDN)
++ _splitpath -> _splitpath_s (MSDN)
++ scanf/sscanf -> sscanf_s (MSDN
++ ato\*
+
+A grep performed on all \*.c source files indicates the aforementioned unsafe functions are not in useexcept in these locations:
+
++ strncpy is used in libProduct and visor_gops_parser at three instances.  Extensive research into various tools, libraries, and commentary by developers indicates that this is a bottomless pit if one attempts to add strlcpy to C source code.  Subject strncpy stands and is used careful with input validation backing defenses.
+
+### Exceptions/Error Messages
+                                                                                                                                                Error messages (Exceptions) will be invoked with a custom class (API infrastructure) specifically designed to support the Application Development STIG to ensure no information expressed during error (stack traces) are displayed to the end-user thus revealing information that could be deemed valuable to an attacker.  Output of error should go to the log, based on log levels, and an obfuscated/reduced output should be displayed to the end user.
+
+The application must not be subject to error handling vulnerabilities (APSC-DV-003235).  The software specific error/exception class will extend from the base functionality of the existing language error/exception class/object.
+
+This application was designed to test the "contract" by which it was written and to fail fast if that contract is broken without authorizing additional capabilities due to failure.  A domain of standard responses, which are application specific, will be matured over time based on encounters of the running package.
 
 ## Useful tools related to Code Standards enforcement
 
@@ -300,4 +352,5 @@ IDEs like Visual Studio Code and WebStorm provide features like syntax highlight
 
 + [K-scope v0.2.6](http://www.r-ccs.riken.jp/ungi/soft/kscope/)
 + [http://fortranwiki.org/fortran/show/Tools](http://fortranwiki.org/fortran/show/Tools)
+
 
