@@ -90,6 +90,8 @@ Develop occurs on *what* resources, *what* platforms, and was run real-time on t
 
 ### Environment
 
+See detailed output from the [Application Configuration Guide (ACG)](./Template_003_ApplicationConfigurationGuideStandard.md) and the [Configuration Management Plan (CMP)](./Template_006_ConfigurationManagementStandard.md).
+
 +	Development Environment - *asset name*, see the Application Configuration Guide (ACG) and Configuration Management Plan (CMP)
 +	Staging  - *where*
 +	Operations - *where*
@@ -97,10 +99,33 @@ Develop occurs on *what* resources, *what* platforms, and was run real-time on t
 ### Processes & Policies
 
 +	Development at *where* targets customer end-environments and embraces the following principles:
-  + Secure operations
-  + Logging at various levels of granularity
-  + Fail fast  
-  + Highly defensive code
+      + Secure operations
+          + Develop solutions with security in mind first, then scalability and then optimization.
+      + Logging at various levels of granularity
+          + Log with a standard framework and do so discretely with informative messages to ensure end-users / invokers fully understand what has transpired.  
+          + Only log generic failures with deeper logs in the background for more detailed analysis.  Give nothing away.
+      + Fail fast  
+          + Use automation in build, deployment, and testing as much as possible so failure is detected early and therefore more quickly resolved.
+      + Highly defensive code
+          + Assume nothing and code defensively.  Use guard clauses, never leave an status in a true state unless proven true, isolate tests to their most logical level and log discretely to find errors quickly.
+
++   Staging and Operations at *where* are intended for User Acceptance Testing (UAT) and operational concerns accordingly.
+
+See the following standards and templates regarding the development process in conjunction with this Design Document for an entire view of how software development occurs with this team:
+
++ [Applicatoin Configuration Guides (ACG)](./Template_003_ApplicationConfigurationGuideStandard.md) will exist.
++ [Coding Standards](./Template_004_CodingStandard.md) will exist and be adhered to.
++ [Code Reviews](./Template_005_CodeReviewStandard.md) will be performed and documented.
++ [Configuration Management Plan (CMP)](./Template_006_ConfigurationManagementStandard.md) will exist and be documented.
++ [Deployment Standards](./Template_008_DeploymentStandard.md) will be adhered to.
++ [Delivery Standards](./Template_010_DeliveryStandard.md) will be adhered to.
++ [Threat Assessments](./Template_011_ThreatAssessment.md) will be conducted initially and after each major release.
++ [Logging Standards](./Template_012_LoggingStandard.md) will be adhered to in all environments.
++ [Tracking System](./Template_013_TrackingSystemStandard.md) will be utilized.
++ [Software Development Life Cycle](./Template_014_SoftwareDevelopmentLifecycleStandard.md) will be documented and followed.
++ [Communications Standards](./Template_015_CommunicationStandard.md) will be utilized by the development team.
++ [Testing Standards](./Template_016_TestStandard.md) will be utilized by a designated tester.
++ [Design Document](./Template_DesignDocumentStandard.md) will exist and be populated.
 
 ### Communications
 +	Developers coordinate with *who*.
@@ -112,21 +137,20 @@ Develop occurs on *what* resources, *what* platforms, and was run real-time on t
 
 Specify network domain or named hardware configuration will be the target architecture for the smaller applications.
 
-provide details specific for the development environment and execution environment for hardware that is specific to this project. 
+See detailed output within the [Application Configuration Guide (ACG)](./Template_003_ApplicationConfigurationGuideStandard.md) and the [Configuration Management Plan (CMP)](./Template_006_ConfigurationManagementStandard.md).
 
-| Hardware Item       | Configuration Identifier | Description                                            |
-| ------------------- | ------------------------ |--------------------------------------------------------|
-| *what asset*        | N/A                      | See CMP / ACG for explicit details about asset specs.  |
 
 ### Data Communications
 
 All communications are performed on a file system, it is possible and at *agency?* probable that subject file system is Network File System (NFS) mounted, however no other communciations via TCP/IP are performed on any ports.  This is a scientific data processing program with no user accounts, roles, or web presence.
 
-Refer to the Configuration Management Plan (CMP) for details regarding data communications.
+Refer to the [Configuration Management Plan (CMP)](./Template_006_ConfigurationManagementStandard.md) for details regarding communications.
 
 ### Software Configuration Items
 
 Language(s) / libraries that will be used for all applications developed for project tasking.  Identify high level tools / packages used to enable the project.  Leave details related to discrete software components, like your code, in the Configuration Management Plan (CMP). This domain should be the minimal softare tools / solutions necessary to execute the project.
+
+***Example:***
 
 | App Name      | App Version |
 | ------------- | ----------- |
@@ -137,17 +161,15 @@ Language(s) / libraries that will be used for all applications developed for pro
 | NetCDF libs   | 4.4.1       |
 
 
-*Software Domain*
-
 ### Data Design
 
 #### Data Objects and Resultant Data Structures
 
+##### Input
 ***Example:*** 
-NetCDF, v4.4.1 is the predominant format used for the *what data type*.
+Satellite imagery, NetCDF, v4.4.1 is the predominant format used for the *what data type*.
 
-+ satellite imagery
-
+##### Output
 Fortran compliant binary outputs are the final resultant and are structured as follows:
 
 ***Data Structure***
@@ -220,11 +242,11 @@ Security classification guides shall provide the following information:
 
 ### Approved Architecture
 
-Describe the architecture approved at a high level conceptually, reference the CMP and ACG for details.
+Describe the architecture approved at a high level conceptually, reference the detailed output within the [Application Configuration Guide (ACG)](./Template_003_ApplicationConfigurationGuideStandard.md) and the [Configuration Management Plan (CMP)](./Template_006_ConfigurationManagementStandard.md).
 
 ***Example:***
 
-This is a scientific data processing software solution and does not have a traditional web architecture or utilize services.  No API was developed for this software package.  See Application Configuration Guide (ACG) for details regarding the general Concept of Operations (CONOPS) and architecture.
+This is a scientific data processing software solution and does not have a traditional web architecture or utilize services.  No API was developed for this software package.  See the [Application Configuration Guide (ACG)](./Template_003_ApplicationConfigurationGuideStandard.md) for details regarding the Concept of Operations (CONOPS) for this solution.
 
 ### Communications
 
@@ -232,11 +254,7 @@ This is a scientific data processing software solution and does not have a tradi
 
 **Communications Protocols**
 
-***Example:***
-
-| Protocol        |	Port    |	Description                                                      |
-|-----------------|---------|--------------------------------------------------------------------|
-|None             | N/A     | No network communications sans NFS mounts, environment dependent.  |
+See the detailed output within the [Application Configuration Guide (ACG)](./Template_003_ApplicationConfigurationGuideStandard.md) and the [Configuration Management Plan (CMP)](./Template_006_ConfigurationManagementStandard.md) for Ports, Protocols, and Services used as per the Ports, Protocols, and Services Manual (PPSM).
 
 
 ### Roles (APSC-DV-002380)
