@@ -71,8 +71,6 @@ Reviewing each standard and creating the minimally required content within each 
  - Secondary - Documented
 
 + [Delivery Standard](#delivery_standard)
- - Incoming software.
- - Customer delivery.
 
 + [Threat Modeling Standard](#thread_modeling_standard)
  - Must exist.
@@ -258,34 +256,114 @@ It also contains the detailed functional architecture as well as any changes to 
 <a name="deployment_standard"/>
 
 #### Deployment Standard
+ - *Structure:* 
+ - *Format:* 
+ - *Methods of work implementation:*  
+ - *Project Artifact Location:* 
+ - *Periodicity of Update:* 
+ - *Comments:* 
+ - *Standard:* [Design Document Standard](./Template_008_DeploymentStandard.md)
+ - *References:*
+
+*definition???*
 
 <a name="delivery_standard"/>
 
 #### Delivery Standard
+ - *Structure:*
+ - *Format:*
+ - *Methods of work implementation:*
+ - *Project Artifact Location:* 
+ - *Periodicity of Update:*
+ - *Comments:*
+ - *Standard:* [Delivery Standard](./Template_010_DeliveryStandard.md) 
+ - *References:*
+
+*definition???*
 
 <a name="threat_modeling_standard"/>
 
 #### Threat Modeling Standard
+ - *Structure:*
+ - *Format:*
+ - *Methods of work implementation:*
+ - *Project Artifact Location:* 
+ - *Periodicity of Update:*
+ - *Comments:*
+ - *Standard:* [Threat Modeling /  Assessment Standard](./Template_011_ThreatAssessment.md) 
+ - *References:*
+
+*definition???*
 
 <a name="logging_standard"/>
 
 #### Logging Standard
+ - *Structure:*
+ - *Format:*
+ - *Methods of work implementation:*
+ - *Project Artifact Location:* 
+ - *Periodicity of Update:*
+ - *Comments:*
+ - *Standard:* [Logging Standard](./Template_012_LoggingStandard.md)
+ - *References:*
+
+*definition???*
 
 <a name="tracking_system_standard"/>
 
 #### Tracking System Standard
+ - *Structure:*
+ - *Format:*
+ - *Methods of work implementation:*
+ - *Project Artifact Location:* 
+ - *Periodicity of Update:*
+ - *Comments:*
+ - *Standard:* [Tracking System Standard](./Template_013_TrackingSystemStandard.md)
+ - *References:*
+
+*definition???*
 
 <a name="test_plan_standard"/>
 
 #### Test Plan Standard
+ - *Structure:*
+ - *Format:*
+ - *Methods of work implementation:*
+ - *Project Artifact Location:* 
+ - *Periodicity of Update:*
+ - *Comments:*
+ - *Standard:* [Test Standard](./Template_016_TestStandard.md)
+ - *References:*
+
+*definition???*
 
 <a name="sdlc_standard"/>
 
 #### Software Development Lifecycle (SDLC) Standard
+ - *Structure:*
+ - *Format:*
+ - *Methods of work implementation:*
+ - *Project Artifact Location:* 
+ - *Periodicity of Update:*
+ - *Comments:*
+ - *Standard:* [Softare Development Lifecycle Standard](./Template_014_SoftwareDevelopmentLifecycleStandard.md)
+ - *References:*
+
+*definition???*
 
 <a name="communication_standard"/>
 
 #### Communication Standard
+ - *Structure:*
+ - *Format:*
+ - *Methods of work implementation:*
+ - *Project Artifact Location:* 
+ - *Periodicity of Update:*
+ - *Comments:*
+ - *Standard:* [Communication Standard](./Template_015_CommunicationStandard.md)
+ - *References:*
+
+*definition???*
 
 <a name="references"/>
 
