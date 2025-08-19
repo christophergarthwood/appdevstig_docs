@@ -298,6 +298,16 @@ If the project does not control the infrastructure configuration items, then thi
 |--------------------------|--------------------------------|--------------------------|----------------|------------------------|
 |AWS Storage Bucket        |Larg data storage bucket for data. |`url here` | Role here from previous table. | Operations, Staging, DEV|
 
+#### Logging
+
+Logging is very important to any application and must exist in the prescribed manner the customer / client dictates. Use the [Logging Standard](./Template_012_LoggingStandard.md) as your mechanism for achieving minimal customer requirements or define your own.  Save the log information as a configuration item in this plan.
+
+***Example:***
+
+|Name of Service for Log   |Log Location                    |Log Permissions           |Log Infrastructure                       |
+|--------------------------|--------------------------------|--------------------------|-----------------------------------------|
+|Apache Tomcat some-server |/some/filesystem                |root, tomcat users        |`url_here`                               |
+
 ### Configuration Management System (CMS)
 
 #### Change Management
