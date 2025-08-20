@@ -17,13 +17,13 @@
 
 
 ## Reference(s)
- + Application Security and Development (ASD) Security Technical Implementation Guide (STIG) Version 6, Release 3, 2025/04/02 
+ + [Application Security Development (ASD) Security Technical Implementation Guide (STIG) version 6, release 3 (APSC-DV-003400)](https://www.cyber.mil/stigs/downloads)
    + APSC-DV-003400, The Program Manager must verify all levels of program management, designers, developers, and testers receive annual security training pertaining to their job function.
- + NIST Special Publication 800-64 (“Security Considerations in the System Development Life Cycle”): Offers detailed federal guidance on integrating security into each SDLC phase for information systems, mandated by FISMA and OMB Circular A-130.
- + NIST Secure Software Development Framework (SSDF), SP 800-218: Sets out best practices and high-level activities for secure software development that organizations should use throughout the SDLC, supporting requirements from Executive Order 14028.
- + U.S. Office of Personnel Management (OPM) SDLC Policy and Standards: Provides an official policy for managing system development in federal organizations, outlining key SDLC phases and ensuring consistent process across projects.
- + Federal Information Security Modernization Act (FISMA): Sets security requirements for federal IT systems, including mandatory security and risk management throughout the SDLC.
- + CISA (Cybersecurity and Infrastructure Security Agency) Software Acquisition and Security Guides: Provide fact sheets and requirements for integrating security and supply chain risk management into the SDLC.
+ + [Software Engineering for Continuous Delivery of Warfighting Capability, 2023/04](https://www.cto.mil/wp-content/uploads/2023/07/SWE-Guide-April2023.pdf)
+ + [DOD Enterprise DevSecOps Fundamentals, v 2.5, 2024/10](https://dodcio.defense.gov/Portals/0/Documents/Library/DoD%20Enterprise%20DevSecOps%20Fundamentals%20v2.5.pdf)
+ + [NIST Special Publication 800-37 (“Risk Management Framework for Information Systems and Organizations"), Rev 2](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-37r2.pdf)
+ + [NIST Secure Software Development Framework (SSDF), SP 800-218A](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf)
+ + [CISA Securing the Software Supply Chain](https://www.cisa.gov/sites/default/files/publications/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN_DEVELOPERS.PDF)
 ____________________________________________________________________________________________________________________________________
 ## **Template**
 

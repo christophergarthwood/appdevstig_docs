@@ -298,72 +298,73 @@ It also contains the detailed functional architecture as well as any changes to 
 <a name="logging_standard"/>
 
 #### Logging Standard
- - *Structure:*
- - *Format:*
- - *Methods of work implementation:*
- - *Project Artifact Location:* 
- - *Periodicity of Update:*
- - *Comments:*
+ - *Structure:* Configuration file according to solution (web server, application server, software application, etc.).
+ - *Format:* See standard details.
+ - *Methods of work implementation:* N/A
+ - *Project Artifact Location:*  Logs saved per customer mandated location, configuration in CM'd config files.
+ - *Periodicity of Update:* Enabled day one of server setup.
+ - *Comments:* None
  - *Standard:* [Logging Standard](./Template_012_LoggingStandard.md)
- - *References:*
+ - *References:* Various Security Technical Implementation Guides (STIG)
 
-*definition???*
+A logging standard for software development projects, in simple terms, is a set of agreed rules about how to record events and information about what the software is doing.
 
 <a name="tracking_system_standard"/>
 
 #### Tracking System Standard
- - *Structure:*
- - *Format:*
- - *Methods of work implementation:*
- - *Project Artifact Location:* 
- - *Periodicity of Update:*
- - *Comments:*
+ - *Structure:* Depends on implementation.
+ - *Format:* Depends on implementation.
+ - *Methods of work implementation:* Utilization of designated system, see artifact location.
+ - *Project Artifact Location:* `url_here`
+ - *Periodicity of Update:*  Daily, per change.
+ - *Comments:* None
  - *Standard:* [Tracking System Standard](./Template_013_TrackingSystemStandard.md)
- - *References:*
+ - *References:* DOD Enterprise DevSecOps Fundamentals, v 2.5, 2024/10
+ 
+ A software tracking system for tracking issues in a software development project, explained simply, is a tool that helps teams keep track of problems, bugs, or tasks that come up during development. It records each issue, assigns it to the right person to fix, and monitors the progress until the problem is resolved.
 
-*definition???*
 
 <a name="test_plan_standard"/>
 
 #### Test Plan Standard
- - *Structure:*
- - *Format:*
- - *Methods of work implementation:*
- - *Project Artifact Location:* 
- - *Periodicity of Update:*
- - *Comments:*
+ - *Structure:* Human authorized / trained tester
+ - *Format:* Depends on methodology utilized.
+ - *Methods of work implementation:* Manual and automated with results saved for inspection.
+ - *Project Artifact Location:* Project Management documentation location.
+ - *Periodicity of Update:* Per release of the application.
+ - *Comments:* None
  - *Standard:* [Test Standard](./Template_016_TestStandard.md)
- - *References:*
+ - *References:* APSC-DV-003130, Prior to each release of the application, updates to system, or applying patches; tests plans and procedures must be created and executed.
 
-*definition???*
+A test plan for software development, explained in plain language, is a document that outlines what needs to be tested in a software project, how it will be tested, who will do the testing, and when it will happen. It acts like a roadmap for the testing team to make sure all important parts of the software are checked before release to catch any problems.
 
 <a name="sdlc_standard"/>
 
 #### Software Development Lifecycle (SDLC) Standard
- - *Structure:*
- - *Format:*
- - *Methods of work implementation:*
- - *Project Artifact Location:* 
- - *Periodicity of Update:*
- - *Comments:*
+ - *Structure:* Guided document showing workflow utilized to make modifications to software.
+ - *Format:* Markdown
+ - *Methods of work implementation:* Track changes, route modifications to PM for approval, circulate with team.
+ - *Project Artifact Location:*  Project Management documentation.
+ - *Periodicity of Update:* Technical Leadership discussion from outcome of identified need for modification.
+ - *Comments:* None
  - *Standard:* [Softare Development Lifecycle Standard](./Template_014_SoftwareDevelopmentLifecycleStandard.md)
- - *References:*
+ - *References:* DOD Enterprise DevSecOps Fundamentals, v 2.5, 2024/10
 
-*definition???*
+The software development lifecycle (SDLC) is a simple step-by-step process that teams follow to create software. It helps organize and guide the work to make sure the software is well-built, meets user needs, and is delivered on time.
 
 <a name="communication_standard"/>
 
 #### Communication Standard
- - *Structure:*
- - *Format:*
- - *Methods of work implementation:*
- - *Project Artifact Location:* 
- - *Periodicity of Update:*
- - *Comments:*
+ - *Structure:* Varies based on task identified in communications standard matrix.
+ - *Format:* Varies based on meeting but standard templates will be consistently used.
+ - *Methods of work implementation:* Varies, see comms matrix.
+ - *Project Artifact Location:* Project Management documentation location.
+ - *Periodicity of Update:* Varies, see comms matrix.
+ - *Comments:* None
  - *Standard:* [Communication Standard](./Template_015_CommunicationStandard.md)
- - *References:*
+ - *References:* Standard Project Management Plan (PMP) practice.
 
-*definition???*
+A communication standard for a software development project is a set of clear rules and guidelines about how team members share information with each other and stakeholders. It explains the best ways and tools to use for talking about project updates, sharing documents, providing feedback, asking questions, and solving problems. The purpose is to keep everyone on the same page, avoid misunderstandings, and make sure important information doesn’t get missed. Communication standards might include things like regular meetings, using certain chat apps or tools, documenting decisions, and being respectful and clear in all messages.
 
 <a name="references"/>
 
