@@ -134,7 +134,7 @@ The application might be vulnerable if the application is:
 + The server does not send security headers or directives, or they are not set to secure values.
 + The software is out of date or vulnerable (see A06:2021-Vulnerable and Outdated Components).
 
-#### 2.6 (Vulnerable and Outdated Components](https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/)
+#### 2.6 [Vulnerable and Outdated Components](https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/)
 
 Attacker identifies a weak component through scanning or manual analysis. He customizes the exploit as needed and executes the attack. It gets more difficult if the used component is deep in the application.
 
@@ -219,7 +219,7 @@ Attacker links to unvalidated redirect and tricks victims into clicking it. Vict
 
 Applications frequently redirect users to other pages, or use internal forwards in a similar manner. Sometimes the target page is specified in an unvalidated parameter, allowing attackers to choose the destination page.  Detecting unchecked redirects is easy. Look for redirects where you can set the full URL. Unchecked forwards are harder, because they target internal pages.
 
-### B.3 STRIDE
+### 3.0 STRIDE
 
 STRIDE is a classification scheme for characterizing known threats according to the kinds of exploit that are used (or motivation of the attacker). The STRIDE acronym is formed from the first letter of each of the following categories.
 
@@ -545,7 +545,7 @@ Limit resource consumption by user or service
 web uses declarative Java with Annotations to determine which roles have elevated privileges. If a user modifies a URL into an area that has privileged content the FrontController facade will first check to see if subject user is allowed elevated privileges, if not a standard page will present.
 
 
-### 5.0 [Security Misconfiguration](https://owasp.org/Top10/A05_2021-Security_Misconfiguration/)
+#### 5.0 [Security Misconfiguration](https://owasp.org/Top10/A05_2021-Security_Misconfiguration/)
 
 `0.0 = (DAMAGE (0) + REPRODUCIBILITY (0) + EXPLOITABILITY (0) + AFFECTED USERS (0) + DISCOVERABILITY (0)) / 5`
 
@@ -567,7 +567,7 @@ An automated process to verify the effectiveness of the configurations and setti
 Web application does not utilize any default accounts for either backend database or JBoss application server.  There are no files or directories without some level of protection. All settings/configuration files are configuration managed. 
 
 
-#### 6.0 (Vulnerable and Outdated Components](https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/)
+#### 6.0 [Vulnerable and Outdated Components](https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/)
 
 `0.0 = (DAMAGE (0) + REPRODUCIBILITY (0) + EXPLOITABILITY (0) + AFFECTED USERS (0) + DISCOVERABILITY (0)) / 5`
 
