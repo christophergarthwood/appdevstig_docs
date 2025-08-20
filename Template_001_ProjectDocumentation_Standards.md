@@ -73,9 +73,6 @@ Reviewing each standard and creating the minimally required content within each 
 + [Delivery Standard](#delivery_standard)
 
 + [Threat Modeling Standard](#thread_modeling_standard)
- - Must exist.
- - APSC-DV-003230, Threat models must be documented and reviewed for each application release and updated as required by design and functionality changes or when new threats are discovered.
- - Artifact must exist for each application.
 
 + [Logging Standard](#logging_standard)
   - STIG compliant.
@@ -284,16 +281,16 @@ It also contains the detailed functional architecture as well as any changes to 
 <a name="threat_modeling_standard"/>
 
 #### Threat Modeling Standard
- - *Structure:*
- - *Format:*
- - *Methods of work implementation:*
- - *Project Artifact Location:* 
- - *Periodicity of Update:*
- - *Comments:*
+ - *Structure:* Template response.
+ - *Format:* Markdown documentation prefered using a known template.
+ - *Methods of work implementation:* Team analysis and recording of results.
+ - *Project Artifact Location:* Project Management documents repository.
+ - *Periodicity of Update:* Inception and each secondary semantic release.
+ - *Comments:* None
  - *Standard:* [Threat Modeling /  Assessment Standard](./Template_011_ThreatAssessment.md) 
- - *References:*
+ - *References:*  APSC-DV-003230, Threat models must be documented and reviewed for each application release and updated as required by design and functionality changes or when new threats are discovered.
 
-*definition???*
+A threat assessment in a software engineering project is the process of identifying, analyzing, and understanding possible dangers or risks that could impact the security or success of the software being developed. This means looking for potential issues, such as vulnerabilities that attackers could exploit, and evaluating how likely and how serious those issues might be. The goal is to spot these threats early, so the team can take steps to prevent or reduce problems and keep the project safe and on track.
 
 <a name="logging_standard"/>
 

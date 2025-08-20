@@ -41,6 +41,8 @@ Should be performed for any major change, semantic versioning of secondary numbe
 
 + [Atlassian Code Review Good Practices](https://www.atlassian.com/blog/add-ons/code-review-best-practices)
 
++ [Google eng-practices](https://google.github.io/eng-practices/review/)
+
 + [GitHub Standard of a Code Review](https://google.github.io/eng-practices/review/reviewer/standard.html)
 
 + [Git Lab What is a code review?](https://about.gitlab.com/topics/version-control/what-is-code-review/)
