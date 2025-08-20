@@ -72,7 +72,7 @@ Reviewing each standard and creating the minimally required content within each 
 
 + [Delivery Standard](#delivery_standard)
 
-+ [Threat Modeling Standard](#thread_modeling_standard)
++ [Threat Modeling Standard](#threat_modeling_standard)
 
 + [Logging Standard](#logging_standard)
   - STIG compliant.
