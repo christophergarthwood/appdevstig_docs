@@ -287,7 +287,7 @@ It also contains the detailed functional architecture as well as any changes to 
  - *Project Artifact Location:* Project Management documents repository.
  - *Periodicity of Update:* Inception and each secondary semantic release.
  - *Comments:* None
- - *Standard:* [Threat Modeling /  Assessment Standard](./Template_011_ThreatAssessment.md) 
+ - *Standard:* [Threat Modeling /  Assessment Standard](./Template_011_ThreatAssessment.md)
  - *References:*  APSC-DV-003230, Threat models must be documented and reviewed for each application release and updated as required by design and functionality changes or when new threats are discovered.
 
 A threat assessment in a software engineering project is the process of identifying, analyzing, and understanding possible dangers or risks that could impact the security or success of the software being developed. This means looking for potential issues, such as vulnerabilities that attackers could exploit, and evaluating how likely and how serious those issues might be. The goal is to spot these threats early, so the team can take steps to prevent or reduce problems and keep the project safe and on track.
