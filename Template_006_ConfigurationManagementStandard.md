@@ -28,6 +28,11 @@ In Software Configuration Management (SCM), the terms branch, trunk, and tag rep
 
 Together, these concepts help teams manage multiple concurrent development efforts, maintain stable release versions, and track important states of the project efficiently. For example, the trunk holds ongoing development, branches are used for isolated changes, and tags mark stable releases or versions for future reference.
 
+## Purpose:
+
+SCM ensures that everyone knows what version of the software is being worked on, who made changes, and what those changes are. This helps avoid mistakes like overwriting work, losing important files, or introducing bugs. It also makes it easier to fix problems, roll back to earlier versions if needed, and keep software running smoothly over time. SCM is essential for teamwork, quality control, and managing complex software projects effectively.
+
+
 ## Requirements/Specifications/Guidelines:
 
 A Software Configuration Management (SCM) plan details how to manage and control changes to software products throughout their lifecycle. Its requirements generally include:
@@ -73,10 +78,6 @@ Software Configuration Management (SCM) is measurable through a variety of metri
 + Incident Impact Rate Due to Configuration Issues: Number or percentage of service incidents linked to configuration errors.
 
 By regularly tracking these metrics, organizations can evaluate the effectiveness of their SCM processes, identify areas for improvement, and demonstrate compliance and risk management efforts. This data-driven approach ensures software integrity and supports reliable development and deployment cycles.
-
-## Purpose:
-
-SCM ensures that everyone knows what version of the software is being worked on, who made changes, and what those changes are. This helps avoid mistakes like overwriting work, losing important files, or introducing bugs. It also makes it easier to fix problems, roll back to earlier versions if needed, and keep software running smoothly over time. SCM is essential for teamwork, quality control, and managing complex software projects effectively.
 
 ## Timeliness:
 

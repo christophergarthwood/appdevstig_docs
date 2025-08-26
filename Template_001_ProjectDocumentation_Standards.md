@@ -67,62 +67,21 @@ Reviewing each standard and creating the minimally required content within each 
 + [Design Document Standard](#design_document_standard)
 
 + [Deployment Standard](#deployment_standard)
- - Primary - Ansible / Puppet
- - Secondary - Documented
 
 + [Delivery Standard](#delivery_standard)
 
 + [Threat Modeling Standard](#threat_modeling_standard)
 
 + [Logging Standard](#logging_standard)
-  - STIG compliant.
-  - Documented and CM'd.
 
 + [Tracking System Standard](#tracking_system_standard)
-  - APSC-DV-003190, Flaws found during a code review must be tracked in a defect tracking system and utilize configuration management.
 
 + [Test Plan Standard](#test_plan_standard)
-  - Documented and CM'd.
-  - Must include some portion of vulnerability scans.
-  - APSC-DV-003130, Prior to each release of the application, updates to system, or applying patches; tests plans and procedures must be created and executed.
-  - APSC-DV-003150, At least one tester must be designated to test for security flaws in addition to functional testing.
-  - APSC-DV-003160, Test procedures must be created and at least annually executed to ensure system initialization, shutdown, and aborts are configured to verify the system remains in a secure state.
-  - APSC-DV-003400, The Program Manager must verify all levels of program management, designers, developers, and testers receive annual security training pertaining to their job function.
-  - APSC-DV-003180, Code coverage statistics must be maintained for each release of the application.
-  - ASPC-DV-001995,Application must not be vulnerable to race conditions, test by code review or static code analysis.
-  - ASPC-DV-002400,Restrict ability to launch DoS attacks, use code review, penetration or vulnerability testing for results that indicate attempts to DoS the application or use the application in DoS.
-  - ASPC-DV-002500, Protect from CSRF vulnerabilities, review code review reports and the vulnerability assessment scans, test plan / configuration should attempt CSRF attack with results saved.
-  - ASPC-DV-002590, Application must not be vulnerable to overflow attacks.A code review, static code analysis or active vulnerability or fuzz testing are methods used to identify overflows within application code. |A code review, static code analysis or active vulnerability or fuzz testing are methods used to identify overflows within application code.
-  - ASPC-DV-002930, The ISSO must ensure active vulnerability testing is performed.The ISSO must ensure active vulnerability testing is performed.  It is imperative that automated scanning tools are configured properly to ensure that all of the application components that can be tested are tested. In the case of web applications, some of the application code base may be accessible on the website and could potentially be corrected by a knowledgeable system administrator. Active testing is different from code review testing in that active testing does not require access to the application source code base. A code review requires complete code base access and is normally performed by the development team.
-  - APSC-DV-001460, An application vulnerability assessment must be conducted.
-  - APSC-DV-002310, The application must fail to a secure state if system initialization fails, shutdown fails, or aborts fail. This should be part of the test plan.
-  - APSC-DV-002485, The application must not store sensitive information in hidden fields. Request most recent code review and vulnerability scan results.  Review test configuration to ensure testing for hidden fields was conducted.  Review test results for incidents of hidden data fields.
-  - APSC-DV-002510, The application must protect from command injection... test for command injection.
-  - APSC-DV-002520, The application must protect from canonical representation vulnerabilities.   You must test your application with your supported browsers to determine if they pass in fully encoded double byte characters safely.
-  - APSC-DV-002530, The application must validate all input, Comprehensive application security testing and code reviews are required to ensure the application is not vulnerable to input validation vulnerabilities.
-  - APSC-DV-002540, The application must not be vulnerable to SQL Injection. Request the latest vulnerability scan test results.  Verify the scan configuration is configured to test for SQL injection flaws.  Review the scan results to determine if any SQL injection flaws were detected during application testing.
-  - APSC-DV-002550, The application must not be vulnerable to XML-oriented attacks. Review the latest application vulnerability assessment and verify the scan was configured to test for XML-related vulnerabilities and security issues.
-  - APSC-DV-002560, The application must not be subject to input handling vulnerabilities. If the vulnerability scan is not configured to test for input validation vulnerabilities if the most recent scan results show that high risk input validation vulnerabilities exist and a documented risk acceptance from the ISSO is not available, or if the scan results do not exist, this is a finding.
-  - APSC-DV-002590, A code review, static code analysis or active vulnerability or fuzz testing are methods used to identify overflows within application code.
-  - APSC-DV-002870, Unsigned Category 1A mobile code must not be used in the application in accordance with DoD policy. Next, test the application. This testing should include functional testing from all major components of the application.
-  - APSC-DV-003235, The application must not be subject to error handling vulnerabilities. Check test results for identified error handling vulnerabilities within the application.
-  - APSC-DV-002250, Applications must use system-generated session identifiers that protect against session fixation. Application session testing is required in order to verify this requirement.
-  - APSC-DV-002280, The application must not re-use or recycle session IDs. Application session testing is required in order to verify this requirement.
-  - APSC-DV-002930, The ISSO must ensure active vulnerability testing is performed. Ask the application representative to provide vulnerability test procedures and vulnerability test results.
 
 + [Software Development Lifecycle (SDLC) Standard](#sdlc_standard)
-  - APSC-DV-003400, The Program Manager must verify all levels of program management, designers, developers, and testers receive annual security training pertaining to their job function.
-
 
 + [Communication Standard](#communication_standard)
 Communication Standards
-  - Cover location, tempo, mechanism, any rules
-  - Team meetings
-  - Technical meetings
-  - Customer technical meetings
-  - Customer formal meetings
-  - Government admin messages
-  - CTG 80.7 community messages (ALL), downtime, etc.
 
 <a name="documentation_explained"/>
 
@@ -131,11 +90,11 @@ Communication Standards
 <a name="project_plan"/>
 
 #### Project Plan (APSC-DV-003210)
- - *Structure:* should be template based on customer standards else develop a template reference the template and utilize that.
- - *Format:* preference is Markdown using pandoc to transform the content, else utilize MS Word.
+ - *Structure:* Must be template based on customer standards else develop a template reference the template and utilize that.
+ - *Format:* Preference is Markdown using pandoc to transform the content as needed and maintain in repository, else utilize MS Word.  
  - *Methods of work implementation:*  Agile (daily scrum, Sprints duration, etc.)
- - *Project Artifact Location:* Central location, identify primary and secondary responsibilities
- - *Periodicity of Update:* Reviewed Updated per Sprint Review
+ - *Project Artifact Location:* Central location with Project Management documentation.
+ - *Periodicity of Update:* Reviewed & updated post Sprint Review
  - *Comments:* Aligned to methodology, easily accessed
  - *Standard:* [Project Plan Template](./Template_002_ProjectPlanStandard.md)
 
@@ -148,17 +107,26 @@ If security flaws are not tracked within the project plan, it is possible the fl
 Tracking flaws in the project plan will help identify code elements to be changed as well as the requested change.  Project Documentation and Procedure Order of precedence Founded in experience, DOD, STIG, and Radiance standards.
 
 #### Integrated Master Plan (IMP) and Integration Master Schedule (IMS)
+
+ - *Structure:* Customer agreed upon format at PM's discretion.
+ - *Format:* Customer agreed upon format at PM's discretion.
+ - *Methods of work implementation:*  Agile (daily scrum, Sprints duration, etc.)
+ - *Project Artifact Location:* Central location with Project Management documentation.
+ - *Periodicity of Update:* As needed by Progam Manager with inputs from the team.
+ - *Comments:* Milestones and High level tasks designed to demonstrate marked progress towards the final capability.
+ - *Standard:* N/A
+
 The Department of Defense (DoD), other agencies and DoD contractors use Integrated Master Plans (IMPs) and Integrated Master Schedules (IMSs) to plan and manage projects from inception to completion. Together the IMP and IMS integrate the activities and schedule components necessary to complete a project successfully.  The IMP typically describes three levels of activities: Events, Accomplishments, and Criteria.  The IMS adds a fourth level of detail: Tasks, with detailed timelines and deadlines. Each level consists of activities to fulfill the next level in the hierarchy. Programs complete Tasks to satisfy Criteria, which roll up to satisfy Accomplishments, which roll up to complete an Event. The IMP and IMS are integrated, so changes to the plan are reflected in the schedule.
 
 <a name="acg"/>
 
 #### Application Configuration Guide (ACG) Standards
- - *Structure:* should be template based on customer standards else develop a template reference the template and utilize that.
- - *Format:* preference is Markdown using pandoc to transform the content, else utilize MS Word.
- - *Methods of work implementation:*  technical lead is responsible and maintains.
- - *Project Artifact Location:* central location, with Project Managment Plan (PMP).
- - *Periodicity of Update:* reviewed Updated per Sprint Retrospective after completed stories.
- - *Comments:* aligned to methodology, easily accessed
+ - *Structure:* Must be template based on customer standards else develop a template reference the template and utilize that.
+ - *Format:* Markdown with a repository utilizing pandoc to transform the content, else utilize MS Word.
+ - *Methods of work implementation:*  Technical Lead is responsible and maintains.
+ - *Project Artifact Location:* Central location (repository preferred), with Project Managment Plan (PMP).
+ - *Periodicity of Update:* Reviewed & updated post Sprint Retrospective after completed stories.
+ - *Comments:* Aligned to methodology, easily accessed.
  - *Standard:* [Application Configuration Guide](./Template_003_ApplicationConfigurationGuideStandard.md)
  - *References:* APSC-DV-003285, An Application Configuration Guide must be created and included with the application.
 
@@ -193,12 +161,12 @@ All deployment configuration settings are to be documented in the Application Co
 <a name="coding_standard"/>
 
 #### Coding Standard
- - *Structure:* should be template based on team standards and must exist.
- - *Format:* preference is to use automated mechanism for conformance.  Alternate is Markdown using pandoc to transform the content, else utilize MS Word.
- - *Methods of work implementation:*  technical lead is responsible and maintains, will use automation whenever possible.
- - *Project Artifact Location:* central location, likely with project code files.
- - *Periodicity of Update:* reviewed Updated per Sprint Retrospective, team discussion.
- - *Comments:* Automation!
+ - *Structure:* Must be a template based on team standards and must exist.
+ - *Format:* Highest priority is to use automated mechanism for conformance.  Alternate is Markdown in a central repository using pandoc to transform the content, else utilize MS Word.
+ - *Methods of work implementation:*  Technical lead is responsible and maintains, however all team members have a voice.
+ - *Project Artifact Location:* Central location, either configuration files or Markdown document, in a repository regardless.
+ - *Periodicity of Update:* Reviewed & updated post Sprint Retrospective, team discussion.
+ - *Comments:* Automation is the key to success.
  - *Standard:* [Coding Standard](./Template_004_CodingStandard.md)
  - *References:* APSC-DV-003215, The application development team must follow a set of coding standards.
 
@@ -207,11 +175,11 @@ A coding standard is a set of simple rules and guidelines that programmers follo
 <a name="code_review_standard"/>
 
 #### Code Review Standard
- - *Structure:* should be template based on team standards and must exist.
- - *Format:* preference is to use Markdown and convert with pandoc if possible.  Atlassian Crucible is an excellent tool.
+ - *Structure:* Must be a template based on team standards and must exist.
+ - *Format:* Highest preference is to use a distributed system like Atlassian's FishEye, however use of Markdown in a repository for a template is acceptable, conversion with pandoc is acceptable. 
  - *Methods of work implementation:*  Performed at the end of a code development cycle per change prior to full merge into main.
- - *Project Artifact Location:* central location, likely with Project management Plans and similar documentation.
- - *Periodicity of Update:* Performed with each change.
+ - *Project Artifact Location:* Central location, final code review output is with Project Management documentation.
+ - *Periodicity of Update:* Performed with each change by a developer.
  - *Comments:* None
  - *Standard:* [Code Review](./Template_005_CodeReviewStandard.md)
  - *References:* APSC-DV-\*, multiple ASD references.
@@ -222,9 +190,9 @@ A code review is when one or more developers check someone else’s computer pro
 
 #### Configuration Management Standard
  - *Structure:* Must be utilized and must be a centralized softare server solution, like Git or another version management system.
- - *Format:* Git
- - *Methods of work implementation:*  Performed with branch, trunk, tag strategy. Peformed minimally every few hours.
- - *Project Artifact Location:* central location, hosted by server.
+ - *Format:* Markdown document with template in central repository, use pandoc for transformation with other formats.
+ - *Methods of work implementation:*  Performed with branch, trunk, tag strategy. Code changes are every few hours, server configuration changes are at change.
+ - *Project Artifact Location:* Central location, must be a repository.  System Administrators have first priority with Technical Lead providing support.
  - *Periodicity of Update:* Performed no less than every few hours on your branch and pushed to the central server (upstream).
  - *Comments:* None
  - *Standard:* [Configuration Management Standard](./Template_006_ConfigurationManagementStandard.md)
@@ -235,11 +203,11 @@ Software Configuration Management (SCM) is the process of keeping track of and c
 <a name="design_document_standard"/>
 
 #### Design Document Standard
- - *Structure:* Must be utilized and must be a centralized softare server solution, like Git or another version management system.
+ - *Structure:* Must be an agreed upon template, must be utilized, must exist, and must be in a repository like Git or similar configuration management solution.
  - *Format:* Preference is Markdown with transformation via pandoc.
  - *Methods of work implementation:*  Executed by Technical Lead with discussion to Project Manager.
- - *Project Artifact Location:* With Project Management Plan (PMP) or related project artifacts.
- - *Periodicity of Update:* Each major change or process / procedure change.  Inspection quarterly with update noted in record of change..
+ - *Project Artifact Location:* Maintained with repository, utilize tags for each release with copy to Project Management documentation.
+ - *Periodicity of Update:* Each major change or process / procedure change.  Technical Leader Inspection quarterly with update noted in record of change. PM inspection yearly.
  - *Comments:* None
  - *Standard:* [Design Document Standard](./Template_007_DesignDocumentStandard.md)
  - *References:* APSC-DV-003220, The designer must create and update the Design Document for each release of the application.
@@ -253,30 +221,30 @@ It also contains the detailed functional architecture as well as any changes to 
 <a name="deployment_standard"/>
 
 #### Deployment Standard
- - *Structure:* 
- - *Format:* 
- - *Methods of work implementation:*  
- - *Project Artifact Location:* 
- - *Periodicity of Update:* 
- - *Comments:* 
- - *Standard:* [Design Document Standard](./Template_008_DeploymentStandard.md)
+ - *Structure:* Markdown formatted template agreed upon by team with diagram demonstrating workflow.  Actual deployment will be an automated solution, like Ansible.
+ - *Format:*  Markdown using pandoc for data transformation.
+ - *Methods of work implementation:*  Updated and maintained by System Administrators, input from whole team.
+ - *Project Artifact Location:* Central location, repository. Actual implementation should utilize Ansible playbooks.
+ - *Periodicity of Update:* Per deployment with initial creation in DEV and initial testing in Staging.
+ - *Comments:*  None
+ - *Standard:* [Deployment Standard](./Template_008_DeploymentStandard.md)
  - *References:*
 
-*definition???*
+A software deployment standard is a set of rules and procedures that explain how to properly deliver and set up software for users or organizations. In simple terms, it describes the steps to safely install, configure, and update software so that it works correctly and securely on users’ computers or devices. Following a standard helps ensure consistency, reduces errors, and improves security for everyone involved.
 
 <a name="delivery_standard"/>
 
 #### Delivery Standard
- - *Structure:*
- - *Format:*
- - *Methods of work implementation:*
- - *Project Artifact Location:* 
- - *Periodicity of Update:*
- - *Comments:*
+ - *Structure:* Manifest of documents aligned with standard in formal letter to the customer.
+ - *Format:* Company letter head release.
+ - *Methods of work implementation:* Gathered by each lead for each component of the effort, formalized by PM and delivered by PM.
+ - *Project Artifact Location:* Project Management document repository.
+ - *Periodicity of Update:* As needed.
+ - *Comments:* Discrete Deliverable.
  - *Standard:* [Delivery Standard](./Template_010_DeliveryStandard.md) 
- - *References:*
+ - *References:* 
 
-*definition???*
+A software delivery standard is a set of guidelines and practices that describe how to create, test, and deliver software products to users in a reliable and efficient way. Simply put, it’s a rulebook that teams follow to make sure software is developed, checked for quality, and handed over to customers on time, with minimal errors and best results. This helps ensure the software meets users’ needs and works as expected.
 
 <a name="threat_modeling_standard"/>
 
@@ -366,8 +334,11 @@ A communication standard for a software development project is a set of clear ru
 <a name="references"/>
 
 ## References
-+ [Integrated Master Plan and Integrated Master Schedule Preparation and Use Guide, May 2023](https://ac.cto.mil/wp-content/uploads/2023/05/IMP-IMS-Guide-2023.pdf)
-
-+ [Application Security Development (ASD) Security Technical Implementation Guide (STIG) version 6, release 3 (APSC-DV-003220)](https://www.cyber.mil/stigs/downloads)
-
-+ [pmi.org - The Value of Project Management](https://www.pmi.org/-/media/pmi/documents/public/pdf/white-papers/value-of-project-management.pdf)
+ + [Software Engineering for Continuous Delivery of Warfighting Capability, 2023/04](https://www.cto.mil/wp-content/uploads/2023/07/SWE-Guide-April2023.pdf)
+ + [DOD Enterprise DevSecOps Fundamentals, v 2.5, 2024/10](https://dodcio.defense.gov/Portals/0/Documents/Library/DoD%20Enterprise%20DevSecOps%20Fundamentals%20v2.5.pdf)
+ + [NIST Special Publication 800-37 (“Risk Management Framework for Information Systems and Organizations"), Rev 2](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-37r2.pdf)
+ + [NIST Secure Software Development Framework (SSDF), SP 800-218A](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf)
+ + [CISA Securing the Software Supply Chain](https://www.cisa.gov/sites/default/files/publications/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN_DEVELOPERS.PDF)
+ + [Application Security Development (ASD) Security Technical Implementation Guide (STIG) version 6, release 3 (APSC-DV-003220)](https://www.cyber.mil/stigs/downloads)
+ + [Integrated Master Plan and Integrated Master Schedule Preparation and Use Guide, May 2023](https://ac.cto.mil/wp-content/uploads/2023/05/IMP-IMS-Guide-2023.pdf)
+ + [pmi.org - The Value of Project Management](https://www.pmi.org/-/media/pmi/documents/public/pdf/white-papers/value-of-project-management.pdf)

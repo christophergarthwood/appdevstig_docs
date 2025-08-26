@@ -11,6 +11,7 @@ Utilize the template below to properly document by way of explicit input or refe
 The PM should review the Project Plan with the customer on a bi-yearly basis to ensure understanding of all facets of the project are still apropos and that customer expectations are being met.
 
 ___________________________________________________________________________________________________________________________________
+## **Template**
 
 # Project Plan for [Plan title]
 

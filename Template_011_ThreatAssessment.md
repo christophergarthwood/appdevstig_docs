@@ -287,6 +287,10 @@ Should occur with each major change to the system at semantic versioning primary
    + APSC-DV-003320, Protections against DoS attacks must be implemented.
  + [OWASP Top 10](https://owasp.org/www-project-top-ten/)
  + [MITRE CWE List](https://cwe.mitre.org/)
+ + [DOD Enterprise DevSecOps Fundamentals, v 2.5, 2024/10](https://dodcio.defense.gov/Portals/0/Documents/Library/DoD%20Enterprise%20DevSecOps%20Fundamentals%20v2.5.pdf)
+ + [NIST Special Publication 800-37 (“Risk Management Framework for Information Systems and Organizations"), Rev 2](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-37r2.pdf)
+ + [NIST Secure Software Development Framework (SSDF), SP 800-218A](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf)
+
 
 ## Versioning
 

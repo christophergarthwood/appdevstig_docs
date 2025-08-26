@@ -3,19 +3,6 @@
 ## Definition:                                                                                        
 A code review is a systematic evaluation of source code, typically performed by one or more developers other than the code’s author, to identify bugs, ensure quality, reinforce coding standards, and promote knowledge sharing within a development team. This process—often called peer review—involves examining code for logic errors, security vulnerabilities, code consistency, and maintainability before the code is merged into the main codebase. Code reviews serve as a cornerstone of software quality assurance, helping teams catch issues early, maintain code integrity, and encourage collaborative learning among team members.
 
-## Requirements/Specifications/Guidelines:                                                            
-A code review must be performed for medium to large changes within a software project or the creation of new functional capabilities.  The review must be documented using a consistent standardized template and must be included with the release of the version of software the review is a part of.
-
-## Measurable and Actionable:
-The code review should be easily understood by a developer or administrator (if the change is a configuration or Operating System modification), should document and register defects or issues, see Tracking System Standard.  The review should iterate through a standard set of expectations and foster teamwork.  The review must not be antagonistic and is not about opinion or preference so much as adherence to whatever standards are in place.  When solving an algorithm no changes to the algorithm should be suggested unless the review knows the algorithm is:
-
-+ Security Concern
-+ Anti-Pattern
-+ Grossly inefficient
-+ Divergent from team expectations that were clearly enumerated
-
-Bear in mind that finding a ***flaw*** in software prior to a deployment is a **SAVE** and should be considered a win for the team.  We learn from our mistakes.  A **FAIL** is when a flaw is deployed and detected by anyone and then must be remediated.
-
 ## Purpose:
 The purpose of a code review is to systematically examine source code by peers to identify defects, ensure adherence to coding standards, and improve overall software quality. It acts as an essential quality control mechanism by catching bugs early, reducing technical debt, and ensuring that code is clear, secure, and maintainable before integration into the main codebase.
 
@@ -34,6 +21,20 @@ The value returned from code reviews includes:
 + Reduced Bugs and Faster Issue Resolution: Early detection of defects reduces costly fixes post-deployment and improves development efficiency.
 
 Overall, code reviews are a vital practice that enhances software quality, team productivity, and project success by coupling technical rigor with collaborative learning.
+
+
+## Requirements/Specifications/Guidelines:                                                            
+A code review must be performed for medium to large changes within a software project or the creation of new functional capabilities.  The review must be documented using a consistent standardized template and must be included with the release of the version of software the review is a part of.
+
+## Measurable and Actionable:
+The code review should be easily understood by a developer or administrator (if the change is a configuration or Operating System modification), should document and register defects or issues, see Tracking System Standard.  The review should iterate through a standard set of expectations and foster teamwork.  The review must not be antagonistic and is not about opinion or preference so much as adherence to whatever standards are in place.  When solving an algorithm no changes to the algorithm should be suggested unless the review knows the algorithm is:
+
++ Security Concern
++ Anti-Pattern
++ Grossly inefficient
++ Divergent from team expectations that were clearly enumerated
+
+Bear in mind that finding a ***flaw*** in software prior to a deployment is a **SAVE** and should be considered a win for the team.  We learn from our mistakes.  A **FAIL** is when a flaw is deployed and detected by anyone and then must be remediated.
 
 ## Timelines: 
 Should be performed for any major change, semantic versioning of secondary number, to the software package.  Should minimally be performed for new developers, regardless of experience, on the project and performed on first release of the software.                                                                                        

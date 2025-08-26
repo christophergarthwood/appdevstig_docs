@@ -1,13 +1,8 @@
 #  Title: Application Configuration Guide (ACG) Standard
 
 ## Definition:
-The Application Configuration Guide is any document or collection of documents used to configure the application.
 
-## Requirements/Specifications/Guidelines:
-An ACG must exist with preference for a Markdown document registered within an artifact repository, see Configuration Management standard.  Utilize the template provided below to build out your content.  *It should be noted that large portions of this document might simply reference: an automated build script, an Ansible or Puppet deployment, and related automation heavy functions.  The reader must be able to find, review, and act upon (assuming appropriate roles) this knowledge. Do not feel compelled to generate paperwork for the sake of paperwork.  Embrace the spirit of this standard by ensuring a map of all knowledge about the application is created in relation to it's configuration.*
-
-## Measurable and Actionable:
-Inspection of the ACG should reveal a means of compiling, starting, and configing the application.  Any representative of the sponsor that is of sufficient technical background (typically a middle-ware admin) must be able to understand and deploy the application along with start and configure it.
+An application configuration guide is a simple instruction manual that explains how to set up an application’s settings. It tells you what options to choose, like database connections, file locations, security settings, or turning features on or off, so the application works correctly in your environment. The guide helps users and administrators make sure the app is set up to meet their needs, run smoothly, and stay secure without needing to change the main code.
 
 ## Purpose:
 By following a configuration guide, teams ensure:
@@ -21,6 +16,14 @@ By following a configuration guide, teams ensure:
 + Simplified maintenance: Structured, centralized documentation reduces complexity in multi-environment scenarios and facilitates troubleshooting, onboarding, and knowledge transfer.
 
 + Industry best practices recommend using human-readable configuration files (e.g., JSON, YAML), environment variables, or command-line arguments to manage these settings. This approach is a key tenet of modern software deployment methodologies such as the twelve-factor app principle, DevOps, and CI/CD pipelines. Ultimately, an application configuration guide helps teams deliver secure, compliant, and consistent software solutions efficiently.
+
+The Application Configuration Guide is any document or collection of documents used to configure the application.
+
+## Requirements/Specifications/Guidelines:
+An ACG must exist with preference for a Markdown document registered within an artifact repository, see Configuration Management standard.  Utilize the template provided below to build out your content.  *It should be noted that large portions of this document might simply reference: an automated build script, an Ansible or Puppet deployment, and related automation heavy functions.  The reader must be able to find, review, and act upon (assuming appropriate roles) this knowledge. Do not feel compelled to generate paperwork for the sake of paperwork.  Embrace the spirit of this standard by ensuring a map of all knowledge about the application is created in relation to it's configuration.*
+
+## Measurable and Actionable:
+Inspection of the ACG should reveal a means of compiling, starting, and configing the application.  Any representative of the sponsor that is of sufficient technical background (typically a middle-ware admin) must be able to understand and deploy the application along with start and configure it.
 
 ## Timeliness:
 Review of the ACG should occur, minimally, after each Sprint Demonstration thus ensuring anything eligible for deployment is updated in the ACG.  Update should be part of the deployment package.  Refer to the Software Delivery Standards for inclusion of this artifact with a numbered deployment.

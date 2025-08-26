@@ -1,19 +1,22 @@
-# Title: Design Management Standard
+# Title: Delivery Standard
 
 ## Definition:
+A software delivery standard is a set of guidelines and practices that describe how to create, test, and deliver software products to users in a reliable and efficient way. Simply put, it’s a rulebook that teams follow to make sure software is developed, checked for quality, and handed over to customers on time, with minimal errors and best results. 
 
+## Purpose:
+The primary method of achieving a quality delivery is consistency.  By having a consistent way to deliver products and receive inpus the development team gains advantage and ultimately helps the Govenrment team member out.
 
 ## Requirements/Specifications/Guidelines:
 
 
 ## Measurable and Actionable:
 
-
-## Purpose:
+Actionable at delivery of a new software version release.
 
 
 ## Timeliness:
 
+Executed at each software secondary, using semantic versioning methods, versoin release.
 
 
 ## Reference(s)
@@ -47,10 +50,21 @@ ________________________________________________________________________________
 
 1. Manifest of this list
 2. Checksum of, APSC-DV-003140, application files must be cryptographically hashed prior to deploying to DoD operational networks.
+   + Executables
+   + Source Code
+   + Associated scripts (automation, build, documentation, test execution, ETL operations, etc.)
+   + Tools
+   + Databases
+   + Libraries
+   + Test Results
+   + DataSets
+   + Training Materials
+   + Any other element used to integrate, test, evaluate, debug, deploy and operate the software application in all relevant environments (DEV, Staging, Ops).
+
 3. Virus scan with results of entire deployment folder.
 4. Design Document updated (if appropriate), preference is markdown with STIG references.
 5. Application Configuration Guide (ACG) updated (if appropriate), preference is markdown with STIG references.
-6. Application Build Instructions - should be a subset of the ACG.
+6. Application Build Procedures - should be a subset of the ACG.
 7. Configuration Management Plan (CMP).
 8. Last deployment plan / instructions, preference is markdown using a standard template.  If automation is used then the playbook involved in repository format (meaning the repository downloaded as a clone).
 9. Git Repo clone with tag refernece Id.
@@ -61,6 +75,8 @@ ________________________________________________________________________________
 14. Automated documentation such as javadoc for each application component.
 15. Ticket management system results showing completed work, pending, etc. MS-Excel appropriate / acceptable.
 16. Code reviews documented, in markdown using team template format.
+
+The delivery of all software components where the government will have rights to the source code, such as open source software and software developed at government expense; and a list of all third-party software components included in the software.  The delivery of software source code should support activities such as compilation and debugging, and future requirements for software sustainment over the lifecycle of the program.
 
 #### Directory structure of deliverable
 

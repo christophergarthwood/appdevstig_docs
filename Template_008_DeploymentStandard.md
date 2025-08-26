@@ -4,6 +4,11 @@
 
 A design document in simple terms is a written plan that explains how software will be built. It describes what the software will do, how it will work, and how its different parts fit together. The purpose is to give everyone on the team (developers, testers, managers) a clear guide for building the software, so everyone knows what to do and how to do it. It helps avoid confusion, saves time, and makes sure the final product meets everyone’s expectations.
 
+## Purpose:
+
+To bring team cohesion and focused understanding of the boundary conditions associated with the project thereby keeping the team on a consistent path that leads to success.
+
+
 ## Requirements/Specifications/Guidelines:
 
 A software design document needs to include several key requirements and components to ensure a clear, effective blueprint for development and shold include: Introduction & Stakeholders, a System Overview, Scope & Context, the Architectural Design, a Detailed Design, User Interface Design, the Data Design, Interface Design, Error Handling & Recovery, Dependencies & Assumptions and a Glossary of Terms.
@@ -13,10 +18,6 @@ Each section should be clear, thorough, and serve as a guide for developers, tes
 ## Measurable and Actionable:
 
 Completion of POA&M milestones, success criteria, and risk management.
-
-## Purpose:
-
-To bring team cohesion and focused understanding of the boundary conditions associated with the project thereby keeping the team on a consistent path that leads to success.
 
 ## Timeliness:
 

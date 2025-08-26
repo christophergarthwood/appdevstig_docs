@@ -30,6 +30,10 @@ Introducing coding standards can help increase the consistency, reliability, and
 
 See: http://www.cse.buffalo.edu/~rapaport/code.documentation.Excerpts.pdf  for details and a more robust explanation as to why a coding standard is necessary.
 
+## Purpose:
+The purpose of a coding standard is to establish clear, consistent rules and guidelines that developers follow when writing code. These standards ensure that the code is clean, readable, and maintainable, which makes it easier for teams to collaborate, find and fix bugs, and extend the software over time. Coding standards also help reduce errors, improve security, and enhance overall software quality by promoting uniformity across the codebase regardless of who writes the code. Ultimately, they lead to more efficient development and better long-term project success.
+
+
 ## Requirements/Specifications/Guidelines:                                                            
 Having an ACG is a Cat II requirement as per the ASD STIG V6R3 and has been a requirement since at least V4 of the ASD STIG.  An ACG is considered an industry best practice as well.  Subject document just exist, should be in Markup, and ideally be as automated as possible.
 
@@ -37,9 +41,6 @@ Your ACG might simply describe how large portions of your coding standard is uti
 
 ## Measurable and Actionable:
 Analysis of code submitted to the repository should conform, largely, with the coding standard.
-
-## Purpose:
-The purpose of a coding standard is to establish clear, consistent rules and guidelines that developers follow when writing code. These standards ensure that the code is clean, readable, and maintainable, which makes it easier for teams to collaborate, find and fix bugs, and extend the software over time. Coding standards also help reduce errors, improve security, and enhance overall software quality by promoting uniformity across the codebase regardless of who writes the code. Ultimately, they lead to more efficient development and better long-term project success.
 
 ## Timelines: 
 Real-time with application development.                                                                                         
