@@ -81,7 +81,6 @@ Reviewing each standard and creating the minimally required content within each 
 + [Software Development Lifecycle (SDLC) Standard](#sdlc_standard)
 
 + [Communication Standard](#communication_standard)
-Communication Standards
 
 <a name="documentation_explained"/>
 
@@ -97,6 +96,7 @@ Communication Standards
  - *Periodicity of Update:* Reviewed & updated post Sprint Review
  - *Comments:* Aligned to methodology, easily accessed
  - *Standard:* [Project Plan Template](./Template_002_ProjectPlanStandard.md)
+ - *References:* APSC-DV-003210, [Secure Software Development Framework (SSDF)](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf)
 
 A project plan is valuable because it provides a roadmap for successful project completion, ensuring projects are completed on time, within budget, and to the required standard. It helps teams avoid potential problems, manage resources effectively, and communicate clearly with stakeholders. Ultimately, a strong project plan sets the foundation for efficient execution and better project outcomes.  This requirement is meant to apply to developers or organizations that are doing application development work.
 
@@ -105,6 +105,7 @@ Application development efforts include the creation of a project plan to track 
 If security flaws are not tracked within the project plan, it is possible the flaws will be overlooked and included in a release.
 
 Tracking flaws in the project plan will help identify code elements to be changed as well as the requested change.  Project Documentation and Procedure Order of precedence Founded in experience, DOD, STIG, and Radiance standards.
+
 
 #### Integrated Master Plan (IMP) and Integration Master Schedule (IMS)
 
@@ -115,6 +116,7 @@ Tracking flaws in the project plan will help identify code elements to be change
  - *Periodicity of Update:* As needed by Progam Manager with inputs from the team.
  - *Comments:* Milestones and High level tasks designed to demonstrate marked progress towards the final capability.
  - *Standard:* N/A
+ - *References:* [Office of Executive Director for Systems Engineering and Architecture, May 2023](https://ac.cto.mil/wp-content/uploads/2023/05/IMP-IMS-Guide-2023.pdf)
 
 The Department of Defense (DoD), other agencies and DoD contractors use Integrated Master Plans (IMPs) and Integrated Master Schedules (IMSs) to plan and manage projects from inception to completion. Together the IMP and IMS integrate the activities and schedule components necessary to complete a project successfully.  The IMP typically describes three levels of activities: Events, Accomplishments, and Criteria.  The IMS adds a fourth level of detail: Tasks, with detailed timelines and deadlines. Each level consists of activities to fulfill the next level in the hierarchy. Programs complete Tasks to satisfy Criteria, which roll up to satisfy Accomplishments, which roll up to complete an Event. The IMP and IMS are integrated, so changes to the plan are reflected in the schedule.
 
