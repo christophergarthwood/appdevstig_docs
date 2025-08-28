@@ -125,14 +125,7 @@ Apache Log Formats
 |%R|The handler generating the response (if any).|
 |%s|Status. For requests that have been internally redirected, this is the status of the original request. Use %>s for the final status.|
 |%t|Time the request was received, in the format [18/Sep/2011:19:18:28 -0400]. The last number indicates the timezone offset from GMT|
-|%{format}t|The time, in the form given by format, which should be in an extended strftime(3) format (potentially localized). If the format starts with begin: (default) the time is taken at the beginning of the request processing. If it starts with end: it is the time when the log entry gets written, close to the end of the request processing. In addition to the formats supported by strftime(3), the following format tokens are supported:
-+ sec -	number of seconds since the Epoch
-+ msec - number of milliseconds since the Epoch
-+ usec - number of microseconds since the Epoch
-+ msec_frac - millisecond fraction
-+ usec_frac - microsecond fraction
-
-These tokens can not be combined with each other or strftime(3) formatting in the same format string. You can use multiple %{format}t tokens instead.|
+|%{format}t|The time, in the form given by format, which should be in an extended strftime(3) format (potentially localized). If the format starts with begin: (default) the time is taken at the beginning of the request processing. If it starts with end: it is the time when the log entry gets written, close to the end of the request processing. In addition to the formats supported by strftime(3), the following format tokens are supported: sec -	number of seconds since the Epoch; msec - number of milliseconds since the Epoch; usec - number of microseconds since the Epoch; msec_frac - millisecond fraction; usec_frac - microsecond fraction.  These tokens can not be combined with each other or strftime(3) formatting in the same format string. You can use multiple %{format}t tokens instead.|
 |%T|The time taken to serve the request, in seconds.|
 |%{UNIT}T|The time taken to serve the request, in a time unit given by UNIT. Valid units are ms for milliseconds, us for microseconds, and s for seconds. Using s gives the same result as %T without any format; using us gives the same result as %D. Combining %T with a unit is available in 2.4.13 and later.|
 |%u|Remote user if the request was authenticated. May be bogus if return status (%s) is 401 (unauthorized).|
