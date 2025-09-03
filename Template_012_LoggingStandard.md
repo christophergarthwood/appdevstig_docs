@@ -90,17 +90,24 @@ ErrorLogFormat "[%t]^[%l]^[%P]^%F^%E^%a^%M" ssl_error_log
 
 Timestamp of entry, Log Level, Process ID, Filename where log originated, Error Code, Client IP, Actual Error Message.
 
-LogFormat "%h^%l^%u%^%t^%>s^%b^%O^%T^%L\:%{Referer}i\"^\"%{User-Agent}i\"^%U^%q" ssl_access_log
-
 Hostname/Ip, Remote Logname, Remote User, Time Request was Received, Status, Size of Response in bytes minus HTTP Headers, Bytes Received, Bytes Sent, Time Taken to Serve Request, Referer, Browser, URL Path, Query String
+
+***Without Logio Module:***
+
+Extra tabs used to mark Logio module fields thus you have a consistent log you can trust regardless of module availability.
+
+LogFormat "%h^%l^\"%{X-SSL-Client-CN}i\"^%t^%s^%b^-^-^%T^%L^\"%{Referer}i\"^\"%{User-Agent}i\"^%U^%q^%f^%m"  ssl_common 
+
+***With Logio Module:***
+
+<IfModule logio_module>
+    LogFormat "%h^%l^\"%{X-SSL-Client-CN}i\"^%t^%s^%b^%I^%O^%T^%L^\"%{Referer}i\"^\"%{User-Agent}i\"^%U^%q^%f^%m"  ssl_common 
+</IfModule>
 
 CustomLog "|/usr/sbin/rotatelogs /var/log/httpd/some_url_ssl_access_log_%Y%m%d-%H%M%S.log 86400" ssl_access_log
 
 LogLevel warn
 
-<IfModule logio_module>
-#You will need to enable mod_logio.c to use %I and %O
-</IfModule>
 `
 
 #### Startup / Shutdown Logs
