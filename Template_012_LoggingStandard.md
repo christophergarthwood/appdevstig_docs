@@ -90,7 +90,7 @@ ErrorLogFormat "[%t]^[%l]^[%P]^%F^%E^%a^%M" ssl_error_log
 
 Timestamp of entry, Log Level, Process ID, Filename where log originated, Error Code, Client IP, Actual Error Message.
 
-Hostname/Ip, Remote Logname, Remote User, Time Request was Received, Status, Size of Response in bytes minus HTTP Headers, Bytes Received, Bytes Sent, Time Taken to Serve Request, Referer, Browser, URL Path, Query String
+Remote Hostname/Ip, Remote Logname, Remote User (SSL CN from DoD CAC), Time Request was Received, Status, Size of Response in bytes minus HTTP Headers, Bytes Received, Bytes Sent, Time Taken to Serve Request, Referer, Browser, URL Path, Query String, Filename (if downloading), Request Method
 
 ***Without Logio Module:***
 
