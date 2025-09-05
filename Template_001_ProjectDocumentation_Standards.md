@@ -89,14 +89,14 @@ Reviewing each standard and creating the minimally required content within each 
 <a name="project_plan"/>
 
 #### Project Plan (APSC-DV-003210)
- - *Structure:* Must be template based on customer standards else develop a template reference the template and utilize that.
+ - *Structure:* Must be template based on customer standards else develop a template, reference the template and utilize that.
  - *Format:* Preference is Markdown using pandoc to transform the content as needed and maintain in repository, else utilize MS Word.  
  - *Methods of work implementation:*  Agile (daily scrum, Sprints duration, etc.)
  - *Project Artifact Location:* Central location with Project Management documentation.
  - *Periodicity of Update:* Reviewed & updated post Sprint Review
  - *Comments:* Aligned to methodology, easily accessed
  - *Standard:* [Project Plan Template](./Template_002_ProjectPlanStandard.md)
- - *References:* APSC-DV-003210, [Secure Software Development Framework (SSDF)](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf)
+ - *References:* ASD STIG APSC-DV-003210, [Secure Software Development Framework (SSDF)](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf)
 
 A project plan is valuable because it provides a roadmap for successful project completion, ensuring projects are completed on time, within budget, and to the required standard. It helps teams avoid potential problems, manage resources effectively, and communicate clearly with stakeholders. Ultimately, a strong project plan sets the foundation for efficient execution and better project outcomes.  This requirement is meant to apply to developers or organizations that are doing application development work.
 
@@ -104,7 +104,7 @@ Application development efforts include the creation of a project plan to track 
 
 If security flaws are not tracked within the project plan, it is possible the flaws will be overlooked and included in a release.
 
-Tracking flaws in the project plan will help identify code elements to be changed as well as the requested change.  Project Documentation and Procedure Order of precedence Founded in experience, DOD, STIG, and Radiance standards.
+Tracking flaws in the project plan will help identify code elements to be changed as well as the requested change.  Project Documentation and Procedure Order of precedence Founded in experience, DOD, STIG, and industry standards.
 
 
 #### Integrated Master Plan (IMP) and Integration Master Schedule (IMS)
