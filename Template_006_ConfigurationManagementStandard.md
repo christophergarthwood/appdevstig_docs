@@ -30,12 +30,11 @@ Together, these concepts help teams manage multiple concurrent development effor
 
 ## Purpose:
 
-SCM ensures that everyone knows what version of the software is being worked on, who made changes, and what those changes are. This helps avoid mistakes like overwriting work, losing important files, or introducing bugs. It also makes it easier to fix problems, roll back to earlier versions if needed, and keep software running smoothly over time. SCM is essential for teamwork, quality control, and managing complex software projects effectively.
-
+SCM ensures that everyone knows what version of the software is being worked on, who has made changes, and what those changes are. This helps avoid mistakes like overwriting work, losing important files, or introducing bugs. It also makes it easier to fix problems, roll back to earlier versions if needed, and keep software running smoothly over time. SCM is essential for teamwork, quality control, and managing complex software projects effectively.
 
 ## Requirements/Specifications/Guidelines:
 
-A Software Configuration Management (SCM) plan details how to manage and control changes to software products throughout their lifecycle. Its requirements generally include:
+Software Configuration Management (SCM) plan details how to manage and control changes to software products throughout their lifecycle. Its requirements generally include:
 
 + Configuration Management Objectives: Clearly state goals such as maintaining version consistency, traceability, and change control.
 
@@ -43,7 +42,7 @@ A Software Configuration Management (SCM) plan details how to manage and control
 
 + Configuration Control: Establish procedures for submitting, reviewing, approving, and implementing changes, including authority roles.
 
-+ Configuration Status Accounting: Specify how changes and current status of components will be recorded, reported, and tracked.
++ Configuration Status Accounting: Specify how changes and status of components will be recorded, reported, and tracked.
 
 + Configuration Audits and Reviews: Outline how audits will be conducted to ensure components meet standards and baseline requirements.
 
@@ -61,7 +60,7 @@ This structured approach ensures software integrity, supports collaboration, min
 
 ## Measurable and Actionable:
 
-Software Configuration Management (SCM) is measurable through a variety of metrics and Key Performance Indicators (KPIs) that assess how effectively the SCM process is maintaining control, accuracy, and consistency of the software and related configuration items. Common measurable aspects include:
+Software Configuration Management (SCM) is measurable through a variety of metrics and Key Performance Indicators (KPIs) that assess how effectively the SCM process maintains control, accuracy, and consistency of the software and related configuration items. Common measurable aspects include:
 
 + Compliance Rate: The degree to which configuration changes and processes adhere to defined SCM policies and standards.
 
@@ -90,7 +89,7 @@ SCM should occur ANY time a change is made to code using a Branch, Trunk, Tag me
     + APSC-DV-003010, A Software Configuration Management (SCM) plan describing the configuration control and change management process of application objects developed by the organization and the roles and responsibilities of the organization must be created and maintained.
     + APSC-DV-003020, A Configuration Control Board (CCB) that meets at least every release cycle, for managing the Configuration Management (CM) process must be established.
     + APSC-DV-003190, Flaws found during a code review must be tracked in a defect tracking system and utilize configuration management.
- + [Defense Agency Univerisy (DAU)](https://www.dau.edu/acquipedia-article/configuration-management-cm)
+ + [Defense Agency University (DAU)](https://www.dau.edu/acquipedia-article/configuration-management-cm)
  + [Federal Shared Services](https://ussm.gsa.gov/assets/files/M3-Playbook-Configuration-Management-Plan-Template.docx)
 ____________________________________________________________________________________________________________________________________
 ## **Template**
@@ -107,11 +106,11 @@ Further refine the purpose of the capability described in the previous section a
 
 ### Assumptions and Constraints:
 
-Document any assumptions or contraints in an enumerated list that impact this project.  Assumptions and Constraints might need [risk management](#risk_management).
+Document any assumptions or constraints in an enumerated list that impacts this project.  Assumptions and Constraints might need [risk management](#risk_management).
 
 ### Roles and Responsibilities:
 
-Identify any roles and the responsibilties of each role in the context of the project as a whole.  The leads of each role are ultimately responsible for success or failure at that scope of the project and will approve / disapprove changes to the system according to their level of involvement.
+Identify any roles and the responsibilities of each role in the context of the project.  The leaders of each role are ultimately responsible for success or failure at that scope of the project and will approve / disapprove changes to the system according to their level of involvement.
 
 ***Example:***
 
@@ -137,11 +136,11 @@ Describe the Configuration Management Strategy for the project. Suggested text i
 ***Example:***
 This project's configuration management strategy is a structured approach to track, control, and organize changes to a software project’s artifacts—such as code, documentation, and environment settings—across its lifecycle. Key elements of an effective strategy include:
 
-+ Planning and Identification: Identify Configuration Items (CI's) and utilize a process for management of those CI's.
++ Planning and Identification: Identify Configuration Items (CI's) and utilize a process for management of those CIs.
 
 + Version Control: Use version control systems (e.g., Git) to record every change. Utilize Trunk, Branch, Tag methodology.
 
-+ Change Management: Implement a workflow to review, approve, and document changes. Use approvals from senior team leads to ensure only authorized modifications go live.
++ Change Management: Implement a workflow to review, approve, and document changes. Use approvals from senior teams leads to ensure only authorized modifications go live.
 
 + Status Tracking: Utilize a tracking system and correlate changes (commit scraping) from the version control system to the tracking system.
 
@@ -185,7 +184,7 @@ Describe the production environment that the project will use and its purpose. P
 |Operational |Some domain  |some-server.at.sompeplace.operations |443           |Proxy Server             |Apache instance that serves as proxy server for all incoming requests.|
 
 #### Tools Used for Environment Management
-Describe the tools used to management the environment.  If you use CI/CD pipelines a basic one paragraph description with location information is sufficient, however a diagram showing the workflow or Mermaid input is a minimal requirement.
+Describe the tools used to manage the environment.  If you use CI/CD pipelines a basic one paragraph description with location information is sufficient, however a diagram showing the workflow or Mermaid input is a minimal requirement.
 
 If you use a code repository such as Git and/or an artifact repository such as JFrog's Artifactory that must be explained with locations referenced.
 
@@ -209,11 +208,11 @@ Who has access to the environment, what role?  Enumerate the roles first and the
 
 #### Environment Schedule
 
-Describe the environment's schedule.  This comes in four-parts:
+Describe the environment's schedule.  This comes in four parts:
 
 ##### Data Schedule
 
-Describe in details using the example table below how data is moved / transferred to the various environments.  If a consistent mechanism is used only one overall environment description is required.
+Describe in detail using the example table below how data is moved / transferred to various environments.  If a consistent mechanism is used only one overall environment description is required.
 
 ***Example:***
 
@@ -238,16 +237,15 @@ All persistent functions like ESRI Portal for ArcGIS are saved after a shutdown 
 
 ##### Update Communication Plan and Schedule
 
-Describe, in detail, the communicate methods and any scheduled time for deployments / updates that would affect customers' ability to use the software package.
+Describe, in detail, the communication methods and any scheduled time for deployments / updates that would affect customers' ability to use the software package.
 
 ##### Routine Downtime
 
 Describe, in detail, how the various human and computer components of this system are notified of routine downtime.
 
-
 #### Environment Maintenance
 
-Describe the overall strategy for maintaining the project's environments.  This should be at a high level and reference more detailed documentation, like processes or procedures.
+Describe the overall strategy for maintaining the project's environment.  This should be at a high level and reference more detailed documentation, like processes or procedures.
 
 ### Configuration Items
 
@@ -273,7 +271,7 @@ Identify the types of controlled code configuration items managed by the project
 
 |Name                      |Function                        |Location                  |
 |--------------------------|--------------------------------|--------------------------|
-|Harvester Scripts         |Python source code and shell scripts used to ingest data to various portal data stores from disparate locations. | `url here` |
+|Harvester Scripts         |Python source code and shell scripts are used to ingest data to various portal data stores from disparate locations. | `url here` |
 |ESRI Portal for ArcGIS    |Portal configurations used for contiguous setup between environments. | `url here`|
 |Apache proxy              |Apache configuration files and scripts used to support all proxy operations. | `url here` |
 
@@ -285,13 +283,13 @@ Identify the types of controlled data configuration items managed by the project
 
 |Name                      |Function                        |Location                  |
 |--------------------------|--------------------------------|--------------------------|
-|Harvester Scripts         |Python source code and shell scripts used to ingest data to various portal data stores from disparate locations. | `url here` |
+|Harvester Scripts         |Python source code and shell scripts are used to ingest data to various portal data stores from disparate locations. | `url here` |
 |ESRI Portal for ArcGIS    |Portal configurations used for contiguous setup between environments. | `url here`|
 |Apache proxy              |Apache configuration files and scripts used to support all proxy operations. | `url here` |
 
 #### Infrastructure Configuration Items
 
-If the project does not control the infrastructure configuration items, then this section may be deleted. Describe the project’s controlled infrastructure configuration items using the table below or an equivalent. If a project has a specific deliverable or set of deliverables that describes its infrastructure configuration items, a reference to those deliverables may be used in place of a table. If cloud services provider is used, please include the service provider name (ex. Azure, AWS, Salesforce, etc.) and their associated CI items here.
+If the project does not control the infrastructure configuration items, then this section may be deleted. Describe the project’s-controlled infrastructure configuration items using the table below or an equivalent. If a project has a specific deliverable or sets of deliverables that describes its infrastructure configuration items, a reference to those deliverables may be used in place of a table. If cloud services provider is used, please include the service provider name (ex. Azure, AWS, Salesforce, etc.) and their associated CI items here.
 
 ***Example:***
 
@@ -301,7 +299,7 @@ If the project does not control the infrastructure configuration items, then thi
 
 #### Logging
 
-Logging is very important to any application and must exist in the prescribed manner the customer / client dictates. Use the [Logging Standard](./Template_012_LoggingStandard.md) as your mechanism for achieving minimal customer requirements or define your own.  Save the log information as a configuration item in this plan.
+Logging is very important for any application and must exist in the prescribed manner the customer / client dictates. Use the [Logging Standard](./Template_012_LoggingStandard.md) as your mechanism for achieving minimal customer requirements or defining your own.  Save the log information as a configuration item in this plan.
 
 ***Example:***
 
@@ -315,49 +313,49 @@ Logging is very important to any application and must exist in the prescribed ma
 Define the process for controlling changes to the system baselines and for tracking the implementation of those changes.  Usually a system change request (SCR) is used to provide information concerning the need to change a baseline system or system component (hardware, software, or documentation). If these processes are detailed in a separate, more detailed plan it should be referenced here.
 
 #### Documentation Configuration Management System
-1.	Describe the project documentation configuration management system(s), including the naming of the system, the purpose, naming standards, directory structure standards, owner, access and version controls.
-2.	Describe the backup and recovery approach including frequency of backup and recovery exercised and validation if required.
-3.	Describe the approach for removal/deletion/archival of project documents. Please include the project document selection process, storage medium, and responsibilities.
-4.	Describe the security and clearance requirements for the controlled project documents.
-5.	Describe the tools and techniques the project will use to let the configuration manager know when a controlled document must be updated based on an approved change request. Document specifics on how the configuration management system will interact with the change control process. >>
+1. Describe the project documentation configuration management system(s), including the naming of the system, the purpose, naming standards, directory structure standards, owner, access and version controls.
+2. Describe the backup and recovery approach including frequency of backup and recovery exercised and validation if required.
+3. Describe the approach for removal/deletion/archival of project documents. Please include the project document selection process, storage medium, and responsibilities.
+4. Describe the security and clearance requirements for the controlled project documents.
+5. Describe the tools and techniques the project will use to let the configuration manager know when a controlled document must be updated based on an approved change request. Document specifics on how the configuration management system will interact with the change control process. >>
 
 #### Software / Code Configuration Management
 
-1.	Describe the project software/code configuration management system(s), including the naming of the system, the purpose, naming standards, directory structure standards, owner, access and version controls.
-2.	Describe the backup and recovery approach including frequency of backup and recovery exercised and validation if required.
-3.	Describe the archival approach for the controlled project software configuration items. Please include the storage medium, retention policy, retrieval process, and access controls
-4.	Describe the security and clearance requirements for the software configuration items.
-5.	Describe the tools and techniques the project will use to let the configuration manager know when a signed off code must be modified under the change request. Document specifics on how the software/code configuration management system will interact with the change control process. >>
+1. Describe the project software/code configuration management system(s), including the naming of the system, the purpose, naming standards, directory structure standards, owner, access and version controls.
+2. Describe the backup and recovery approach including frequency of backup and recovery exercised and validation if required.
+3. Describe the archival approach for the controlled project software configuration items. Please include the storage medium, retention policy, retrieval process, and access controls
+4. Describe the security and clearance requirements for the software configuration items.
+5. Describe the tools and techniques the project will use to let the configuration manager know when a signed off code must be modified under the change request. Document specifics on how the software/code configuration management system will interact with the change control process. >>
 
 #### Infrastructure Configuration Management
 
-1.	Describe the project infrastructure configuration management system(s), including the naming of the system, the purpose, naming standards, directory structure standards, owner, access and version controls.
-2.	Describe the backup and recovery approach including frequency of backup and recovery exercised and validation if required.
-3.	Describe the archival approach for the system or infrastructure/environment: Include the storage medium, retention policy, retrieval process, and access controls
-4.	Describe any security and clearance requirements for access and configuration of the infrastructure
-5.	Describe the tools and techniques the project will use to let the configuration manager know when a controlled infrastructure item must be modified under the change request. Document specifics on how the configuration management system will interact with the change control process.
+1. Describe the project infrastructure configuration management system(s), including the naming of the system, the purpose, naming standards, directory structure standards, owner, access and version controls.
+2. Describe the backup and recovery approach including frequency of backup and recovery exercised and validation if required.
+3. Describe the archival approach for the system or infrastructure/environment: Include the storage medium, retention policy, retrieval process, and access controls
+4. Describe any security and clearance requirements for access and configuration of the infrastructure
+5. Describe the tools and techniques the project will use to let the configuration manager know when a controlled infrastructure item must be modified under the change request. Document specifics on how the configuration management system will interact with the change control process.
 
 #### Interface Configuration Management
 
-1.	Describe the project interface configuration management system(s), including the naming of the system, the purpose, naming standards, directory structure standards, owner, access and version controls.
-2.	Describe the tools and techniques the project will use to let the configuration manager know when a controlled infrastructure item must be modified under the change request. Document specifics on how the configuration management system will interact with the change control process. 
+1. Describe the project interface configuration management system(s), including the naming of the system, the purpose, naming standards, directory structure standards, owner, access and version controls.
+2. Describe the tools and techniques the project will use to let the configuration manager know when a controlled infrastructure item must be modified under the change request. Document specifics on how the configuration management system will interact with the change control process. 
 
 #### Database Configuration Management
 
-1.	Describe the project database configuration management system(s), including the naming of the system, the purpose, naming standards, directory structure standards, owner, access and version controls.
-2.	Describe the backup and recovery approach including frequency of backup and recovery exercised and validation if required.
-3.	Describe the archival approach for the system: Include the storage medium, retention policy, retrieval process, and access controls
-4.	Describe any security and clearance requirements for access and configuration of the database
-5.	Describe the tools and techniques the project will use to let the configuration manager know when a controlled database item must be modified under the change request. Document specifics on how the configuration management system will interact with the change control process. >>
+1. Describe the project database configuration management system(s), including the naming of the system, the purpose, naming standards, directory structure standards, owner, access and version controls.
+2. Describe the backup and recovery approach including frequency of backup and recovery exercised and validation if required.
+3. Describe the archival approach for the system: Include the storage medium, retention policy, retrieval process, and access controls
+4. Describe any security and clearance requirements for access and configuration of the database
+5. Describe the tools and techniques the project will use to let the configuration manager know when a controlled database item must be modified under the change request. Document specifics on how the configuration management system will interact with the change control process. >>
 
 #### Library Configuration Management
 
-1.	Describe the project libraries configuration management system(s), including the naming of the system, the purpose, naming standards, directory structure standards, owner, access and version controls.
-2.	Describe the tools and techniques the project will use to let the configuration manager know when a controlled library item must be modified under the change request. Document specifics on how the configuration management system will interact with the change control process.
+1. Describe the project libraries’ configuration management system(s), including the naming of the system, the purpose, naming standards, directory structure standards, owner, access and version controls.
+2. Describe the tools and techniques the project will use to let the configuration manager know when a controlled library item must be modified under the change request. Document specifics on how the configuration management system will interact with the change control process.
 
 ### CM Plan Maintenance
 
-Describe the activities and responsibilities necessary to ensure continued CM planning during the life cycle of the project. Identify all of those responsible for monitoring the CM plan. Describe how frequently updates are to be performed; how changes to the CM plan are to be evaluated and certified; and how changes to the CM plan are to be made and communicated. 
+Describe the activities and responsibilities necessary to ensure continued CM planning during the life cycle of the project. Identify all those responsible for monitoring the CM plan. Describe how frequent updates are to be carried out; how changes to the CM plan are to be evaluated and certified; and how changes to the CM plan are to be made and communicated. 
 
 Example: Control Boards, CM Change Management Process, etc.
 
@@ -365,23 +363,18 @@ Example: Control Boards, CM Change Management Process, etc.
 
 #### Risk Management
 
-Enumerate any risks perceived with the existing CM Plan and document stragegies employed to help mitigate that risk in a favorable way for the project.
+Enumerate any risks perceived with the existing CM Plan and document strategies employed to help mitigate that risk in a favorable way for the project.
 
-###	Configuration Management Automation Support
+###   Configuration Management Automation Support
 
-1.	Automated Tools
+1. Automated Tools
 
 Describe any automated tools used.
 
-2.	Work Space Management
+2. Workspace Management
 
 Describe the processes used for automated software source code control tools.
 
-3.	Build Management
+3. Build Management
 
 Describe the controls in place to manage the building of executable code.
-
-
-
-
-
