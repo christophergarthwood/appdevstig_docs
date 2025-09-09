@@ -1,4 +1,4 @@
-# Title: Deployment Standad
+# Title: Deployment Standard
 
 ## Definition:
 
@@ -6,12 +6,11 @@ A software delivery plan is a simple, step-by-step roadmap that shows how a team
 
 ## Purpose:
 
-A software delivery plan ensures "no surprises" when migrating a capability to the next tier and reduces risk when deploying a solution as the plan is circulated with all team members, tested, and followed in the subsequent Staging and Operations releases.
-
+A software delivery plan ensures "no surprises" when migrating to the next tier and reduces risk when deploying a solution as the plan is circulated with all team members, tested, and followed in the subsequent Staging and Operations releases.
 
 ## Requirements/Specifications/Guidelines:
 
-A software deployment plan template, based on industry best practices, should provide a clear and detailed blueprint for delivering software to production environments with minimal risk and maximum transparency. 
+A software deployment plan template, based on industry’s best practices, should provide a clear and detailed blueprint for delivering software to production environments with minimal risk and maximum transparency. 
 
 All deployments will have the following characteristics:
 
@@ -34,10 +33,9 @@ Blue-Green Deployment: Two identical production environments are maintained (Blu
 + Pros: Provides a quick rollback option and ensures high availability during the transition.
 + Cons: Requires maintaining two production environments, which can be costly.
 
-Canary Deployment: The new version is released to a small, isolated subset of users first. The behavior and performance are closely monitored.
+Canary Deployment: The new version is released to a small, isolated subset of users first. Their behavior and performance are closely monitored.
 + Pros: Minimizes the impact of bugs by affecting only a small group of users, allowing for early detection and correction.
 + Cons: Requires sophisticated traffic routing and monitoring capabilities.
-
 
 ## Measurable and Actionable:
 
@@ -47,10 +45,9 @@ Performed for every deployment.
 
 Performed for every deployment.
 
-
 ## Reference(s)
  + Application Security and Development (ASD) Security Technical Implementation Guide (STIG) Version 6, Release 3, 2025/04/02
-    + APSC-DV-003220, The designer must create and update the Design Document for each release of the application.The application design document or configuration guide includes configuration settings, recommendations and best practices that pertain to the secure deployment of the application. 
+    + APSC-DV-003220, The designer must create and update the Design Document for each release of the application. The application design document or configuration guide includes configuration settings, recommendations and best practices that pertain to the secure deployment of the application. 
     + APSC-DV-002930, The ISSO must ensure active vulnerability testing is performed prior to deployment.
     + APSC-DV-003340, At least one application administrator must be registered to receive update notifications, or security alerts, when automated alerts are available.
 ____________________________________________________________________________________________________________________________________
@@ -70,7 +67,7 @@ ________________________________________________________________________________
 
 ### Objective
 
-**Software Name:Identify the software product or version being deployed.  Deployment Objective: State the purpose and expected outcomes of the deployment.  In plain language state the object of the upgrade and reference any significant data points associated with the change.  If due to a security concern or patch identify that reasoning as part of the objective.**
+**Software Name: Identify the software product or version being deployed.  Deployment Objective: State the purpose and expected outcomes of the deployment.  In plain language state the object of the upgrade and reference any significant data points associated with the change.  If due to a security concern or patch identify that reasoning as part of the objective.**
 
 **Utilize a discrete list of changes that will occur in detail, table below provided as a guide.  Each element in this table should be traceable to the Application Configuration Guide (ACG) and Design Document which must be updated post deployment.**
 
@@ -111,7 +108,6 @@ ________________________________________________________________________________
 │      ├── *.json - Configuration files that support Utility functions.
 ```
 
-
 ### Timeline
 
 ***Deployment Timeline: Specify deployment date(s) and relevant milestones.***
@@ -124,7 +120,7 @@ ________________________________________________________________________________
 
 ***Deployment Team: List personnel and roles involved (DevOps, QA, product owner, etc.). Minimally identify the primary admin, any developers involved, primary tester, project manager, and sponsor success will be reported to.***
 
-|Stakeholder    |Role        |EMail / Phone      | Commentary |
+|Stakeholder    |Role        |Email / Phone      | Commentary |
 |---------------|------------|-------------------|------------|
 |Joe Smoe       |Project Manager| pm@smoe.inc.com| Notify upon completion.|
 |Little Debbie  |Sponsor        | little.debbie@tasty.cakes.com| Notify upon completion, will notify user base via templated message.|
@@ -136,7 +132,7 @@ ________________________________________________________________________________
 
 ***Stakeholder Communication Plan: How and when updates will be communicated during deployment.***
 
-|Stakeholder    |Role        |EMail / Phone      | Commentary |
+|Stakeholder    |Role        |Email / Phone      | Commentary |
 |---------------|------------|-------------------|------------|
 |Joe Smoe       |Project Manager| pm@smoe.inc.com| Coordinates inputs to Sponsor.|
 |Mr. Coder      |Developer      | mr.coder@gmail.com | Conveys status to PM.|
@@ -144,9 +140,9 @@ ________________________________________________________________________________
 
 ### Authority
 
-***Approval Authority: Identify people authorized to approve or halt deployment. It should be noted that the team member on scene is ultimately responsible and therefore has ultimate authority to decide how the deployment will progress.  If pressed against time,  you can't beat the clock, or running into unexpected issues the person making the deployment may halt and revert to original state at will without concern for admonishment.***
+***Approval Authority: Identify people authorized to approve or halt deployment. It should be noted that the team member on scene is ultimately responsible and therefore has ultimate authority to decide how the deployment will progress.  If pressed against time,  you can't beat the clock or run into unexpected issues the person making the deployment may halt and revert to original state at will without concern for admonishment.***
 
-|Stakeholder    |Role        |EMail / Phone      | Commentary |
+|Stakeholder    |Role        |Email / Phone      | Commentary |
 |---------------|------------|-------------------|------------|
 |Mr. Big        |Primary System Admin | mr.big@gmail.com | Ultimate authority.|
 |Joe Smoe       |Project Manager| pm@smoe.inc.com| May request roll-back if consulted.|
@@ -156,13 +152,13 @@ ________________________________________________________________________________
 Perform Risk Assessment: List potential risks, impacts, likelihood, mitigations, and owners.
 
 ***Example***
-|Risk           |Impact        |EMail / Phone      | Commentary |
+|Risk           |Impact        |Email / Phone      | Commentary |
 |---------------|------------|-------------------|------------|
 |Mr. Big        |Primary System Admin | mr.big@gmail.com | Ultimate authority.|
 
 ## Pre-Deployment Activities
 
-The following are steps necessary to ensure the deployment environment is in a state that's acceptable to receive the update.  In the event a backup procedure cannot be performed the deployment will be aborted and administrative teams consulted regarding next steps for the future (resolution of low disk space, availability of mounted file systems, etc.).  If a step is incorrect, a test fails or something unexpected occurs in the deployment the team member executing the deployment has the authority to halt a deployment and roll-back / abort the mission.  Identification of the discrepancy must be resolved and if necessary re-executed in the Integration Environment.
+The following are steps necessary to ensure the deployment environment is in a state that it’s acceptable to receive the update.  In the event a backup procedure cannot be performed the deployment will be aborted and administrative teams consulted regarding next steps for the future (resolution of low disk space, availability of mounted file systems, etc.).  If a step is incorrect, a test fails or something unexpected occurs in the deployment the team member executing the deployment has the authority to halt a deployment and roll-back / abort the mission.  Identification of the discrepancy must be resolved and if necessary re-executed in the Integration Environment.
 
 ### Configuration Items for Deployment
 
@@ -174,7 +170,6 @@ Ensure the following list of installation files are available and ready for your
 |Java 8                      |./jre-8.3.tgz           | /mnt/staging_software|
 |Tomcat 10 Configurations    |https://gitlab.org/myconfigs | Download from repository.|
 |WAR files for web apps      |Copy from existing Tomcat 9 | /usr/local/tomcat9/webapps|
-
 
 ### Backup Procedures:
 
@@ -228,7 +223,7 @@ Validate all target variables in the environment.  An example is provided below 
 5. Ensure proper version of Java is present:
 
   + `java -version`
-  + If not the correct version (version 8) perform a backup of Java and deploy the new Java with the appropriate instructions.
+  + If not the correct version (version 8) performs a backup of Java and deploys the new Java with the appropriate instructions.
 
 6. If all tests have passed initiate deployment.
 
@@ -306,7 +301,7 @@ The recommended place to specify these variables is a "setenv" script. See below
 
 5. Using the "setenv" script.
 
-Apart from CATALINA_HOME and CATALINA_BASE, all environment variables can be specified in the "setenv" script. The script is placed either into CATALINA_BASE/bin or into CATALINA_HOME/bin directory and is named setenv.bat (on Windows) or setenv.sh (on *nix). The file has to be readable.  By default the setenv script file is absent. If the script file is present both in CATALINA_BASE and in CATALINA_HOME, the one in CATALINA_BASE is
+Apart from CATALINA_HOME and CATALINA_BASE, all environment variables can be specified in the "setenv" script. The script is placed either into CATALINA_BASE/bin or into CATALINA_HOME/bin directory and is named setenv.bat (on Windows) or setenv.sh (on *nix). The file must be readable.  By default, the setenv script file is absent. If the script file is present both in CATALINA_BASE and in CATALINA_HOME, the one in CATALINA_BASE is
 preferred.
 
 On *nix, $CATALINA_BASE/bin/setenv.sh:
@@ -329,11 +324,9 @@ On *nix, $CATALINA_BASE/bin/setenv.sh:
   + Open local browser and access http://localhost:8080/
   + Consult designated tester and other team members that services are working.
 
-
 ### Rollback Plan
 
-See previous section regarding roll-backs.
-
+See previous section regarding rollbacks.
 
 ## Post-Deployment Activities
 
@@ -347,11 +340,11 @@ If available execute the Test Plan with the designated Tester for the project.
 
 #### Administrative Checks (minimal)
 
-1. Check version of Java in use, should be 8+.
+1. Check the Java in use, should be 8+.
 
   + `java -version`
 
-2. Check version of Tomcat Deployed, should be 10+.
+2. Check version of Tomcat Deployed should be 10+.
 
   + `/usr/share/tomcat9/bin/version.sh`
 
@@ -368,7 +361,6 @@ If available execute the Test Plan with the designated Tester for the project.
   + Verify port 8??? is listening.
   + Open browser on local machine and verify https://localhost:8080 responds.
 
-
 ### Stakeholder Notification
 
 Confirm deployment completion and report results. Utilize the Communication Plan above and issue inputs to team members regarding status.
@@ -376,4 +368,3 @@ Confirm deployment completion and report results. Utilize the Communication Plan
 ### Documentation Update
 
 Capture “lessons learned” and retrospective notes to update the deployment plan for next time.  Ensure notes indicated below are propagated to the Sprint Retrospective.
-
