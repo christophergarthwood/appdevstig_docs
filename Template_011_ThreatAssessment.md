@@ -18,15 +18,15 @@ Utilize the following model as the basis for your analysis to calculate the leve
 
 ### 1.0 DREAD
 
-DREAD is a classification scheme for quantifying, comparing and prioritizing the amount of risk presented by each evaluated threat. The DREAD acronym is formed from the first letter of each category below. DREAD modeling influences the thinking behind setting the risk rating, and is also used directly to sort the risks. The DREAD algorithm, shown below, is used to compute a risk value, which is an average of all five categories.
+DREAD is a classification scheme for quantifying, comparing and prioritizing the amount of risk presented by each evaluated threat. The DREAD acronym is formed from the first letter of each category below. DREAD modeling influences the thinking behind setting the risk rating and is also used directly to sort the risks. The DREAD algorithm, shown below, is used to compute a risk value, which is an average of all five categories.
 
 `Risk_DREAD = (DAMAGE + REPRODUCIBILITY + EXPLOITABILITY + AFFECTED USERS + DISCOVERABILITY) / 5`
 
-The calculation always produces a number between 0 and 10; the higher the number, the more serious the risk. Here are some examples of how to quantify the DREAD categories.
+The calculation always produces a number between 0 and 10, the higher the number, the more serious the risk. Here are some examples of how to quantify the DREAD categories.
 
 #### 1.1 Damage Potential
 
-If a threat exploit occurs, how much damage will be caused?
+If a threat exploit occurs, how much damage will it be caused?
 
 + 0 = Nothing
 + 5 = Individual user data is compromised or affected.
@@ -73,9 +73,9 @@ The following are explanations of OWASP and potential mitigations with examples 
 
 #### 2.1 [Broken Authentication / Access Control and Session Management](http://owasp.org/Top10/A03_2021-Injection/)  (APSC-DV-000010, APSC-DV-001800, APSC-DV-002220, APSC-DV-002240, APSC-DV-002250, APSC-DV-002260, APSC-DV-002270, APSC-DV-002270)
 
-Attacker uses leaks or flaws in the authentication or session management functions (e.g., exposed accounts, passwords, session IDs) to impersonate users.
+Attackers use leaks or flaws in the authentication or session management functions (e.g., exposed accounts, passwords, session IDs) to impersonate users.
 
-Session management encompasses the techniques employed by web applications to transparently authorize a user for every HTTP request without having the user repeatedly login. The onus of session management must be borne by the application itself due to the stateless nature of the underlying HTTP protocol. Session management entails the application sending the client (in most cases, a web browser) a session token after successful authentication. In most cases, this token is passed via the Set-Cookie directive of HTTP and is stored on the client. The session token must then be sent by the client along with every HTTP request to the server to identify itself to the web-based application. The application can then determine whether the client is authorized to access the page being requested.
+Session management encompasses the techniques employed by web applications to transparently authorize a user for every HTTP request without having the user repeatedly login. The onus of session management must be borne by the application itself due to the stateless nature of the underlying HTTP protocol. Session management entails the application sending the client (in most cases, a web browser) a session token after successful authentication. In most cases, this token is passed via the Set-Cookie directive of HTTP and is stored on the client. The session token must then be sent by the client along with every HTTP request to the server to identify itself with the web-based application. The application can then determine whether the client is authorized to access the page being requested.
 
 Session management mechanisms can be broadly classified into client-side and server-side mechanisms. This classification is based on the contents of the session token passed between the client and the application.
 
@@ -91,13 +91,13 @@ Are default crypto keys in use, weak crypto keys generated or re-used, or is pro
 
 Is encryption not enforced, e.g., are any HTTP headers (browser) security directives or headers missing?
 
-Is the received server certificate and the trust chain properly validated?
+Are the received server certificate and the trust chain properly validated?
 
 Are initialization vectors ignored, reused, or not generated sufficiently secure for the cryptographic mode of operation? Is an insecure mode of operation such as ECB in use? Is encryption used when authenticated encryption is more appropriate?
 
 Are passwords being used as cryptographic keys in absence of a password base key derivation function?
 
-Is randomness used for cryptographic purposes that was not designed to meet cryptographic requirements? Even if the correct function is chosen, does it need to be seeded by the developer, and if not, has the developer over-written the strong seeding functionality built into it with a seed that lacks sufficient entropy/unpredictability?
+Is randomness used for cryptographic purposes that were not designed to meet cryptographic requirements? Even if the correct function is chosen, does it need to be seeded by the developer, and if not, has the developer over-written the strong seeding functionality built into it with a seed that lacks sufficient entropy/unpredictability?
 
 Are deprecated hash functions such as MD5 or SHA1 in use, or are non-cryptographic hash functions used when cryptographic hash functions are needed?
 
@@ -107,7 +107,7 @@ Are cryptographic error messages or side channel information exploitable, for ex
 
 #### 2.3 [Injection](https://owasp.org/Top10/A03_2021-Injection/) (APSC-DV-001460, APSC-DV-002510, APSC-DV-002540)
 
-In an injection attack, the attacker sends simple text-based attacks that exploit the syntax of the targeted interpreter. Almost any source of data can be an injection vector, including internal sources.  Injection attacks can be used to run malicious queries or code, and can result in leaking or modifying sensitive information.  The best way to find out if an application is vulnerable to injection is to verify that all use of interpreters clearly separates untrusted data from the command or query. For SQL calls, this means using bind variables in all prepared statements and stored procedures, and avoiding dynamic queries.
+In an injection attack, the attacker sends simple text-based attacks that exploit the syntax of the targeted interpreter. Almost any source of data can be an injection vector, including internal sources.  Injection attacks can be used to run malicious queries or code and can result in leaking or modifying sensitive information.  The best way to find out if an application is vulnerable to injection is to verify that all use of interpreters clearly separates untrusted data from the command or query. For SQL calls, this means using bind variables in all prepared statements and stored procedures and avoiding dynamic queries.
 
 #### 2.4 [Insecure Design](https://owasp.org/Top10/A04_2021-Insecure_Design/)
 
@@ -115,7 +115,7 @@ Attacker, who is an authorized system user, simply changes a parameter value tha
 
 Applications frequently use the actual name or key of an object when generating web pages. Applications don’t always verify the user is authorized for the target object. This results in an insecure direct object reference flaw. Testers can easily manipulate parameter values to detect such flaws. Code analysis quickly shows whether authorization is properly verified.
 
-Insecure design is a broad category representing different weaknesses, expressed as “missing or ineffective control design.” Insecure design is not the source for all other Top 10 risk categories. There is a difference between insecure design and insecure implementation. We differentiate between design flaws and implementation defects for a reason, they have different root causes and remediation. A secure design can still have implementation defects leading to vulnerabilities that may be exploited. An insecure design cannot be fixed by a perfect implementation as by definition, needed security controls were never created to defend against specific attacks. One of the factors that contribute to insecure design is the lack of business risk profiling inherent in the software or system being developed, and thus the failure to determine what level of security design is required.
+Insecure design is a broad category representing different weaknesses, expressed as “missing or ineffective control design.” Insecure design is not the source for all other Top 10 risk categories. There is a difference between insecure design and insecure implementation. We differentiate between design flaws and implementation defects for a reason, they have different root causes and remediation. A secure design can still have implementation defects leading to vulnerabilities that may be exploited. An insecure design cannot be fixed by perfect implementation as by definition, needed security controls were never created to defend against specific attacks. One of the factors that contributes to insecure design is the lack of business risk profiling inherent in the software or system being developed, and thus the failure to determine what level of security design is required.
 
 #### 2.5 [Security Misconfiguration](https://owasp.org/Top10/A05_2021-Security_Misconfiguration/)
 
@@ -136,7 +136,7 @@ The application might be vulnerable if the application is:
 
 #### 2.6 [Vulnerable and Outdated Components](https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/)
 
-Attacker identifies a weak component through scanning or manual analysis. He customizes the exploit as needed and executes the attack. It gets more difficult if the used component is deep in the application.
+Attackers identifies a weak component through scanning or manual analysis. He customizes the exploit as needed and executes the attack. It gets more difficult if the used component is deep in the application.
 
 Virtually every application has these issues because most development teams don’t focus on ensuring their components/libraries are up to date. In many cases, the developers don’t even know all the components they are using, never mind their versions. Component dependencies make things even worse.
 
@@ -152,15 +152,15 @@ If software developers do not test the compatibility of updated, upgraded, or pa
 
 If you do not secure the components’ configurations (see A05:2021-Security Misconfiguration).
 
-#### 2.7 [Identification and Authentication Failures - Cross-Site Scripting (XSS) / Cross Site Request Forgery (CSRF) / Server Side Request Forgery](https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29) (APSC-DV-002490, APSC-DV-002500, APSC-DV-002530, APSC-DV-000060, APSC-DV-002210, APSC-DV-002930)
+#### 2.7 [Identification and Authentication Failures - Cross-Site Scripting (XSS) / Cross Site Request Forgery (CSRF) / Server-Side Request Forgery](https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29) (APSC-DV-002490, APSC-DV-002500, APSC-DV-002530, APSC-DV-000060, APSC-DV-002210, APSC-DV-002930)
 
-Attacker sends text-based attack scripts that exploit the interpreter in the browser. Almost any source of data can be an attack vector, including internal sources such as data from the database.
+Attackers send text-based attack scripts that exploit the interpreter in the browser. Almost any source of data can be an attack vector, including internal sources such as data from the database.
 
-Applications are vulnerable if they do not ensure that all user supplied input is properly escaped, or they do not verify it to be safe via input validation, before including that input in the output page. Without proper output escaping or validation, such input will be treated as active content in the browser.
+Applications are vulnerable if they do not ensure that all users supplied input properly escaped, or they do not verify it to be safe via input validation, before including that input in the output page. Without proper output escaping or validation, such input will be treated as active content in the browser.
 
-Attacker creates forged HTTP requests and tricks a victim into submitting them via image tags, XSS, or numerous other techniques. If the user is authenticated, the attack succeeds.
+Attackers create forged HTTP requests and trick a victim into submitting them via image tags, XSS, or numerous other techniques. If the user is authenticated, the attack succeeds.
 
-CSRF takes advantage the fact that most web apps allow attackers to predict all the details of a particular action.  Because browsers send credentials like session cookies automatically, attackers can create malicious web pages which generate forged requests that are indistinguishable from legitimate ones.  Detection of CSRF flaws is fairly easy via penetration testing or code analysis.
+CSRF takes advantage of the fact that most web apps allow attackers to predict all the details of a particular action.  Because browsers send credentials like session cookies automatically, attackers can create malicious web pages which generate forged requests that are indistinguishable from legitimate ones.  Detection of CSRF flaws is easy via penetration testing or code analysis.
 
 Confirmation of the user's identity, authentication, and session management is critical to protect against authentication-related attacks. There may be authentication weaknesses if the application:
 
@@ -186,10 +186,9 @@ Does not correctly invalidate Session IDs. User sessions or authentication token
 
 Software and data integrity failures relate to code and infrastructure that does not protect against integrity violations. An example of this is where an application relies upon plugins, libraries, or modules from untrusted sources, repositories, and content delivery networks (CDNs). An insecure CI/CD pipeline can introduce the potential for unauthorized access, malicious code, or system compromise. Lastly, many applications now include auto-update functionality, where updates are downloaded without sufficient integrity verification and applied to the previously trusted application. Attackers could potentially upload their own updates to be distributed and run on all installations. Another example is where objects or data are encoded or serialized into a structure that an attacker can see and modify is vulnerable to insecure deserialization.
 
-
 #### 2.9 [Security Logging and Monitoring Features](https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/)
 
-Without logging and monitoring, breaches cannot be detected. Insufficient logging, detection, monitoring, and active response occurs any time:
+Without logging and monitoring, breaches cannot be detected. Insufficient logging, detection, monitoring, and active response occurs at any time:
 
 Auditable events, such as logins, failed logins, and high-value transactions, are not logged.
 
@@ -213,11 +212,11 @@ You are vulnerable to injections or attacks on the logging or monitoring systems
 
 SSRF flaws occur whenever a web application is fetching a remote resource without validating the user-supplied URL. It allows an attacker to coerce the application to send a crafted request to an unexpected destination, even when protected by a firewall, VPN, or another type of network access control list (ACL).
 
-As modern web applications provide end-users with convenient features, fetching a URL becomes a common scenario. As a result, the incidence of SSRF is increasing. Also, the severity of SSRF is becoming higher due to cloud services and the complexity of architectures.
+As modern web applications provide end-users with convenient features, fetching a URL becomes a common scenario. As a result, the incidence of SSRF is increasing. Also, the severity of SSRF is becoming higher due to cloud services and the complexity of architecture.
 
-Attacker links to unvalidated redirect and tricks victims into clicking it. Victims are more likely to click on it, since the link is to a valid site. Attacker targets unsafe forward to bypass security checks.
+Attacker links to unvalidated redirect and tricks victims into clicking it. Victims are more likely to click on it, since the link is to a valid site. Attackers target unsafe forward to bypass security checks.
 
-Applications frequently redirect users to other pages, or use internal forwards in a similar manner. Sometimes the target page is specified in an unvalidated parameter, allowing attackers to choose the destination page.  Detecting unchecked redirects is easy. Look for redirects where you can set the full URL. Unchecked forwards are harder, because they target internal pages.
+Applications frequently redirect users to other pages or use internal forwards in a similar manner. Sometimes the target page is specified in an unvalidated parameter, allowing attackers to choose the destination page.  Detecting unchecked redirects is easy. Look for redirects where you can set the full URL. Unchecked forwards are harder, because they target internal pages.
 
 ### 3.0 STRIDE
 
@@ -225,7 +224,7 @@ STRIDE is a classification scheme for characterizing known threats according to 
 
 #### Spoofing Identity
 
-“Identity spoofing” is a key risk for applications that have many users but provide a single execution context at the application and database level. In particular, users should not be able to become any other user or assume the attributes of another user.
+“Identity spoofing” is a key risk for applications that have many users but provide a single execution context at the application and database level. Users should not be able to become any other user or assume the attributes of another user.
 
 *Mitigation*: Provide methods of defense in use.
 
@@ -251,22 +250,22 @@ Such storage should not be relied on to secure sensitive information or to provi
 
 #### Denial of Service
 
-Application designers should be aware that their applications may be subject to a denial of service attack. Therefore, the use of expensive resources such as large files, complex calculations, heavy-duty searches, or long queries should be reserved for authenticated and authorized users, and not available to anonymous users.
+Application designers should be aware that their applications may be subject to a denial-of-service attack. Therefore, the use of expensive resources such as large files, complex calculations, heavy-duty searches, or long queries should be reserved for authenticated and authorized users, and not available to anonymous users.
 
-For applications that do not have this luxury, every facet of the application should be engineered to perform as little work as possible, to use fast and few database queries, to avoid exposing large files or unique links per user, in order to prevent simple denial of service attacks.
+For applications that do not have this luxury, every facet of the application should be engineered to perform as little work as possible, to use fast and few database queries, to avoid exposing large files or unique links per user, to prevent simple denial of service attacks.
 
 *Mitigation*: Provide methods of defense in use.
 
 #### Elevation of Privilege
 
-If an application provides distinct user and administrative roles, then it is vital to ensure that the user cannot elevate his/her role to a higher privilege one. In particular, simply not displaying privileged role links is insufficient. Instead, all actions should be gated through an authorization matrix, to ensure that only the permitted roles can access privileged functionality.
+If an application provides distinct user and administrative roles, then it is vital to ensure that the user cannot elevate his/her role to a higher privilege one. Simply not displaying privileged role links is insufficient. Instead, all actions should be gated through an authorization matrix, to ensure that only the permitted roles can access privileged functionality.
 
 *Mitigation*: Provide methods of defense in use.
 
 ## Measurable and Actionable:
 
 + Threat assessment must exist.
-+ Threat assessments must return a numerical value indicating the level of concern for an identified vulnerability.
++ Threat assessments must return to a numerical value indicating the level of concern for an identified vulnerability.
 + Improvement of scores should occur over the course of the application's lifecycle if risk management indicates tighter security is appropriate.
 
 ## Purpose:
@@ -276,7 +275,6 @@ The purpose of a software threat assessment, in simple terms, is to identify pot
 ## Timeliness:
 
 Should occur with each major change to the system at semantic versioning primary level 1.x.x to 2.x.x.
-
 
 ## Reference(s)
  + [Application Security Development (ASD) Security Technical Implementation Guide (STIG) version 6, release 3 (APSC-DV-003230)](https://www.cyber.mil/stigs/downloads)
@@ -290,7 +288,6 @@ Should occur with each major change to the system at semantic versioning primary
  + [DOD Enterprise DevSecOps Fundamentals, v 2.5, 2024/10](https://dodcio.defense.gov/Portals/0/Documents/Library/DoD%20Enterprise%20DevSecOps%20Fundamentals%20v2.5.pdf)
  + [NIST Special Publication 800-37 (“Risk Management Framework for Information Systems and Organizations"), Rev 2](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-37r2.pdf)
  + [NIST Secure Software Development Framework (SSDF), SP 800-218A](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf)
-
 
 ## Versioning
 
@@ -331,7 +328,7 @@ ________________________________________________________________________________
 + The nature of information being exchanged
   ***Example: Document location.***
 
-+ Any protections on the external interface
++ Any protection on the external interface
   ***Example: Document location.***
 
 + User roles required for access control and the access privileges assigned to each role
@@ -358,31 +355,31 @@ ________________________________________________________________________________
 
 OWASP advocates the following security principles:
 
-+	Minimize Attack Surface Area
++ Minimize Attack Surface Area
     ***Example: N/A not a web application.***
 
-+	Secure Defaults 
++ Secure Defaults 
     ***Example: all functions assume failure and do not elegate privilege.***
 
-+	Principle of Least Privilege 
++ Principle of Least Privilege 
     ***Example: confirmed, through code review.***
 
-+	Principle of Defense in Depth 
++ Principle of Defense in Depth 
     ***Example: input validation, file/dir verification occur at all levels.***
 
-+	Fail Securely
-    ***Example:application fails securely and fast reporting issue to invoker and logfed.****
++ Fail Securely
+    ***Example: application fails securely and fast reporting issue to invoker and logged.****
 
-+	Separation of Duties
++ Separation of Duties
     ***Example: N/A, no additional requirements or duties are associated with this application such as Database Administrator***
     
-+	Do not trust Security through Obscurity 
++ Do not trust Security through Obscurity 
     ***Example: confirmed***
     
-+	Simplicity 
++ Simplicity 
     ***Example: confirmed***
 
-+	Fix Security Issues Correctly
++ Fix Security Issues Correctly
     ***Example: confirmed****
 
 ### Threat Assessment (APSC-DV-003230)
@@ -391,26 +388,26 @@ The STIG details Threat Modeling:
 
 "Threat Modeling is the process of identifying potential threats to the application, risk ranking these threats, and selecting appropriate countermeasures or mitigations for the threats. Threat modeling is a critical step in securing an application from attack."
 
-+	Define Common Usage
-    ***Example: Invocation by host OS authenticated user with appropritate file system permissions only.***
++ Define Common Usage
+    ***Example: Invocation by host OS authenticated user with appropriate file system permissions only.***
 
-+	Identify External Dependencies
++ Identify External Dependencies
     ***Example: No external programs used or invoked by software.***
 
-+	Enumerate Security Assumptions
-    ***Example: No external network requiements, NetCDF assumed a safe data file format for purposes of trust.***
++ Enumerate Security Assumptions
+    ***Example: No external network requirements, NetCDF assumed a safe data file format for purposes of trust.***
     ***Example: All inputs obtained from trusted sources using secure transport mechanisms.***
 
-+	Identify Objects and Interactions
++ Identify Objects and Interactions
     ***Example:  Basic NetCDF read and Fortran compliant binary output.  ***
-	***Example:  libll - Linked list struct implementation.***
-	***Example:  libNav - Navigation struct.***
-	***Example:  libProducts - Product domain management struct.***
+  ***Example:  libll - Linked list struct implementation.***
+  ***Example:  libNav - Navigation struct.***
+  ***Example:  libProducts - Product domain management struct.***
 
-+	Identify Entry Points
++ Identify Entry Points
     ***Example:  Entry point via authorized user with appropriate access to file system.***
 
-+	Determine Threat Risk
++ Determine Threat Risk
     ***Example:  Threat risk minimal due to lack of web presence, host OS user management, and no external network dependencies.***
 
 The remainder of this section will be your threat assessment technique identified in the standard applied here.
@@ -423,9 +420,9 @@ The remainder of this section will be your threat assessment technique identifie
 
 `0.0 = (DAMAGE (?) + REPRODUCIBILITY (?) + EXPLOITABILITY (?) + AFFECTED USERS (?) + DISCOVERABILITY (?)) / 5`
 
-Attacker uses leaks or flaws in the authentication or session management functions (e.g., exposed accounts, passwords, session IDs) to impersonate users.
+Attackers use leaks or flaws in the authentication or session management functions (e.g., exposed accounts, passwords, session IDs) to impersonate users.
 
-Session management encompasses the techniques employed by web applications to transparently authorize a user for every HTTP request without having the user repeatedly login. The onus of session management must be borne by the application itself due to the stateless nature of the underlying HTTP protocol. Session management entails the application sending the client (in most cases, a web browser) a session token after successful authentication. In most cases, this token is passed via the Set-Cookie directive of HTTP and is stored on the client. The session token must then be sent by the client along with every HTTP request to the server to identify itself to the web-based application. The application can then determine whether the client is authorized to access the page being requested.
+Session management encompasses the techniques employed by web applications to transparently authorize a user for every HTTP request without having the user repeatedly login. The onus of session management must be borne by the application itself due to the stateless nature of the underlying HTTP protocol. Session management entails the application sending the client (in most cases, a web browser) a session token after successful authentication. In most cases, this token is passed via the Set-Cookie directive of HTTP and is stored on the client. The session token must then be sent by the client along with every HTTP request to the server to identify itself with the web-based application. The application can then determine whether the client is authorized to access the page being requested.
 
 Session management mechanisms can be broadly classified into client-side and server-side mechanisms. This classification is based on the contents of the session token passed between the client and the application.
 
@@ -447,9 +444,9 @@ Rate limit API and controller access to minimize the harm from automated attack 
 
 Stateful session identifiers should be invalidated on the server after logout. Stateless JWT tokens should rather be short-lived so that the window of opportunity for an attacker is minimized. For longer lived JWTs it's highly recommended to follow the OAuth standards to revoke access.
 
-Web application ensures that all user supplied input sent back to the browser is verified to be safe (via input validation), and that user input is properly escaped before it is included in the output page. Proper output encoding ensures that such input is always treated as text in the browser, rather than active content that might get executed. web utilizes validation of all input is a part of the Infrastructure code and with the use of local validation libraries as well as ESAPI all input coming into code is checked.  
+Web application ensures that all user supplied input sent back to the browser is verified to be safe (via input validation), and that user input properly escaped before it is included in the output page. Proper output encoding ensures that such input is always treated as text in the browser, rather than active content that might get executed. web utilizes validation of all input is a part of the Infrastructure code and with the use of local validation libraries as well as ESAPI all input coming into code is checked.  
 
-The web uses a security token that is generated on the fly per edit/save pairing, so that “tricking” a user into navigating to a save page would not cause a save to occur, but instead would throw a security error in the log file.
+The web uses a security token that is generated on the fly per edit/save pairing, so that “tricking” a user into navigating to a save page would not cause a save to occur but instead would throw a security error in the log file.
 
 The web uses referrer checks on state-changing pages to ensure the user is coming from the previous page expected.  In addition, each page is annotated for role access and checked for organizational access before allowing a user to view it.
 
@@ -464,7 +461,6 @@ Disable HTTP redirections
 Be aware of the URL consistency to avoid attacks such as DNS rebinding and “time of check, time of use” (TOCTOU) race conditions
 
 Do not mitigate SSRF via the use of a deny list or regular expression. Attackers have payload lists, tools, and skills to bypass deny lists.
-
 
 #### 2.2 [Cryptographic Failures](https://owasp.org/Top10/A02_2021-Cryptographic_Failures/)
 
@@ -503,24 +499,22 @@ Avoid deprecated cryptographic functions and padding schemes, such as MD5, SHA1,
 
 Verify independently the effectiveness of configuration and settings.
 
-
 #### 3.0 [Injection](https://owasp.org/Top10/A03_2021-Injection/) (APSC-DV-001460, APSC-DV-002510, APSC-DV-002540)
 
 `0.0 = (DAMAGE (?) + REPRODUCIBILITY (?) + EXPLOITABILITY (?) + AFFECTED USERS (?) + DISCOVERABILITY (?)) / 5`
 
 *Mitigation*: 
 
-Preventing injection requires keeping data separate from commands and queries:
+Preventing injections requires keeping data separate from commands and queries:
 
 The preferred option is to use a safe API, which avoids using the interpreter entirely, provides a parameterized interface, or migrates to Object Relational Mapping Tools (ORMs).
 
-Note: Even when parameterized, stored procedures can still introduce SQL injection if PL/SQL or T-SQL concatenates queries and data or executes hostile data with EXECUTE IMMEDIATE or exec().
+Note: Even when parameterized, stored procedures can still introduce SQL injections if PL/SQL or T-SQL concatenates queries and data or executes hostile data with EXECUTE IMMEDIATE or exec().
 
 Use positive server-side input validation. This is not a complete defense as many applications require special characters, such as text areas or APIs for mobile applications.
 
 For any residual dynamic queries, escape special characters using the specific escape syntax for that interpreter.
 Note: SQL structures such as table names, column names, and so on cannot be escaped, and thus user-supplied structure names are dangerous. This is a common issue in report-writing software. 
-
 
 #### 4.0 [Insecure Design](https://owasp.org/Top10/A04_2021-Insecure_Design/)
 
@@ -546,8 +540,7 @@ Segregate tenants robustly by design throughout all tiers
 
 Limit resource consumption by user or service
 
-web uses declarative Java with Annotations to determine which roles have elevated privileges. If a user modifies a URL into an area that has privileged content the FrontController facade will first check to see if subject user is allowed elevated privileges, if not a standard page will present.
-
+web uses declarative Java with Annotations to determine which roles have elevated privileges. If a user modifies a URL into an area that has privileged content the Front Controller facade will first check to see if subject user is allowed elevated privileges, if not a standard page will present.
 
 #### 5.0 [Security Misconfiguration](https://owasp.org/Top10/A05_2021-Security_Misconfiguration/)
 
@@ -568,8 +561,7 @@ Sending security directives to clients, e.g., Security Headers.
 
 An automated process to verify the effectiveness of the configurations and settings in all environments.
 
-Web application does not utilize any default accounts for either backend database or JBoss application server.  There are no files or directories without some level of protection. All settings/configuration files are configuration managed. 
-
+Web applications do not utilize any default accounts for either backend database or JBoss application server.  There are no files or directories without any level of protection. All settings/configuration files are configuration managed. 
 
 #### 6.0 [Vulnerable and Outdated Components](https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/)
 
@@ -588,8 +580,7 @@ Every organization must ensure an ongoing plan for monitoring, triaging, and app
 
 Each component of the web is checked for updates regularly and patches are applied when available.
 
-
-#### 7.0 [Identification and Authentication Failures - Cross-Site Scripting (XSS) / Cross Site Request Forgery (CSRF) / Server Side Request Forgery](https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29) (APSC-DV-002490, APSC-DV-002500, APSC-DV-002530, APSC-DV-000060, APSC-DV-002210, APSC-DV-002930)
+#### 7.0 [Identification and Authentication Failures - Cross-Site Scripting (XSS) / Cross Site Request Forgery (CSRF) / Server-Side Request Forgery](https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29) (APSC-DV-002490, APSC-DV-002500, APSC-DV-002530, APSC-DV-000060, APSC-DV-002210, APSC-DV-002930)
 
 `0.0 = (DAMAGE (0) + REPRODUCIBILITY (0) + EXPLOITABILITY (0) + AFFECTED USERS (0) + DISCOVERABILITY (0)) / 5`
 
@@ -605,12 +596,11 @@ Align password length, complexity, and rotation policies with National Institute
 
 Ensure registration, credential recovery, and API pathways are hardened against account enumeration attacks by using the same messages for all outcomes.
 
-Limit or increasingly delay failed login attempts, but be careful not to create a denial of service scenario. Log all failures and alert administrators when credential stuffing, brute force, or other attacks are detected.
+Limit or increasingly delay failed login attempts but be careful not to create a denial-of-service scenario. Log all failures and alert administrators when credential stuffing, brute force, or other attacks are detected.
 
 Use a server-side, secure, built-in session manager that generates a new random session ID with high entropy after login. Session identifier should not be in the URL, be securely stored, and invalidated after logout, idle, and absolute timeouts.
 
-The web utilizes a FrontController facade which manages access to every portion of the site. A WebServiceController provides the same level of management for web services. The authorization matrix is explicit, if you are not authorized to be in a particular portion of the site you will be denied access. If a user changes the URL to an area they are not authorized for (seeking elevated privileges) they will be blocked using Declarative Java annotations. If a URL is modified in an attempt to get the user to data they are not supposed to see, the backend DAO will block access using a rigidly enforced organizational access filter and restrict where necessary.
-
+The web utilizes a Front Controller facade which manages access to every portion of the site. A Webservice Controller provides the same level of management for web services. The authorization matrix is explicit, if you are not authorized to be in a particular portion of the site you will be denied access. If a user changes the URL to an area they are not authorized for (seeking elevated privileges) they will be blocked using Declarative Java annotations. If a URL is modified to get the user to data they are not supposed to see, the backend DAO will block access using a rigidly enforced organizational access filter and restrict where necessary.
 
 #### 8.0 [Software and Data Integrity Failures](https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/)
 
@@ -619,7 +609,7 @@ The web utilizes a FrontController facade which manages access to every portion 
 *Mitigation:*
 Use digital signatures or similar mechanisms to verify the software or data is from the expected source and has not been altered.
 
-Ensure libraries and dependencies, such as npm or Maven, are consuming trusted repositories. If you have a higher risk profile, consider hosting an internal known-good repository that's vetted.
+Ensure libraries and dependencies, such as npm or Maven, are consuming trusted repositories. If you have a higher risk profile, consider hosting a well-known good repository that's vetted.
 
 Ensure that a software supply chain security tool, such as OWASP Dependency Check or OWASP CycloneDX, is used to verify that components do not contain known vulnerabilities
 
@@ -628,7 +618,6 @@ Ensure that there is a review process for code and configuration changes to mini
 Ensure that your CI/CD pipeline has proper segregation, configuration, and access control to ensure the integrity of the code flowing through the build and deploy processes.
 
 Ensure that unsigned or unencrypted serialized data is not sent to untrusted clients without some form of integrity check or digital signature to detect tampering or replay of the serialized data
-
 
 #### 9.0 [Security Logging and Monitoring Features](https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/)
 
@@ -649,7 +638,6 @@ Ensure high-value transactions have an audit trail with integrity controls to pr
 DevSecOps teams should establish effective monitoring and alerting such that suspicious activities are detected and responded to quickly.
 
 Establish or adopt an incident response and recovery plan, such as National Institute of Standards and Technology (NIST) 800-61r2 or later.
-
 
 #### 10.0 [Server-Side Request Forgery (SSRF)](https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/)
 
@@ -684,7 +672,6 @@ For frontends with dedicated and manageable user groups use network encryption (
 
 
 
-
 ## STRIDE
 
 STRIDE is a classification scheme for characterizing known threats according to the kinds of exploit that are used (or motivation of the attacker). The STRIDE acronym is formed from the first letter of each of the following categories.
@@ -711,4 +698,4 @@ STRIDE is a classification scheme for characterizing known threats according to 
 
 ### Elevation of Privilege
 
-*Mitigation*: The web app enforces a strict authorization matrix for each page based on both roles and organizational filters. Privileged links are inaccessible to unprivileged users both by not being shown as well as prevention of use by the Controller (PageController performs role checks and org checks and enforces the annotated privileges on each page). Non-administrative users cannot modify their own access level.
+*Mitigation*: The web app enforces a strict authorization matrix for each page based on both roles and organizational filters. Privileged links are inaccessible to unprivileged users both by not being shown as well as prevention of use by the Controller (Page Controller performs role checks and org checks and enforces the annotated privileges on each page). Non-administrative users cannot modify their own access level.

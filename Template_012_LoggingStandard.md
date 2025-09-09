@@ -6,7 +6,7 @@ A logging standard for software development projects, in simple terms, is a set 
 
 ## Requirements/Specifications/Guidelines:
 
-A logging standard standard usually defines:
+A logging standard usually defines:
 
 + What kind of information should be logged (like errors or user actions)
 + How detailed the logs should be (log levels such as info, warning, error)
@@ -31,7 +31,7 @@ Include in Host portion of conf/server.xml with your Tomcat Distribution
 
 Explanation:
 
-Hostname/IP, Remote Logname, Remote User, Time Request was received, status, Size of Repsonse in bytes minute HTTP Headers, Time of request, Cookie SessionID, request Session Id, URL Path, Query
+Hostname/IP, Remote Logname, Remote User, Time Request was received, status, Size of Response in bytes minute HTTP Headers, Time of request, Cookie SessionID, request Session Id, URL Path, Query
 
 Tomcat Patterns:
 
@@ -43,7 +43,7 @@ Tomcat Patterns:
 |%A | Local IP address|
 |%b | Bytes sent, excluding HTTP headers, or '-' if zero|
 |%B | Bytes sent, excluding HTTP headers|
-|%D | Time taken to process the request in millis. Note: In httpd %D is microseconds. Behaviour will be aligned to httpd in Tomcat 10 onwards.|
+|%D | Time taken to process the request in millis. Note: In httpd %D are microseconds. Behavior will be aligned to httpd in Tomcat 10 onwards.|
 |%F | Time taken to commit the response, in milliseconds|
 |%h | Remote host name (or IP address if enableLookups for the connector is false)|
 |%H | Request protocol|
@@ -56,7 +56,7 @@ Tomcat Patterns:
 |%s | HTTP status code of the response|
 |%S | User session ID|
 |%t | Date and time, in Common Log Format|
-|%T | Time taken to process the request, in seconds. Note: This value has millisecond resolution whereas in httpd it has second resolution. Behaviour will be align to httpd in Tomcat 10 onwards.|
+|%T | Time taken to process the request, in seconds. Note: This value has millisecond resolution whereas in httpd it has second resolution. Behavior will be aligned to httpd in Tomcat 10 onwards.|
 |%u | Remote user that was authenticated (if any), else '-' (escaped if required)|
 |%U | Requested URL path|
 |%v | Local server name|
@@ -65,7 +65,7 @@ Tomcat Patterns:
 |+ =| Connection may be kept alive after the response is sent.|
 |- =| Connection will be closed after the response is sent.|
 
-There is also support to write information incoming or outgoing headers, cookies, session or request attributes and special timestamp formats. It is modeled after the Apache HTTP Server log configuration syntax. Each of them can be used multiple times with different xxx keys:
+There is also supported to write information incoming or outgoing headers, cookies, session or request attributes and special timestamp formats. It is modeled after the Apache HTTP Server log configuration syntax. Each of them can be used multiple times with different xxx keys:
 
 |Pattern|Explanation|
 |-------|-----------|
@@ -90,11 +90,11 @@ ErrorLogFormat "[%t]^[%l]^[%P]^%F^%E^%a^%M" ssl_error_log
 
 Timestamp of entry, Log Level, Process ID, Filename where log originated, Error Code, Client IP, Actual Error Message.
 
-Remote Hostname/Ip, Remote Logname, Remote User (SSL CN from DoD CAC), Time Request was Received, Status, Size of Response in bytes minus HTTP Headers, Bytes Received, Bytes Sent, Time Taken to Serve Request, Referer, Browser, URL Path, Query String, Filename (if downloading), Request Method
+Remote Hostname/Ip, Remote Logname, Remote User (SSL CN from DoD CAC), Time Request was Received, Status, Size of Response in bytes minus HTTP Headers, Bytes Received, Bytes Sent, Time Taken to Serve Request, Referrer, Browser, URL Path, Query String, Filename (if downloading), Request Method
 
 ***Without Logio Module:***
 
-Extra tabs used to mark Logio module fields thus you have a consistent log you can trust regardless of module availability.
+Extra tabs are used to mark Logio module fields thus you have a consistent log you can trust regardless of module availability.
 
 LogFormat "%h^%l^\"%{X-SSL-Client-CN}i\"^%t^%s^%b^-^-^%T^%L^\"%{Referer}i\"^\"%{User-Agent}i\"^%U^%q^%f^%m"  ssl_common 
 
@@ -114,7 +114,7 @@ LogLevel warn
 
 Minimal log format is:
 
-LogFormat "%a %A %h %H %l %m %s %t %u %U \"%{Referer}i\" " common
+LogFormat "%a %A %h %H %l %m %s %t %u %U \"%{Referrer}i\" " common
 
 Apache Log Formats
 
@@ -134,7 +134,7 @@ Apache Log Formats
 |%{c}h|Like %h, but always reports on the hostname of the underlying TCP connection and not any modifications to the remote hostname by modules like mod_remoteip.|
 |%H|The request protocol.|
 |%{VARNAME}i|The contents of VARNAME: header line(s) in the request sent to the server. Changes made by other modules (e.g. mod_headers) affect this. If you're interested in what the request header was prior to when most modules would have modified it, use mod_setenvif to copy the header into an internal environment variable and log that value with the %{VARNAME}e described above.|
-|%k|Number of keepalive requests handled on this connection. Interesting if KeepAlive is being used, so that, for example, a '1' means the first keepalive request after the initial one, '2' the second, etc...; otherwise this is always 0 (indicating the initial request).|
+|%k|Number of keepalive requests handled on this connection. Interesting if KeepAlive is being used, so that, for example, a '1' means the first keepalive request after the initial one, '2' the second, etc...; otherwise, this is always 0 (indicating the initial request).|
 |%l|Remote logname (from identd, if supplied). This will return a dash unless mod_ident is present and IdentityCheck is set On.|
 |%L|The request log ID from the error log (or '-' if nothing has been logged to the error log for this request). Look for the matching error log line to see what request caused what error.|
 |%m|The request method.|
@@ -149,7 +149,7 @@ Apache Log Formats
 |%R|The handler generating the response (if any).|
 |%s|Status. For requests that have been internally redirected, this is the status of the original request. Use %>s for the final status.|
 |%t|Time the request was received, in the format [18/Sep/2011:19:18:28 -0400]. The last number indicates the timezone offset from GMT|
-|%{format}t|The time, in the form given by format, which should be in an extended strftime(3) format (potentially localized). If the format starts with begin: (default) the time is taken at the beginning of the request processing. If it starts with end: it is the time when the log entry gets written, close to the end of the request processing. In addition to the formats supported by strftime(3), the following format tokens are supported: sec -	number of seconds since the Epoch; msec - number of milliseconds since the Epoch; usec - number of microseconds since the Epoch; msec_frac - millisecond fraction; usec_frac - microsecond fraction.  These tokens can not be combined with each other or strftime(3) formatting in the same format string. You can use multiple %{format}t tokens instead.|
+|%{format}t|The time, in the form given by format, which should be in an extended strftime(3) format (potentially localized). If the format starts with begin: (default) the time is taken at the beginning of the request processing. If it starts with end: it is the time when the log entry gets written, close to the end of the request processing. In addition to the formats supported by strftime(3), the following format tokens are supported: sec - number of seconds since the Epoch; msec - number of milliseconds since the Epoch; usec - number of microseconds since the Epoch; msec_frac - millisecond fraction; usec_frac - microsecond fraction.  These tokens cannot be combined with each other or strftime(3) formatting in the same format string. You can use multiple %{format}t tokens instead.|
 |%T|The time taken to serve the request, in seconds.|
 |%{UNIT}T|The time taken to serve the request, in a time unit given by UNIT. Valid units are ms for milliseconds, us for microseconds, and s for seconds. Using s gives the same result as %T without any format; using us gives the same result as %D. Combining %T with a unit is available in 2.4.13 and later.|
 |%u|Remote user if the request was authenticated. May be bogus if return status (%s) is 401 (unauthorized).|
@@ -178,21 +178,21 @@ If your application modifies, creates or in any way alters a role or account you
 
 #### Sensitive Data
 
-It is important to identify and exclude certain types of data that is written into the logs. If the logs are compromised and sensitive data is included in the logs, this could assist an attacker in furthering their attack or it could completely compromise the system.
+It is important to identify and exclude certain types of data that are written in the logs. If the logs are compromised and sensitive data is included in the logs, this could assist an attacker in furthering their attack or it could completely compromise the system.
 
 Examples of such data include but are not limited to; Passwords, Session IDs, Application source code, encryption keys, and sensitive data such as personal health information (PHI), Personally Identifiable Information (PII), or government identifiers (e.g., SSN).
 
 Inspection by Senior Administrator and when in doubt the Project Manager.
 
 #### Access to objects
-Review the logs and identify if the application is logging both successful and unsuccessful access to application objects such as files, folders, processes, or application modules and sub components, or systems.
+Review the logs and identify if the application is logging both successful and unsuccessful access to application objects such as files, folders, processes, or application modules and subcomponents, or systems.
 
 #### Startup and Shutdown
 
 The application must log startup and shutdown events such as the beginning of execution and the end of execution.
 ## Measurable and Actionable:
 
-Analysis of logged fields versus requirements mandated by the various STIG's.
+Analysis of logged fields versus requirements mandated by the various STIGs.
 
 ## Purpose:
 
@@ -213,12 +213,12 @@ Applicable day one of server setup.
    + APSC-DV-000650, The application must not write sensitive data into the application logs.
    + APSC-DV-000830, The application must generate audit records when successful/unsuccessful logon attempts occur.
    + APSC-DV-000840, The application must generate audit records for privileged activities or other system-level access.
-   + APSC-DV-000860, The application must generate audit records when successful/unsuccessful accesses to objects occur.
+   + APSC-DV-000860, The application must generate audit records when successful/unsuccessful access to objects occur.
    + APSC-DV-000910, The application must initiate session auditing upon startup. 
    + APSC-DV-000940, The application must log application shutdown events.
  + [Apache Tomcat Application Server 9, version 3, release 2](https://www.cyber.mil/stigs/downloads)
    + TCAT-AS-000170, Tomcat servers behind a proxy or load balancer must log client IP.
-   + TCAT-AS-001080, Application user name must be logged.
+   + TCAT-AS-001080, Application username must be logged.
  + [Apache Server 2.4 UNIX Server, version 3, release 2](https://www.cyber.mil/stigs/downloads)
    + AS24-U1-000065, The Apache web server must have system logging enabled.
    + AS24-U1-000070, The Apache web server must generate, at a minimum, log records for system startup and shutdown, system access, and system authentication events.
@@ -229,4 +229,4 @@ Applicable day one of server setup.
    + AS24-U1-000440, Apache web server application directories,  libraries, and configuration files must only be accessible to privileged users.
    + AS24-U1-000690, Non-privileged accounts on the hosting system must only access Apache web server security-relevant information and functions through a distinct administrative account.
    + AS24-U1-000710, The Apache web server must use a logging mechanism that is configured to allocate log record storage capacity large enough to accommodate the logging requirements of the Apache web server.
-   + AS24-U1-000730, The Apache web server must be configured to integrate with an organizations security infrastructure.
+   + AS24-U1-000730, The Apache web server must be configured to integrate with an organization’s security infrastructure.
