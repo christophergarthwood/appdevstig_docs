@@ -25,15 +25,15 @@ When committing something use the -m flag to add a short commit message of the f
 
 Commit messages must be in the past tense.
 
-In general try to group file changes wherever appropriate, so if your controller change also involved updating something in a helper file, the one commit message can happily encompas the changes to both files. The message ought to reflect the main aim of the change.
+In general, try to group file changes wherever appropriate, so if your controller changes also involve updating something in a helper file, the one commit message can happily encompass the changes to both files. The message ought to reflect the main aim of the change.
 
 Bug Fix - the change fixes a bug
 Feature - the change adds a new feature (the usual issue type)
 Documentation — The change is a documentation only change
-Optimisation - The change is an optimisation of the code base without any functional changes
-If your change does not fit any of these categories, use Feature. Likewise if your change is not tied to an issue number you may use n/a instead.
+Optimization - The change is an optimization of the code base without any functional changes
+If your change does not fit any of these categories, use Feature. Likewise, if your change is not tied to an issue number you may use n/a instead.
 
-So to use the above example your commit would have the following message:
+So, to use the above example your commit would have the following message:
 
 #132 Feature added cosine similarity to human selected comments versus generative selected comments.
 #132 (ML-025) Feature added cosine similarity to human selected comments versus generative selected comments.

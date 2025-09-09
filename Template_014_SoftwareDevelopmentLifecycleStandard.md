@@ -2,18 +2,13 @@
 
 ## Definition:
 
-
 ## Requirements/Specifications/Guidelines:
-
 
 ## Measurable and Actionable:
 
-
 ## Purpose:
 
-
 ## Timeliness:
-
 
 
 ## Reference(s)
@@ -27,7 +22,7 @@
 ____________________________________________________________________________________________________________________________________
 ## **Template**
 
-# Softare Development Lifecycle (SDLC)
+# Software Development Lifecycle (SDLC)
 
 ## Name of the Project
 
@@ -46,7 +41,6 @@ ________________________________________________________________________________
 |v0.1          | Inception source code, totally alpha, v0.1  |
 |v1.1.24       | v1.1.24 ASD STIG v5 updates                 |
 |v1.2.00       | v1.2.00 ASD STIG v6r3 updates               |
-
 
 ## Executive Summary
 
@@ -74,7 +68,7 @@ The SDLC typically includes these key stages:
 
 SDLC provides a roadmap that guides each phase methodically, helping ensure efficient, predictable, and successful software development and delivery. Different methodologies (like Waterfall, Agile, Spiral) apply these stages in varied ways tailored to specific project needs.
 
-### Secure Design Principle Training (APSC-DV-003400)
+### Secure Design Principal Training (APSC-DV-003400)
 
 Many application team members may not be aware of the security implications regarding the code that they design, write and test. To address this concern, the Program Manager will ensure all levels of program management receive security training regarding the necessity, impact, and benefits of integrating secure development practices into the development lifecycle. 
 
@@ -93,20 +87,19 @@ Security Training completed by team in support of Secure Software Development Pr
 
 **Security Training (APSC-DV-003400)**
 
-|Training Name	| Date Reviewed |	Description                                                          |
+|Training Name  | Date Reviewed | Description                                                          |
 |---------------|---------------|----------------------------------------------------------------------|
-|OWASP Top Ten	|????/??/??     |Internal training covering the OWASP Top Ten for 2017 and implications for this application.|
-|SDLC 101       |????/??/??	    |http://safecode.org/courses/security-development-lifecycle-101        |
-|CyberAwareness |????/??/??	    |DoD Requirement                                                       |
-
+|OWASP Top Ten  |????/??/??     |Internal training covering the OWASP Top Ten for 2017 and implications for this application.|
+|SDLC 101       |????/??/??     |http://safecode.org/courses/security-development-lifecycle-101        |
+|CyberAwareness |????/??/??     |DoD Requirement                                                       |
 
 ##### Standards
 
-Development efforts will follow the processes specified in the Process Asset Library (PAL) or other standard as specified in a kick-off meeting.  Enumerate the different processes and provide a hyperlink to their authoritative location.
+Development efforts will follow the processes specified in the Process Asset Library (PAL) or other standards specified in a kick-off meeting.  Enumerate the different processes and provide a hyperlink to their authoritative location.
 
 #### PAL
 
-*where?* Reference: [standards and best practices](https://confluence.di2e.net/display/NRL7331) used per project and as a whole by the team.
+*where?* Reference: [standards and best practices](https://confluence.di2e.net/display/NRL7331) used per project and by the team.
 
 #### Software Configuration Management (APSC-DV-003010)
 
@@ -124,7 +117,7 @@ Objects considered eligible for deployment:
 
 [VISOR Central Repository](https://bitbucket.di2e.net/projects/NRL7331/repos/visor_gops_parser/browse)
 
-Additional information regarding operational deployment is located in the section Transferring Code from Development to Deployment (APSC-DV-003010).
+Additional information regarding operational deployment is in the section Transferring Code from Development to Deployment (APSC-DV-003010).
 
 All modifications to any configurable part of the project will be managed and tracked by using the tracking system.
 
@@ -133,20 +126,20 @@ Each time this software is released a new version is indicated and a tag created
 Individual tag history is stored with each project in a corresponding README.md file at the top level of the folder.
 
 For a baseline of all components of the software package refer to the Deployment folder for the last deployment which should contain:
-+	Test Case report.
-+	Sonar Source report.
-+	Unit, Human Testing, Technical Acceptance Test | User Acceptance Test report.
-+	Security scan report (Sonar duplicates this function).
-+	A copy of the actual software and any supplementary content to deploy as in the binary release.
-+	Reference to the reference for repository for subject release of the following components:
-+	Source Code.
-+	Documentation. 
-+	Architecture diagram, embedded within documentation.
-+	Design document (this document).
-+	User Release Notes
-+	Application Configuration Guide
-+	Setup Guide
-+	Installation Guide
++ Test Case report.
++ Sonar Source report.
++ Unit, Human Testing, Technical Acceptance Test | User Acceptance Test report.
++ Security scan report (Sonar duplicates this function).
++ A copy of the actual software and any supplementary content to deploy as in the binary release.
++ Reference to the reference for repository for subject release of the following components:
++ Source Code.
++ Documentation. 
++ Architecture diagram, embedded within documentation.
++ Design document (this document).
++ User Release Notes
++ Application Configuration Guide
++ Setup Guide
++ Installation Guide
 
 ## Build Environment 
 
@@ -156,11 +149,11 @@ For a baseline of all components of the software package refer to the Deployment
 
 Common programming standards are adhered to for the following reasons:
 
-+	Programmers can go into any code and determine the current status   which increases maintainability, readability, and reusability.
-+	New programmers can rapidly grasp the current status.
-+	Programmers that are unfamiliar with a programming language have a common standard which alleviates the need to develop a personal style.
-+	Standard programming language reduces errors and increases reliability.
-+	Individual styles are replaced and an emphasis is placed on business concerns - high productivity, maintainability, shared authorship, and other aspects that help the group achieve its goal. 
++ Programmers can go into any code and determine the status   which increases maintainability, readability, and reusability.
++ New programmers can rapidly grasp their status.
++ Programmers that are unfamiliar with a programming language have a common standard which alleviates the need to develop a personal style.
++ Standard programming language reduces errors and increases reliability.
++ Individual styles are replaced, and an emphasis is placed on business concerns - high productivity, maintainability, shared authorship, and other aspects that help the group achieve its goal. 
 
 See: http://www.cse.buffalo.edu/~rapaport/code.documentation.Excerpts.pdf  for details and a more robust explanation as to why a coding standard is necessary.
 
@@ -180,12 +173,11 @@ Note that each project has a build and test script associated with it.
 | Visual Code Grep Scanner| VISOR (visor_gops_parser)| C/C++ static code analysis     |
 | Shellcheck              | Consolidated System      | Compliance/Standards inspection|
 
-
 #### General Conventions - C / Bash / Ksh languages used
 
 ##### Unsafe Methods (APSC-DV-003210)
 
-Unsafe methods are those that have side-effects that are not understood properly or require elevated security privileges in order to perform their function.  No unsafe methods are utilized in this system.  Functions such as strlen and related string manipulation functions are not used.  Research into best C practices for unsafe functions was conducted and all relevent function calls replaced with known good representations of the same function.
+Unsafe methods are those that have side-effects that are not understood properly or require elevated security privileges to perform their function.  No unsafe methods are utilized in this system.  Functions such as strlen and related string manipulation functions are not used.  Research into best C practices for unsafe functions was conducted and all relevant function calls replaced with known good representations of the same function.
 
 Classic list of recognized unsafe functions:
 
@@ -199,13 +191,13 @@ Classic list of recognized unsafe functions:
 + scanf/sscanf -> sscanf_s (MSDN
 + ato\*
 
-A grep performed on all \*.c source files indicates the aforementioned unsafe functions are not in useexcept in these locations:
+A grep performed on all \*.c source files indicates the unsafe functions are not in use except in these locations:
 
 + strncpy is used in libProduct and visor_gops_parser at three instances.  Extensive research into various tools, libraries, and commentary by developers indicates that this is a bottomless pit if one attempts to add strlcpy to C source code.  Subject strncpy stands and is used careful with input validation backing defenses.
 
 Other considerations are the output by Flaw Finder:
 1. Multiple references to format strings (CWE-134).  This is a library pulled in from a 3rd party and reviewed.  Inputs provided to the log.c code are all generated by the developer.  In the event an external string is provided to the log.c routines subject external input would be scrubbed for input by 
-2. References to CWE-362/CWE-367.  As previously stated this code should be run using the lowest privileges that are required to accomplish the necessary tasks. If possible, create isolated accounts with limited privileges that are only used for a single task. That way, a successful attack will not immediately give the attacker access to the rest of the software or its environment. Also note that files are closed after use, user input is validated, see ***validate_*** routines, subject files are not open and closed multiple times, and race conditions are met with the fcntl library that locks the .out files created during program executio.  NetCDF's don't have a locking mechanism for shared reading thus the input is unaltered.
+2. References to CWE-362/CWE-367.  As previously stated, this code should be run using the lowest privileges that are required to accomplish the necessary tasks. If possible, create isolated accounts with limited privileges that are only used for a single task. That way, a successful attack will not immediately give the attacker access to the rest of the software or its environment. Also note that files are closed after use, user input is validated, see ***validate_*** routines, subject files are not open and closed multiple times, and race conditions are met with the fcntl library that locks the .out files created during program execution.  NetCDF's don't have a locking mechanism for shared reading thus the input is unaltered.
 
 3. Buffer boundary checking referenced in the report for libll.c are invalid as this routine is a debugging routine to support output of data to ASCII format.  Use of snsprintf helps prevent overflow.  Commentary regarding log.c buffers do not take the sizeof(buf) into account and are a false positive.
 
@@ -220,7 +212,6 @@ No system commands are called in compiled code.
 ##### No URL's in Compiled Code
 
 As this is not a web application, no URL`'`s are stored within source code.
-
 
 ##### Exceptions/Error Messages
 
@@ -239,30 +230,30 @@ The following are employed as part of "standard practice" within the VISOR syste
 
 #### Local Variables
 
-+	Do not name local variables with the same name as an instance (global scope) variable.
-+	One per line.
-+	Use the local variable for only one thing.
++ Do not name local variables with the same name as an instance (global scope) variable.
++ One per line.
++ Use the local variable for only one thing.
 
 #### Methods
 
-+	Separate with blank lines.
-+	Refactor where appropriate.  If you have a method that takes more than 60 seconds to understand, break it into helper methods.  
-+	Reuse.  If you have a routine that is called by someone/something else consider incorporation into a larger schema for access such as our APIs.
++ Separate with blank lines.
++ Refactor where appropriate.  If you have a method that takes more than 60 seconds to understand, break it into helper methods.  
++ Reuse.  If you have a routine that is called by someone/something else consider incorporation into a larger schema for access such as our APIs.
 
 #### Imports/Library references
 
-+	Use separate lines.
-+	Preference is to group as follows: 1) standard library 2) related third party 3) local project
-+	Bulk import for #1, #2, and #3 bring in specific objects needed.
-+	Regardless, be consistent.
-+	Remove unused import statements; leverage the IDE to find these if possible.
++ Use separate lines.
++ Preference is to group as follows: 1) standard library 2) related third party 3) local project
++ Bulk import for #1, #2, and #3 bring in specific objects needed.
++ Regardless, be consistent.
++ Remove unused import statements; leverage the IDE to find these if possible.
 
 #### Error Handling
 
-+	All code will be written to degrade gracefully...if possible and where appropriate.
++ All code will be written to degrade gracefully...if possible and where appropriate.
   +  Exhaustive testing to ensure *fail fast* is used throughout the code base.
-+	All routines that the developer considers "risky" meaning has potential for failure or the developer recognized potential flaw in algorithm and is unsure of a solution will wrap the code in the equivalent of a try/catch/finally.
-+	All results of failure will gracefully degrade and report the error along with meaningful commentary.
++ All routines that the developer considers "risky" meaning have potential for failure or the developer recognized potential flaw in algorithm and is unsure of a solution will wrap the code in the equivalent of a try/catch/finally.
++ All results of failure will gracefully degrade and report the error along with meaningful commentary.
 
 #### Abstraction
 
@@ -275,15 +266,15 @@ All source, for the entire project, will be formatted prior to a tag being creat
 #### Static Code Analysis 
 
 Source code will be scanned for classic errors using a standardized tool (could be considered standard if a custom written solution is the only way to verify error for a language).
-+	No issues flagged as Critical will be permitted to go forward into a release unless agreed to by team.
-+	Update tool configuration file so error doesn't propagate.
++ No issues flagged as Critical will be permitted to go forward into a release unless agreed to by team.
++ Update tool configuration file so error doesn't propagate.
 +   SonarQube is used to help manage static code analysis, see [Test Case](../testcase/index.html) documentation for details regarding SonarQube instance that supports this project.
 +   Visual Code Grepper (windows based) is used to help manage static code analysis as well, see [Test Case](../testcase/index.html) documentation for details regarding SonarQube instance that supports this project.
 
  
 ### Top 10 Secure Coding Practices (Software Engineering Institute)
 
- 1. Validate input Validate input from all untrusted data sources. Proper input validation can eliminate the vast majority of software vulnerabilities. Be suspicious of most external data sources, including command line arguments, network interfaces, environmental variables, and user controlled (APSC-DV-002530, APSC-DV-002560).  ***Performed on all user input received, see `validate_` routines.***
+ 1. Validate input Validate input from all untrusted data sources. Proper input validation can eliminate most software vulnerabilities. Be suspicious of most external data sources, including command line arguments, network interfaces, environmental variables, and user controlled (APSC-DV-002530, APSC-DV-002560).  ***Performed on all user input received, see `validate_` routines.***
 
  2. Heed compiler warnings. Compile code using the highest warning level available for your compiler and eliminate warnings by modifying the code. Use static and dynamic analysis tools to detect and eliminate additional security flaws.  ***Compiler warnings are kept to a bare minimal.  Compiler details and log results are made available in the [Test Case](../testcase/index.html)***
 
@@ -291,11 +282,11 @@ Source code will be scanned for classic errors using a standardized tool (could 
 
  4. Keep it simple. Keep the design as simple and small as possible. Complex designs increase the likelihood that errors will be made in their implementation, configuration, and use. Additionally, the effort required to achieve an appropriate level of assurance increases dramatically as security mechanisms become more complex.
 
- 5. Default deny. Base access decisions on permission rather than exclusion. This means that, by default, access is denied and the protection scheme identifies conditions under which access is permitted.
+ 5. Default deny. Base access decisions on permission rather than exclusion. This means that, by default, access is denied, and the protection scheme identifies conditions under which access is permitted.
 
- 6. Adhere to the principle of least privilege. Every process should execute with the least set of privileges necessary to complete the job. Any elevated permission should be held for a minimum time. This approach reduces the opportunities an attacker has to execute arbitrary code with elevated privileges. ***This system was designed to support only a basic user account with appropriate access to file system areas designated in teh configuration file.***
+ 6. Adhere to the principle of least privilege. Every process should execute with the least set of privileges necessary to complete the job. Any elevated permission should be held for a minimum time. This approach reduces the opportunities an attacker must execute arbitrary code with elevated privileges. ***This system was designed to support only a basic user account with appropriate access to file system areas designated in the configuration file.***
 
- 7. Sanitize data sent to other systems. Sanitize all data passed to complex subsystems such as command shells, relational databases, and commercial off-the-shelf components. Attackers may be able to invoke unused functionality in these components through the use of SQL, command, or other injection attacks. This is not necessarily an input validation problem because the complex subsystem being invoked does not understand the context in which the call is made. Because the calling process understands the context, it is responsible for sanitizing the data before invoking the subsystem. ***All user supplied input is validated for erroneous characters.***
+ 7. Sanitize data sent to other systems. Sanitize all data passed to complex subsystems such as command shells, relational databases, and commercial off-the-shelf components. Attackers may be able to invoke unused functionality in these components using SQL, command, or other injection attacks. This is not necessarily an input validation problem because the complex subsystem being invoked does not understand the context in which the call is made. Because the calling process understands the context, it is responsible for sanitizing the data before invoking the subsystem. ***All user supplied input is validated for erroneous characters.***
 
  8. Practice defense in depth. Manage risk with multiple defensive strategies, so that if one layer of defense turns out to be inadequate, another layer of defense can prevent a security flaw from becoming an exploitable vulnerability and/or limit the consequences of a successful exploit. For example, combining secure programming techniques with secure runtime environments should reduce the likelihood that vulnerabilities remaining in the code at deployment time can be exploited in the operational environment.
 
@@ -307,18 +298,17 @@ Source code will be scanned for classic errors using a standardized tool (could 
 
 As referenced in section, Build Environment, multiple environments are used to develop this application. Build and Test (BAT) is the actual developer's workstation.  Code is written after the trunk is branched and the appropriate change request is updated.  The developer implements the algorithm/modifications to their branch on their workstation and conducts tests prior to reintegration of the branch into the trunk.  
 
-The Operational environment will be hosted on *where?* resources and maintenance of both environment and security fall to that organization`'`s administrative staff.
+The Operational environment will be hosted on *where?* resources and maintenance of both environment and security fall to that organization's administrative staff.
 
 #### Deployment
 
 The final steps in any deployment are to specifically test both general functionality as well as specific functionality of what was released with the specific stakeholder for each change request.
 
-Deployment will have a guide and be a specific tag identified as part of the transition document.
+Deployment will have a guide and a specific tag identified as part of the transition document.
 
 TODO: Consider Ansible deployment script.
 
 #### Creation of Deployment Materials
 
-Application files must be cryptographically hashed prior to deploying to DoD operational networks (ASPC-DV-003140). 
+Application files must be cryptographically hashed prior to deploying DoD operational networks (ASPC-DV-003140). 
 Indicate where deployment materials are kept as part of a deployment, if using a code repository be sure to include the URI.
-
