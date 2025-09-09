@@ -20,10 +20,10 @@ By following a configuration guide, teams ensure:
 The Application Configuration Guide is any document or collection of documents used to configure the application.
 
 ## Requirements/Specifications/Guidelines:
-An ACG must exist with preference for a Markdown document registered within an artifact repository, see Configuration Management standard.  Utilize the template provided below to build out your content.  *It should be noted that large portions of this document might simply reference: an automated build script, an Ansible or Puppet deployment, and related automation heavy functions.  The reader must be able to find, review, and act upon (assuming appropriate roles) this knowledge. Do not feel compelled to generate paperwork for the sake of paperwork.  Embrace the spirit of this standard by ensuring a map of all knowledge about the application is created in relation to it's configuration.*
+An ACG must exist with preference for a Markdown document registered within an artifact repository, see Configuration Management standard.  Utilize the template provided below to build out your content.  *It should be noted that large portions of this document might simply be reference: an automated build script, an Ansible or Puppet deployment, and related automation heavy functions.  The reader must be able to find, review, and act upon (assuming appropriate roles) this knowledge. Do not feel compelled to generate paperwork for the sake of paperwork.  Embrace the spirit of this standard by ensuring a map of all knowledge about the application is created in relation to its configuration.*
 
 ## Measurable and Actionable:
-Inspection of the ACG should reveal a means of compiling, starting, and configing the application.  Any representative of the sponsor that is of sufficient technical background (typically a middle-ware admin) must be able to understand and deploy the application along with start and configure it.
+Inspection of the ACG should reveal a means of compiling and the application.  Any representative of the sponsor that is of sufficient technical background (typically a middle-ware admin) must be able to understand and deploy the application along with start and configuring it.
 
 ## Timeliness:
 Review of the ACG should occur, minimally, after each Sprint Demonstration thus ensuring anything eligible for deployment is updated in the ACG.  Update should be part of the deployment package.  Refer to the Software Delivery Standards for inclusion of this artifact with a numbered deployment.
@@ -37,23 +37,23 @@ ________________________________________________________________________________
 
 ## Components of the [Software Application Name]
 
-The creation or integration of a software components requires the identification of those desired traits the software will present as a solution to business requirements that inspired the creation of the software component and those requirements that are necessary for actual execution.  These prerequisites are known as (computer) system requirements and are often used as a guideline as opposed to an absolute rule.
+The creation or integration of software components requires the identification of those desired traits the software will present as a solution to business requirements that inspired the creation of the software component and those requirements that are necessary for actual execution.  These prerequisites are known as (computer) system requirements and are often used as guidelines as opposed to an absolute rule.
 
 The system requirements outlined in this text were created from vendor documentation and the actual installation and configuration of the [Software Application Name] on an execution environment within the following environments:
 
-+ enumerate a list of environments by recognized name (preferablly the ATO name)
++ enumerate a list of environments by recognized name (preferably the ATO name)
 
 Data sources were accessed via
 
-+ enumrate means of access such as Network File System (NFS) mounts
++ enumerate means of access such as Network File System (NFS) mounts
 
-Describe the overall setup of the application.  Is it a Java WAR running on an Application Server, is it a Bash only invoked set of scientific applications written in C, give a 50K view of the setup.
+Describe the overall setting up of the application.  Is it a Java WAR running on an Application Server, is it a Bash only invoked set of scientific applications written in C, give a 50K view of the setup.
 
-***Example: [Software Application Name] is comprised of its own scripting infrastructure in the Korn Shell as well as various other sub-components and can be called via a batch system or in a more linear fashion directoy on the command line.  The following is a description of each component and the minimal requirements associated with them.  Information such as library requirements is also included with each aspect of this system.***
+***Example: [Software Application Name] is comprised of its own scripting infrastructure in the Korn Shell as well as various other sub-components and can be called via a batch system or in a more linear fashion directory on the command line.  The following is a description of each component and the minimal requirements associated with them.  Information such as library requirements is also included with each aspect of this system.***
 
 ## [Software Application Name] Version
 
-Use semantic versioning standards to version your application and either reference a version manifest relating each task tracking id ,see Tracking System Standard, to the version release. 
+Use semantic versioning standards to version your application and reference a version manifest relating to each task tracking id ,see Tracking System Standard, to the version release. 
 
 ***Example:***
 |Version    | Id(s) of Change | Description of Release|
@@ -63,15 +63,15 @@ Use semantic versioning standards to version your application and either referen
 ## [Software Application Name] Description
 
 ***Example:***
-The OFM Consolidated System (CS) is a RHEL based system comprised if individual components: Create Seed, 3DOG, Mixed Layer Depth (MLD), BioCAST, and product generation which create consume / produce the other components data to create a forecast run-stream.  The run-stream will be run via Unix Korn shell via either crontab or batch system commands. The CS is designed to run as a single process or in a batch system, such as TORQUE.  Design philosophy is to log meaningfully and heavily but in a configurable fashion.  A dedicated logging solution is in place for the SH, Fortran 90, and Python 3 components of the system.  Another design philosophy is to fail fast, meaning to validate the requirements defined in environment variables such as executables, files and directories expected for execution.  If a required component is not present the system fails quickly with meaningful output to help zero in on the discrepancy and support faster re-execution / setup.
+The OFM Consolidated System (CS) is a RHEL based system comprised of individual components: Create Seed, 3DOG, Mixed Layer Depth (MLD), BioCAST, and product generation which create consume / produce the other components data to create a forecast run-stream.  The run-stream will be run via Unix Korn shell via either crontab or batch system commands. The CS is designed to run as a single process or in a batch system, such as TORQUE.  Design philosophy is to log meaningfully and heavily but in a configurable fashion.  A dedicated logging solution is in place for the SH, Fortran 90, and Python 3 components of the system.  Another design philosophy is to fail fast, meaning to validate the requirements defined in environment variables such as executables, files and directories expected for execution.  If a required component is not present the system fails quickly with meaningful output to help zero in on the discrepancy and support faster re-execution / setup.
 
 Environment variables will be utilized for persistence of variables that are used for single components or shared among components.  Two levels of variable complexity exist: general & advanced.  General variables are those variables that must be tailored, typically to suit a particular environment, and advanced variables represent esoteric values specific to the application that require both a greater degree of Oceanographic understanding as well as programming experience.  Two configuration files will exist: regional and global.  The regional environment variables are specific to a particular geographically oriented domain such as Red Sea or Gulf of Mexico whereby changing specific values is necessary to support general functionality for the region.  Global variables are those variables that are used by 1 to N components and will not change, necessarily, due to regional concerns.
 
 The consolidated system is a series of shell scripts and configuration files that orchestrate a run-stream for processing Optical Forecast data.  ofm_cs.sh calls the core environment file (see Setup) to have cognizance of the environment.  Given the arguments passed in the Command Line Interface (CLI) the region of interest is sourced.
 
-Within the regional environment file is the function_names array.  This array coupled with the regional configuration file (see Setup) build the concept of a run-stream.  What is a run-stream?  A series of tasks executed in a specific order, chained off each other to produce a final result.
+Within the regional environment file is the function_names array.  This array coupled with the regional configuration file (see Setup) builds the concept of a run-stream.  What is a run-stream?  A series of tasks executed in a specific order, chained off each other to produce a result.
 
-All core support functions are defined in the `ofm_functions` directory and accessed via the `FPATH` variable which is refered in the Setup documentation and Korn Shell documentation.  Each sub-component of OFM-CS is wrapped by a corresponding high level script which in turn has an internal: prep, validation, run, and post function.
+All core support functions are defined in the `ofm_functions` directory and accessed via the `FPATH` variable which is referred in the Setup documentation and Korn Shell documentation.  Each sub-component of OFM-CS is wrapped by a corresponding high-level script which in turn has an internal: prep, validation, run, and post function.
 
 The information outlined below represents a snapshot of the test environment and full domain of all IT requirements for the system.
 
@@ -88,7 +88,6 @@ The information outlined below represents a snapshot of the test environment and
 |Hard-drive space                   | 100 MB                                         |
 |Processor                          | >i5 @ 2.5 GHZ                                  |
 |Network                            | Standard network connectivity sufficient       |
-
 
 #### **Overall Minimal Software requirements:**
 
@@ -154,13 +153,13 @@ Explain the way data is transferred, obtained, or received by the application.
 ***Example:***
 OFM-CS performs data exchange by way of NFS mounts.  No FTP/SCP calls are made outside of the NFS mount.
 
-OFM-CS initially sources the environmental file referncesd in the `-e` CLI argument and then sources the regional environmental file by way of the `-r` CLI argument.  Once the environment is established OFM-CS validates the environment immediately.  Next step is to marshal data via the `marshalData.sh` script.  Each component of the OFM-CS is addressed within `marshalData.sh` and implementation can vary between components, however MLD, Biocast,and 3DOG copy available data from sources referenced in the environmental files into the `run/in` directory specificed in the Setup documentation.  Once data is staged for localized processing, each component is called and processing occurs and is saved in the `run/out` folder.  At the sub-component/post function call data is copied from the `run/out` folder into the `db/<sub-component_name>_<ISO8601>` folder.
+OFM-CS initially sources the environmental file referenced in the `-e` CLI argument and then sources the regional environmental file by way of the `-r` CLI argument.  Once the environment is established OFM-CS validates the environment immediately.  Next step is to marshal data via the `marshalData.sh` script.  Each component of the OFM-CS is addressed within `marshalData.sh` and implementation can vary between components, however MLD, Biocast,and 3DOG copy available data from sources referenced in the environmental files into the `run/in` directory specified in the Setup documentation.  Once data is staged for localized processing, each component is called, and processing occurs and is saved in the `run/out` folder.  At the sub-component/post function call data is copied from the `run/out` folder into the `db/<sub-component_name>_<ISO8601>` folder.
 
-- Invoker is expected to have a valid configuration file setup and have access to the require inputs below.
+- Invoker is expected to have a valid configuration file setup and have access to the required inputs below.
 
 ### Inputs
 
-Provide a detaile description of the inputs expected by the application.
+Provide a detailed description of the inputs expected by the application.
 
 ***Example:***
 - SEED
@@ -203,7 +202,7 @@ OFM-CS has no web component associated with it.  Some documentation generated by
 Explain how accounts work within the context of the application.  Include discussion of service accounts as well.
 
 ***Example:***
-No service account are required for OFM-CS.  It is recommended OFM-CS be run as a standard user account that has only those privileges that are appropriate for typical scientific computing.  If using a batch system it setup for subject user with access to appropriate queues will be necessary.
+No service accounts are required for OFM-CS.  It is recommended OFM-CS be run as a standard user account that has only those privileges that are appropriate for typical scientific computing.  If using a batch system, its setup for subject users with access to appropriate queues will be necessary.
 
 #### Roles
 
@@ -219,7 +218,7 @@ OFM-CS does allow for different users to run different tasks / jobs in the run-s
 
 ## Database / Persistence
 
-Discuss an persistence mechanisms the application utilizes, the location and general setup.
+Discuss the persistence mechanism the application utilizes, the location and general setup.
 
 ***Example:***
 There is no database or persistence mechanism other than the filesystem location specified in the **OFM_OUTPUT_DB_DIR** environment variable defined in `-e ./ofm.env`.  The **OFM_STATE_DIR** saves individual text files that correlated to a DTG_REGION_JOB-NUMBER_SCRIPT-NAME.[start, stop, complete] format.  Inside each state file is a simple ISO 8601 date-time stamp that represents that action [start, stop, complete] and when it occurred.
@@ -230,7 +229,7 @@ See documentation in the `installation` folder.
 
 ## Using/Starting [Software Application Name]
 
-Detail how the overall system gets started.  If it is a multi-step process indicate that.  Highlight any special access, accounts or permissions required to make the system initiate.  Detail any steps required prior to actual use.
+Detail how the overall system gets started.  If it is a multi-step process indicates that.  Highlight any special access, accounts or permissions required to make the system initiate.  Detail any steps required prior to actual use.
 
 ***Example:***
 
@@ -249,27 +248,26 @@ This application requires command line interface (CLI) arguments to run.
 + -h      Display this message.
 + -d      Optional, debug output is printed.
 + -e      Optional, program environment file, specifies environment variables used throughout the code base for file location, parameter settings and related controls related to operation.  Assumes `./ofm.env` if not passed.
-+ -r      Required, region to process, must be present in ofm.env and spelled exactly the same.
++ -r      Required, region to process, must be present in ofm.env and spelled the same.
 + -t      Optional, date for desired run, this allows for execution of past events Default is yesterday if nothing is passed.  Acceptable formats range from anything the Unix date command can run but "20200603" is recommended being passed as the CLI argument.
 
 ## Components
 
-Indicate if the system is multi-part and if so explain each component along with versioning, usage, etc.  Ensure documentation or project artifacts are referenced if the system is outside of your control.  If a program that's part of a larger whole ensure detailed information at the same level of this ACG is provided or if a software package minimally express the documenetation generated from the code itself.
+Indicate if the system is multi-part and if so explain each component along with versioning, usage, etc.  Ensure documentation or project artifacts are referenced if the system is outside of your control.  If a program that's part of a larger whole ensures detailed information at the same level as this ACG is provided or if a software package minimally expresses the documentation generated from the code itself.
 
 ***Example:***
 
 ### OFM Mixed Layer Depth (MLD)
 
-The MLD task takes a NCOM Model files and produces two NetCDF's which represent the Mixed Layer Depth (MLD) and the Intensity of the Mixed Layer Depth (IMLD) which is used by 3DOG for processing.
+The MLD task takes NCOM Model files and produces two NetCDF's which represent the Mixed Layer Depth (MLD) and the Intensity of the Mixed Layer Depth (IMLD) which is used by 3DOG for processing.
 
-[Source Code Documenation by Doxygen](../ofm_mld/html/index.html)
+[Source Code Documentation by Doxygen](../ofm_mld/html/index.html)
 
 ### OFM Seed Generator
 
 The Seed Generator takes a BioCast Tau 000 output and today's image to fill in missing data and gaps of coverage.
 
-[Source Code Documenation by Doxygen](../ofm_seed_generator/html/index.html)
-
+[Source Code Documentation by Doxygen](../ofm_seed_generator/html/index.html)
 
 ### Operating System Requirements
 
@@ -277,7 +275,6 @@ Identify the type(s) of operating system(s) in use and the minimum requirements 
 
 ***Example:***
 See overall system requirements.  Test and development on CentOS Linux release 7.8.2003 (Core).
-
 
 ### Language Requirements
 
@@ -288,7 +285,7 @@ Version: 3+
 
 Tested On: Anaconda v4.8.3.
 
-System version    #:3.6.13 | packaged by conda-forge | (default, Feb 19 2021, 05:36:01) [GCC 9.3.0]
+System version    #:3.6.13 | packaged by conda-forge | (default, Feb 19, 2021, 05:36:01) [GCC 9.3.0]
 
 (specific libraries are cited below)
 
@@ -311,7 +308,6 @@ conda install imageio seaborn bokeh pathlib cartopy geoviews hvplot cmocean
 conda install geopandas h5py pyhdf IPython jupyter
 conda install -c anaconda netcdf4 h5netcdf scipy pydap zarr fsspec cftime rasterio cfgrib pooch
 
-
 #### Identify tools used for Optimization (if applicable)
 
 Identify any tools of methods used to document the applications performance.
@@ -320,7 +316,6 @@ Identify any tools of methods used to document the applications performance.
 
 + `conda install py-spy py-heat memory_profiler line_profiler`
 + `conda install py-py`
-
 
 #### Library domain for all [Insert Language Name here] code:
 
@@ -597,13 +592,12 @@ Identify all core libraries that are part of the runtime that executes your code
 
 ## Build Requirements
 
-Explain the build requirements associated with each element of this software package.
-
+Explain the building requirements associated with each element of this software package.
 
 ### **Compilation Directives**
 
 ***Example:***
-Biocast is a FORTRAN 90 application that requires compilation for OFM-CS to function.  The information showing below illustrates those requirements for a successfull build.  Note that the Makefile and ./build_biocast.sh script have full details necessary to replicate compilation and linkng.
+Biocast is a FORTRAN 90 application that requires compilation for OFM-CS to function.  The information shown below illustrates those requirements for a successfull build.  Note that the Makefile and ./build_biocast.sh script have full details necessary to replicate compilation and linking.
 
 Provide instructions on the use of the compilation directives used to create your code, if appropriate.
 
@@ -620,11 +614,10 @@ Provide instructions on the use of the compilation directives used to create you
 |Compiling options                  | [-C -g -fbacktrace -fcheck=bounds -O5]                             |
 |Linking options                    | [-lnetcdff -lnetcdf -ljpeg -lmfhdf -ldf -lhdf5_hl -lhdf5 -ldl -lm -lz -ljpeg] |
 
-
 ### ***Compilation Directives***
 
 ***Example:***
-MLD is a C application that requires compilation for OFM-CS to function.  The information showing below illustrates those requirements for a successfull build.  Note that the Makefile and ./build_mld.sh script have full details necessary to replicate compilation and linkng.
+MLD is a C application that requires compilation for OFM-CS to function.  The information shown below illustrates those requirements for a successfull build.  Note that the Makefile and ./build_mld.sh script have full details necessary to replicate compilation and linking.
 
 |Compilation Directive              | Requirements                                                       |
 |-----------------------------------|--------------------------------------------------------------------|
@@ -636,4 +629,3 @@ MLD is a C application that requires compilation for OFM-CS to function.  The in
 |Includes                           | -I/net/americium/export/sw/linux-x86_64-sl7/aps/local/include      |
 |Compiling options                  | [-C -g -Wall -pedantic -fbounds-check -std=c99 -O5 -Wvariadic-macros]  |
 |Linking options                    | [-lnetcdf -ljpeg -lmfhdf -ldf -lhdf5_hl -lhdf5 -ldl -lm -lz -ljpeg ]   |
-

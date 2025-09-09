@@ -79,6 +79,39 @@ ________________________________________________________________________________
 |Env Staging    |Tomcat application server| 9.0.3             |10.1   | IAVA-4337 Update.|
 |Env Staging    |My Fav Application       | 4.3.2             |5.0.1  | Major upgrade.|
 
+### Artifacts
+
+|Artifact                     | Location                    | Description                                        |
+|-----------------------------|-----------------------------|----------------------------------------------------|
+|Software deployment files    | /some/location/on/server    |Zip file of entire application, structure defined below. |
+
+```
+./
+├── <version> - deployed to Tomcat container, copy/paste
+│   ├── static
+│   ├── assets
+│   ├── index.html
+│   ├── robots.txt
+│   ├── manifest.json
+│   ├── favicon.ico
+│   ├── asset-manifest.json
+├── Data - deployed to configuration folder
+│   ├── LayerLists
+│      ├── *.json - JSON file defining layer for application to access.
+│   ├── Org1
+│   ├── ESRIAssets
+├── Parser - Crontab function
+│   ├── capParser.py - Harvester in Python run on crontab.
+│   ├── certConfig.json - JSON file referencing server certificates.
+│   ├── uiConfig.json - User Interface JSON specification for app.
+├── UTILS - WAR deployed to Tomcat container
+│   ├── requirements_UTILS.txt - used to build virtual environment.
+│   ├── utils17-2.war - Deployed to Tomcat container.
+│   ├── configs
+│      ├── *.json - Configuration files that support Utility functions.
+```
+
+
 ### Timeline
 
 ***Deployment Timeline: Specify deployment date(s) and relevant milestones.***

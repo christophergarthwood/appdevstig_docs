@@ -5,7 +5,7 @@
 Utilize the template below to properly document by way of explicit input or references to other artifacts those data elements necessary to ensure any team member can obtain an understanding of the project.  Minimally the Project Manager (PM) should be the author and maintainer of these data elements and perform a monthly review to:
 
 + Ensure all deliverables are being met.
-+ Ensure all standards are being embraced through the use of spot checks by direct inspection or delegation.
++ Ensure all standards are being embraced using spot checks by direct inspection or delegation.
 + Update the Milestones and Timeline according to changes experienced per cycle / Sprint / iteration of work.
 
 The PM should review the Project Plan with the customer on a bi-yearly basis to ensure understanding of all facets of the project are still apropos and that customer expectations are being met.

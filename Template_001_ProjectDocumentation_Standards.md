@@ -42,7 +42,7 @@ Robust communication plans ensure that stakeholders remain informed and engaged,
 
 A “cloud culture” is the set of values, attitudes, and behaviors within an organization that enable and optimize an IT architecture. This culture emphasizes collaboration, flexibility, and scalability—not just in technical infrastructure, but in work processes and team dynamics as well. In a cloud culture, teams are encouraged to experiment, adapt quickly, leverage automation, and share resources, all of which support innovation and agility.
 
-Cloud-centric behavior prioritize continuous learning, open communication, and customer-focused solutions. Rather than relying on rigid structures and traditional IT silos, a cloud culture fosters cross-functional teamwork, self-service access to resources, and rapid decision-making. This mindset shift empowers employees to embrace change, learn new skills, and optimize business outcomes using the unique advantages of cloud platforms.
+Cloud-centric behavior prioritizes continuous learning, open communication, and customer-focused solutions. Rather than relying on rigid structures and traditional IT silos, a cloud culture fosters cross-functional teamwork, self-service access to resources, and rapid decision-making. This mindset shift empowers employees to embrace change, learn new skills, and optimize business outcomes using the unique advantages of cloud platforms.
 
 Cloud culture seeks automation over manual processes, exercises Agile workload management, utilizes abstraction and seeks scalable design first.
 
@@ -50,9 +50,9 @@ Cloud culture seeks automation over manual processes, exercises Agile workload m
 
 ### Minimal Documentation Set
 
-The following standards represents the minimal set of documents / artifacts a software project should create, maintain, and reference throughout the Software Development Lifecycle (SDLC).  Each standard provides justification for existence through references to US Government policy and Industry recognized practices.  Decentralized command is a tennant of the US military, without mechanisms in place to help ensure each team member has a means of understanding protocol / procedure you lose cohesion in the face of inevitable personnel change outs.
+The following standards represent the minimal set of documents / artifacts a software project should create, maintain, and reference throughout the Software Development Lifecycle (SDLC).  Each standard provides justification for existence through references to US Government policy and Industry recognized practices.  Decentralized command is a tenant of the US military, without mechanisms in place to ensure each team member has a means of understanding protocol / procedure you lose cohesion in the face of inevitable personnel change outs.
 
-Reviewing each standard and creating the minimally required content within each artifact helps fortify but does not guarantee success.  Only by understanding that these standards are for your customer, team, and culture to utilize and adapt for your own purposes will you be successful.  Much like the Application Security Development (ASD) Security Technical Implementation Guide (STIG) is a *guide* for engaging the development process and not a ***mandated*** checklist will your make use of this artifact.
+Reviewing each standard and creating the minimally required content within each artifact helps fortify but does not guarantee success.  Only by understanding that these standards are for your customer, team, and culture to utilize and adapt for your own purposes will you be successful.  Much like the Application Security Development (ASD) Security Technical Implementation Guide (STIG) is a *guide* for engaging the development process and not a ***mandated*** checklist will make use of this artifact.
 
 + [Project Plan and Master Integrated POA&M](#project_plan)
 
@@ -89,7 +89,7 @@ Reviewing each standard and creating the minimally required content within each 
 <a name="project_plan"/>
 
 #### Project Plan (APSC-DV-003210)
- - *Structure:* Must be template based on customer standards else develop a template, reference the template and utilize that.
+ - *Structure:* Must be templated based on customer standards else develop a template, reference the template and utilize that.
  - *Format:* Preference is Markdown using pandoc to transform the content as needed and maintain in repository, else utilize MS Word.  
  - *Methods of work implementation:*  Agile (daily scrum, Sprints duration, etc.)
  - *Project Artifact Location:* Central location with Project Management documentation.
@@ -100,12 +100,11 @@ Reviewing each standard and creating the minimally required content within each 
 
 A project plan is valuable because it provides a roadmap for successful project completion, ensuring projects are completed on time, within budget, and to the required standard. It helps teams avoid potential problems, manage resources effectively, and communicate clearly with stakeholders. Ultimately, a strong project plan sets the foundation for efficient execution and better project outcomes.  This requirement is meant to apply to developers or organizations that are doing application development work.
 
-Application development efforts include the creation of a project plan to track and organize the development work.
+Application development efforts include the creation of a project plan to track and organize development work.
 
 If security flaws are not tracked within the project plan, it is possible the flaws will be overlooked and included in a release.
 
 Tracking flaws in the project plan will help identify code elements to be changed as well as the requested change.  Project Documentation and Procedure Order of precedence Founded in experience, DOD, STIG, and industry standards.
-
 
 #### Integrated Master Plan (IMP) and Integration Master Schedule (IMS)
 
@@ -113,8 +112,8 @@ Tracking flaws in the project plan will help identify code elements to be change
  - *Format:* Customer agreed upon format at PM's discretion.
  - *Methods of work implementation:*  Agile (daily scrum, Sprints duration, etc.)
  - *Project Artifact Location:* Central location with Project Management documentation.
- - *Periodicity of Update:* As needed by Progam Manager with inputs from the team.
- - *Comments:* Milestones and High level tasks designed to demonstrate marked progress towards the final capability.
+ - *Periodicity of Update:* As needed by Program Manager with input from the team.
+ - *Comments:* Milestones and High-level tasks designed to demonstrate marked progress towards the final capability.
  - *Standard:* N/A
  - *References:* [Office of Executive Director for Systems Engineering and Architecture, May 2023](https://ac.cto.mil/wp-content/uploads/2023/05/IMP-IMS-Guide-2023.pdf)
 
@@ -123,10 +122,10 @@ The Department of Defense (DoD), other agencies and DoD contractors use Integrat
 <a name="acg"/>
 
 #### Application Configuration Guide (ACG) Standards
- - *Structure:* Must be template based on customer standards else develop a template reference the template and utilize that.
+ - *Structure:* Must be templated based on customer standards else develop a template reference the template and utilize that.
  - *Format:* Markdown with a repository utilizing pandoc to transform the content, else utilize MS Word.
  - *Methods of work implementation:*  Technical Lead is responsible and maintains.
- - *Project Artifact Location:* Central location (repository preferred), with Project Managment Plan (PMP).
+ - *Project Artifact Location:* Central location (repository preferred), with Project Management Plan (PMP).
  - *Periodicity of Update:* Reviewed & updated post Sprint Retrospective after completed stories.
  - *Comments:* Aligned to methodology, easily accessed.
  - *Standard:* [Application Configuration Guide](./Template_003_ApplicationConfigurationGuideStandard.md)
@@ -157,14 +156,13 @@ Examples include but are not limited to:
  - Operating systems and versions
  - For web applications, which browsers and what versions are supported.
 
-All deployment configuration settings are to be documented in the Application Configuration Guide and the Application Configuration Guide must be made available to application hosting providers and application/system administrators.
-
+All deployment configuration settings are to be documented in the Application Configuration Guide, and the Application Configuration Guide must be made available to application hosting providers and application/system administrators.
 
 <a name="coding_standard"/>
 
 #### Coding Standard
  - *Structure:* Must be a template based on team standards and must exist.
- - *Format:* Highest priority is to use automated mechanism for conformance.  Alternate is Markdown in a central repository using pandoc to transform the content, else utilize MS Word.
+ - *Format:* Highest priority is to use automated mechanism for conformance.  Alternate is Markdown in a central repository using pandoc to transform the content, and else utilize MS Word.
  - *Methods of work implementation:*  Technical lead is responsible and maintains, however all team members have a voice.
  - *Project Artifact Location:* Central location, either configuration files or Markdown document, in a repository regardless.
  - *Periodicity of Update:* Reviewed & updated post Sprint Retrospective, team discussion.
@@ -178,7 +176,7 @@ A coding standard is a set of simple rules and guidelines that programmers follo
 
 #### Code Review Standard
  - *Structure:* Must be a template based on team standards and must exist.
- - *Format:* Highest preference is to use a distributed system like Atlassian's FishEye, however use of Markdown in a repository for a template is acceptable, conversion with pandoc is acceptable. 
+ - *Format:* Highest preference is to use a distributed system like Atlassian's Fisheye, however use of Markdown in a repository for a template is acceptable, conversion with pandoc is acceptable. 
  - *Methods of work implementation:*  Performed at the end of a code development cycle per change prior to full merge into main.
  - *Project Artifact Location:* Central location, final code review output is with Project Management documentation.
  - *Periodicity of Update:* Performed with each change by a developer.
@@ -186,15 +184,15 @@ A coding standard is a set of simple rules and guidelines that programmers follo
  - *Standard:* [Code Review](./Template_005_CodeReviewStandard.md)
  - *References:* APSC-DV-\*, multiple ASD references.
 
-A code review is when one or more developers check someone else’s computer program code to find mistakes, improve quality, and make sure it follows agreed-upon rules before the code is added to the final project. It helps catch problems early and keeps the software working well.
+A code review is when one or more developers check someone else’s computer program code to find mistakes, improve quality, and make sure it follows agreed-upon rules before the code is added to the final project. It helps to catch problems early and keeps the software working well.
 
 <a name="configuration_management_standard"/>
 
 #### Configuration Management Standard
- - *Structure:* Must be utilized and must be a centralized softare server solution, like Git or another version management system.
+ - *Structure:* Must be utilized and must be a centralized software server solution, like Git or another version management system.
  - *Format:* Markdown document with template in central repository, use pandoc for transformation with other formats.
  - *Methods of work implementation:*  Performed with branch, trunk, tag strategy. Code changes are every few hours, server configuration changes are at change.
- - *Project Artifact Location:* Central location, must be a repository.  System Administrators have first priority with Technical Lead providing support.
+ - *Project Artifact Location:* Central location, must be a repository.  System Administrators have priority with Technical Lead providing support.
  - *Periodicity of Update:* Performed no less than every few hours on your branch and pushed to the central server (upstream).
  - *Comments:* None
  - *Standard:* [Configuration Management Standard](./Template_006_ConfigurationManagementStandard.md)
@@ -218,7 +216,7 @@ This requirement is meant to apply to developers or organizations that are doing
 
 The application design document or configuration guide includes configuration settings, recommendations and best practices that pertain to the secure deployment of the application.
 
-It also contains the detailed functional architecture as well as any changes to the application architecture corresponding to a new version release and must be documented to ensure all risks are assessed and mitigated to the maximum extent practical.
+It also contains detailed functional architecture as well as any changes to the application architecture corresponding to a new version release and must be documented to ensure all risks are assessed and mitigated to the maximum extent practical.
 
 <a name="deployment_standard"/>
 
@@ -237,7 +235,7 @@ A software deployment standard is a set of rules and procedures that explain how
 <a name="delivery_standard"/>
 
 #### Delivery Standard
- - *Structure:* Manifest of documents aligned with standard in formal letter to the customer.
+ - *Structure:* Manifest of documents aligned with standard formal letters to the customer.
  - *Format:* Company letter head release.
  - *Methods of work implementation:* Gathered by each lead for each component of the effort, formalized by PM and delivered by PM.
  - *Project Artifact Location:* Project Management document repository.
@@ -252,7 +250,7 @@ A software delivery standard is a set of guidelines and practices that describe 
 
 #### Threat Modeling Standard
  - *Structure:* Template response.
- - *Format:* Markdown documentation prefered using a known template.
+ - *Format:* Markdown documentation preferred using a known template.
  - *Methods of work implementation:* Team analysis and recording of results.
  - *Project Artifact Location:* Project Management documents repository.
  - *Periodicity of Update:* Inception and each secondary semantic release.
@@ -268,7 +266,7 @@ A threat assessment in a software engineering project is the process of identify
  - *Structure:* Configuration file according to solution (web server, application server, software application, etc.).
  - *Format:* See standard details.
  - *Methods of work implementation:* N/A
- - *Project Artifact Location:*  Logs saved per customer mandated location, configuration in CM'd config files.
+ - *Project Artifact Location:*  Logs saved per customer mandated location, configuration in Configuration Managed config files.
  - *Periodicity of Update:* Enabled day one of server setup.
  - *Comments:* None
  - *Standard:* [Logging Standard](./Template_012_LoggingStandard.md)
@@ -290,20 +288,19 @@ A logging standard for software development projects, in simple terms, is a set 
  
  A software tracking system for tracking issues in a software development project, explained simply, is a tool that helps teams keep track of problems, bugs, or tasks that come up during development. It records each issue, assigns it to the right person to fix, and monitors the progress until the problem is resolved.
 
-
 <a name="test_plan_standard"/>
 
 #### Test Plan Standard
  - *Structure:* Human authorized / trained tester
  - *Format:* Depends on methodology utilized.
- - *Methods of work implementation:* Manual and automated with results saved for inspection.
+ - *Methods of implementation:* Manual and automated with results saved for inspection.
  - *Project Artifact Location:* Project Management documentation location.
  - *Periodicity of Update:* Per release of the application.
  - *Comments:* None
  - *Standard:* [Test Standard](./Template_016_TestStandard.md)
  - *References:* APSC-DV-003130, Prior to each release of the application, updates to system, or applying patches; tests plans and procedures must be created and executed.
 
-A test plan for software development, explained in plain language, is a document that outlines what needs to be tested in a software project, how it will be tested, who will do the testing, and when it will happen. It acts like a roadmap for the testing team to make sure all important parts of the software are checked before release to catch any problems.
+A test plan for software development, explained in plain language, is a document that outlines what needs to be tested in a software project, how it will be tested, who will do the testing, and when it will happen. It acts like a roadmap for the testing team to make sure all-important parts of the software are checked before release to catch any problems.
 
 <a name="sdlc_standard"/>
 
@@ -314,10 +311,10 @@ A test plan for software development, explained in plain language, is a document
  - *Project Artifact Location:*  Project Management documentation.
  - *Periodicity of Update:* Technical Leadership discussion from outcome of identified need for modification.
  - *Comments:* None
- - *Standard:* [Softare Development Lifecycle Standard](./Template_014_SoftwareDevelopmentLifecycleStandard.md)
+ - *Standard:* [Software Development Lifecycle Standard](./Template_014_SoftwareDevelopmentLifecycleStandard.md)
  - *References:* DOD Enterprise DevSecOps Fundamentals, v 2.5, 2024/10
 
-The software development lifecycle (SDLC) is a simple step-by-step process that teams follow to create software. It helps organize and guide the work to make sure the software is well-built, meets user needs, and is delivered on time.
+The software development lifecycle (SDLC) is a simple step-by-step process that teams follow to create software. It helps organize and guides the work to make sure the software is well-built, meets user needs, and is delivered on time.
 
 <a name="communication_standard"/>
 
@@ -355,4 +352,3 @@ A communication standard for a software development project is a set of clear ru
  + [SonarQube Index Page from SonarQube](https://www.sonarqube.org/)
  + [Top 10 Coding Practices from CERT](https://wiki.sei.cmu.edu/confluence/display/seccode/Top+10+Secure+Coding+Practices)
  + [Wikipedia.org Technical Debt](https://en.wikipedia.org/wiki/Technical_debt)
-
