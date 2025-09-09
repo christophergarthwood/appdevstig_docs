@@ -3,15 +3,15 @@
 ## Definition:                                                                                        
 The application development team must follow a set of coding standards.  Common programming standards are adhered to for the following reasons:
 
-+   Programmers can go into any code and determine the current status   which increases maintainability, readability, and reusability.
-+   New programmers can rapidly grasp the current status.
++   Programmers can go into any code and determine the status   which increases maintainability, readability, and reusability.
++   New programmers can rapidly grasp their status.
 +   Programmers that are unfamiliar with a programming language have a common standard which alleviates the need to develop a personal style.
 +   Standard programming language reduces errors and increases reliability.
-+   Individual styles are replaced and an emphasis is placed on business concerns - high productivity, maintainability, shared authorship, and other aspects that help the group achieve its goal.
++   Individual styles are replaced, and an emphasis is placed on business concerns - high productivity, maintainability, shared authorship, and other aspects that help the group achieve its goal.
 
 Coding standards are guidelines established by the development team or individual developers that recommend programming style, practices and methods.  The coding standards employed will vary based upon the programming language that is being used to develop the application and the development team.
 
-Coding standards often cover the use of white space characters, variable naming conventions, function naming conventions, and comment styles.  Implementing coding standards provides many benefits to the development process.  These benefits include code readability, coding consistency among both individual and teams of developers as well as ease of code integration.  
+Coding standards often cover the use of white space characters, variable naming conventions, function naming conventions, and comment styles.  Implementing coding standards provides many benefits to the development process.  These benefits include code readability, coding consistency among both individuals and teams of developers as well as ease of code integration.  
 
 The following are examples of what will typically be in a coding standards document.  This list is an example of what one can expect to find in typical coding standard documents and is not a comprehensive list:
 
@@ -33,14 +33,13 @@ See: http://www.cse.buffalo.edu/~rapaport/code.documentation.Excerpts.pdf  for d
 ## Purpose:
 The purpose of a coding standard is to establish clear, consistent rules and guidelines that developers follow when writing code. These standards ensure that the code is clean, readable, and maintainable, which makes it easier for teams to collaborate, find and fix bugs, and extend the software over time. Coding standards also help reduce errors, improve security, and enhance overall software quality by promoting uniformity across the codebase regardless of who writes the code. Ultimately, they lead to more efficient development and better long-term project success.
 
-
 ## Requirements/Specifications/Guidelines:                                                            
-Having an ACG is a Cat II requirement as per the ASD STIG V6R3 and has been a requirement since at least V4 of the ASD STIG.  An ACG is considered an industry best practice as well.  Subject document just exist, should be in Markup, and ideally be as automated as possible.
+Having an ACG is a Cat II requirement as per the ASD STIG V6R3 and has been a requirement since at least V4 of the ASD STIG.  An ACG is considered the industry best practice as well.  Subject documents just exist, should be in Markup, and ideally be as automated as possible.
 
-Your ACG might simply describe how large portions of your coding standard is utilized within an Integrated Development Environment (IDE) or how each developer applies subject standard to their work through the use of Code Templates, etc... Do not use documents to drive change, use automation with configurations.
+Your ACG might simply describe how large portions of your coding standard are utilized within an Integrated Development Environment (IDE) or how each developer applies subject standard to their work using Code Templates, etc... Do not use documents to drive change, use automation with configurations.
 
 ## Measurable and Actionable:
-Analysis of code submitted to the repository should conform, largely, with the coding standard.
+Analysis of coding submitted to the repository should conform, largely, with the coding standard.
 
 ## Timelines: 
 Real-time with application development.                                                                                         
@@ -55,7 +54,7 @@ Real-time with application development.
 
    + [coding Standards and Guidelines](https://www.geeksforgeeks.org/software-engineering/coding-standards-and-guidelines/)
 
-## Miscellanous
+## Miscellaneous
 
 [Case Preference Per Language](#case_preference_per_language)
 
@@ -90,25 +89,25 @@ ________________________________________________________________________________
 ## The Standard
 *Document the coding standards intended for your project, enumerated list and automation are ideal for this stage.*
 
-The following are high level coding standards rules that transcend language and algorithm and are intended to foster highly legible code without cramping the style of your programming staff.  Subject rules should be adapted / augmented to support your project(s) and not used at face value.
+The following are high level coding standards rules that transcend language and algorithms and are intended to foster highly legible code without cramping the style of your programming staff.  Subject rules should be adapted / augmented to support your project(s) and not used at face value.
 
-1.	No magic numbers.  All static values should be either constants or in a configuration file.  Always use configuration files with key, value pair notation whenever possible.
-2.	Use meaningful variables.  FORTRAN constructs such as: i, j, k are not permissible.  Make variables as long as you want but make them meaningful.  Code should read like a sentence vice a cryptographer’s test.  See the table below for coding styles of variables.
-3.	If the program is going to do something more than once, make it a function.  Copy / paste of code or repetitive code that does nearly the same thing should be encapsulated as functions.  Again, naming of functions is relevant just like with variables.  The following are industry recognized function naming schema: Function names should be verbs if the function changes the state of the program, and nouns if they're used to return a certain value.
-4.	Comment the code, but not excessively.  Major programs should enumerate scope, purpose, and a change log (use of a repository system allows for dropping this practice).  Smaller functions should describe their purpose and arguments.  Application Programmer’s Interfaces (API’s) should be more heavily documented than functions that are not providing services to others.
-5.	Format your code.  Pick the formatting tool your project will use and stick with it.  Instead of the 50 page unread document simply utilize a formatter, consider configuration managing the settings file if appropriate, and bypass the worries of following something developed as a technique before code formatters were standardized.
-6.	Test.  Include a test, at some level, with your work.  Develop a Use Case, which enumerates application usage and the fulfillment of that use through the application.  Create a Test Case, explicit instructions designed to allow repetitive testing of specific functions, born from the Use Case.  Execute the Test Cases prior to each commit and especially before a release.  Use automation whenever possible.
-7.	Security.  Consider the implications of security on your code.  Minimally conduct a scan using static code analysis tools such as SonarQube (SonarQube Index Page, n.d.) to get a sense of where your code is and where you might improve it.  Establish as a team the maximum level of compliance with the scanning tool and work towards reduction of Technical Debt (Wikipedia.org Technical Debt, n.d.).
-8.	Address Exception and Error handling (APSC-DV-003235).  Also see (Failing Securely, n.d.) and (Fail Securely, n.d.).
-9.	Log consistently.  In the case of Model Operations use the logging framework.
-10.	See Unsafe Functions and understand the ramifications.
-11.	Use of System Executables (flow of control outside of the application will be discussed) should be managed.  PERL offers 3-4 ways to invoke a system command.  The PERL system function call does the same thing as exec, except that a fork is done first and the parent process waits for the child process to exit.  The system function call also provides the exit code of the external call.  Use the PERL system function for calls outside of PERL itself.
-12.	exec - executes a command and never returns. It's like a return statement in a function.  If the command is not found exec returns false. It never returns true, because if the command is found it never returns at all. There is also no point in returning STDOUT, STDERR or exit status of the command. You can find documentation about it in perlfunc, because it is a function.
-13.	System – (desired solution) executes a command and your Perl script is continued after the command has finished.  The return value is the exit status of the command. You can find documentation about it in perlfunc.
-14.	Backticks - like system executes a command and your Perl script is continued after the command has finished.  In contrary to system the return value is STDOUT of the command.  qx// is equivalent to backticks. You can find documentation about it in perlop, because unlike system and exec it is an operator.
-15.	Document Top 10’s.  Top 10 worst things to do and top 10 best things to do should be known by all team members per language used.
+1.  No magic numbers.  All static values should be either constants or in a configuration file.  Always use configuration files with key, value pair notation whenever possible.
+2.  Use meaningful variables.  FORTRAN constructs such as i, j, k are not permissible.  Make variables as long as you want but make them meaningful.  Code should be read like a sentence vice a cryptographer’s test.  See the table below for coding styles of variables.
+3.  If the program is going to do something more than once, make it a function.  Copy / paste of code or repetitive code that does nearly the same thing should be encapsulated as functions.  Again, naming of functions is relevant just like with variables.  The following are industry recognized function naming schema: Function names should be verbs if the function changes the state of the program, and nouns if they're used to return a certain value.
+4. Comment on the code, but not excessively.  Major programs should enumerate scope, purpose, and a change log (use of a repository system allows for dropping this practice).  Smaller functions should describe their purpose and arguments.  Application Programmer’s Interfaces (API’s) should be more heavily documented than functions that are not providing services to others.
+5.  Format your code.  Pick the formatting tool your project will use and stick with it.  Instead of the 50-page unread document simply utilizing a formatter, consider configuration managing the settings file if appropriate, and bypass the worries of following something developed as a technique before code formatters were standardized.
+6.  Test.  Include a test, at some level, with your work.  Develop a Use Case, which enumerates application usage and the fulfillment of that use through the application.  Create a Test Case, explicit instructions designed to allow repetitive testing of specific functions, born from the Use Case.  Execute the Test Cases prior to each commit and especially before a release.  Use automation whenever possible.
+7.  Security.  Consider the implications of security on your code.  Minimally conduct a scan using static code analysis tools such as SonarQube (SonarQube Index Page, n.d.) to get a sense of where your code is and where you might improve it.  Establish as a team the maximum level of compliance with the scanning tool and work towards reduction of Technical Debt (Wikipedia.org Technical Debt, n.d.).
+8.  Address Exception and Error handling (APSC-DV-003235).  Also see (Failing Securely, n.d.) and (Fail Securely, n.d.).
+9.  Log consistently.  In the case of Model Operations use the logging framework.
+10. See Unsafe Functions and understand the ramifications.
+11. Use of System Executables (flow of control outside of the application will be discussed) should be managed.  PERL offers 3-4 ways to invoke a system command.  The PERL system function call does the same thing as exec, except that a fork is done first and the parent process waits for the child process to exit.  The system function call also provides the exit code of the external call.  Use the PERL system function for calls outside of PERL itself.
+12. exec - executes a command and never returns. It's like a return statement in a function.  If the command is not found exec returns false. It never returns true, because if the command is found it never returns at all. There is also no point in returning STDOUT, STDERR or exit status of the command. You can find documentation about it in perlfunc, because it is a function.
+13. System – (desired solution) executes a command and your Perl script is continued after the command has finished.  The return value is the exit status of the command. You can find documentation about it in perlfunc.
+14. Backticks - like system executes a command and your Perl script is continued after the command has finished.  In contrast to system the return value is STDOUT of the command.  qx// is equivalent to backticks. You can find documentation about it in perlop, because unlike system and exec it is an operator.
+15. Document Top 10’s.  Top 10 worst things to do and top 10 best things to do should be known by all team members per language used.
 
-## General Good Practices to condsider
+## General Good Practices to consider
 
 1.  Will have "Top 10" things not to do in the language(s) you're developing in.
 2.  Will have "Top 5+" things that are considered best practices for the language(s) you're developing in.
@@ -128,13 +127,13 @@ Using command line exe's are considered inherently unsafe, as such a MD5 hash of
 3.  If executable is MD5 compliant then the System.exec can be called.
 
 ## No URL's in Compiled Code
-URL's on pages will not be statically defined in page thus requiring recompilation.  Exceptions to this rule are if the language is scripted and does not require recompile (JSP, ASP, HTML, etc...).  The following algorithm will be used:
+URLs on pages will not be statically defined in page thus requiring recompilation.  Exceptions to this rule are if the language is scripted and does not require recompilation (JSP, ASP, HTML, etc...).  The following algorithm will be used:
 
-1.  All URLs will registered with a standard XML file.
-2.  Each segment of the site (think different package schmea) will be separated within the XML file.
+1.  All URLs will register with a standard XML file.
+2.  Each segment of the site (think different package schema) will be separated within the XML file.
 3.  An MD5 of the XML configuration file will be stored in a configuration file.
 4.  Upload load of the site read in a singleton after confirming the MD5 signature.
-5.  Use a structure to persistent package/url information and call as necessary.
+5.  Use a structure to persistent package/URL information and call as necessary.
 6.  Failure of any type will result in no URL being displayed on page.
 
 ## Exceptions/Error Messages
@@ -149,7 +148,7 @@ URL's on pages will not be statically defined in page thus requiring recompilati
 
 ## Source Formatting
 
-1. All source, for the entire project, will be formatted prior to a tag being created using, preferred, an external formatting tool thus ensuring no dependency on a specific IDE.
+1. All sources for the entire project will be formatted prior to a tag being created using, preferred, an external formatting tool thus ensuring no dependency on a specific IDE.
 
 ## Development Practices
 
@@ -194,20 +193,20 @@ Namespaces are one honking great idea -- let's do more of those!
 ## Static Code Analysis (SonarQube)
 1. Source code will be scanned for classic errors using a standardized tool (could be considered standard if a custom written solution is the only way to verify error for a language).
 2. No issues flagged as Critical will be permitted to go forward into a release unless:
-	+  Agreed to by team.
-	+  Update tool configuration file so error doesn't propagate.
-	+  CM configuration file for tool.
-	+  Add to comments/readme in deployment document and design document (coding standards)
+  +  Agreed to by team.
+  +  Update tool configuration file so error doesn't propagate.
+  +  CM configuration file for tool.
+  +  Add to comments/readme in deployment document and design document (coding standards)
 3. No Application Development STIG issues will be permitted going forward (get APP codes) into a release unless:
-	+  Agreed to by team after performing a dedicated code review to ensure vulnerabilities are not considered dangerous to the project.
-	+  Documented in the comments/readme in deployment document.
-	+  Added to a new story in the backlog to be addressed immediately at next cycle.
-	+  Customer notified of plan.
+  +  Agreed to by team after performing a dedicated code review to ensure vulnerabilities are not considered dangerous to the project.
+  +  Documented in the comments/readme in deployment document.
+  +  Added to a new story in the backlog to be addressed immediately at next cycle.
+  +  Customer notified of plan.
 
 ## STIG Considerations
 
 ### Unsafe Methods (APSC-DV-003210)                                                                                                                                                                                                                                                           
-Unsafe methods are those that have side-effects that are not understood properly or require elevated security privileges in order to perform their function.  No unsafe methods are utilized in this system.  Functions such as strlen and related string manipulation functions are not used.  Research into best C practices for unsafe functions was conducted and all relevent function calls replaced with known good representations of the same function.
+Unsafe methods are those that have side-effects that are not understood properly or require elevated security privileges to perform their function.  No unsafe methods are utilized in this system.  Functions such as strlen and related string manipulation functions are not used.  Research into best C practices for unsafe functions was conducted and all relevant function calls replaced with known good representations of the same function.
 
 Classic list of recognized unsafe functions:
 
@@ -221,7 +220,7 @@ Classic list of recognized unsafe functions:
 + scanf/sscanf -> sscanf_s (MSDN
 + ato\*
 
-A grep performed on all \*.c source files indicates the aforementioned unsafe functions are not in useexcept in these locations:
+A grep performed on all \*.c source files indicates the unsafe functions are not in use except in these locations:
 
 + strncpy is used in libProduct and visor_gops_parser at three instances.  Extensive research into various tools, libraries, and commentary by developers indicates that this is a bottomless pit if one attempts to add strlcpy to C source code.  Subject strncpy stands and is used careful with input validation backing defenses.
 
@@ -272,33 +271,33 @@ IDEs like Visual Studio Code and WebStorm provide features like syntax highlight
 
 ## Case Preference Per Language
 
-|Language	|Style	    |Example	                |URI|
+|Language |Style      |Example                  |URI|
 |-----------|-----------|---------------------------|---|
-|Python	    |Snake case	|this_is_my_var	            |https://www.python.org/dev/peps/pep-0008/|
-|Perl	    |Snake case	|$this_is_my_var	        |https://perldoc.perl.org/perlstyle.html|
-|Bash	    |Lowercase	|$this	                    |http://wiki.bash-hackers.org/scripting/style|
-|Java	    |CamelCase / MixedCase	|thisIsMyVar	|http://www.oracle.com/technetwork/java/codeconventions-135099.html|
-|Fortran	|Snake case	|this_is_my_var	            |https://gcc.gnu.org/onlinedocs/gcc-6.1.0/gfortran/Naming-conventions.html; http://www.fortran90.org/src/best-practices.html|
-|C / C++    |           |                           | |			
+|Python     |Snake case |this_is_my_var             |https://www.python.org/dev/peps/pep-0008/|
+|Perl     |Snake case |$this_is_my_var          |https://perldoc.perl.org/perlstyle.html|
+|Bash     |Lowercase  |$this                      |http://wiki.bash-hackers.org/scripting/style|
+|Java     |CamelCase / Mixed Case  |thisIsMyVar  |http://www.oracle.com/technetwork/java/codeconventions-135099.html|
+|Fortran  |Snake case |this_is_my_var             |https://gcc.gnu.org/onlinedocs/gcc-6.1.0/gfortran/Naming-conventions.html; http://www.fortran90.org/src/best-practices.html|
+|C / C++    |           |                           | |     
 
 <a name="documentation_tools"/>
 
 ## Documentation Tools
 
-|Name	   |URI	                             |Notes|
+|Name    |URI                              |Notes|
 |----------|---------------------------------|-----|
 |Doxygen   |http://www.doxygen.nl/           |Converts many languages to highly useful documentation.|
-|Pandoc	   |https://pandoc.org/              |Converts Markdown, which you should be using, to any format you want.|
-|FORTRAN Documenter	| http://www.doxygen.nl/ |Converts FORTRAN source to highly useful documentation.|
+|Pandoc    |https://pandoc.org/              |Converts Markdown, which you should be using, to any format you want.|
+|FORTRAN Documenter | http://www.doxygen.nl/ |Converts FORTRAN source to highly useful documentation.|
 
 <a name="scanning_tools"/>
 
 ## Scanning Tools
 
-|Name	                   |URI	              |Notes|
+|Name                    |URI               |Notes|
 |--------------------------|------------------|-----|
-|SonarQube	               |See CI/CD Pipeline|	Performs static code analysis against configurable templates.|
-|Visual Code Grepper (VCGV)|https://github.com/nccgroup/VCG|Only works in Windows (sorry) and is an automated code security review tools which handles: C, C++, Java, VB, C#, PL/SQL.|
+|SonarQube                 |See CI/CD Pipeline| Performs static code analysis against configurable templates.|
+|Visual Code Grepper (VCGV)|https://github.com/nccgroup/VCG|Only works in Windows (sorry) and is an automated code security review tools which handles C, C++, Java, VB, C#, PL/SQL.|
 |Flawfinder|https://dwheeler.com/flawfinder/|A simple program that examines C/C++ source code and reports possible security weaknesses (“flaws”) sorted by risk level.|
 
 <a name="linting_tools"/>
@@ -309,11 +308,11 @@ IDEs like Visual Studio Code and WebStorm provide features like syntax highlight
 
 ### Python
 
-|Name	    |URI	                               |Notes|
+|Name     |URI                                 |Notes|
 |-----------|--------------------------------------|-----|
-|autopep8	|https://pypi.python.org/pypi/autopep8 |Actual format tool.|
-|Pyflakes	|https://pypi.python.org/pypi/pyflakes |Code checker / linter.|
-|black	    |Use Anaconda.	                       |Anaconda|
+|autopep8 |https://pypi.python.org/pypi/autopep8 |Actual format tool.|
+|Pyflakes |https://pypi.python.org/pypi/pyflakes |Code checker / linter.|
+|black      |Use Anaconda.                         |Anaconda|
 
 <a name="c"/>
 
@@ -353,5 +352,3 @@ IDEs like Visual Studio Code and WebStorm provide features like syntax highlight
 
 + [K-scope v0.2.6](http://www.r-ccs.riken.jp/ungi/soft/kscope/)
 + [http://fortranwiki.org/fortran/show/Tools](http://fortranwiki.org/fortran/show/Tools)
-
-
