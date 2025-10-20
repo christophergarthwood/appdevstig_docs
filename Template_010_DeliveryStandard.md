@@ -57,7 +57,8 @@ ________________________________________________________________________________
    + Datasets
    + Training Materials
    + Any other element used to integrate, test, evaluate, debug, deploy and operate the software application in all relevant environments (DEV, Staging, Ops).
-
+  
+If the project is `git clone` then cryptographic hashing is not required.  Git repository must be a valid organization repository recognized by your organization as authoritative. 
 3. Virus scan with results of entire deployment folder.
 4. Design Document updated (if appropriate), preference is markdown with STIG references.
 5. Application Configuration Guide (ACG) updated (if appropriate), preference is markdown with STIG references.
