@@ -146,8 +146,8 @@ All environment variables will contain a three-part nomenclature :
 
 #### Final Output Example
 
- - `DOUGLLM_POSTGRESQL_PASSWD`
- - `DOUGLLM_POSTGRESQL_USERNAME`
+ - `PRJ_POSTGRESQL_PASSWD`
+ - `PRJ_POSTGRESQL_USERNAME`
 
 ### Secrets and Configuration Externalization
 

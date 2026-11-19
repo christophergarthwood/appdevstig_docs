@@ -6,7 +6,7 @@
 
 *Standard:* [Coding Standard](./004_Coding_Standard.md)
 
-## Coding Standard for DOUG LLM
+## Coding Standard
 
 [Case Preference Per Language](#case_preference_per_language)
 
