@@ -1,12 +1,12 @@
-# Software Development Standard
+# 📘Software Development Standard
 
 [TOC]
 
-## Template / Reference
+## 🔗 Template / Reference
 
 *Template* - [Software Development Lifecycle Template](./013_SoftwareDevelopmentLifecycle_Template.md)
 
-## Definition:
+## 📖 Definition
 
 The Software Development Life Cycle (SDLC) is a structured process used by development teams to design, build, test, and deploy software. It consists of seven key stages that guide the creation of software from initial concept to ongoing support:
 
@@ -20,11 +20,12 @@ The Software Development Life Cycle (SDLC) is a structured process used by devel
 
 Note that new technology added to the project needs [PDR/CDR](./013a_PDR_CDR_SDLC_Process.md) work done.
 
-## Purpose:
+
+## 🎯 Purpose
 
 The purpose of the SDLC is to provide a roadmap that guides each phase of software development methodically, helping to ensure efficient, predictable, and successful software delivery. It helps development teams ensure that the software meets user needs, is delivered on time, and is of high quality. By following a structured approach, the SDLC reduces risks, improves project management, and enables teams to track progress systematically through each stage. Different methodologies such as Waterfall, Agile, and Spiral apply these stages in varied ways, allowing teams to tailor the process to their specific project needs while maintaining the core framework that promotes quality, security, and successful outcomes.
 
-## Requirements/Specifications/Guidelines:
+## 🧩 Requirements/Specifications/Guidelines
 
 + Requirements
 + Tracking System relating requirements to actions
@@ -37,7 +38,7 @@ The purpose of the SDLC is to provide a roadmap that guides each phase of softwa
 
 Based on the references documentation, here are the key guidelines and requirements:
 
-### Security Requirements
+### 🟦 1.  Security Requirements
 
 **APSC-DV-003400 - Secure Design Principal Training**
 - All program management levels must receive security training on integrating secure development practices
@@ -68,13 +69,13 @@ Based on the references documentation, here are the key guidelines and requireme
 **ASPC-DV-003140 - Cryptographic Hashing**
 - Application files must be cryptographically hashed prior to deploying to Government operational networks
 
-### Development Standards & Guidelines
+### 🟩 2. Development Standards & Guidelines
 
 + **Establish Process Standards**
 + **Utilize Version Control**
 + **Identify and Plan Deployment Package Requirements**
 
-### Establish Coding Best Practices
+### 🟨 3.  Establish Coding Best Practices
 
 + **Utilize Local Variables**
 + **Utilize Methods / Functions**
@@ -84,7 +85,7 @@ Based on the references documentation, here are the key guidelines and requireme
 + **Apply Source Formatting**
 + **Execute Static Code Analysis**
 
-### Top 10 Secure Coding Practices (Software Engineering Institute)
+### 🟧 4.  Top 10 Secure Coding Practices (Software Engineering Institute)
 
 1. **Validate Input** - From all untrusted data sources
 2. **Heed Compiler Warnings** - Use highest warning level, eliminate warnings by modifying code
@@ -97,7 +98,7 @@ Based on the references documentation, here are the key guidelines and requireme
 9. **Quality Assurance** - Use fuzz testing, penetration testing, source code audits, and independent security reviews
 10. **Secure Coding Standard** - Develop and/or apply secure coding standard for target language and platform
 
-## Security-Specific Guidelines
+### 🟥5. Security-Specific Guidelines
 
 + **System Executables should only be called after team review and lack of any other choices, consider using checksums**
 + **Static URLs in Code are not allowed, use configuration files. **
@@ -105,7 +106,7 @@ Based on the references documentation, here are the key guidelines and requireme
 + **Establish Testing Requirements, use Unit Testing minimally**
 + **Follow a Deployment Process and document what it takes to implement this change**
 
-## Measurable and Actionable:
+## 📏 Measurable and Actionable
 
 Metrics provide comprehensive visibility into the SDLC process, enabling teams to identify areas for improvement, ensure compliance with security requirements, and deliver high-quality software consistently.
 
@@ -113,7 +114,7 @@ Note that these metrics represent potential, not all must be utilizes, your actu
 
 Based on the reference documentation, Government mandates, and industry best practices, here are key metrics that can be used to measure the software development lifecycle:
 
-### Security Compliance Metrics
+### 📊 Security Compliance Metrics
 
 **Training Compliance**
 - Percentage of team members completing annual secure design training (APSC-DV-003400)
@@ -129,7 +130,7 @@ Based on the reference documentation, Government mandates, and industry best pra
 **Compliance Adherence**
 - Number of APSC-DV violations per release
 
-## Code Quality Metrics
+### 📊 Code Quality Metrics
 
 **Static Analysis**
 - Number of critical, major, minor, and info-level issues from SonarQube
@@ -151,7 +152,7 @@ Based on the reference documentation, Government mandates, and industry best pra
 - Method complexity (methods taking >60 seconds to understand)
 - Local variable naming convention compliance
 
-### Version Control & Configuration Management Metrics
+### 📊 Version Control & Configuration Management Metrics
 
 **SCM Effectiveness (APSC-DV-003010)**
 - Percentage of changes tracked with task correlation
@@ -167,7 +168,7 @@ Based on the reference documentation, Government mandates, and industry best pra
 - Change request documentation completeness
 - Deployment package completeness (test reports, Sonar reports, UAT reports)
 
-### Testing Metrics
+### 📊 Testing Metrics
 
 **Test Coverage**
 - Unit test coverage percentage
@@ -190,7 +191,7 @@ Based on the reference documentation, Government mandates, and industry best pra
 - Number of test cycles required before deployment
 - User acceptance test approval rate
 
-### Development Cycle Metrics
+### 📊 Development Cycle Metrics
 
 **Velocity & Throughput**
 - Sprint velocity (for Agile methodologies)
@@ -205,7 +206,7 @@ Based on the reference documentation, Government mandates, and industry best pra
 - Number of deployment rollbacks
 - Time spent on rework vs. new development
 
-### Deployment Metrics
+### 📊 Deployment Metrics
 
 **Deployment Success**
 - Deployment success rate (first-time right)
@@ -222,7 +223,7 @@ Based on the reference documentation, Government mandates, and industry best pra
 - Environment parity issues
 - Large changes incorporate a Preliminary Design Review and Critical Design Review
 
-### Maintenance & Support Metrics
+### 📊 Maintenance & Support Metrics
 
 **Issue Management**
 - Mean time to acknowledge issues
@@ -237,7 +238,7 @@ Based on the reference documentation, Government mandates, and industry best pra
 - Error rate in production logs
 - Performance degradation incidents
 
-## Process Adherence Metrics
+### 📊 Process Adherence Metrics
 
 **SDLC Phase Compliance**
 - Percentage of projects completing all seven SDLC phases
@@ -251,7 +252,7 @@ Based on the reference documentation, Government mandates, and industry best pra
 - Best practices adoption rate
 - Secure coding standard compliance percentage
 
-### Team Performance Metrics
+### 📊 Team Performance Metrics
 
 **Productivity**
 - Story points completed per sprint
@@ -263,7 +264,7 @@ Based on the reference documentation, Government mandates, and industry best pra
 - Team member training completion rates
 - Cross-functional collaboration incidents
 
-### Risk & Quality Metrics
+### 📊 Risk & Quality Metrics
 
 **Risk Management**
 - Number of identified risks per phase
@@ -277,7 +278,7 @@ Based on the reference documentation, Government mandates, and industry best pra
 - Code audit findings
 - Quality gate failure rate
 
-### Efficiency Metrics
+### 📊 Efficiency Metrics
 
 **Resource Utilization**
 - Actual vs. planned effort variance
@@ -291,7 +292,7 @@ Based on the reference documentation, Government mandates, and industry best pra
 - Deployment automation effectiveness
 - Static analysis automation coverage
 
-### Key Performance Indicators (KPIs) Dashboard Example
+### 📊Key Performance Indicators (KPIs) Dashboard Example
 
 **Critical KPIs to Track:**
 1. Deployment success rate (target: >95%)
@@ -314,20 +315,11 @@ Based on the reference documentation, Government mandates, and industry best pra
 - Use metrics to drive continuous improvement
 
 
-## Timeliness:
+## ⏱️ Timeliness
 
 Applicable for every software code change (configuration files do not count).
 
-## Reference(s)
- + [Application Security Development (ASD) Security Technical Implementation Guide (STIG) version 6, release 5 (APSC-DV-003400)](https://www.cyber.mil/stigs/downloads)
-   + APSC-DV-003400, The Program Manager must verify all levels of program management, designers, developers, and testers receive annual security training pertaining to their job function.
- + [Software Engineering for Continuous Delivery of Warfighting Capability, 2023/04](https://www.cto.mil/wp-content/uploads/2023/07/SWE-Guide-April2023.pdf)
- + [DoW Enterprise DevSecOps Fundamentals, v 2.5, 2024/10](https://dodcio.defense.gov/Portals/0/Documents/Library/DoD%20Enterprise%20DevSecOps%20Fundamentals%20v2.5.pdf)
- + [NIST Special Publication 800-37 (“Risk Management Framework for Information Systems and Organizations"), Rev 2](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-37r2.pdf)
- + [NIST Secure Software Development Framework (SSDF), SP 800-218A](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf)
- + [CISA Securing the Software Supply Chain](https://www.cisa.gov/sites/default/files/publications/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN_DEVELOPERS.PDF)
-
-## Diagram
+## 🖼️ Visual
 
 ```mermaid
 graph TD
@@ -422,4 +414,15 @@ graph TD
     class Security_Training,Static_Analysis,Annual_Training,Security_Review,SCM_Setup,SCM_Track securityClass
     class Code_Review,Critical_Check,Warning_Check,Test_Results,Deploy_Success,Issues decisionClass
 ```
+
+
+
+## 📚 Reference(s)
+ + 🏛️[Application Security Development (ASD) Security Technical Implementation Guide (STIG) version 6, release 5 (APSC-DV-003400)](https://www.cyber.mil/stigs/downloads)
+   + APSC-DV-003400, The Program Manager must verify all levels of program management, designers, developers, and testers receive annual security training pertaining to their job function.
+ + 🏛️[Software Engineering for Continuous Delivery of Warfighting Capability, 2023/04](https://www.cto.mil/wp-content/uploads/2023/07/SWE-Guide-April2023.pdf)
+ + 🏛️[DoW Enterprise DevSecOps Fundamentals, v 2.5, 2024/10](https://dodcio.defense.gov/Portals/0/Documents/Library/DoD%20Enterprise%20DevSecOps%20Fundamentals%20v2.5.pdf)
+ + 🏛️[NIST Special Publication 800-37 (“Risk Management Framework for Information Systems and Organizations"), Rev 2](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-37r2.pdf)
+ + 🏛️[NIST Secure Software Development Framework (SSDF), SP 800-218A](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf)
+ + 🏛️[CISA Securing the Software Supply Chain](https://www.cisa.gov/sites/default/files/publications/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN_DEVELOPERS.PDF)
 

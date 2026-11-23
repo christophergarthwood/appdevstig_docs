@@ -1,20 +1,21 @@
-# Deployment Standard
+# 📘 Deployment Standard
 
 [TOC]
 
-## Template / Reference
+## 🔗 Template / Reference
 
 *Template* - [Deployment Template](./008_Deployment_Template.md)
 
-## Definition
+## 📖 Definition
 
 A software delivery plan is a simple, step-by-step roadmap that shows how a team will create, test, and deliver a software product to its users. It organizes all the important tasks, timelines, and resources needed so that everyone knows what to do, when to do it, and how to reach the project’s goals successfully. In short, it helps teams stay organized and on track from the beginning of a project all the way through to releasing the finished software.
 
-## Purpose
+## 🎯 Purpose
 
 A software delivery plan ensures "no surprises" when migrating to the next tier and reduces risk when deploying a solution as the plan is circulated with all team members, tested, and followed in the subsequent Staging and Operations releases.
 
-## Requirements/Specifications/Guidelines
+
+## 🧩 Requirements/Specifications/Guidelines
 
 A software deployment plan template, based on industry’s best practices, should provide a clear and detailed blueprint for delivering software to production environments with minimal risk and maximum transparency. 
 
@@ -43,16 +44,16 @@ Canary Deployment: The new version is released to a small, isolated subset of us
 + Pros: Minimizes the impact of bugs by affecting only a small group of users, allowing for early detection and correction.
 + Cons: Requires sophisticated traffic routing and monitoring capabilities.
 
-## Measurable and Actionable
+## 📏 Measurable and Actionable
 
 Performed for every deployment.
 
-## Timeliness
+## ⏱️Timeliness
 
 Performed for every deployment.
 
-## Reference(s)
- + Application Security and Development (ASD) Security Technical Implementation Guide (STIG) Version 6, Release 5, 2025/04/02
+## 📚 Reference(s)
+ + 🏛️Application Security and Development (ASD) Security Technical Implementation Guide (STIG) Version 6, Release 5, 2025/04/02
     + APSC-DV-003220, The designer must create and update the Design Document for each release of the application. The application design document or configuration guide includes configuration settings, recommendations and best practices that pertain to the secure deployment of the application. 
     + APSC-DV-002930, The ISSO must ensure active vulnerability testing is performed prior to deployment.
     + APSC-DV-003340, At least one application administrator must be registered to receive update notifications, or security alerts, when automated alerts are available.

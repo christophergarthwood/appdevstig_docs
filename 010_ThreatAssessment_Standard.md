@@ -1,33 +1,33 @@
-# Threat Assessment Standard (APP3030)
+# 📘Threat Assessment Standard (APP3030)
 
 [TOC]
 
-## Template / Reference
+## 🔗 Template / Reference
 
 *Template* - [Threat Modeling /  Assessment Standard](./010_ThreatAssessment_Template.md)
 
-## Definition:
+## 📖 Definition
 
 A threat assessment is a simple process used to identify and understand potential dangers or risks that could cause harm. It helps determine how serious a threat is and how likely it is to happen, so people can take steps to prevent problems or respond effectively. Essentially, it's about spotting possible threats early and managing them to keep people, places, or systems safe.
 
-## Purpose:
+## 🎯 Purpose
 
 The purpose of a software threat assessment, in simple terms, is to identify potential dangers or weaknesses in a software system that hackers or other malicious actors could exploit. It helps organizations understand what kind of threats they might face, how serious those threats are, and what needs to be done to protect the software and data before any harm happens. This proactive approach reduces risks, helps allocate security resources wisely, improves safety, and helps ensure compliance with regulations. Essentially, it keeps the software safer by preparing for and preventing potential attacks before they occur.
 
 
-## Requirements/Specifications/Guidelines:
+## 🧩 Requirements/Specifications/Guidelines
 
 The threat risk modeling process has five steps, enumerated below. They are: 
 
-+ Identify Security Objectives.
-+ Survey the Application
-+ Decompose it
-+ Identify Threats
-+ Identify Vulnerabilities
++ ✅ Identify Security Objectives.
++ ✅ Survey the Application
++ ✅ Decompose it
++ ✅ Identify Threats
++ ✅ Identify Vulnerabilities
 
 Utilize the following model as the basis for your analysis to calculate the level of risk.  Consider your application's potential weaknesses by either self-reflection and/or utilizing a known standard such as OWASP's Top 10.
 
-### 1.0 DREAD
+### 🟦 1. DREAD
 
 DREAD is a classification scheme for quantifying, comparing and prioritizing the amount of risk presented by each evaluated threat. The DREAD acronym is formed from the first letter of each category below. DREAD modeling influences the thinking behind setting the risk rating and is also used directly to sort the risks. The DREAD algorithm, shown below, is used to compute a risk value, which is an average of all five categories.
 
@@ -35,7 +35,7 @@ DREAD is a classification scheme for quantifying, comparing and prioritizing the
 
 The calculation always produces a number between 0 and 10, the higher the number, the more serious the risk. Here are some examples of how to quantify the DREAD categories.
 
-#### 1.1 Damage Potential
+#### 1.1 🔹Damage Potential
 
 If a threat exploit occurs, how much damage will it be caused?
 
@@ -43,7 +43,7 @@ If a threat exploit occurs, how much damage will it be caused?
 + 5 = Individual user data is compromised or affected.
 + 10 = Complete system or data destruction
 
-#### 1.2 Reproducibility
+#### 1.2 🔹Reproducibility
 
 How easy is it to reproduce the threat exploit?
 
@@ -51,7 +51,7 @@ How easy is it to reproduce the threat exploit?
 + 5 = One or two steps required, may need to be an authorized user.
 + 10 = Just a web browser and the address bar is sufficient, without authentication.
 
-#### 1.3 Exploitability
+#### 1.3 🔹Exploitability
 
 What is needed to exploit this threat?
 
@@ -59,7 +59,7 @@ What is needed to exploit this threat?
 + 5 = Malware exists on the Internet, or an exploit is easily performed, using available attack tools.
 + 10 = Just a web browser
 
-#### 1.4 Affected Users
+#### 1.4 🔹 Affected Users
 
 How many users will be affected?
 
@@ -67,7 +67,7 @@ How many users will be affected?
 + 5 = Some users, but not all
 + 10 = All users
 
-#### 1.5 Discoverability
+#### 1.5 🔹Discoverability
 
 How easy is it to discover this threat?
 
@@ -78,11 +78,11 @@ How easy is it to discover this threat?
 
 Note: When performing a security review of an existing application, “Discoverability” will often be set to 10 by convention, as it is assumed the threat issues will be discovered.
 
-### 2.0 OWASP (Top 10)
+### ### 🟧 2.0 OWASP (Top 10)
 
 The following are explanations of OWASP and potential mitigations with examples of how to score.
 
-#### 2.1 [Broken Authentication / Access Control and Session Management](http://owasp.org/Top10/A03_2021-Injection/)  (APSC-DV-000010, APSC-DV-001800, APSC-DV-002220, APSC-DV-002240, APSC-DV-002250, APSC-DV-002260, APSC-DV-002270, APSC-DV-002270)
+#### 2.1 🔸[Broken Authentication / Access Control and Session Management](http://owasp.org/Top10/A03_2021-Injection/)  (APSC-DV-000010, APSC-DV-001800, APSC-DV-002220, APSC-DV-002240, APSC-DV-002250, APSC-DV-002260, APSC-DV-002270, APSC-DV-002270)
 
 Attackers use leaks or flaws in the authentication or session management functions (e.g., exposed accounts, passwords, session IDs) to impersonate users.
 
@@ -90,7 +90,7 @@ Session management encompasses the techniques employed by web applications to tr
 
 Session management mechanisms can be broadly classified into client-side and server-side mechanisms. This classification is based on the contents of the session token passed between the client and the application.
 
-#### 2.2 [Cryptographic Failures](https://owasp.org/Top10/A02_2021-Cryptographic_Failures/)
+#### 2.2 🔸[Cryptographic Failures](https://owasp.org/Top10/A02_2021-Cryptographic_Failures/)
 
 The first thing is to determine the protection needs of data in transit and at rest. For example, passwords, credit card numbers, health records, personal information, and business secrets require extra protection, mainly if that data falls under privacy laws, e.g., EU's General Data Protection Regulation (GDPR), or regulations, e.g., financial data protection such as PCI Data Security Standard (PCI DSS). For all such data:
 
@@ -116,11 +116,11 @@ Are deprecated cryptographic padding methods such as PKCS number 1 v1.5 in use?
 
 Are cryptographic error messages or side channel information exploitable, for example in the form of padding oracle attacks?
 
-#### 2.3 [Injection](https://owasp.org/Top10/A03_2021-Injection/) (APSC-DV-001460, APSC-DV-002510, APSC-DV-002540)
+#### 2.3 🔸 [Injection](https://owasp.org/Top10/A03_2021-Injection/) (APSC-DV-001460, APSC-DV-002510, APSC-DV-002540)
 
 In an injection attack, the attacker sends simple text-based attacks that exploit the syntax of the targeted interpreter. Almost any source of data can be an injection vector, including internal sources.  Injection attacks can be used to run malicious queries or code and can result in leaking or modifying sensitive information.  The best way to find out if an application is vulnerable to injection is to verify that all use of interpreters clearly separates untrusted data from the command or query. For SQL calls, this means using bind variables in all prepared statements and stored procedures and avoiding dynamic queries.
 
-#### 2.4 [Insecure Design](https://owasp.org/Top10/A04_2021-Insecure_Design/)
+#### 2.4 🔸 [Insecure Design](https://owasp.org/Top10/A04_2021-Insecure_Design/)
 
 Attacker, who is an authorized system user, simply changes a parameter value that directly refers to a system object to another object the user isn’t authorized for. Is access granted?
 
@@ -128,7 +128,7 @@ Applications frequently use the actual name or key of an object when generating 
 
 Insecure design is a broad category representing different weaknesses, expressed as “missing or ineffective control design.” Insecure design is not the source for all other Top 10 risk categories. There is a difference between insecure design and insecure implementation. We differentiate between design flaws and implementation defects for a reason, they have different root causes and remediation. A secure design can still have implementation defects leading to vulnerabilities that may be exploited. An insecure design cannot be fixed by perfect implementation as by definition, needed security controls were never created to defend against specific attacks. One of the factors that contributes to insecure design is the lack of business risk profiling inherent in the software or system being developed, and thus the failure to determine what level of security design is required.
 
-#### 2.5 [Security Misconfiguration](https://owasp.org/Top10/A05_2021-Security_Misconfiguration/)
+#### 2.5 🔸 [Security Misconfiguration](https://owasp.org/Top10/A05_2021-Security_Misconfiguration/)
 
 Attacker accesses default accounts, unused pages, unpatched flaws, unprotected files and directories, etc. to gain unauthorized access to or knowledge of the system.
 
@@ -145,7 +145,7 @@ The application might be vulnerable if the application is:
 + The server does not send security headers or directives, or they are not set to secure values.
 + The software is out of date or vulnerable (see A06:2021-Vulnerable and Outdated Components).
 
-#### 2.6 [Vulnerable and Outdated Components](https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/)
+#### 2.6 🔸 [Vulnerable and Outdated Components](https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/)
 
 Attackers identifies a weak component through scanning or manual analysis. He customizes the exploit as needed and executes the attack. It gets more difficult if the used component is deep in the application.
 
@@ -163,7 +163,7 @@ If software developers do not test the compatibility of updated, upgraded, or pa
 
 If you do not secure the components’ configurations (see A05:2021-Security Misconfiguration).
 
-#### 2.7 [Identification and Authentication Failures - Cross-Site Scripting (XSS) / Cross Site Request Forgery (CSRF) / Server-Side Request Forgery](https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29) (APSC-DV-002490, APSC-DV-002500, APSC-DV-002530, APSC-DV-000060, APSC-DV-002210, APSC-DV-002930)
+#### 2.7 🔸 [Identification and Authentication Failures - Cross-Site Scripting (XSS) / Cross Site Request Forgery (CSRF) / Server-Side Request Forgery](https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29) (APSC-DV-002490, APSC-DV-002500, APSC-DV-002530, APSC-DV-000060, APSC-DV-002210, APSC-DV-002930)
 
 Attackers send text-based attack scripts that exploit the interpreter in the browser. Almost any source of data can be an attack vector, including internal sources such as data from the database.
 
@@ -193,11 +193,11 @@ Reuse session identifier after successful login.
 
 Does not correctly invalidate Session IDs. User sessions or authentication tokens (mainly single sign-on (SSO) tokens) aren't properly invalidated during logout or a period of inactivity.
 
-#### 2.8 [Software and Data Integrity Failures](https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/)
+#### 2.8🔸 [Software and Data Integrity Failures](https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/)
 
 Software and data integrity failures relate to code and infrastructure that does not protect against integrity violations. An example of this is where an application relies upon plugins, libraries, or modules from untrusted sources, repositories, and content delivery networks (CDNs). An insecure CI/CD pipeline can introduce the potential for unauthorized access, malicious code, or system compromise. Lastly, many applications now include auto-update functionality, where updates are downloaded without sufficient integrity verification and applied to the previously trusted application. Attackers could potentially upload their own updates to be distributed and run on all installations. Another example is where objects or data are encoded or serialized into a structure that an attacker can see and modify is vulnerable to insecure deserialization.
 
-#### 2.9 [Security Logging and Monitoring Features](https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/)
+#### 2.9 🔸 [Security Logging and Monitoring Features](https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/)
 
 Without logging and monitoring, breaches cannot be detected. Insufficient logging, detection, monitoring, and active response occurs at any time:
 
@@ -219,7 +219,7 @@ You are vulnerable to information leakage by making logging and alerting events 
 
 You are vulnerable to injections or attacks on the logging or monitoring systems if log data is not correctly encoded.
 
-#### 2.10 [Server-Side Request Forgery (SSRF)](https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/)
+#### 2.10 🔸 [Server-Side Request Forgery (SSRF)](https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/)
 
 SSRF flaws occur whenever a web application is fetching a remote resource without validating the user-supplied URL. It allows an attacker to coerce the application to send a crafted request to an unexpected destination, even when protected by a firewall, VPN, or another type of network access control list (ACL).
 
@@ -229,7 +229,7 @@ Attacker links to unvalidated redirect and tricks victims into clicking it. Vict
 
 Applications frequently redirect users to other pages or use internal forwards in a similar manner. Sometimes the target page is specified in an unvalidated parameter, allowing attackers to choose the destination page.  Detecting unchecked redirects is easy. Look for redirects where you can set the full URL. Unchecked forwards are harder, because they target internal pages.
 
-### 3.0 STRIDE
+### 🟩3.0 STRIDE
 
 STRIDE is a classification scheme for characterizing known threats according to the kinds of exploit that are used (or motivation of the attacker). The STRIDE acronym is formed from the first letter of each of the following categories.
 
@@ -273,29 +273,29 @@ If an application provides distinct user and administrative roles, then it is vi
 
 *Mitigation*: Provide methods of defense in use.
 
-## Measurable and Actionable:
+## 📏 Measurable and Actionable
 
 + Threat assessment must exist.
 + Threat assessments must return to a numerical value indicating the level of concern for an identified vulnerability.
 + Improvement of scores should occur over the course of the application's lifecycle if risk management indicates tighter security is appropriate.
 
-## Timeliness:
+## ⏱️ Timeliness
 
 Should occur with each major change to the system at semantic versioning primary level 1.x.x to 2.x.x.
 
-## Reference(s)
- + [Application Security Development (ASD) Security Technical Implementation Guide (STIG) version 6, release 3 (APSC-DV-003230)](https://www.cyber.mil/stigs/downloads)
+## 📚 Reference(s)
+ + 🏛️ [Application Security Development (ASD) Security Technical Implementation Guide (STIG) version 6, release 3 (APSC-DV-003230)](https://www.cyber.mil/stigs/downloads)
    + APSC-DV-000520, The application must audit the execution of privileged functions.
    + APSC-DV-003220, The designer must create and update the Design Document for each release of the application.
    + APSC-DV-003230, Threat models must be documented and reviewed for each application release and updated as required by design and functionality changes or when new threats are discovered.
    + APSC-DV-003260, Procedures must be in place to notify users when an application is decommissioned.
    + APSC-DV-003320, Protections against DoS attacks must be implemented.
- + [OWASP Top 10](https://owasp.org/www-project-top-ten/)
- + [OWASP Threat Modeling Process](https://community.owasp.org/Threat_Modeling_Process)
- + [MITRE CWE List](https://cwe.mitre.org/)
- + [DoW Enterprise DevSecOps Fundamentals, v 2.5, 2024/10](https://dodcio.defense.gov/Portals/0/Documents/Library/DoD%20Enterprise%20DevSecOps%20Fundamentals%20v2.5.pdf)
- + [NIST Special Publication 800-37 (“Risk Management Framework for Information Systems and Organizations"), Rev 2](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-37r2.pdf)
- + [NIST Secure Software Development Framework (SSDF), SP 800-218A](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf)
+ + 🏛️ [OWASP Top 10](https://owasp.org/www-project-top-ten/)
+ + 🏛️ [OWASP Threat Modeling Process](https://community.owasp.org/Threat_Modeling_Process)
+ +  [MITRE CWE List](https://cwe.mitre.org/)
+ + 🏛️ [DoW Enterprise DevSecOps Fundamentals, v 2.5, 2024/10](https://dodcio.defense.gov/Portals/0/Documents/Library/DoD%20Enterprise%20DevSecOps%20Fundamentals%20v2.5.pdf)
+ + 🏛️ [NIST Special Publication 800-37 (“Risk Management Framework for Information Systems and Organizations"), Rev 2](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-37r2.pdf)
+ + 🏛️ [NIST Secure Software Development Framework (SSDF), SP 800-218A](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf)
 
  ## Visual
 

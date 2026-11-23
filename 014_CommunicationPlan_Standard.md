@@ -1,41 +1,41 @@
-# Communication Standard
+# 📘Communication Standard
 
 
 [TOC]
 
-## Template / References
+## 🔗 Template / Reference
 
 *Template:* - [Communication Template](./015_CommunicationPlan_Template.md)
 
-## Definition:
+## 📖 Definition
 
 A communication standard for a software development project is a set of clear rules and guidelines about how team members share information with each other and stakeholders. It explains the best ways and tools to use for talking about project updates, sharing documents, providing feedback, asking questions, and solving problems. The purpose is to keep everyone on the same page, avoid misunderstandings, and make sure important information doesn’t get missed. Communication standards might include things like regular meetings, using certain chat apps or tools, documenting decisions, and being respectful and clear in all messages.
 
-## Purpose:
+## 🎯 Purpose
 
 The purpose of a communication standard for software development is to create clear, consistent, and reliable ways for team members and stakeholders to share information throughout a project. This standard:
 
-+ Ensures everyone knows how, when, and where to provide updates, ask questions, report progress, and resolve issues.
++ ✅ Ensures everyone knows how, when, and where to provide updates, ask questions, report progress, and resolve issues.
 
-+ Reduces misunderstandings and confusion, saving time and preventing mistakes.
++ ✅ Reduces misunderstandings and confusion, saving time and preventing mistakes.
 
-+ Provides a common language and approach so that collaboration is smooth, even with new team members or across different departments.
++ ✅ Provides a common language and approach so that collaboration is smooth, even with new team members or across different departments.
 
-+ Makes it easier to document decisions and track project progress, leading to better organization and accountability.
++ ✅ Makes it easier to document decisions and track project progress, leading to better organization and accountability.
 
-+ Improves teamwork and the overall quality of the software by making sure important information is not missing and everyone stays aligned.
++ ✅ Improves teamwork and the overall quality of the software by making sure important information is not missing and everyone stays aligned.
 
-+ Ultimately, a communication standard helps keep a software development project on track, efficient, and successful.
++ ✅ Ultimately, a communication standard helps keep a software development project on track, efficient, and successful.
 
-## Requirements/Specifications/Guidelines:
+## 🧩 Requirements/Specifications/Guidelines
 
 The requirement for a communication standard in a software development project is to ensure that everyone involved has a clear, consistent way to share information, updates, and feedback throughout the project. This standard reduces misunderstandings, prevents missed information, and helps everyone know when and how to communicate.
 
-Minimal team member expectations in meetings:
+### 🟦 1. Minimal team member expectations in meetings:
   - Rules are to always remain professional, no profanity, positive attitude, always follow up.
   - Meetings have agendas and meeting minutes to follow (transformation of VTT authorized).
 
-A good communication standard requires:
+### 🟩 2. A good communication standard requires:
 
 + Identifying who needs to communicate (team members, stakeholders)
 
@@ -49,7 +49,7 @@ A good communication standard requires:
 
 + With these requirements, project communication becomes more reliable, efficient, and professional, keeping the whole team aligned and helping deliver successful software.
 
-### Table of Communications Matrix
+### 🟨 3. Table of Communications Matrix
 
 |Name               |Purpose          |Templates              |Roles                |Location          |Frequency |
 |-------------------|-----------------|-----------------------|---------------------|------------------|----------|
@@ -61,21 +61,21 @@ A good communication standard requires:
 |Sprint Daily Standup |Classic Agile daily 15-minute stand-up|Informal, MS Teams or in person meeting| All team members IAW Agile methodology.|Vitual MS Teams|Daily|
 |Customer Meetings    |Requirements gathering, customer feedback, operational concerns, contracts.| An agenda for the meeting in question will be generated via email and meeting minutes to follow that trace back to the agenda submitted for the meeting highlighting: location, attendees, general discussion, action items.| Any team member.|Variable|Variable|
 
-## Measurable and Actionable:
+## 📏 Measurable and Actionable
 
 + Sprint demonstrations and retrospective are an inspectable artifact that must exist after every Sprint.
 + Evidence of Senior Administrator tracking must exist (updates come out often, quarterly inspection by Program Manager).
 + Customer meetings must have an agenda and meeting minutes saved to project documentation folder specified by Program Manager.
 
-## Timeliness:
+## ⏱️ Timeliness
 
 See requirements table outlining meetings, venue, and times.
 
-## Reference(s)
- + Application Security and Development (ASD) Security Technical Implementation Guide (STIG) Version 6, Release 5, 2026/09/30 
-   + APSC-DV-003340, At least one application administrator must be registered to receive update notifications, or security alerts, when automated alerts are available.
- + DoDI 5000.87: Operation of the Software Acquisition Pathway: Requires active engagement and communication with users and stakeholders across the software lifecycle to gather requirements, clarify needs, and ensure priorities are met. The policy emphasizes ongoing interaction as a core requirement in software project planning and execution.
- + DoDI 8310.01: Information Technology Standards in the DoW: Requires program managers to develop and submit standards views and supporting content for IT projects. This includes proper alignment with IT and interoperability standards, ensuring technical information and guidance is communicated across DoW components and partners.
- + DoDI 4630.09: Communications Waveform Management and Standardization: Mandates periodic reviews and communication of waveform (communications standards for software/radio) implementations to ensure interoperability, operational value, and compliance throughout the system lifecycle. Emphasizes developer coordination and formal communication processes for changes and enhancements.
- + DoW Systems Engineering Plan (SEP) Outline v4.1:Indicates that the program should thoroughly describe the communication process among software, systems, and specialty engineers and provide a summary for consistent information sharing across technical and specialty disciplines as part of program planning.
+## 📚 Reference(s)
+ + 🏛️ Application Security and Development (ASD) Security Technical Implementation Guide (STIG) Version 6, Release 5, 2026/09/30 
+	   + APSC-DV-003340, At least one application administrator must be registered to receive update notifications, or security alerts, when automated alerts are available.
+ + 🏛️ DoDI 5000.87: Operation of the Software Acquisition Pathway: Requires active engagement and communication with users and stakeholders across the software lifecycle to gather requirements, clarify needs, and ensure priorities are met. The policy emphasizes ongoing interaction as a core requirement in software project planning and execution.
+ + 🏛️ DoDI 8310.01: Information Technology Standards in the DoW: Requires program managers to develop and submit standards views and supporting content for IT projects. This includes proper alignment with IT and interoperability standards, ensuring technical information and guidance is communicated across DoW components and partners.
+ + 🏛️ DoDI 4630.09: Communications Waveform Management and Standardization: Mandates periodic reviews and communication of waveform (communications standards for software/radio) implementations to ensure interoperability, operational value, and compliance throughout the system lifecycle. Emphasizes developer coordination and formal communication processes for changes and enhancements.
+ + 🏛️ DoW Systems Engineering Plan (SEP) Outline v4.1:Indicates that the program should thoroughly describe the communication process among software, systems, and specialty engineers and provide a summary for consistent information sharing across technical and specialty disciplines as part of program planning.
 

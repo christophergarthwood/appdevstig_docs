@@ -1,7 +1,5 @@
 # Project Documentation Standards (AppDev STIG v6r5, APSC-DV-003210)
 
-<div align="center" style="margin: 20px 0; padding: 10px; background-color: #f0f0f0; border: 2px solid #999;"> <strong style="font-size: 72px; color: #666;">⚠️<H1>DRAFT</H1>⚠️</strong> </div>
-
 [TOC]
 
 ## Versioning
@@ -389,5 +387,3 @@ A communication standard for a software development project is a set of clear ru
  + [Wikipedia.org Technical Debt](https://en.wikipedia.org/wiki/Technical_debt)
  + [DoW DevSecOps Enterprise Container Hardening](https://dl.dod.cyber.mil/wp-content/uploads/devsecops/pdf/Final_DevSecOps_Enterprise_Container_Hardening_Guide_1.2.pdf)
 
-
-<div align="center" style="margin: 20px 0; padding: 10px; background-color: #f0f0f0; border: 2px solid #999;"> <strong style="font-size: 72px; color: #666;">⚠️<H1>DRAFT</H1>⚠️</strong> </div>

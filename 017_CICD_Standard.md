@@ -1,12 +1,13 @@
-# CI/CD Standard
+# 📘 CI/CD Standard
 
 [TOC]
 
-## Template / References
+## 🔗 Template / Reference
+
 
 *Template* - [CI/CD Template](./018_CICD_Template.md)
 
-## Definition:
+## 📖 Definition
 
 CI/CD is a way to automate getting software changes from a developer’s computer to users.
 
@@ -36,23 +37,18 @@ Think of a factory assembly line:
 3. CD packages the approved change and sends it to a test environment or live website.
 4. The goal is to release updates faster and with fewer avoidable mistakes.
 
-## Purpose:
+
+## 🎯 Purpose
 
 This standard establishes the procedures for the development, security scanning, and deployment of all new applications within the project Environment. The primary scope of this document is for applications intended for the NIPRNet (Non-classified Internet Protocol Router Network).
 
 The objective is to ensure a secure, compliant, and efficient software development lifecycle (SDLC) by mandating the use of an approved CI/CD pipeline and deployment methodology.
 
+## 🧩 Requirements/Specifications/Guidelines
+
 **Note:** While this standard is currently enacted for the NIPRNet environment, the principles and procedures outlined herein are intended to serve as the foundational model for future deployments to other classification levels. It is acknowledged that at the current time, a dedicated "Alpha" or development cloud environment for non-NIPR environments does not yet exist for testing. It is anticipated that the core CI/CD toolset and processes will be similar when those environments are established.
 
-## Measurable and Actionable:
-
-Evidence of executed workloads related to required tasks in the Template must be available for inspection.  Every commit to the project should be eligible for inspection.
-
-## Timeliness:
-
-Minimally, a nightly build should occur, however as changes are made the measured work performed per task within the CI/CD pipeline should be created.
-
-## 4.0 Policy Statements
+### 🟦 1.  Policy Statements
 
 1. All new applications developed for the project Environment must be designed for containerization and deployed via the approved CI/CD pipeline (Section 5.0).
 2. Applications that cannot be containerized require a formal exception (Section 6.0) before any development or deployment activities may commence.
@@ -62,11 +58,11 @@ Minimally, a nightly build should occur, however as changes are made the measure
 
 ---
 
-## 5.0 Procedure: Standard Pathway for Containerized Applications
+### 🟩 2. Procedure: Standard Pathway for Containerized Applications
 
 This is the mandatory process for all new applications capable of being containerized.
 
-### 5.1 Code Management and Pipeline Initiation
+#### 🟩 2.1 Code Management and Pipeline Initiation
 
 **Post Code:** Application Developers shall commit all source code to the designated DISA GitLab repository (web.git.mil). Adherence to defined branching strategies (e.g., GitFlow) is required.
 
@@ -76,7 +72,7 @@ Phase 1: Following a merge to the main or release branch, developers shall notif
 
 Phase 2: Upon completion of the merge, the DevSecOps team will import the repository into the OSA toolset. (This process is planned for automation via webhooks in future pipeline iterations.)
 
-### 5.2 CI/CD Pipeline Execution (Automated)
+#### 🟩 2.2 CI/CD Pipeline Execution (Automated)
 
 **Phase 1:** Once the `.gitlab-ci.yml` is configured, GitLab runners will automatically execute containerization builds upon code commits or merge requests. Developers work with DevSecOps to configure the initial pipeline using GitLab CI/CD capabilities.
 
@@ -93,7 +89,7 @@ Phase 2: Upon completion of the merge, the DevSecOps team will import the reposi
 9. **Image Signing:** The final container image is cryptographically signed using Tekton Chains and Cosign.
 10. **Deploy to Registry:** The signed, scanned, and attested container image is pushed to the designated container registry (currently GitLab Container Registry).
 
-### 5.3 Application Deployment
+#### 🟩 2.3 Application Deployment
 
 This process is performed by System Administrators to deploy the final, approved application into the production environment.
 
@@ -103,7 +99,7 @@ This process is performed by System Administrators to deploy the final, approved
 
 ---
 
-## 6.0 Procedure: Exception Pathway for Non-Containerized Applications
+### 🟨 3.  Procedure: Exception Pathway for Non-Containerized Applications
 
 This pathway is reserved for applications with a compelling business or technical justification that prevents containerization. Approval is not guaranteed.
 
@@ -123,11 +119,11 @@ This pathway is reserved for applications with a compelling business or technica
 
 ---
 
-## 6.5 Implementation Phases
+### 🟧 4.  Implementation Phases
 
 This policy will be implemented in two phases to balance immediate security needs with the ultimate goal of full automation.
 
-### 6.5.1 Short-Term Implementation (Phase 1)
+#### 🟧 4.1  Short-Term Implementation (Phase 1)
 
 During the short-term phase, the focus is on establishing foundational security practices and version control discipline while the full CI/CD pipeline infrastructure is being developed.
 
@@ -169,7 +165,7 @@ Developers are responsible for running security scans locally on their developme
 **Deployment Documentation:** All deployments must be documented including the image/artifact version, deployment date, approver, and any configuration changes.
 **Change Management:** All production deployments must follow the established change management process with appropriate approvals.
 
-### 6.5.2 Long-Term Implementation (Phase 2)
+#### 🟧 4.2  Long-Term Implementation (Phase 2)
 
 The long-term implementation phase represents the full realization of the automated CI/CD pipeline as described in Section 5.0. This phase will be initiated once the OSA Toolset infrastructure is fully operational.
 
@@ -199,7 +195,7 @@ The transition from Phase 1 (short-term) to Phase 2 (long-term) will occur when 
 
 Once Phase 2 is fully implemented, the procedures described in Section 5.0 (Standard Pathway for Containerized Applications) become mandatory. The local scanning requirements of Phase 1 may be reduced or eliminated as the automated pipeline provides comprehensive security coverage.
 
-### 6.5.3 Ongoing Requirements (All Phases)
+#### 🟧 4.3  Ongoing Requirements (All Phases)
 
 Regardless of the implementation phase, the following requirements remain constant:
 
@@ -219,32 +215,29 @@ Regardless of the implementation phase, the following requirements remain consta
 
 ---
 
-## 7.0 Roles and Responsibilities
+### 🟦 7. Roles and Responsibilities
 
-### Application Developers
+#### 🟦 7.1 Application Developers
 
 - Responsible for writing secure code, committing it to GitLab, and remediating security findings.
 - For non-containerized applications, performing and documenting code reviews.
-
-### DevSecOps Team
+#### 🟦 7.2 DevSecOps Team
 
 - Responsible for maintaining, managing, and securing the CI/CD pipeline and OSA toolset.
 - Importing new projects and assisting developers with the pipeline.
-
-### System Administrators
+#### 🟦 7.3 System Administrators
 
 - Responsible for the underlying infrastructure of the project Environment.
 - For containerized applications: Responsible for pulling, verifying, and deploying signed container images to production.
 - For non-containerized applications: Responsible for executing Ansible playbooks to deploy and manage the application.
-
-### Project Managers / Stakeholders
+### 🟦 7.4 Project Managers / Stakeholders
 
 - Responsible for reviewing and approving/denying exception requests for non-containerized applications.
 - Ensuring projects and teams are compliant with this policy.
 
 ---
 
-## 8.0 Compliance and Enforcement
+### 🟩 8. Compliance and Enforcement
 
 Compliance with this policy is mandatory.
 
@@ -252,14 +245,18 @@ Applications found to be out of compliance may be removed from the project Envir
 
 Regular audits of the CI/CD pipeline, container registry, and deployed applications will be conducted to ensure adherence to this policy.
 
-## Reference(s):
+## 📏 Measurable and Actionable
 
-[Container Standard](./020_Container_Standard.md)
+Evidence of executed workloads related to required tasks in the Template must be available for inspection.  Every commit to the project should be eligible for inspection.
 
-[Container Hardening Guide, Version 1](https://dl.dod.cyber.mil/wp-content/uploads/devsecops/pdf/Final_DevSecOps_Enterprise_Container_Hardening_Guide_1.2.pdf)
+## ⏱️ Timeliness
 
-[DoW Enterprise DevSecOps Fundamentals, v 2.5, 2024/10](https://dodcio.defense.gov/Portals/0/Documents/Library/DoD%20Enterprise%20DevSecOps%20Fundamentals%20v2.5.pdf)
+Minimally, a nightly build should occur, however as changes are made the measured work performed per task within the CI/CD pipeline should be created.
 
-[NIST Secure Software Development Framework (SSDF), SP 800-218A](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf)
+## 📚 Reference(s)
 
-[Software Engineering for Continuous Delivery of Warfighting Capability, 2023/  04](https://www.cto.mil/wp-content/uploads/2023/07/SWE-Guide-April2023.pdf)
++ [Container Standard](./020_Container_Standard.md)
++ 🏛️ [Container Hardening Guide, Version 1](https://dl.dod.cyber.mil/wp-content/uploads/devsecops/pdf/Final_DevSecOps_Enterprise_Container_Hardening_Guide_1.2.pdf)
++ 🏛️ [DoW Enterprise DevSecOps Fundamentals, v 2.5, 2024/10](https://dodcio.defense.gov/Portals/0/Documents/Library/DoD%20Enterprise%20DevSecOps%20Fundamentals%20v2.5.pdf)
++ 🏛️ [NIST Secure Software Development Framework (SSDF), SP 800-218A](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf)
++ 🏛️ [Software Engineering for Continuous Delivery of Warfighting Capability, 2023/  04](https://www.cto.mil/wp-content/uploads/2023/07/SWE-Guide-April2023.pdf)

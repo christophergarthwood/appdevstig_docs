@@ -1,16 +1,16 @@
-# Integrated Deployment Environment (IDE) Standard
+# 📘 Integrated Deployment Environment (IDE) Standard
 
 [TOC]
 
-## Template / References
+## 🔗 Template / Reference
 
 No explicit template or reference exists.  The SOP for using this environment is encapsulated within this document.
 
-## Definition:
+## 📖 Definition
 
 An integrated deployment environment is a unified setup for software development and deployment that improves the process of moving code from development to a production environment. The  environment replicates the Staging / Operations environments to ensure deployment of any solution has a reasonable chance of success when engaging the Staging environment.  This is the first stop for the migration of code from a developer's local environment prior to Staging release.  
 
-## Purpose:
+## 🎯 Purpose
 
 This standard governs the activities of all application developers creating, deploying, or maintaining applications within the project environment, hosted on the project environment (hereinafter referred to as "DEV"). The purpose of this standard is to ensure the security, stability, and operational integrity of the DEV environment by strictly controlling access to services and resources. 
 
@@ -18,27 +18,27 @@ To facilitate a smooth transition for development teams, the DEV environment wil
 
 By using an Integrated Deployment Environment (IDE) the teams ensure:
 
-+ Consistent deployments: The application can run reliably in development, testing, and production environments by simply adjusting configuration files rather than altering code.
++ ✅ Consistent deployments: The application can run reliably in development, testing, and production environments by simply adjusting configuration files rather than altering code.
 
-+ Security and compliance: Sensitive data such as credentials and access keys on the Staging / Operation environment have no chance of spillage.
++ ✅ Security and compliance: Sensitive data such as credentials and access keys on the Staging / Operation environment have no chance of spillage.
 
-+ Rapid updates and scaling: Configuration changes can be made quickly, even in real-time, to accommodate updates, incident response, or scaling demands—without downtime or code changes.
++ ✅ Rapid updates and scaling: Configuration changes can be made quickly, even in real-time, to accommodate updates, incident response, or scaling demands—without downtime or code changes.
 
-+ Simplified maintenance: Structured, centralized documentation reduces complexity in multi-environment scenarios and facilitates troubleshooting, onboarding, and knowledge transfer.
++ ✅ Simplified maintenance: Structured, centralized documentation reduces complexity in multi-environment scenarios and facilitates troubleshooting, onboarding, and knowledge transfer.
 
-+ Requirements/Specifications/Guidelines: The IDE must exist and be respected by ensuring all team members utilizing this environment understand the rules of engagement.
++ ✅ Requirements/Specifications/Guidelines: The IDE must exist and be respected by ensuring all team members utilizing this environment understand the rules of engagement.
 
-+ Measurable and Actionable: Every deployment to the Staging / Operational environment must be proceeded by a deployment to the IDE.  Approval to move to the Staging environment requires proof of deployment to the IDE.
++ ✅ Measurable and Actionable: Every deployment to the Staging / Operational environment must be proceeded by a deployment to the IDE.  Approval to move to the Staging environment requires proof of deployment to the IDE.
 
-## Requirements/Specifications/Guidelines:
 
-### Scope 
+## 🧩 Requirements/Specifications/Guidelines
+
+### 🟦 1. Scope 
 
 This standard applies to all company personnel, contractors, and third-party developers (collectively, "Developers") who require access to the project DEV environment for application development and deployment activities. This standard covers all actions taken by Developers within the Management Console, via the Command Line Interface (CLI), or through any SDK or API interacting with the DEV account. 
 
 Internal admin team norms will be documented as working papers / processes thus the intent of this standard is to ensure a clear understanding of Developer and Admin responsibilities for this aspect of our Development Security and Operations (DevSecOps) efforts.
-
-### Statement 
+ Statement 
 
 While the current configuration of the DEV environment grants developers broad permissions for operational flexibility, all personnel are mandated to operate under a self-governed Principle of Least Privilege. 
 
@@ -48,7 +48,7 @@ Developers must operate as if their permissions are limited only to the activiti
 
 Developers will be granted read-only access, initially, and extended more advanced permissions based on mission need on an "as needed" basis only reverted back to read-only when the advanced permissions are no longer required.
 
-### Access to the DEV Environment 
+### 🟩 2. Access to the DEV Environment 
 
 All personnel requiring new or modified access to the project DEV environment must submit a signed formal request. 
 
@@ -62,7 +62,7 @@ Justification for Access
 
 The process of onboarding is managed by the Government representative.
 
-### Permitted Activities 
+### 🟨 3.  Permitted Activities 
 
 Developers are permitted to perform the following actions only on their assigned EC2 instance(s) : 
 
@@ -78,7 +78,7 @@ Developers are permitted to perform the following actions only on their assigned
 
 Any action related to Operating System modification must be cleared with the admin team first.  The Administrative team expects developers to have an automated deployment process by way of: 1) Ansible 2) Bash Shell execution unless the operation simply does not lend itself to automation (User Interfaces from a vendor that cannot be scripted).
 
-### Prohibited Activities 
+### 🟧 4.  Prohibited Activities 
 
 To maintain the security and stability of the shared DEV environment, the following activities are strictly prohibited. Even though your account permissions may allow these actions, performing them is a direct violation of this standard. 
 
@@ -108,7 +108,7 @@ No Unapproved Access to Other Cloud Services: Creating, configuring, modifying, 
 
 All requests for infrastructure changes (e.g., firewall rules, new databases, load balancers) must be submitted as a service request to the Cloud Operations team as per Section 8.0. 
 
-### Shared EC2 Instance Protocol 
+### 🟦 5. Shared Instance Protocol 
 
 It is common for multiple applications to be co-hosted on a single EC2 instance within the project environment. This shared tenancy requires strict coordination to prevent service disruptions. 
 
@@ -132,7 +132,7 @@ It is common for multiple applications to be co-hosted on a single EC2 instance 
 
 + Conflict Resolution: If another team identifies a conflict with the proposed change, it is the responsibility of the involved parties to coordinate and find a mutually agreeable time. The Cloud Operations team can be engaged to mediate if a resolution cannot be reached. 
 
-### Exception Request Process 
+### 🟩 6.  Exception Request Process 
 
 If an application has a legitimate technical requirement for a service other than EC2 (e.g., an S3 bucket for file storage or an RDS database), access will not be granted directly to the Developer. 
 
@@ -149,7 +149,7 @@ Instead, the Developer must submit a formal "Infrastructure Request" ticket to t
 The Cloud Operations team will review the request. If approved, the team will provision the resource and provide the application with the necessary credentials and connection details (e.g., database endpoint, IAM Role for EC2). 
  
 
-###  Enforcement and Compliance 
+### 🟨 7.  Enforcement and Compliance 
 
 + Monitoring: All actions within the project are logged and monitored. This logging provides full visibility into all actions taken by all users. 
 
@@ -157,7 +157,7 @@ The Cloud Operations team will review the request. If approved, the team will pr
 
 + Violations: Unauthorized activity or failure to comply with the self-governed Principle of Least Privilege outlined in this standard will be treated as a security incident. Non-compliance may result in immediate revocation of access, and further disciplinary action in accordance with company standard. 
 
-## Measurable and Actionable:
+## 📏 Measurable and Actionable
 
 + Lack of Issue Ticket Id's represents a failure to trace a change request to a change in the system and thereby a lack of Configuration Management (CM) compliance.  Monitoring of submissions will be key for administrators to ensure developers honor the standard.
 
@@ -165,16 +165,11 @@ The Cloud Operations team will review the request. If approved, the team will pr
 
 + Administrative team will have a consistently formatted, managed, and centrally located database, in whatever form they deem appropriate, of requests.  Numbers of requests from developers should be measurable and help provide input into the flux of project changes as well as how well DevSecOps principles are being followed.
 
-## Timeliness:
+## ⏱️ Timeliness
 
 Appropriate with each Developer need for access.
 
-## Reference:
-
-Internal standard.
-
- 
-## Visual
+## 🖼️ Visual
 
 ```mermaid
 graph TB
@@ -255,3 +250,9 @@ graph TB
 
 ```
 
+
+## 📚 Reference(s)
+
+Internal standard.
+
+ 

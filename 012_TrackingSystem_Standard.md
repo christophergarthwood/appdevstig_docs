@@ -1,23 +1,24 @@
-# Tracking System Standard
+# 📘 Tracking System Standard
 
 [TOC]
 
-## Template / References
+## 🔗 Template / Reference
 
 *Template* - [Tracking System Template](./012_TrackingSystem_Template.md)
 
-## Definition:
+## 📖 Definition
 
 A software tracking system for tracking issues in a software development project, explained simply, is a tool that helps teams keep track of problems, bugs, or tasks that come up during development. It records each issue, assigns it to the right person to fix, and monitors the progress until the problem is resolved.
 
-## Purpose:
+## 🎯 Purpose
 
 A tracking system makes managing bugs or tasks clearer, faster, and more efficient so the software can be improved and delivered more reliably as well as provide metrics for project performance and accountability.
 
 
-## Requirements/Specifications/Guidelines:
 
-A tracking system must:
+## 🧩 Requirements/Specifications/Guidelines
+
+### 🟦 1. A tracking system must:
 
 + Organize all reported issues in one place
 + Prioritize which problems to fix first
@@ -25,7 +26,7 @@ A tracking system must:
 + Track how long issues take to get fixed
 + Keep everyone informed about the status of issues
 
-**APSC-DV-003010 - Software Configuration Management**
+### 🟩 2. APSC-DV-003010 - Software Configuration Management
  - Application must be modified using Trunk/Branch/Tag methodology
  - A Software repository management system required
  - Each modification must be tracked as a task
@@ -34,7 +35,7 @@ A tracking system must:
 
 Establish a tracking system with commit messages utilizing Issue Id notation.
 
-#### Commit Messages
+### 🟨 3. Commit Messages
 When committing something use the -m flag to add a short commit message of the format:
 
 `#<<Issue_Id by ing System>><<Optional:(Use Case Id)>><<Bug Fix|Feature|Documentation|Optimization>><<Short description of the change in past tense>>.`
@@ -56,24 +57,17 @@ So, to use the above example your commit would have the following message:
 #132 Feature added cosine similarity to human selected comments versus generative selected comments.
 #132 (ML-025) Feature added cosine similarity to human selected comments versus generative selected comments.
 
-## Measurable and Actionable:
+## 📏 Measurable and Actionable
 
 + Evidence of a commits tied to issues by way of the tracking system.
 + Evidence of changes traceable from version release to tracking system to requirement.
 
-## Timeliness:
+## ⏱️ Timeliness
 
 + Per commit of code to the Software Configuration Management Plan.
 + Per new or modified Story or Task.
 
-## Reference(s):
- + [Software Engineering for Continuous Delivery of Warfighting Capability, 2023/04](https://www.cto.mil/wp-content/uploads/2023/07/SWE-Guide-April2023.pdf)
- + [DoW Enterprise DevSecOps Fundamentals, v 2.5, 2024/10](https://dodcio.defense.gov/Portals/0/Documents/Library/DoD%20Enterprise%20DevSecOps%20Fundamentals%20v2.5.pdf)
- + [NIST Special Publication 800-37 (“Risk Management Framework for Information Systems and Organizations"), Rev 2](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-37r2.pdf)
- + [NIST Secure Software Development Framework (SSDF), SP 800-218A](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf)
- + [CISA Securing the Software Supply Chain](https://www.cisa.gov/sites/default/files/publications/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN_DEVELOPERS.PDF)
-
-## Visual
+## 🖼️ Visual
 
 ### Basic Git Workflow Example
 
@@ -412,4 +406,12 @@ graph LR
     class TK1,TK2,TK3 ticketStyle
     class PKG1,PKG2,PKG3,PKG4,PKG5,PKG6 deployStyle
 ```
+
+
+## 📚 Reference(s)
+ + 🏛️[Software Engineering for Continuous Delivery of Warfighting Capability, 2023/04](https://www.cto.mil/wp-content/uploads/2023/07/SWE-Guide-April2023.pdf)
+ + 🏛️[DoW Enterprise DevSecOps Fundamentals, v 2.5, 2024/10](https://dodcio.defense.gov/Portals/0/Documents/Library/DoD%20Enterprise%20DevSecOps%20Fundamentals%20v2.5.pdf)
+ + 🏛️[NIST Special Publication 800-37 (“Risk Management Framework for Information Systems and Organizations"), Rev 2](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-37r2.pdf)
+ + 🏛️[NIST Secure Software Development Framework (SSDF), SP 800-218A](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218A.pdf)
+ + 🏛️[CISA Securing the Software Supply Chain](https://www.cisa.gov/sites/default/files/publications/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN_DEVELOPERS.PDF)
 
