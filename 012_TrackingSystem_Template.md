@@ -3,7 +3,7 @@
 **Participants:** Developer "X"
 
 **Title:** MDV 4.\* to 5.\* Upgrade Deployment Plan (1 of 2)
-Purpose: Create deployment plan based on documentation provided by MDV Team Lead (Josh Standford [Radiance]).  As an integrator for CTG 80.7 I need to plan for and execute an upgrade of MDV 5.\* to the Portal environment.  Validation of requirements, marshaling of materials, and execution of installation are the identified major tasks.  We will pursue a dual execution of “by hand” building of a deployment coupled with an automated method of deployment as this aligns with the Product Owner’s vision current to future operations.  Deployment of MDV 5.\* is considered a must have by the sponsor and will provide enhanced capability to the end-user (Navy ship riders).
+Purpose: Create deployment plan based on documentation provided by MDV Team Lead.  As an integrator for CTG 80.7 I need to plan for and execute an upgrade of MDV 5.\* to the Portal environment.  Validation of requirements, marshaling of materials, and execution of installation are the identified major tasks.  We will pursue a dual execution of “by hand” building of a deployment coupled with an automated method of deployment as this aligns with the Product Owner’s vision current to future operations.  Deployment of MDV 5.\* is considered a must have by the sponsor and will provide enhanced capability to the end-user (Navy ship riders).
 
 **Plan (Tasks):**
 1.	Deployment plan will be a documented series of steps that indicate pre-test conditions for deployment, deployment instructions, and post-test conditions when complete. 

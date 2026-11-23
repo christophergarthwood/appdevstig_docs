@@ -66,7 +66,7 @@ The model must undergo local testing using an approved open-source framework (e.
 
 ### 🟨 3.3  Standardized Test Environment & Data
 
-All evaluations must occur in an isolated IT evaluation environment coordinated with the Radiance Team prior to deployment.  Furthermore, all baseline and proposed models must be evaluated against the exact same standardized, unclassified test dataset (communicate with Chris on what this may look like) to ensure an objective comparison.
+All evaluations must occur in an isolated IT evaluation environment coordinated with the Team prior to deployment.  Furthermore, all baseline and proposed models must be evaluated against the exact same standardized, unclassified test dataset (communicate with Chris on what this may look like) to ensure an objective comparison.
 
 ### 🟧 4.  Efficiency and Resource Constraints
 

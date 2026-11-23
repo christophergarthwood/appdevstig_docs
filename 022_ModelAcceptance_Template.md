@@ -28,7 +28,7 @@
 |------------------------|-----|
 |**Testing Coordinators**|*[e.g. Name]*|
 |**Date of Installation**|*[YYYY-MM-DD]*|
-|**Test Environment**    |*[e.g. Local Docker/Podman execution, Radiance Test Server]*|
+|**Test Environment**    |*[e.g. Local Docker/Podman execution, Test Server]*|
 
 ## 4.0 Quantitative Evaluation: The Scorecard
 

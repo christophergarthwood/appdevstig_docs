@@ -79,7 +79,7 @@ Security Training completed by team in support of Secure Software Development Pr
 
 Development efforts will follow the processes specified in the Process Asset Library (PAL) or other standards specified in a kick-off meeting.  Enumerate the different processes and provide a hyperlink to their authoritative location.
 
-[Process Asset Library (PAL)](https://gitlab.nrlssc.org/navo-se/wade-docs/sop)
+[Process Asset Library (PAL)](<cite URL here)
 
 #### Software Configuration Management (APSC-DV-003010)
 
@@ -92,12 +92,6 @@ Objects considered eligible for deployment:
 + Source Code (\*.py, \*.sh, \*.md, \*.json, \*.(all graphics formats) )
 + Configuration/Settings files
 + Libraries used for execution at build and run-time, these must be CM'd as well in a repository.
-
-+ [NRL NAVO Surf Eagle Repository](https://gitlab.nrlssc.org/navo-se)
-+ [Documentation](https://gitlab.nrlssc.org/navo-se/wade-docs/sop)
-+ [Langgraph Multi-Agent](https://gitlab.nrlssc.org/navo-se/langgraph-mult-agent-workflow)
-+ [ERDDAP MCP](https://gitlab.nrlssc.org/navo-se/erddap-mcp)
-+ [ERDDAP PY](https://gitlab.nrlssc.org/navo-se/erddapy)
 
 Additional information regarding operational deployment is in the section Transferring Code from Development to Deployment (APSC-DV-003010).
 
@@ -132,7 +126,7 @@ Common programming standards are adhered to for the following reasons:
 + Standard programming language reduces errors and increases reliability.
 + Individual styles are replaced, and an emphasis is placed on business concerns - high productivity, maintainability, shared authorship, and other aspects that help the group achieve its goal. 
 
-Coding standards are outlined at [Standard Operating Procedures Documentation](https://gitlab.nrlssc.org/navo-se/wade-docs/sop).
+Coding standards are outlined at [Standard Operating Procedures Documentation](<cite URL here>).
 
 ## Build Environment 
 

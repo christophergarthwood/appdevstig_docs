@@ -110,7 +110,7 @@ Set both the `TMPDIR` environment variable and the `--tmpdir $(pwd)` flag so tha
 # Force all temporary layer staging into the current directory
 export TMPDIR=$(pwd)
 
-# 1. Pull open-webui:v0.12.3-dougllm.0.2.0
+# 1. Pull <image name>
 skopeo copy --tmpdir $(pwd) \
   docker://registry.<cite url>/<name of container image> \
   docker-archive:./<name of container image>.tar:registry.<cite URL>/<cite image name>

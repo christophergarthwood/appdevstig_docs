@@ -87,7 +87,7 @@ The information outlined below represents a snapshot of the test environment and
 Explain the development environment.
 
 ***Example:***
-#### **NRL Development Environment Overview**
+#### **Development Environment Overview**
 
 |Component                          | Comments                                       |
 |-----------------------------------|-----------------------------------------------:|
